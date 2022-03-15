@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+ }
+
+ body{
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    color: white;    
+}
+
+.menu{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    background-color: hsl(208, 93%, 24%);
+    padding: 5vw 0vh 2vh 2vh;
+    position: relative; 
+ }
+
+ .title{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding: 0vw 2vh 0vh 0vh;
+   margin-top: 2%;
+  
+ }
+
+ .title img{
+   width: 300px;
+ }
+
+.options div{
+   padding: 0vw 2vh 0vh 0vh;
+ }
+
+.menu .white_container{
+   background-color: white;
+   border-radius: 20px 0px 0px 20px;
+   padding: 0%;
+}
+
+ .existing_courses {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ }
+
+.existing_courses_img{
+   margin-right: 3%;
+}
+
+ .existing_courses{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin: 0px 0px 10% 10px;
+   color: hsl(208, 93%, 24%);
+}
+
+ .add_new_course {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 10% 10px;
+ }
+
+ .existing_classes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 10% 10px;
+ }
+
+ .add_new_class {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 10% 10px;
+ }
+
+ .registered_users {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ }
+
+ .logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 0px 10px;
+ }
+
+
+
+ .opitions div {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
+}

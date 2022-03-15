@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+ }
+
+ body{
+    width: 100vw;
+    height: 100vh;
+    padding: 20px 40px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first_part{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.first_part h1{
+    margin-left: 5vh;
+}
+
+img{
+    width: 70px;
+}
+
+h1{
+    color: hsl(208, 93%, 24%);
+    font-size: 30px;
+}

@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+ }
+
+ body{
+    width: 100vw;
+    height: 100vh;
+    background: url('../IMG/background.svg');
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.452);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+ }
+
+ main{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+ }
+
+ .container{
+   max-width: 1200px;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ main h1{
+   font-size: 100px
+}
+
+ main h2{
+   margin: 3%;
+    font-size: 43px;
+ }
+
+ main .button{
+    font-size: 43px;
+    max-width: 26vw;
+    border: 5px solid;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    border-color: #0987F7;
+    border-radius: 10px;
+    padding: 10px;
+ }
+
+ @media (max-width: 1200px) {
+    .container{
+      max-width: 1100px;
+    }
+
+   main h1{
+      font-size: clamp(1rem, 10vw, 6.25rem); 
+   }
+  
+   main h2{
+      margin: 5%;
+      font-size: clamp(0.5rem, 5vw, 2.6rem); 
+   }
+  
+   .button{
+      font-size: 5px;
+      width: clamp(21.8rem, 10vw, 21rem);
+   }
+
+   .button p{
+      font-size: clamp(0.4rem, 2.5vw, 2.6rem);
+   }
+}
+
