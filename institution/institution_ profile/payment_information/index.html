@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
-    <title>perfil da instituição</title>
+    <title>informacoes de pagamento da instituição</title>
   </head>
   <body>
     <div class="container mt-5 container">
@@ -18,36 +18,23 @@
         <form class="row g-3">
 
           <div class="col-md-12" >
-            <label for="institutional_email" class="form-label">E-mail institucional</label>
-            <input type="email" class="form-control institutional_email" placeholder="unicuritiba@gmail.com" required>
+            <label for="card_number" class="form-label">Número do cartão</label>
+            <input type="text" class="form-control card_number" placeholder="unicuritiba@gmail.com" required>
           </div>
 
-          <div class="col-md-6">
-            <label for="institution_name" class="form-label">Nome da instituição</label>
-            <input type="text" class="form-control institution_name" placeholder="Universidade De Curitiba " required>
+          <div class="col-md-12">
+            <label for="name_on_the_card" class="form-label">Nome no cartão</label>
+            <input type="text" class="form-control name_on_the_card" placeholder="Universidade De Curitiba " required>
           </div>
 
           <div class="col-md-6 for-cnp">
-            <label for="cnpj" class="form-label">CNPJ</label>
-            <input type="text" class="form-control cnpj" placeholder="42.591.538/0001-68" required>
+            <label for="valid_thru" class="form-label">Validade</label>
+            <input type="text" class="form-control valid_thru" placeholder="42.591.538/0001-68" required>
           </div>
 
           <div class="col-md-6">
-            <label for="phone" class="form-label">Telefone</label>
-            <input type="text" class="form-control phone" placeholder="+55 (11) 99869-7564" required>
-          </div>
-
-          <div class="col-md-6">
-            <label for="password" class="form-label">Senha</label>
-            <input type="password" class="form-control password" placeholder="Nexus@5" required>
-          </div>
-
-          <div class="col-md-6">
-            <button id="first-button" type="submit">INFORMAÇÕES DE PAGAMENTO</button>
-          </div>
-
-          <div class="col-md-3">
-            <button id="second-button" type="submit">EXCLUIR</button>
+            <label for="cvc" class="form-label">CVV</label>
+            <input type="text" class="form-control cvc" placeholder="+55 (11) 99869-7564" required>
           </div>
           
           <div class="col-md-3">

@@ -15,34 +15,36 @@
   }
  
   body {
+     width: 100vw;
      height: 100vh;
     display: flex;
     flex-direction: column; 
     justify-content: center; 
+    background-position: center center;
  }
  
- .institutional_email{
+ .card_number{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
- .institution_name{
+ .name_on_the_card{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
- .cnpj{
+ .valid_thru{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
- .phone{
+ .cvc{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
@@ -65,20 +67,10 @@
   ::placeholder {
     font-family: 'Hind', sans-serif;
  }
-
-  #first-button{
-   margin-top: 2vh;
-     width: 100%;
-     background-color: rgba(240, 248, 255, 0);
-     color: white;
-     background-color: #C2C2C2;
-     border-radius: 30px;
-     padding: 15px
-  }
  
- #second-button{
-   margin-top: 2vh;
-    width: 100%;
+ #third-button{
+     margin-top: 2vh;
+     width: 100%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
     background-color: #044177;
@@ -86,44 +78,20 @@
     padding: 15px
  }
  
- #icon input[type="text"] {
-   padding-left: 40px;
- }
- 
-#icon {
-   position: relative;
- }
- 
-#icon i {
-   position: absolute;
-   right: 1%;
-   top: 45%;
-   padding: 9px 8px;
-   color: #808080;
-   transition: 0.3s;
- }
- 
-#icon.inputIconBg i {
-   background-color: #aaa;
-   padding: 9px 4px;
-   border-radius: 4px 0 0 4px;
- }
-
  @media (max-width: 1200px) {
-
-   
-   .container{
-      padding: 50px; 
-      
-    }
-   .container h1{
-      text-align: center;
-      font-size: clamp(1rem, 10vw, 4.25rem); 
-      
-   }
-
-   form div{
-      max-width: 10px;
-   }
-}
  
+    
+    .container{
+       padding: 50px; 
+       
+     }
+    .container h1{
+         text-align: center;
+       font-size: clamp(1rem, 10vw, 4.25rem); 
+       
+    }
+ 
+    form div{
+       max-width: 10px;
+    }
+ }

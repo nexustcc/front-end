@@ -69,27 +69,33 @@
 }
 
 #first-button{
+   margin-top: 2vh;
    width: 100%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
     background-color: #0664B7;
     border-radius: 30px;
+    padding: 15px
  }
 
  #second-button{
+   margin-top: 2vh;
     width: 100%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
     background-color: #0664B7;
     border-radius: 30px;
+    padding: 15px
  }
 
 #third-button{
+   margin-top: 2vh;
    width: 100%;
    background-color: rgba(240, 248, 255, 0);
    color: white;
    background-color: #044177;
    border-radius: 30px;
+   padding: 15px
 }
 
 @media (max-width: 1200px) {
