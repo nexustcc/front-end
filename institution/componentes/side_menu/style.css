@@ -5,7 +5,7 @@
  }
 
  body{
-    width: 30vw;
+    width: 35vw;
     height: 100vh;
     display: flex;
     color: white;    
@@ -17,7 +17,9 @@
     justify-content: space-between;
     background-color: hsl(208, 93%, 24%);
     padding: 5vw 0vh 2vh 2vh;
+    font-family: 'Poppins', sans-serif;
     position: relative; 
+    font-size: 15px;
  }
 
  .title{
@@ -25,7 +27,6 @@
    align-items: center;
    flex-direction: column;
    padding: 0vw 2vh 0vh 0vh;
-   margin-top: 2%;
   
  }
 
@@ -49,7 +50,7 @@
     align-items: center;
  }
 
-.existing_courses_img{
+#existing_courses_img{
    margin-right: 3%;
 }
 
@@ -61,12 +62,20 @@
    color: hsl(208, 93%, 24%);
 }
 
+#existing_courses_img{
+   margin-right: 3%;
+}
+
  .add_new_course {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0px 0px 10% 10px;
  }
+
+ #add_new_course_img{
+   margin-right: 3%;
+}
 
  .existing_classes {
     display: flex;
@@ -75,6 +84,10 @@
     margin: 0px 0px 10% 10px;
  }
 
+ #existing_classes_img{
+   margin-right: 3%;
+}
+
  .add_new_class {
     display: flex;
     flex-direction: row;
@@ -82,11 +95,19 @@
     margin: 0px 0px 10% 10px;
  }
 
+#add_new_class_img{
+   margin-right: 3%;
+}
+
  .registered_users {
     display: flex;
     flex-direction: row;
     align-items: center;
  }
+
+ #registered_users_img{
+   margin-right: 3%;
+}
 
  .logout {
     display: flex;
@@ -95,9 +116,6 @@
     margin: 0px 0px 0px 10px;
  }
 
-
-
- .opitions div {
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Righteous', cursive;
+#loigout_img{
+   margin-right: 3%;
 }
