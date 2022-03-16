@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+ 
+ 
+ .container h1{
+    font-size: 70px;
+    display: flex;  
+    flex-direction: column; 
+    align-items: center;
+    color: #05204A;
+    font-family: 'Poppins', sans-serif;
+  }
+ 
+  body {
+     width: 100vw;
+     height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    background-position: center center;
+ }
+ 
+ .numero_do_cartao{
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204A;
+    padding: 15px
+ }
+ 
+ .nome_no_cartao{
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204A;
+    padding: 15px
+ }
+ 
+ .validade{
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204A;
+    padding: 15px
+ }
+ 
+ .cvv{
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204A;
+    padding: 15px
+ }
+ 
+  .senha{
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204A;
+    padding: 15px
+ }
+ 
+  button{
+     padding: 10px;
+     border: 5px solid;
+     font-family: 'Poppins', sans-serif;
+  }
+ 
+  ::placeholder {
+    font-family: 'Hind', sans-serif;
+ }
+ 
+ #primeiro_botao{
+     margin-top: 2vh;
+     width: 100%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #C2C2C2;
+    border-radius: 30px;
+    padding: 15px
+ }
+
+ #segundo_botao{
+   margin-top: 2vh;
+    width: 100%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 30px;
+    padding: 15px
+ }
+ 
+ #icon input[type="text"] {
+   padding-left: 40px;
+ }
+ 
+#icon {
+   position: relative;
+ }
+ 
+#icon i {
+   position: absolute;
+   right: 1%;
+   top: 45%;
+   padding: 9px 8px;
+   color: #808080;
+   transition: 0.3s;
+ }
+ 
+#icon.inputIconBg i {
+   background-color: #aaa;
+   padding: 9px 4px;
+   border-radius: 4px 0 0 4px;
+ }
+ 
+ @media (max-width: 1200px) {
+ 
+    
+    .container{
+       padding: 50px; 
+       
+     }
+    .container h1{
+         text-align: center;
+       font-size: clamp(1rem, 10vw, 4.25rem); 
+       
+    }
+ 
+    form div{
+       max-width: 10px;
+    }
+ }
