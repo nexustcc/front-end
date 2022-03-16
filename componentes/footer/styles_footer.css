@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind', sans-serif;
+}
+
+body {
+    color: #fff;
+}
+
+footer {
+    height: 230px;
+    width: 100vw;
+    background-color: #000025;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.social_medias ul li {
+    width: 27px;
+    height: 20px;
+    display: inline-block;
+    margin: 5px;
+    color: #333;
+}
+
+#facebook_icon:hover {
+    fill: #4267B2;
+    transition: all 0.3s ease 0s;
+}
+
+#twitter_icon:hover {
+    fill: #1DA1F2;
+    transition: all 0.3s ease 0s;
+}
+
+#instagram_icon:hover {
+    fill: #8a49a1;
+    transition: all 0.3s ease 0s;
+}
+
+.social_medias svg {
+    height: 26px;
+    width: 26px; 
+}

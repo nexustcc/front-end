@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hind', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #000032, #0664B7);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.login_adquirir {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.login_link:hover {
+    color: #0987F7;
+    transition: all 0.3s ease 0s;
+}
+
+.login_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+  margin-left: 50vw;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 500px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.login_form img {
+  padding: 40px 0;
+}
+
+.login_form p {
+  color: #000;
+  font-size: 17px;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 40px 0;
+}
+
+.txt_field input {
+  width: 94%;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.txt_field img {
+  position: absolute;
+  top: -75%;
+  right: 5px;
+}
+
+#show_password {
+  cursor: pointer;
+}
+
+.txt_field span::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0987F7;
+  transition: .5s;
+}
+
+.txt_field input:focus~label,
+.txt_field input:valid~label {
+  top: -5px;
+  color: #0987F7;
+}
+
+input:focus~label,
+input:valid~label {
+  top: -5px;
+  color: #0987F7;
+}
+
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before {
+  width: 100%;
+}
+
+.forgot_password {
+  margin: 10px 0 20px 5px;
+  color: #0987F7;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.forgot_password:hover {
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  width: 300px;
+  height: 50px;
+  border: 1px solid;
+  background: #0987F7;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 30px;
+}
+
+input[type="submit"]:hover {
+  border-color: #0987F7;
+  transition: .5s;
+}
+
+input[type="button"] {
+  width: 300px;
+  height: 50px;
+  border: none;
+  background: #E3E3E3;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 30px;
+}
+
+input[type="button"]:hover {
+  transform: scale(1.02);
+  transition: .5s;
+}
+
+.cancel_send {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .login_form {
+    width: 300px;
+  }
+
+  .login_form p {
+    max-width: 250px;
+  }
+
+  .txt_field input {
+    width: 84%;
+  }
+
+  input[type="submit"] {
+    width: 230px;
+  }
+
+  input[type="button"] {
+    width: 230px;
+  }
+
+  .cancel_send {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+}
