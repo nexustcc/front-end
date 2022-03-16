@@ -22,7 +22,7 @@
     font-size: 15px;
  }
 
- .title{
+ .titulo{
    display: flex;
    align-items: center;
    flex-direction: column;
@@ -30,31 +30,31 @@
   
  }
 
- .title img{
+ .titulo img{
    width: 300px;
  }
 
-.options div{
+.opcoes div{
    padding: 0vw 2vh 0vh 0vh;
  }
 
-.menu .white_container{
+.menu .container_branco{
    background-color: white;
    border-radius: 20px 0px 0px 20px;
    padding: 0%;
 }
 
- .existing_courses {
+ .cursos_existentes {
     display: flex;
     flex-direction: row;
     align-items: center;
  }
 
-#existing_courses_img{
+#cursos_existentes_img{
    margin-right: 3%;
 }
 
- .existing_courses{
+ .cursos_existentes{
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -62,60 +62,60 @@
    color: hsl(208, 93%, 24%);
 }
 
-#existing_courses_img{
+#cursos_existentes_img{
    margin-right: 3%;
 }
 
- .add_new_course {
+ .adicionar_novo_curso {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0px 0px 10% 10px;
  }
 
- #add_new_course_img{
+ #adicionar_novo_curso_img{
    margin-right: 3%;
 }
 
- .existing_classes {
+ .turmas_existentes {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0px 0px 10% 10px;
  }
 
- #existing_classes_img{
+ #turmas_existentes_img{
    margin-right: 3%;
 }
 
- .add_new_class {
+ .criar_nova_turma {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0px 0px 10% 10px;
  }
 
-#add_new_class_img{
+#criar_nova_turma_img{
    margin-right: 3%;
 }
 
- .registered_users {
+ .usuarios_cadastrados {
     display: flex;
     flex-direction: row;
     align-items: center;
  }
 
- #registered_users_img{
+ #usuarios_cadastrados_img{
    margin-right: 3%;
 }
 
- .logout {
+ .sair {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0px 0px 0px 10px;
  }
 
-#loigout_img{
+#sair_img{
    margin-right: 3%;
 }

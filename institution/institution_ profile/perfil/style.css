@@ -23,14 +23,14 @@
    background-position: center center;
 }
 
-.institutional_email{
+.email_institucional{
    background-color: #E3E3E3;
    border-radius: 10px;
    border-bottom: 1px solid #05204A;
    padding: 15px
 }
 
-.institution_name{
+.nome_da_instituicao{
    background-color: #E3E3E3;
    border-radius: 10px;
    border-bottom: 1px solid #05204A;
@@ -44,14 +44,14 @@
    padding: 15px
 }
 
-.phone{
+.telefone{
    background-color: #E3E3E3;
    border-radius: 10px;
    border-bottom: 1px solid #05204A;
    padding: 15px
 }
 
- .password{
+ .senha{
    background-color: #E3E3E3;
    border-radius: 10px;
    border-bottom: 1px solid #05204A;
@@ -68,7 +68,7 @@
    font-family: 'Hind', sans-serif;
 }
 
-#first-button{
+#primeiro_botao{
    margin-top: 2vh;
    width: 100%;
     background-color: rgba(240, 248, 255, 0);
@@ -78,7 +78,7 @@
     padding: 15px
  }
 
- #second-button{
+ #segundo_botao{
    margin-top: 2vh;
     width: 100%;
     background-color: rgba(240, 248, 255, 0);
@@ -88,7 +88,7 @@
     padding: 15px
  }
 
-#third-button{
+#terceiro_botao{
    margin-top: 2vh;
    width: 100%;
    background-color: rgba(240, 248, 255, 0);

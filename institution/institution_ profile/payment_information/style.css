@@ -23,35 +23,35 @@
     background-position: center center;
  }
  
- .card_number{
+ .numero_do_cartao{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
- .name_on_the_card{
+ .nome_no_cartao{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
- .valid_thru{
+ .validade{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
- .cvc{
+ .cvv{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
  }
  
-  .password{
+  .senha{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
@@ -68,7 +68,7 @@
     font-family: 'Hind', sans-serif;
  }
  
- #third-button{
+ #primeiro_botao{
      margin-top: 2vh;
      width: 100%;
     background-color: rgba(240, 248, 255, 0);

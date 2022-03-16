@@ -17,13 +17,13 @@ header{
     justify-content: space-between;
 }
 
-.first_part{
+.primeira_parte{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.first_part h1{
+.primeira_parte h1{
     margin-left: 5vh;
 }
 

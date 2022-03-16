@@ -1,72 +1,74 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-  }
- 
- 
- .container h1{
-    font-size: 70px;
-    display: flex;  
-    flex-direction: column; 
-    align-items: center;
-    color: #05204A;
-    font-family: 'Poppins', sans-serif;
-  }
- 
-  body {
-     height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
- }
- 
- .institutional_email{
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
- }
- 
- .institution_name{
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
- }
- 
- .cnpj{
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
- }
- 
- .phone{
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
- }
- 
-  .password{
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
- }
- 
-  button{
-     padding: 10px;
-     border: 5px solid;
-     font-family: 'Poppins', sans-serif;
-  }
- 
-  ::placeholder {
-    font-family: 'Hind', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
  }
 
-  #first-button{
+
+.container h1{
+   font-size: 70px;
+   display: flex;  
+   flex-direction: column; 
+   align-items: center;
+   color: #05204A;
+   font-family: 'Poppins', sans-serif;
+ }
+
+ body {
+    width: 100vw;
+    height: 100vh;
+   display: flex;
+   flex-direction: column; 
+   justify-content: center; 
+   background-position: center center;
+}
+
+.email_institucional{
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
+}
+
+.nome_da_instituicao{
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
+}
+
+.cnpj{
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
+}
+
+.telefone{
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
+}
+
+ .senha{
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
+}
+
+ button{
+    padding: 10px;
+    border: 5px solid;
+    font-family: 'Poppins', sans-serif;
+ }
+
+ ::placeholder {
+   font-family: 'Hind', sans-serif;
+}
+
+  #primeiro_botao{
    margin-top: 2vh;
      width: 100%;
      background-color: rgba(240, 248, 255, 0);
@@ -76,7 +78,7 @@
      padding: 15px
   }
  
- #second-button{
+ #segundo_botao{
    margin-top: 2vh;
     width: 100%;
     background-color: rgba(240, 248, 255, 0);
