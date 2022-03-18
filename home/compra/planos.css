@@ -146,7 +146,7 @@ ul li {
     list-style: none;
 }
 
-.form_plano input[type="submit"] {
+.form_plano input[type="button"] {
     width: 500px;
     height: 50px;
     border: 1px solid;
@@ -160,7 +160,7 @@ ul li {
     margin-bottom: 40px;
   }
   
-  .form_plano input[type="submit"]:hover {
+  .form_plano input[type="button"]:hover {
     border-color: #0987F7;
     transition: .5s;
   }
@@ -186,7 +186,7 @@ ul li {
         width: 320px;
     }
 
-    .form_plano input[type="submit"] {
+    .form_plano input[type="button"] {
         width: 290px;
         font-size: 15px;
     }
