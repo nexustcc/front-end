@@ -2,6 +2,10 @@ header, main {
     background-color: #000032;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 main {
     display: flex;
     align-items: center;
@@ -9,7 +13,7 @@ main {
     flex-direction: column;
     list-style: none;
     text-decoration: none;
-    padding: 50px 0 50px;
+    padding: 0px 0 50px;
     gap: 25px;
     height: 100vh;
 }
@@ -68,14 +72,58 @@ main h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width: 550px;
     height: 500px;
     background-color: #fff;
     border-radius: 30px;
 }
 
+.preco_plano {
+    display: flex;
+    padding: 35px 0px 30px 0px;
+    align-items: center;
+    width: 500px;
+    justify-content: center;
+    border-bottom: 2px solid #ECEDF1;
+}
+
+.valor_plano {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.recorrencia_pagamento {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.recorrencia_pagamento .valor {
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.recorrencia_pagamento .recorrencia {
+    color: #A4A5AA;
+}
+
+.preco_plano .titulo {
+    font-size: 21px;
+    font-weight: 500;
+}
+
 .infos_plano {
     color: #1C2348;
+}
+
+.infos_plano ul {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .infos_plano ul li {
@@ -83,12 +131,23 @@ main h1 {
     justify-content: space-between;
 }
 
+.infos_plano .texto {
+    margin-left: 0px;
+}
+
+.infos_plano .check_img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    right: 0;
+}
+
 ul li {
     list-style: none;
 }
 
-input[type="submit"] {
-    width: 350px;
+.form_plano input[type="submit"] {
+    width: 500px;
     height: 50px;
     border: 1px solid;
     background: #0987F7;
@@ -98,16 +157,61 @@ input[type="submit"] {
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   
-  input[type="submit"]:hover {
+  .form_plano input[type="submit"]:hover {
     border-color: #0987F7;
     transition: .5s;
   }
   
+  @media (max-width: 768px) {
 
-.check_img {
-    width: 24px;
-    height: 24px;
-}
+    main h4 {
+        font-size: 15px;
+    }
+
+    main h1 {
+        font-size: 28px;
+
+    }
+
+    .tipo_plano ul li {
+        width: 150px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .form_plano {
+        width: 320px;
+    }
+
+    .form_plano input[type="submit"] {
+        width: 290px;
+        font-size: 15px;
+    }
+
+    .preco_plano {
+        width: 290px;
+    }
+
+    .preco_plano .titulo {
+        font-size: 20px;
+    }
+
+    .recorrencia_pagamento .valor {
+        font-size: 30px;
+    }
+
+
+    .infos_plano ul {
+        width: 290px;
+    }
+
+    
+    .infos_plano ul li .texto {
+        font-size: 13px;
+        max-width: 250px;
+    }
+  }
+
