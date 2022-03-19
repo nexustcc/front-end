@@ -16,8 +16,11 @@
   <title>PERFIL DA INSTITUIÇÃO</title>
 </head>
 
+<div class="bg"></div>
+
+
 <body>
-  <div class="container mt-5 container">
+  <div class="container">
     <h1>PERFIL DA INSTITUIÇÃO</h1>
     <form class="row g-3">
 
@@ -43,9 +46,10 @@
 
       <div class="col-md-6">
         <label for="senha" class="form-label">Senha</label>
-        <input type="senha" class="form-control senha" placeholder="Nexus@5">
+        <input type="password" class="form-control senha" placeholder="Nexus@5">
       </div>
-
+    </form>
+    <div class="button">
       <div class="col-md-6">
         <button id="primeiro_botao" type="submit">INFORMAÇÕES DE PAGAMENTO</button>
       </div>
@@ -53,22 +57,32 @@
       <div class="col-md-3">
         <button id="segundo_botao" type="submit">EDITAR</button>
       </div>
-
       <div class="col-md-3">
         <button id="terceiro_botao" type="">EXCLUIR</button>
       </div>
+    </div>
 
-      <div class="modal" id="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <h1>DESEJA EXCLUIR A CONTA?</h1>
-            <button>CANCELAR</button>
-            <button>EXCLUIR</button>
-          </div>
-        </div>
 
-      </div>
-    </form>
+  </div>
+  <div class="container mt-5 container modal">
+    <h1>Deseja excluir essa conta?</h1>
+    <h2>Lembre-se que essa é uma ação irreversível!</h2>
+
+    <div class="buttons">
+      <button class="col-md-3" id="primeiro_botao_modal" onclick="exitModal()">CANCELAR</button>
+      <button class="col-md-3" id="segundo_botao_modal">CONFIRMAR</button>
+    </div>
+  </div>
+
+  <div class="containe rmt-5 container otherModal">
+    <div class="col-md-12 anotherModal">
+      <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
+      <input type="password" class="form-control senha-label" placeholder="Nexus@5">
+    </div>
+    <div class="buttons">
+      <button class="col-md-3" id="primeiro_botao_modal" onclick="exitOtherModal()">CANCELAR</button>
+      <button class="col-md-3" id="segundo_botao_modal">CONFIRMAR</button>
+    </div>
   </div>
 </body>
 
