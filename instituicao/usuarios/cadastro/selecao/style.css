@@ -4,12 +4,19 @@
     box-sizing: border-box; 
  }
 
+ body{
+     height: 100vh;
+     width: 100vw;
+     padding: 2%;
+     font-family: 'Poppins', sans-serif;
+ }
+
  .container{
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: space-between;
-     padding: 2%;
+     width: 100%;
  }
 
 .card_azul{
@@ -17,9 +24,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 30vw;
     height: 30vh;
-    background-color: #044177;
+    background-color: #0664B7;
     border-radius: 20px;
     text-align: center;
     color: white;
@@ -28,35 +35,25 @@
 
 .card_azul h1{
     font-size: 1.5vw;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600; 
+    font-weight: 600;
+    
 }
 
-img{
+.img{
     width: 100%;
     margin-bottom: 1%;
     margin-top: 2%;
 }
 
 #ul{
-    width: 100%;
+    width: 30vw;
     border: 2px solid;
     border-color: #05204A;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 2%;
-    overflow-y: auto;
-    height: 50vh;
+    color: #044177;
+    
 }
-
-#ul::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  
-#ul::-webkit-scrollbar-thumb {
-    background-color: #05204A;    /* color of the scroll thumb */
-    border-radius: 10px;       /* roundness of the scroll thumb */
-    border:none;  /* creates padding around scroll thumb */
-  }
 
 #li{
     border: none;
@@ -64,7 +61,7 @@ img{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;  
+    padding: 0 5%;
 }
 
 #icone{
@@ -99,7 +96,7 @@ img{
  #icon i {
     position: absolute;
     right: 7%;
-    top: 63%;
+    top: 10%;
     padding: 9px 8px;
     color: #808080;
     transition: 0.3s;
@@ -112,8 +109,8 @@ img{
   }
 
   #li h2{
+      font-size: 20px;
     color: #272727;
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
   }
 
@@ -126,19 +123,51 @@ img{
       font-weight: 400;
   }
 
-  
-@media (max-width: 1200px) {
-    .container{
-       padding: 2%;
-    }
-    .container h1{
-       display: flex;
-       font-size: clamp(0rem, 10vw, 4.3rem);
-       text-align: center;
-    }
+  .conteudo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
 
-    .card_azul h1{
-        font-size: clamp(0rem, 10vw, 2.3rem);
-    }
- }
+  #terceiro_botao{
+      border: none;
+    margin-top: 2vh;
+     width: 100%;
+     background-color: rgba(240, 248, 255, 0);
+     color: white;
+     background-color: #044177;
+     font-family: 'Poppins', sans-serif;
+     font-weight: 700;
+     border-radius: 30px;
+     padding: 15px
+  }
+
+  .turma_selecionada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+      height: 40vh;
+      padding: 5%;
+      background-color: #F4F4F4;
+      border-radius: 20px;
+      margin-left: 10%;
+      justify-content: space-between;
+  }
+
+  .titulo{
+      color: #044177;
+      font-size: 50px;
+    font-weight: 700;
+    margin: 1%;
+  }
+
+ .turma_selecionada p{
+    font-size: 30px;
+    margin-top: 5%;
+    font-weight: 400;
+}
+
   

@@ -15,8 +15,8 @@
  }
 
  body {
-    width: 100vw;
-    height: 100vh;
+   height: 100vh;
+   width: 100vw;
    display: flex;
    flex-direction: column; 
    justify-content: center; 
@@ -58,11 +58,21 @@
    padding: 15px
 }
 
+.senha-label{
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   padding: 15px
+}
+
  button{
     padding: 10px;
     border: 5px solid;
     font-family: 'Poppins', sans-serif;
  }
+
+.button{
+   display: flex;
+}
 
  ::placeholder {
    font-family: 'Hind', sans-serif;
@@ -93,28 +103,106 @@
    width: 100%;
    background-color: rgba(240, 248, 255, 0);
    color: white;
-   background-color: #044177;
+   background-color: #A71E34;
    border-radius: 30px;
    padding: 15px
 }
 
-@media (max-width: 1200px) {
-
-   
-   .container{
-      padding: 50px; 
-      
-    }
-   .container h1{
-      text-align: center;
-      font-size: clamp(1rem, 10vw, 4.25rem); 
-      
-   }
-
-   form div{
-      max-width: 10px;
-   }
+.modal {
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 40%;
+   height: 100%;
+   background-color: rgb(255, 255, 255);
+   display: none;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+   font-family: 'Poppins', sans-serif;
+   border-radius: 20px;
 }
- 
 
+.otherModal{
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 40%;
+   height: 100%;
+   background-color: rgb(255, 255, 255);
+   display: none;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+   font-family: 'Poppins', sans-serif;
+   padding: 5%;
+   border-radius: 20px;
+   z-index: 9999;
+}
+
+.modal h1{
+   font-size: 30px;
+   font-weight: 700;
+   text-align: center;
+   color: #05204A;
+}
+.modal h2{
+   margin: 2% 0 2% 0;
+   font-size: 20px;
+   font-weight: 300;
+   text-align: center;
+   color: #A71E34;
+}
+
+.otherModal label{
+   font-size: 20px;
+   font-weight: 300;
+   color: #05204A;
+}
+
+.buttons{
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   text-align: center;
+   justify-content: center;
+}
+
+.bg{
+   position: fixed;
+   z-index: 1;
+   width: 100%;
+   height: 100%;
+   display: none;
+   background-blend-mode: darken;
+   background-color: rgba(0, 0, 0, 0.658);
+}
+
+#primeiro_botao_modal{
+   margin-top: 2vh;
+     width: 70%;
+     background-color: rgba(240, 248, 255, 0);
+     color: white;
+     font-weight: 700;
+     border-radius: 30px;
+     border: none;
+     padding: 15px;
+     background-color: #C2C2C2;
+     margin-right: 5%;
+  }
  
+ #segundo_botao_modal{
+   margin-top: 2vh;
+    width: 70%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    padding: 15px
+ }

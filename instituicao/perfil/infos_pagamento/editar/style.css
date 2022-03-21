@@ -63,6 +63,11 @@
      border: 5px solid;
      font-family: 'Poppins', sans-serif;
   }
+
+  .buttons{
+   display: flex;
+   flex-direction: row-reverse;
+}
  
   ::placeholder {
     font-family: 'Hind', sans-serif;

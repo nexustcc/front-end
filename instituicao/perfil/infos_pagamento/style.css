@@ -67,7 +67,12 @@
   ::placeholder {
     font-family: 'Hind', sans-serif;
  }
- 
+
+ .buttons{
+   display: flex;
+   flex-direction: row-reverse;
+}
+
  #primeiro_botao{
      margin-top: 2vh;
      width: 100%;
