@@ -82,6 +82,17 @@
     border-radius: 30px;
     padding: 15px
  }
+
+ #segundo_botao{
+   margin-top: 2vh;
+   width: 100%;
+  background-color: rgba(240, 248, 255, 0);
+  color: white;
+  background-color: #c2c2c2;
+  border-radius: 30px;
+  padding: 15px
+}
+
  
  @media (max-width: 1200px) {
  

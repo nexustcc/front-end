@@ -113,8 +113,8 @@
    right: 0;
    bottom: 0;
    left: 0;
-   width: 40%;
-   height: 100%;
+   width: 30%;
+   height: 30%;
    background-color: rgb(255, 255, 255);
    display: none;
    align-items: center;
@@ -123,25 +123,6 @@
    justify-content: center;
    font-family: 'Poppins', sans-serif;
    border-radius: 20px;
-}
-
-.otherModal{
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   width: 40%;
-   height: 100%;
-   background-color: rgb(255, 255, 255);
-   display: none;
-   align-items: center;
-   flex-direction: column;
-   text-align: center;
-   justify-content: center;
-   font-family: 'Poppins', sans-serif;
-   padding: 5%;
-   border-radius: 20px;
-   z-index: 9999;
 }
 
 .modal h1{
@@ -150,17 +131,18 @@
    text-align: center;
    color: #05204A;
 }
+
 .modal h2{
    margin: 2% 0 2% 0;
    font-size: 20px;
-   font-weight: 300;
+   font-weight: 100;
    text-align: center;
    color: #A71E34;
 }
 
-.otherModal label{
+.modal label{
    font-size: 20px;
-   font-weight: 300;
+   font-weight:1100;
    color: #05204A;
 }
 
@@ -193,7 +175,7 @@
      padding: 15px;
      background-color: #C2C2C2;
      margin-right: 5%;
-  }
+   }
  
  #segundo_botao_modal{
    margin-top: 2vh;
@@ -206,3 +188,4 @@
     border: none;
     padding: 15px
  }
+

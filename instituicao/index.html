@@ -55,7 +55,7 @@
       </div>
 
       <div class="col-md-3">
-        <button id="segundo_botao" type="submit">EDITAR</button>
+        <button id="segundo_botao" type="submit"> <a href="./perfil/editar/index.html">EDITAR</a> </button>
       </div>
       <div class="col-md-3">
         <button id="terceiro_botao" type="">EXCLUIR</button>
@@ -68,21 +68,17 @@
     <h1>Deseja excluir essa conta?</h1>
     <h2>Lembre-se que essa é uma ação irreversível!</h2>
 
+    <div>
+      <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
+      <input type="password" class="form-control senha-label" placeholder="Nexus@5">
+    </div>
+
     <div class="buttons">
       <button class="col-md-3" id="primeiro_botao_modal" onclick="exitModal()">CANCELAR</button>
       <button class="col-md-3" id="segundo_botao_modal">CONFIRMAR</button>
     </div>
   </div>
 
-  <div class="containe rmt-5 container otherModal">
-    <div class="col-md-12 anotherModal">
-      <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
-      <input type="password" class="form-control senha-label" placeholder="Nexus@5">
-    </div>
-    <div class="buttons">
-      <button class="col-md-3" id="primeiro_botao_modal" onclick="exitOtherModal()">CANCELAR</button>
-      <button class="col-md-3" id="segundo_botao_modal">CONFIRMAR</button>
-    </div>
   </div>
 </body>
 
