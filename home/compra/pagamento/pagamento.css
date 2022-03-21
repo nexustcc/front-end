@@ -7,7 +7,7 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+     /* align-items: center; */
 }
 
 .titulo_infos_pagamento {
@@ -23,7 +23,7 @@ main h4 {
 }
 
 .infos_pagamento {
-    width: 95vw;
+    width: 96vw;
     height: 120px;
     display: flex;
     margin-left: 20px;
@@ -76,7 +76,90 @@ main h4 {
     gap: 50px;
 }
 
-.form_pagamento {
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96vw;
+    background-color: #F5F6FC;
+    margin-left: 20px;
+    border: 1px solid #C2C2C2;
+    border-radius: 5px;
+}
+
+.infos_gerais{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.infos_instituicao{
+    /* background-color: aliceblue; */
+    width: 50%;
+    padding: 30px;
+}
+
+form .infos_instituicao .input_instituicao {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos_cartao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    /* background-color: blue; */
+}
+
+form input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+.inputs_cartao{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn_finalizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+form input[type="submit"] {
+    width: 450px;
+    height: 50px;
+    border: 1px solid;
+    background: #0987F7;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 40px;
+  }
+  
+ form input[type="submit"]:hover {
+    transform: scale(1.05);
+    transition: .5s;
+  }
+
+/* .form_pagamento {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,6 +170,33 @@ main h4 {
     border-radius: 5px;
     margin-left: 20px;
 }
+
+.infos_gerais {
+    background-color: tomato;
+}
+
+.input_instituicao.sucesso input {
+    border: 2px solid #4ECA64;
+}
+
+.input_instituicao.erro input {
+    border: 2px solid #DB5A5A;
+}
+
+.input_instituicao p, .input_cartao_instituicao p{
+    visibility: hidden;
+    font-size: 10px;
+}
+
+.form_pagamento input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
 
 .form_pagamento label {
     font-weight: bold;
@@ -101,7 +211,7 @@ main h4 {
 
 .form_pagamento .infos_gerais {
     display: flex;
-    /* flex-direction: column; */
+     flex-direction: column; 
     width: 95vw;
     height: 500px;
 }
@@ -242,16 +352,16 @@ main h4 {
 
     .btn_finalizar {
         width: 89.5vw;
-        /* height: 100px; */
+         height: 100px; 
         border-top: 1px solid #C2C2C2;
-        /* background-color: #0987F7; */
+         background-color: #0987F7; 
         justify-content: center;
         margin-left: 16px;
 
     }
 
-    /* footer {
+     footer {
         display: none;
-    } */
+    } 
 
-  }
+  } */

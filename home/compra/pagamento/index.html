@@ -4,15 +4,10 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="../../componentes/header/styles_header.css"
-        />
-        <link
-            rel="stylesheet"
-            href="../../componentes/footer/styles_footer.css"
-        />
+        <link rel="stylesheet" href="../../componentes/header/styles_header.css"/>
+        <link rel="stylesheet" href="../../componentes/footer/styles_footer.css">
         <link rel="stylesheet" href="pagamento.css" />
+        <script src="script.js" defer></script>
         <title>Pagamento</title>
     </head>
     <body>
@@ -62,49 +57,183 @@
             </div>
 
             <h4>Informações do cliente e pagamento</h4>
-            <div class="form_pagamento">
-                <form action="" method="post">
-                    <div class="infos_gerais">
+
+            <form onsubmit="cadastrarInstituicao()">
+
+                <div class="infos_gerais">
+
                     <div class="infos_instituicao">
+
+                        <div class="input_instituicao sucesso">
+                            <label for="inputNomeInstituicao">Nome da Instituição</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text" placeholder="Nome da Instituição"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
+                        <div class="input_instituicao erro">
+                            <label for="inputEmailInstituicao">E-mail Institucional</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email" placeholder="E-mail Institucional"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
                         <div class="input_instituicao">
-                            <label>Nome da Instituição</label>
-                            <input type="text" placeholder="Nome da Instituição" required />
+                            <label for="inputConfirmarEmail">Confirme seu E-mail</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputConfirmarEmail" name="inputConfirmarEmail" type="email" placeholder="Confirme seu E-mail"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
+                        <div class="input_instituicao">
+                            <label for="inputSenhaInstituicao">Senha</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password" placeholder="Senha"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
+                        <div class="input_instituicao">
+                            <label for="inputConfirmarSenha">Confirme sua senha</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputConfirmarSenha" name="inputConfirmarSenha" type="password" placeholder="Confirme sua senha"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
+                        <div class="input_instituicao">
+                            <label for="inputTelefoneInstituicao">Telefone</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputTelefoneInstituicao" name="inputTelefoneInstituicao" type="text" placeholder="Telefone"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
+                        <div class="input_instituicao">
+                            <label for="inputCnpjInstituicao">CNPJ</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputCnpjInstituicao" name="inputCnpjInstituicao" type="text" placeholder="CNPJ"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="infos_cartao">
+
+                        <div class="infos_cartao_inputs">
+                            <div class="input_cartao_instituicao">
+                                <input id="inputNumeroCartao" name="inputNumeroCartao" type="number" placeholder="Número do cartão"  />
+                                <p>Error mesage</p>
+                            </div>
+
+                            <div class="input_cartao_instituicao">
+                                <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão"  />
+                                <p>Error mesage</p>
+                            </div>
+
+                            <div class="inputs_cartao">
+                                <div class="input_cartao_instituicao">
+                                    <input id="inputDataValidadeCartao" name="inputDataValidadeCartao" type="text" placeholder="Data de validade (mm/aaaa)" />
+                                    <p>Error mesage</p>
+                                </div>
+                                
+                                <div class="input_cartao_instituicao">
+                                    <input id="inputCvvCartao" name="inputCvvCartao" type="number" placeholder="Código de segurança"  />
+                                    <p>Error mesage</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="infos_cartao_svg"><img src="img/cartao.svg" alt="cartao"></div>
+
+                    </div>
+
+                </div>
+                
+                <div class="btn_finalizar">
+                    <input type="submit" value="FINALIZAR PEDIDO →">
+                </div>
+            </form>
+            <!-- <div class="form_pagamento">
+                <form id="form_pagamento" onsubmit="criarInstituicao()">
+                    <div class="infos_gerais">
+                        <div class="infos_instituicao">
+                        <div class="input_instituicao sucesso">
+                            <label for="inputNomeInstituicao">Nome da Instituição</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text" placeholder="Nome da Instituição"  />
+                                <p>Error mesage</p>
+                            </div>
+                        </div>
+                        <div class="input_instituicao erro">
+                            <label for="inputEmailInstituicao">E-mail Institucional</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email" placeholder="E-mail Institucional"  />
+                                <p>Error mesage</p>
+                            </div>
                         </div>
                         <div class="input_instituicao">
-                            <label>E-mail Institucional</label>
-                            <input type="text" placeholder="E-mail Institucional" required />
+                            <label for="inputConfirmarEmail">Confirme seu E-mail</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputConfirmarEmail" name="inputConfirmarEmail" type="email" placeholder="Confirme seu E-mail"  />
+                                <p>Error mesage</p>
+                            </div>
+                        <div class="input_instituicao">
+                            <label for="inputSenhaInstituicao">Senha</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password" placeholder="Senha"  />
+                                <p>Error mesage</p>
+                            </div>
                         </div>
                         <div class="input_instituicao">
-                            <label>Confirme seu E-mail</label>
-                            <input type="text" placeholder="Confirme seu E-mail" required />
+                            <label for="inputConfirmarSenha">Confirme sua senha</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputConfirmarSenha" name="inputConfirmarSenha" type="password" placeholder="Confirme sua senha"  />
+                                <p>Error mesage</p>
+                            </div>
                         </div>
                         <div class="input_instituicao">
-                            <label>Senha</label>
-                            <input type="text" placeholder="Senha" required />
+                            <label for="inputTelefoneInstituicao">Telefone</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputTelefoneInstituicao" name="inputTelefoneInstituicao" type="text" placeholder="Telefone"  />
+                                <p>Error mesage</p>
+                            </div>
                         </div>
                         <div class="input_instituicao">
-                            <label>Confirme sua senha</label>
-                            <input type="text" placeholder="Confirme sua senha" required />
-                        </div>
-                        <div class="input_instituicao">
-                            <label>Telefone</label>
-                            <input type="text" placeholder="Telefone" required />
-                        </div>
-                        <div class="input_instituicao">
-                            <label>CNPJ</label>
-                            <input type="text" placeholder="CNPJ" required />
+                            <label for="inputCnpjInstituicao">CNPJ</label>
+                            <div class="input_dados_instituicao">
+                                <input id="inputCnpjInstituicao" name="inputCnpjInstituicao" type="text" placeholder="CNPJ"  />
+                                <p>Error mesage</p>
+                            </div>
                         </div>
                     </div>
                     <div class="cartao_instituicao">
-                        <input type="text" placeholder="Número do cartão" required />
-                        <input type="text" placeholder="Nome no cartão" required />
+                        <div class="input_cartao_instituicao">
+                            <input id="inputNumeroCartao" name="inputNumeroCartao" type="number" placeholder="Número do cartão"  />
+                            <p>Error mesage</p>
+                        </div>
+                        <div class="input_cartao_instituicao">
+                            <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão"  />
+                            <p>Error mesage</p>
+                        </div>
                         <div class="inputs_cartao">
-                            <input
-                                type="text"
-                                placeholder="Data de validade (mm/aaaa)"
-                                required
-                            />
-                            <input type="text" placeholder="Código de segurança" required />
+                            <div class="input_cartao_instituicao">
+                                <input id="inputDataValidadeCartao" name="inputDataValidadeCartao" type="text" placeholder="Data de validade (mm/aaaa)" />
+                                <p>Error mesage</p>
+                            </div>
+                            <div class="input_cartao_instituicao">
+                                <input id="inputCvvCartao" name="inputCvvCartao" type="number" placeholder="Código de segurança"  />
+                                <p>Error mesage</p>
+                            </div>
                         </div>
                         <img src="img/cartao.svg" alt="cartao" />
                     </div>
@@ -113,7 +242,7 @@
                         <input type="submit" value="FINALIZAR PEDIDO →" />
                     </div>
                 </form>
-            </div>
+            </div> -->
         </main>
 
         <footer>
