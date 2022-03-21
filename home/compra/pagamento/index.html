@@ -24,13 +24,13 @@
                 <ul class="nav_links">
                     <li><a href="#">Início</a></li>
                     <li><a href="#">Produto</a></li>
-                    <li><a href="index.html">Planos & Preços</a></li>
+                    <li><a href="../index.html">Planos & Preços</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
             <nav class="login_adquirir">
-                <a href="../login/index.html" class="login_link">Login</a>
-                <a href="../compra/index.html">
+                <a href="../../login/index.html" class="login_link">Login</a>
+                <a href="../index.html">
                     <button>ADQUIRIR →</button>
                 </a>
             </nav>
@@ -48,44 +48,70 @@
                             <option value="Anual">Anual</option>
                         </select>
                     </div>
-                    <p>R$ 12,00</p>
+                    <div class="preco_pedido">
+                        <p>R$ 12,00</p>
+                        <img src="img/cancelar.svg" alt="cancelar">
+                    </div>
                 </div>
                 <div class="segunda_linha">
-                    <p>Total</p>
-                    <p>R$ 12,00</p>
+                    <div class="infos">
+                        <p>Total</p>
+                        <p>R$ 12,00</p>
+                    </div>
                 </div>
             </div>
 
+            <h4>Informações do cliente e pagamento</h4>
             <div class="form_pagamento">
-                <h4>Informações do cliente e pagamento</h4>
                 <form action="" method="post">
+                    <div class="infos_gerais">
                     <div class="infos_instituicao">
-                        <label>Nome da Instituição</label>
-                        <input type="text" placeholder="Nome da Instituição" />
-                        <label>E-mail Institucional</label>
-                        <input type="text" placeholder="E-mail Institucional" />
-                        <label>Confirme seu E-mail</label>
-                        <input type="text" placeholder="Confirme seu E-mail" />
-                        <label>Senha</label>
-                        <input type="text" placeholder="Senha" />
-                        <label>Confirme sua senha</label>
-                        <input type="text" placeholder="Confirme sua senha" />
-                        <label>Telefone</label>
-                        <input type="text" placeholder="Telefone" />
-                        <label>CNPJ</label>
-                        <input type="text" placeholder="CNPJ" />
+                        <div class="input_instituicao">
+                            <label>Nome da Instituição</label>
+                            <input type="text" placeholder="Nome da Instituição" required />
+                        </div>
+                        <div class="input_instituicao">
+                            <label>E-mail Institucional</label>
+                            <input type="text" placeholder="E-mail Institucional" required />
+                        </div>
+                        <div class="input_instituicao">
+                            <label>Confirme seu E-mail</label>
+                            <input type="text" placeholder="Confirme seu E-mail" required />
+                        </div>
+                        <div class="input_instituicao">
+                            <label>Senha</label>
+                            <input type="text" placeholder="Senha" required />
+                        </div>
+                        <div class="input_instituicao">
+                            <label>Confirme sua senha</label>
+                            <input type="text" placeholder="Confirme sua senha" required />
+                        </div>
+                        <div class="input_instituicao">
+                            <label>Telefone</label>
+                            <input type="text" placeholder="Telefone" required />
+                        </div>
+                        <div class="input_instituicao">
+                            <label>CNPJ</label>
+                            <input type="text" placeholder="CNPJ" required />
+                        </div>
                     </div>
                     <div class="cartao_instituicao">
-                        <input type="text" placeholder="Número do cartão" />
-                        <input type="text" placeholder="Nome no cartão" />
-                        <input
-                            type="text"
-                            placeholder="Data de validade (mm/aaaa)"
-                        />
-                        <input type="text" placeholder="Código de segurança" />
-                        <img src="" alt="cartao" />
+                        <input type="text" placeholder="Número do cartão" required />
+                        <input type="text" placeholder="Nome no cartão" required />
+                        <div class="inputs_cartao">
+                            <input
+                                type="text"
+                                placeholder="Data de validade (mm/aaaa)"
+                                required
+                            />
+                            <input type="text" placeholder="Código de segurança" required />
+                        </div>
+                        <img src="img/cartao.svg" alt="cartao" />
                     </div>
-                    <input type="submit" value="FINALIZAR PEDIDO →" />
+                </div>
+                    <div class="btn_finalizar">
+                        <input type="submit" value="FINALIZAR PEDIDO →" />
+                    </div>
                 </form>
             </div>
         </main>

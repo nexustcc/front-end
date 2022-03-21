@@ -161,8 +161,9 @@ ul li {
   }
   
   .form_plano input[type="button"]:hover {
-    border-color: #0987F7;
-    transition: .5s;
+    color: #0987F7;
+    background-color: #fff;
+    transition: .3s;
   }
   
   @media (max-width: 768px) {
@@ -184,6 +185,7 @@ ul li {
 
     .form_plano {
         width: 320px;
+        height: 550px;
     }
 
     .form_plano input[type="button"] {
@@ -210,7 +212,7 @@ ul li {
 
     
     .infos_plano ul li .texto {
-        font-size: 13px;
+        font-size: 14px;
         max-width: 250px;
     }
   }
