@@ -131,31 +131,6 @@
                         <p class="nome">NOME</p>
                     </div>
                 </li>
-
-                <li class="li-user">
-                    <div id="icone">
-                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                            data-width="100" data-height="100"></span>
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div id="icone">
-                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                            data-width="100" data-height="100"></span>
-                        <p class="nome">NOME</p>
-                    </div>
-                </li>
-                <li class="li-user">
-                    <div id="icone">
-                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                            data-width="100" data-height="100"></span>
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div id="icone">
-                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                            data-width="100" data-height="100"></span>
-                        <p class="nome">NOME</p>
-                    </div>
-                </li>
             </ul>
 
             <button onclick="showModal()" class="col-md-6 primeiro_botao">VIZUALIZAR USUÁRIO</button>
@@ -200,18 +175,19 @@
                     <option value="3">Three</option>
                 </select>
             </div>
-
-            <div class="buttons">
-                <div class="col-md-3">
-                    <button id="primeiro_botao" type="submit" onclick="changeModalExcluir()">EXCLUIR</button>
-                </div>
-
-                <div class="col-md-3">
-                    <button id="segundo_botao" type="submit" onclick="changeModal()">EDITAR</button>
-                </div>
-            </div>
         </form>
+        <div class="buttons">
+            <div class="col-md-3">
+                <button id="primeiro_botao" type="" onclick="changeModalExcluir()">EXCLUIR</button>
+            </div>
+
+            <div class="col-md-3">
+                <button id="segundo_botao" type="" onclick="changeModalEditar()">EDITAR</button>
+            </div>
+        </div>
+
     </div>
+
 
     <div class="container mt-5 container modal-editar">
         <h1>CRIAR NOVO USUÁRIO</h1>
@@ -267,7 +243,7 @@
 
         </form>
     </div>
-    
+
     <div class="container mt-5 container modal-excluir">
         <h1>Deseja excluir esse usuário?</h1>
         <h2>Lembre-se que essa é uma ação irreversível!</h2>

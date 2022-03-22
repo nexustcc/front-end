@@ -93,8 +93,8 @@
     padding: 15px
  }
  
- #icon input[type="text"] {
-   padding-left: 40px;
+ #icon input {
+   padding-right: 50px;
  }
  
 #icon {

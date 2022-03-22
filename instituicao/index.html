@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet">
   <script src="script.js" defer></script>
   <title>PERFIL DA INSTITUIÇÃO</title>
 </head>
@@ -51,9 +52,8 @@
     </form>
     <div class="button">
       <div class="col-md-6">
-        <button id="primeiro_botao" type="submit">INFORMAÇÕES DE PAGAMENTO</button>
+        <button id="primeiro_botao" type="submit"> <a href="../instituicao/perfil/infos_pagamento/index.html"></a> INFORMAÇÕES DE PAGAMENTO</button>
       </div>
-
       <div class="col-md-3">
         <button id="segundo_botao" type="submit"> <a href="./perfil/editar/index.html">EDITAR</a> </button>
       </div>
@@ -61,12 +61,13 @@
         <button id="terceiro_botao" type="">EXCLUIR</button>
       </div>
     </div>
-
-
   </div>
+
   <div class="container mt-5 container modal">
-    <h1>Deseja excluir essa conta?</h1>
-    <h2>Lembre-se que essa é uma ação irreversível!</h2>
+    <div>
+      <h1>Deseja excluir essa conta?</h1>
+      <h2>Lembre-se que essa é uma ação irreversível!</h2>
+    </div>
 
     <div>
       <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
@@ -77,6 +78,7 @@
       <button class="col-md-3" id="primeiro_botao_modal" onclick="exitModal()">CANCELAR</button>
       <button class="col-md-3" id="segundo_botao_modal">CONFIRMAR</button>
     </div>
+
   </div>
 
   </div>

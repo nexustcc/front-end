@@ -22,6 +22,7 @@ function exitModal() {
 }
 
 function changeModalEditar() {
+    
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 }
@@ -31,7 +32,7 @@ function exitChangeModalEditar() {
     document.querySelector(".modal-editar").style.display = "none";
 }
 
-function changeModalExluir() {
+function changeModalExcluir() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-excluir").style.display = "flex";
 }
