@@ -52,12 +52,18 @@ body {
     /* creates padding around scroll thumb */
 }
 
+.modal-excluir input{
+        background-color: #E3E3E3;
+        border-radius: 10px;
+        border-bottom: 1px solid #05204A;
+        padding: 15px
+     
+}
 .usuarios_existentes {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    color: #044177;
     font-size: 50px;
     font-weight: 700;
 }
@@ -177,6 +183,7 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 #icone {
@@ -421,4 +428,16 @@ h1 {
     font-weight: 700;
     border: none;
     padding: 15px
+}
+
+#terceiro_botao {
+    margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    padding: 15px;
+    background-color: #c2c2c2;
 }

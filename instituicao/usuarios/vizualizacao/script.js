@@ -39,6 +39,7 @@ function changeModalExcluir() {
 }
 
 function exitchangeModalExcluir() {
+    document.querySelector(".modal").style.display = "none";
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }

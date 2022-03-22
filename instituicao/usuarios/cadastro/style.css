@@ -143,7 +143,7 @@ img{
  #icon i {
     position: absolute;
     right: 7%;
-    top: 63%;
+    top: 65%;
     padding: 9px 8px;
     color: #808080;
     transition: 0.3s;
@@ -251,7 +251,7 @@ img{
     flex-direction: row-reverse;
  }
   
-@media (max-width: 1200px) {
+@media (max-width: 830px) {
     .container{
        padding: 2%;
     }
@@ -263,6 +263,47 @@ img{
 
     .card_azul h1{
         font-size: clamp(0rem, 10vw, 2.3rem);
+    }
+
+    #li{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button h2{
+      font-size:clamp(0rem, 10vw, 1.5rem);
+    }
+
+    .turma{
+      font-size:clamp(0rem, 10vw, 1.5rem);
+      margin-right: 5%;
+    }
+    #icone{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .livro{
+      display: none;
+    }
+
+    #icon {
+      position: relative;
+    }
+    
+   #icon i {
+      position: absolute;
+      right: 7%;
+      top: 65%;
+      padding: 9px 8px;
+      color: #808080;
+      transition: 0.3s;
+    }
+    
+   #icon.inputIconBg i {
+      background-color: #aaa;
+      padding: 9px 4px;
+      border-radius: 4px 0 0 4px;
     }
  }
   

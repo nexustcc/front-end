@@ -128,27 +128,27 @@
     </div>
 
     <div class="container mt-5 container modal">
-        <h1>CRIAR NOVO USUÁRIO</h1>
+        <h1>NOME DO USUARIO</h1>
         <form class="row g-7">
 
             <div class="col-md-12 lab-inp">
                 <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
-                <input type="text" class="form-control nome_do_usuario" placeholder="unicuritiba@gmail.com">
+                <input type="text" class="form-control nome_do_usuario" placeholder="unicuritiba@gmail.com" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="email_usuario" class="form-label">Email do usuário</label>
-                <input type="email" class="form-control email_usuario" placeholder="Universidade De Curitiba ">
+                <input type="email" class="form-control email_usuario" placeholder="Universidade De Curitiba " disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="text" class="form-control senha" placeholder="42.591.538/0001-68">
+                <input type="text" class="form-control senha" placeholder="42.591.538/0001-68" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="tipo-select" class="form-label">Tipo</label>
-                <select class="form-select tipo-select" aria-label="Default select example">
+                <select class="form-select tipo-select" aria-label="Default select example" disabled>
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -158,7 +158,7 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="turma-select" class="form-label">Turma</label>
-                <select class="form-select turma-select" aria-label="Default select example">
+                <select class="form-select turma-select" aria-label="Default select example" disabled>
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -222,11 +222,11 @@
 
             <div class="buttons">
                 <div class="col-md-3">
-                    <button id="segundo_botao" type="" onclick="exitChangeModalEditar()">CANCELAR</button>
+                    <button id="segundo_botao" type="button" onclick="exitChangeModalEditar()">CANCELAR</button>
                 </div>
 
                 <div class="col-md-3">
-                    <button id="primeiro_botao" type="" onclick="exitChangeModalEditar()">SALVAR</button>
+                    <button id="terceiro_botao" type="button" onclick="exitChangeModalEditar()">SALVAR</button>
                 </div>
             </div>
 
@@ -244,11 +244,11 @@
 
         <div class="buttons">
             <div class="col-md-3">
-                <button id="segundo_botao" type="" onclick="exitChangeModalExcluir()">CANCELAR</button>
+                <button id="segundo_botao" type="button" onclick="exitchangeModalExcluir()">CANCELAR</button>
             </div>
 
             <div class="col-md-3">
-                <button id="primeiro_botao" type="" onclick="exitChangeModalExcluir()">CONFIRMAR</button>
+                <button id="primeiro_botao" type="button" onclick="exitchangeModalExcluir()">CONFIRMAR</button>
             </div>
         </div>
     </div>
