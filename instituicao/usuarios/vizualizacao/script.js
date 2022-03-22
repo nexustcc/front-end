@@ -2,8 +2,8 @@
 
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
-tiposUsuario.forEach((tipoUsuario)=>{
-    tipoUsuario.addEventListener("click", ()=> {
+tiposUsuario.forEach((tipoUsuario) => {
+    tipoUsuario.addEventListener("click", () => {
         tiposUsuario.forEach((tipoUsuario) => {
             tipoUsuario.classList.remove("ativo");
         })
@@ -22,7 +22,7 @@ function exitModal() {
 }
 
 function changeModalEditar() {
-    
+    document.querySelector(".modal").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 }
@@ -33,6 +33,12 @@ function exitChangeModalEditar() {
 }
 
 function changeModalExcluir() {
+    document.querySelector(".modal").style.display = "none";
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-excluir").style.display = "flex";
+}
+
+function exitchangeModalExcluir() {
+    document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal-excluir").style.display = "none";
 }
