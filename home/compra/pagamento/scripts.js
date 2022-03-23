@@ -21,124 +21,133 @@ $(document).ready(function(){
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     checkInputs();
 })
 
 
 const errorValidation = (input, message) => {
     const inputDadosInstituicao = input.parentElement;
-    const p = inputDadosInstituicao.querySelector('p');
-
+    const p = inputDadosInstituicao.querySelector('p');\
     p.style.visibility = 'visible';
     p.innerText = message;
-
+    inputDadosInstituicao.classList.remove('sucesso');
     inputDadosInstituicao.className = 'input_dados_instituicao erro';
 }
 
 const sucessValidation = (input) => {
     const inputDadosInstituicao = input.parentElement;
     const p = inputDadosInstituicao.querySelector('p');
-
     inputDadosInstituicao.classList.remove('erro');
     inputDadosInstituicao.className = 'input_dados_instituicao sucesso';
-
     p.style.visibility = 'hidden';
+}
+
+const validarCompatibilidadeInputs = (input, inputConfirmacao) => {
+    console.log('validar comopatibilidade')
+    if (input.value == inputConfirmacao.value) { 
+        console.log('valores iguais');
+        console.log('valor 1: ' + input.value);
+        console.log('valor 2: ' + inputConfirmacao.value);
+        sucessValidation(inputConfirmacao)
+    }
+    else { 
+        console.log('valores diferentes')
+        console.log('valor 1: ' + input.value);
+        console.log('valor 2: ' + inputConfirmacao.value);
+        errorValidation(inputConfirmacao, 'Os valores inseridos não coincidem')
+    }
 }
 
 const validarVazio = (input) => {
 
     if (input.value == '') {
         errorValidation(input, 'Preencha todos os campos')
-        console.log('vazio')
         return false;
     } else {
+        if( input == document.getElementById('inputConfirmarEmail')){
+            console.log('validação email')
+            validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail)
+        }
+
+        // if( input == document.getElementById('inputSenhaInstituicao')){
+        //     validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha)
+        // }
+        
+        if( input == document.getElementById('inputDataValidadeCartao')){
+            converterData(inputDataValidadeCartao.value)
+        }  
+
         sucessValidation(input)
-        console.log('preenchido')
         return true;
     }
 }
 
-const validarCompatibilidadeInputs = (input, inputConfirmacao) => {
-
-    if (input.value != inputConfirmacao.value) {
-        errorValidation(inputConfirmacao, 'Os valores inseridos não correspondem')
-    } else {
-        sucessValidation(inputConfirmacao)
-    }
-}
 
 const converterData = (inputValue) => {
     let splitedDate = inputValue.split(['/'])
     let dateString = '01/' + splitedDate[0] + '/20' + splitedDate[1];
     let splitedDateString = dateString.split(['/']);
-    let data = new Date(splitedDateString[2]+splitedDateString[1]+splitedDateString[0]);
+    let data = splitedDateString[2]+'-'+splitedDateString[1]+'-'+splitedDateString[0];
     console.log(data);
 }
 
 const checkInputs = () => {
 
-    validarVazio(inputNomeInstituicao);
-    validarVazio(inputEmailInstituicao);
+    console.log('check')
 
-    if (validarVazio(inputConfirmarEmail)) {
-        validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail);
+    if(
+        validarVazio(inputNomeInstituicao) &&
+        validarVazio(inputEmailInstituicao) &&
+        validarVazio(inputConfirmarEmail) &&
+        validarVazio(inputSenhaInstituicao) && 
+        validarVazio(inputConfirmarSenha) &&
+        validarVazio(inputTelefoneInstituicao) &&
+        validarVazio(inputCnpjInstituicao) &&
+        validarVazio(inputNumeroCartao) &&
+        validarVazio(inputNomeCartao) &&
+        validarVazio(inputDataValidadeCartao) &&
+        validarVazio(inputCvvCartao)
+    ) {
+        cadastrarInstituicao(inputNomeInstituicao.value,
+                            inputEmailInstituicao.value, 
+                            inputSenhaInstituicao.value,
+                            inputTelefoneInstituicao.value,
+                            inputCnpjInstituicao.value,
+                            inputNomeCartao.value,
+                            inputDataValidadeCartao.value,
+                            inputCvv.value
+                        )
     }
-
-    if(validarVazio(inputConfirmarSenha)) {
-        validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha);
-    }
-    
-    validarVazio(inputSenhaInstituicao);
-    validarVazio(inputTelefoneInstituicao);
-    validarVazio(inputCnpjInstituicao);
-    validarVazio(inputNumeroCartao);
-    validarVazio(inputNomeCartao);
-
-    if(validarVazio(inputDataValidadeCartao)){
-        converterData(inputDataValidadeCartao.value)
-    }
-    validarVazio(inputCvvCartao);
 }
 
 //INTEGRAÇÃO COM O BACK-END
-const cadastrarInstituicao = () => {
-
-    event.preventDefault()
-
-    let nomeInstituicao = document.getElementById('inputNomeInstituicao').value
-    let emailInstituicao = document.getElementById('inputEmailInstituicao').value
-    let senhaInstituicao = document.getElementById('inputSenhaInstituicao').value
-    let telefoneInstituicao = document.getElementById('inputTelefoneInstituicao').value
-    let cnpjInstituicao = document.getElementById('inputCnpjInstituicao').value
-    let numeroCartao = document.getElementById('inputNumeroCartao').value
-    let nomeCartao = document.getElementById('inputNomeCartao').value
-    let validadeCartao = document.getElementById('inputValidadeCartao').value
-    let cvvCartao = document.getElementById('inputCvvCartao').value
+const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituicao, telefoneInstituicao, cnpjInstituicao, numeroCartao, nomeCartao, validadeCartao, cvvCartao) => {
 
     const instituicao = {
-        "nome": nomeInstituicao.toString(),
-        "email": emailInstituicao.toString(),
-        "senha": senhaInstituicao.toString(),
-        "nomeNoCartao": nomeCartao.toString(),
+        "nome": nomeInstituicao,
+        "email": emailInstituicao,
+        "senha": senhaInstituicao,
+        "nomeNoCartao": nomeCartao,
         "dataValidade": validadeCartao,
-        "cvv": parseInt(cvvCartao),
-        "numero": numeroCartao.toString(),
-        "cnpj": cnpjInstituicao.toString(),
-        "telefone": telefoneInstituicao.toString()
+        "cvv": cvvCartao,
+        "numero": numeroCartao,
+        "cnpj": cnpjInstituicao,
+        "telefone": telefoneInstituicao
     };
-
-    const config = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(instituicao)
-    }
-
-    fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
-        });
+    
+    console.log(instituicao)
+    
+        // const config = {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(instituicao)
+        // }
+    
+        // fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         console.log(data)
+        //     });
 }
