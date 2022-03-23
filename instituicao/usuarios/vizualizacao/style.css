@@ -83,13 +83,13 @@ body {
     flex-direction: row;
 }
 
-.modal-excluir {
+#modal-excluir {
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 50vw;
-    height: 60vh;
+    width: 90vw;
+    height:40vh;
     background-color: rgb(255, 255, 255);
     display: none;
     align-items: center;
@@ -138,8 +138,8 @@ body {
     height: 50px;
     text-align: center;
     padding: 13px 15px;
-    border: 1px solid #044177;
-    color: #657895;
+    border: 1px solid #C2C2C2;
+    color: #C2C2C2;
     font-weight: bold;
     transform: all 0.2s ease;
     cursor: pointer;
