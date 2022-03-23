@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../../componentes/header/styles_header.css"/>
         <link rel="stylesheet" href="../../componentes/footer/styles_footer.css">
         <link rel="stylesheet" href="pagamento.css" />
-        <script src="script.js" defer></script>
+        <script src="scripts.js" defer></script>
         <title>Pagamento</title>
     </head>
     <body>
@@ -58,7 +58,7 @@
 
             <h4>Informações do cliente e pagamento</h4>
 
-            <form onsubmit="cadastrarInstituicao()">
+            <form id="form" name="form">
 
                 <div class="infos_gerais">
 
@@ -67,7 +67,7 @@
                         <div class="input_instituicao sucesso">
                             <label for="inputNomeInstituicao">Nome da Instituição</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text" placeholder="Nome da Instituição"  />
+                                <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text" placeholder="Nome da Instituição"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                         <div class="input_instituicao erro">
                             <label for="inputEmailInstituicao">E-mail Institucional</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email" placeholder="E-mail Institucional"  />
+                                <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email" placeholder="E-mail Institucional"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="input_instituicao">
                             <label for="inputConfirmarEmail">Confirme seu E-mail</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputConfirmarEmail" name="inputConfirmarEmail" type="email" placeholder="Confirme seu E-mail"  />
+                                <input id="inputConfirmarEmail" name="inputConfirmarEmail" type="email" placeholder="Confirme seu E-mail" />
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="input_instituicao">
                             <label for="inputSenhaInstituicao">Senha</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password" placeholder="Senha"  />
+                                <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password" placeholder="Senha"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                         <div class="input_instituicao">
                             <label for="inputConfirmarSenha">Confirme sua senha</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputConfirmarSenha" name="inputConfirmarSenha" type="password" placeholder="Confirme sua senha"  />
+                                <input id="inputConfirmarSenha" name="inputConfirmarSenha" type="password" placeholder="Confirme sua senha"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                         <div class="input_instituicao">
                             <label for="inputTelefoneInstituicao">Telefone</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputTelefoneInstituicao" name="inputTelefoneInstituicao" type="text" placeholder="Telefone"  />
+                                <input id="inputTelefoneInstituicao" name="inputTelefoneInstituicao" type="text" placeholder="Telefone"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -126,12 +126,12 @@
 
                         <div class="infos_cartao_inputs">
                             <div class="input_cartao_instituicao">
-                                <input id="inputNumeroCartao" name="inputNumeroCartao" type="number" placeholder="Número do cartão"  />
+                                <input id="inputNumeroCartao" name="inputNumeroCartao" type="number" placeholder="Número do cartão" />
                                 <p><small>Error mesage</small></p>
                             </div>
 
                             <div class="input_cartao_instituicao">
-                                <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão"  />
+                                <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão"/>
                                 <p><small>Error mesage</small></p>
                             </div>
 
@@ -142,7 +142,7 @@
                                 </div>
                                 
                                 <div class="input_cartao_instituicao">
-                                    <input id="inputCvvCartao" name="inputCvvCartao" type="number" placeholder="Código de segurança"  />
+                                    <input id="inputCvvCartao" name="inputCvvCartao" type="number" placeholder="Código de segurança"/>
                                     <p><small>Error mesage</small></p>
                                 </div>
                             </div>

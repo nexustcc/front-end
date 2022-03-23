@@ -97,6 +97,20 @@ form label {
     font-weight: bold;
 }
 
+.input_dados_instituicao.erro input, .input_cartao_instituicao.erro input {
+    border: 2px solid #DB5A5A;
+} 
+
+.input_dados_instituicao.sucesso input, .input_cartao_instituicao.sucesso input {
+    border: 2px solid #008000;
+} 
+
+.input_dados_instituicao p, .input_cartao_instituicao  p {
+    visibility: hidden;
+    color: #DB5A5A;
+    font-size: 13px;
+}
+
 .infos_gerais {
     display: flex;
     justify-content: space-between;
