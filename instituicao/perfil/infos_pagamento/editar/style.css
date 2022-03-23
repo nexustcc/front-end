@@ -31,36 +31,7 @@ body {
     justify-content: center;
     background-position: center center;
 }
-
-.numero_do_cartao {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.nome_no_cartao {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.validade {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.cvv {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.senha {
+.container input {
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;

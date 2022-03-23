@@ -35,45 +35,10 @@ body {
     color: #05204A;
     font-weight: 700;
 }
-
-.email_institucional {
+.container input {
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.nome_da_instituicao {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.cnpj {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.telefone {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.senha {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.senha-label {
-    background-color: #E3E3E3;
-    border-radius: 10px;
     padding: 15px
 }
 
@@ -128,8 +93,8 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    width: 50vw;
-    height: 60vh;
+    width: 90vw;
+    height:40vh;
     background-color: rgb(255, 255, 255);
     display: none;
     align-items: center;

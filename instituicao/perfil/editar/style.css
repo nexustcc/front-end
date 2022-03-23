@@ -22,35 +22,7 @@ body {
     background-position: center center;
 }
 
-.email_institucional {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.nome_da_instituicao {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.cnpj {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.telefone {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.senha {
+.container input {
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
