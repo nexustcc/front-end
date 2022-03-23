@@ -13,6 +13,12 @@ const inputNomeCartao = document.getElementById('inputNomeCartao');
 const inputDataValidadeCartao = document.getElementById('inputDataValidadeCartao');
 const inputCvvCartao = document.getElementById('inputCvvCartao');
 
+$(document).ready(function(){        
+    $(inputCnpjInstituicao).mask("99.999.999/0001-99");
+    $(inputTelefoneInstituicao).mask("(99) 9999-9999");
+    $(inputDataValidadeCartao).mask('99/99');
+});
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -44,9 +50,11 @@ const validarVazio = (input) => {
 
     if (input.value == '') {
         errorValidation(input, 'Preencha todos os campos')
+        console.log('vazio')
         return false;
     } else {
         sucessValidation(input)
+        console.log('preenchido')
         return true;
     }
 }
@@ -58,6 +66,14 @@ const validarCompatibilidadeInputs = (input, inputConfirmacao) => {
     } else {
         sucessValidation(inputConfirmacao)
     }
+}
+
+const converterData = (inputValue) => {
+    let splitedDate = inputValue.split(['/'])
+    let dateString = '01/' + splitedDate[0] + '/20' + splitedDate[1];
+    let splitedDateString = dateString.split(['/']);
+    let data = new Date(splitedDateString[2]+splitedDateString[1]+splitedDateString[0]);
+    console.log(data);
 }
 
 const checkInputs = () => {
@@ -78,9 +94,11 @@ const checkInputs = () => {
     validarVazio(inputCnpjInstituicao);
     validarVazio(inputNumeroCartao);
     validarVazio(inputNomeCartao);
-    validarVazio(inputDataValidadeCartao);
-    validarVazio(inputCvvCartao);
 
+    if(validarVazio(inputDataValidadeCartao)){
+        converterData(inputDataValidadeCartao.value)
+    }
+    validarVazio(inputCvvCartao);
 }
 
 //INTEGRAÇÃO COM O BACK-END
