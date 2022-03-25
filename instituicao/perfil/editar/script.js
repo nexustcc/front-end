@@ -32,8 +32,6 @@ async function editarInstituicao(){
         "telefone": document.getElementById('telefone_instituicao').value
     }
 
-    console.log(instituicao)
-
     const config = {
         method: 'PUT',
         headers: {

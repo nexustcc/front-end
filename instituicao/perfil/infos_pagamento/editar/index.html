@@ -10,34 +10,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+
+    <script src="./script.js" defer></script>
+
     <title>EDITAR INFORMAÇÕES DE PAGAMENTO</title>
   </head>
   <body>
     <div class="container mt-5 container">
         <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>
-        <form class="row g-3">
+        <form onsubmit="editarInstituicao()" class="row g-3">
 
           <div class="col-md-12" id="icon">
             <label for="numero_do_cartao" class="form-label">Número do cartão</label>
-            <input type="text" class="form-control numero_do_cartao" placeholder="1234 5678 9101 1213">
+            <input id="input_numero_do_cartao" type="text" class="form-control numero_do_cartao">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
 
           <div class="col-md-12" id="icon">
             <label for="nome_no_cartao" class="form-label">Nome no cartão</label>
-            <input type="text" class="form-control nome_no_cartao" placeholder="Alice Pereira">
+            <input id="input_nome_no_cartao" type="text" class="form-control nome_no_cartao">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
 
           <div class="col-md-6" id="icon">
             <label for="validade" class="form-label">Validade</label>
-            <input type="text" class="form-control validade" placeholder="02/29">
+            <input id="input_validade" type="text" class="form-control validade">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
 
           <div class="col-md-6" id="icon">
             <label for="cvv" class="form-label">CVV</label>
-            <input type="text" class="form-control cvv" placeholder="123">
+            <input id="input_cvv" type="text" class="form-control cvv">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
 
@@ -47,7 +50,8 @@
           </div>
 
           <div class="col-md-3">
-            <button id="segundo_botao" type=""><a href="../../../index.html">SALVAR</a></button>
+            <input id="segundo_botao" type="submit" value="SALVAR">
+            <!-- <button id="segundo_botao" type=""><a href="../../../index.html">SALVAR</a></button> -->
           </div>
           </div>
           
