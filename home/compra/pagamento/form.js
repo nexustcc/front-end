@@ -1,6 +1,9 @@
 'use strict'
 
-const form = document.getElementById('form');
+let form = document.getElementById('form');
+// let inputsForm = form.elements;
+// var inputsArr1 = Array.from(inputsForm);
+// var inputsArr2 = Array.prototype.slice.call(inputsForm);
 const inputNomeInstituicao = document.getElementById('inputNomeInstituicao');
 const inputEmailInstituicao = document.getElementById('inputEmailInstituicao');
 const inputConfirmarEmail = document.getElementById('inputConfirmarEmail');
@@ -19,43 +22,102 @@ $(document).ready(function(){
     $(inputDataValidadeCartao).mask('99/99');
 });
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    checkInputs();
-})
+$(inputConfirmarEmail).on('keydown', function () {
+    
+    validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail);
+  });
 
+$(inputConfirmarSenha).on('keydown', function () {
+    
+    validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha);
+});
+
+$(inputNomeInstituicao).on('keydown', function () {
+    
+    validarTamanho(inputNomeInstituicao, 254);
+});
+
+$(inputEmailInstituicao).on('keydown', function () {
+
+    validarTamanho(inputEmailInstituicao, 254);
+});
+
+$(inputSenhaInstituicao).on('keydown', function () {
+    
+    validarTamanho(inputSenhaInstituicao, 254);
+});
+
+$(inputNumeroCartao).on('keydown', function () {
+
+    validarTamanho(inputNumeroCartao, 18);
+});
+
+$(inputNomeCartao).on('keydown', function () {
+    
+    validarTamanho(inputNomeCartao, 44);
+});
+
+$(inputCvvCartao).on('keydown', function () {
+
+    validarTamanho(inputCvvCartao, 3);
+    console.log(inputCvvCartao.value);
+});
+
+const validarTamanho = (input, numeroMaximoCaracteres) => {
+
+    const numeroMax = numeroMaximoCaracteres + 1;
+    // let bala = numeroMaximoCaracteres + 2
+
+    if (input.value.length > numeroMaximoCaracteres) {
+        errorValidation(input, 'O número máximo de caracteres é ' + numeroMax);
+        return false
+    } else if (input.value.length <= (numeroMax + 2)) {
+        sucessValidation(input);
+        return true;
+    }
+}
 
 const errorValidation = (input, message) => {
     const inputDadosInstituicao = input.parentElement;
-    const p = inputDadosInstituicao.querySelector('p');\
+    const p = inputDadosInstituicao.querySelector('p');
     p.style.visibility = 'visible';
     p.innerText = message;
-    inputDadosInstituicao.classList.remove('sucesso');
+
+    if(inputDadosInstituicao.className == 'sucesso') {
+        inputDadosInstituicao.classList.remove('sucesso');
+    }
+    
+    input.focus()
     inputDadosInstituicao.className = 'input_dados_instituicao erro';
 }
 
 const sucessValidation = (input) => {
     const inputDadosInstituicao = input.parentElement;
     const p = inputDadosInstituicao.querySelector('p');
-    inputDadosInstituicao.classList.remove('erro');
+
+    if(inputDadosInstituicao.className == 'erro') {
+        inputDadosInstituicao.classList.remove('erro');
+    }
+
     inputDadosInstituicao.className = 'input_dados_instituicao sucesso';
     p.style.visibility = 'hidden';
 }
 
 const validarCompatibilidadeInputs = (input, inputConfirmacao) => {
-    console.log('validar comopatibilidade')
-    if (input.value == inputConfirmacao.value) { 
-        console.log('valores iguais');
-        console.log('valor 1: ' + input.value);
-        console.log('valor 2: ' + inputConfirmacao.value);
-        sucessValidation(inputConfirmacao)
+    if (input.value != inputConfirmacao.value) { 
+        errorValidation(inputConfirmacao, 'Os valores inseridos não coincidem');
+        inputConfirmacao.focus();
     }
-    else { 
-        console.log('valores diferentes')
-        console.log('valor 1: ' + input.value);
-        console.log('valor 2: ' + inputConfirmacao.value);
-        errorValidation(inputConfirmacao, 'Os valores inseridos não coincidem')
+    else if (input.value == inputConfirmacao.value) { 
+        sucessValidation(inputConfirmacao);
     }
+}
+
+const converterData = (inputValue) => {
+    let splitedDate = inputValue.split(['/'])
+    let dateString = '01/' + splitedDate[0] + '/20' + splitedDate[1];
+    let splitedDateString = dateString.split(['/']);
+    let data = splitedDateString[2]+'-'+splitedDateString[1]+'-'+splitedDateString[0];
 }
 
 const validarVazio = (input) => {
@@ -63,38 +125,18 @@ const validarVazio = (input) => {
     if (input.value == '') {
         errorValidation(input, 'Preencha todos os campos')
         return false;
-    } else {
-        if( input == document.getElementById('inputConfirmarEmail')){
-            console.log('validação email')
-            validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail)
-        }
-
-        // if( input == document.getElementById('inputSenhaInstituicao')){
-        //     validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha)
-        // }
-        
-        if( input == document.getElementById('inputDataValidadeCartao')){
-            converterData(inputDataValidadeCartao.value)
-        }  
-
-        sucessValidation(input)
+    } 
+     else if (input != '') {
+        sucessValidation(input);
         return true;
     }
-}
 
-
-const converterData = (inputValue) => {
-    let splitedDate = inputValue.split(['/'])
-    let dateString = '01/' + splitedDate[0] + '/20' + splitedDate[1];
-    let splitedDateString = dateString.split(['/']);
-    let data = splitedDateString[2]+'-'+splitedDateString[1]+'-'+splitedDateString[0];
-    console.log(data);
-}
+    }
 
 const checkInputs = () => {
 
     console.log('check')
-
+    
     if(
         validarVazio(inputNomeInstituicao) &&
         validarVazio(inputEmailInstituicao) &&
@@ -108,17 +150,24 @@ const checkInputs = () => {
         validarVazio(inputDataValidadeCartao) &&
         validarVazio(inputCvvCartao)
     ) {
+        console.log('dados enviados');
         cadastrarInstituicao(inputNomeInstituicao.value,
                             inputEmailInstituicao.value, 
                             inputSenhaInstituicao.value,
                             inputTelefoneInstituicao.value,
                             inputCnpjInstituicao.value,
+                            inputNumeroCartao.value,
                             inputNomeCartao.value,
                             inputDataValidadeCartao.value,
-                            inputCvv.value
+                            inputCvvCartao.value
                         )
     }
 }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkInputs();
+})
 
 //INTEGRAÇÃO COM O BACK-END
 const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituicao, telefoneInstituicao, cnpjInstituicao, numeroCartao, nomeCartao, validadeCartao, cvvCartao) => {
