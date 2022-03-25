@@ -25,12 +25,50 @@ function exibirDados(instituicao) {
 }
 
 async function getInfoInstituicao() {
-    const url = `http://localhost:3000/instituicao/listarInstituicao/8`
+    const idInstituicao = 11;
 
-    fetch (url).then(response => response.json).then(console.log)
+    const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`
+
+    fetch (url).then(response => response.json)
     const dados = await fetch(url)
     const instituicao = await dados.json()
     exibirDados(instituicao.instituicao[0])
 };
+
+
+async function excluirConta() {
+    let idInstituicao = 11;
+
+    let inputSenhaInstituicao = document.getElementById('senhaInstituicao')
+    
+    const senha = {
+        "senha": inputSenhaInstituicao.value
+    };
+
+    console.log(senha)
+
+    const config = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(senha)
+    }
+    
+    fetch(`http://localhost:3000/instituicao/deletarInstituicao/${idInstituicao}`, config)
+        .then((res) => res.json())
+        .then((data) => {
+            let response = data[Object.keys(data)[0]];
+
+            if(response === 'senha incorreta'){
+                inputSenhaInstituicao.classList.remove('container');
+                inputSenhaInstituicao.classList.add('erro');
+                document.getElementById('p-senha-incorreta').style.display = 'flex';
+            } else {
+                // log-out
+                window.location.href = "../home"
+            }
+    });
+}
 
 window.onload = getInfoInstituicao();

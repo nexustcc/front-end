@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
 
 const errorValidation = (input, message) => {
     const inputDadosInstituicao = input.parentElement;
-    const p = inputDadosInstituicao.querySelector('p');\
+    const p = inputDadosInstituicao.querySelector('p');
     p.style.visibility = 'visible';
     p.innerText = message;
     inputDadosInstituicao.classList.remove('sucesso');
