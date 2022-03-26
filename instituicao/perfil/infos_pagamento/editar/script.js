@@ -1,14 +1,14 @@
 "use strict";
 
 async function getInfoCartao() {
-    const idInstituicao = 11;
+    const idInstituicao = 3;
 
     const url = `http://localhost:3000/cartao/listarCartao/${idInstituicao}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
-    const cartao = await dados.json();
-    exibirDados(cartao.response[0]);
+    const cartaoJSON = await dados.json();
+    exibirDados(cartaoJSON.response[0]);
 }
 
 const converterData = (dataValidade) => {
@@ -37,7 +37,7 @@ const converterDataBanco = (inputValue) => {
 async function editarInstituicao(){
     event.preventDefault();
 
-    const idInstituicao = 11;
+    const idInstituicao = 3;
 
     const cartao = {
         "nomeNoCartao": document.getElementById("input_nome_no_cartao").value,
@@ -53,7 +53,7 @@ async function editarInstituicao(){
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(cartao)
+        body: JSON.stringify(instituicao)
     }
     
     fetch(`http://localhost:3000/cartao/editarCartao/${idInstituicao}`, config)

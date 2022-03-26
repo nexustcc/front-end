@@ -83,6 +83,7 @@ const converterData = (inputValue) => {
     let dateString = '01/' + splitedDate[0] + '/20' + splitedDate[1];
     let splitedDateString = dateString.split(['/']);
     let data = splitedDateString[2]+'-'+splitedDateString[1]+'-'+splitedDateString[0];
+    return data;
 }
 
 const validarVazio = (input) => {
@@ -122,7 +123,7 @@ const checkInputs = () => {
                             inputCnpjInstituicao.value,
                             inputNumeroCartao.value.trim(),
                             inputNomeCartao.value.trim().toUpperCase(),
-                            inputDataValidadeCartao.value,
+                            converterData(inputDataValidadeCartao.value),
                             inputCvvCartao.value
                         )                   
     }
