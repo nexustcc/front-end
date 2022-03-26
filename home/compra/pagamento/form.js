@@ -1,9 +1,6 @@
 'use strict'
 
 let form = document.getElementById('form');
-// let inputsForm = form.elements;
-// var inputsArr1 = Array.from(inputsForm);
-// var inputsArr2 = Array.prototype.slice.call(inputsForm);
 const inputNomeInstituicao = document.getElementById('inputNomeInstituicao');
 const inputEmailInstituicao = document.getElementById('inputEmailInstituicao');
 const inputConfirmarEmail = document.getElementById('inputConfirmarEmail');
@@ -22,6 +19,10 @@ $(document).ready(function(){
     $(inputDataValidadeCartao).mask('99/99');
 });
 
+inputNumeroCartao.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+  });
+
 $(inputConfirmarEmail).on('keydown', function () {
     
     validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail);
@@ -32,48 +33,12 @@ $(inputConfirmarSenha).on('keydown', function () {
     validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha);
 });
 
-$(inputNomeInstituicao).on('keydown', function () {
-    
-    validarTamanho(inputNomeInstituicao, 254);
-});
+const isInputNumber = (evt) =>{
 
-$(inputEmailInstituicao).on('keydown', function () {
+    let char = String.fromCharCode(evt.which);
 
-    validarTamanho(inputEmailInstituicao, 254);
-});
-
-$(inputSenhaInstituicao).on('keydown', function () {
-    
-    validarTamanho(inputSenhaInstituicao, 254);
-});
-
-$(inputNumeroCartao).on('keydown', function () {
-
-    validarTamanho(inputNumeroCartao, 18);
-});
-
-$(inputNomeCartao).on('keydown', function () {
-    
-    validarTamanho(inputNomeCartao, 44);
-});
-
-$(inputCvvCartao).on('keydown', function () {
-
-    validarTamanho(inputCvvCartao, 3);
-    console.log(inputCvvCartao.value);
-});
-
-const validarTamanho = (input, numeroMaximoCaracteres) => {
-
-    const numeroMax = numeroMaximoCaracteres + 1;
-    // let bala = numeroMaximoCaracteres + 2
-
-    if (input.value.length > numeroMaximoCaracteres) {
-        errorValidation(input, 'O número máximo de caracteres é ' + numeroMax);
-        return false
-    } else if (input.value.length <= (numeroMax + 2)) {
-        sucessValidation(input);
-        return true;
+    if(!(/[0-9]/.test(char))) {
+        evt.preventDefault();
     }
 }
 
@@ -131,7 +96,7 @@ const validarVazio = (input) => {
         return true;
     }
 
-    }
+}
 
 const checkInputs = () => {
 
@@ -150,17 +115,16 @@ const checkInputs = () => {
         validarVazio(inputDataValidadeCartao) &&
         validarVazio(inputCvvCartao)
     ) {
-        console.log('dados enviados');
-        cadastrarInstituicao(inputNomeInstituicao.value,
-                            inputEmailInstituicao.value, 
+        cadastrarInstituicao(inputNomeInstituicao.value.trim(),
+                            inputEmailInstituicao.value.trim(), 
                             inputSenhaInstituicao.value,
                             inputTelefoneInstituicao.value,
                             inputCnpjInstituicao.value,
-                            inputNumeroCartao.value,
-                            inputNomeCartao.value,
+                            inputNumeroCartao.value.trim(),
+                            inputNomeCartao.value.trim().toUpperCase(),
                             inputDataValidadeCartao.value,
                             inputCvvCartao.value
-                        )
+                        )                   
     }
 }
 
@@ -171,6 +135,7 @@ form.addEventListener('submit', (e) => {
 
 //INTEGRAÇÃO COM O BACK-END
 const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituicao, telefoneInstituicao, cnpjInstituicao, numeroCartao, nomeCartao, validadeCartao, cvvCartao) => {
+
 
     const instituicao = {
         "nome": nomeInstituicao,

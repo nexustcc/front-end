@@ -203,6 +203,15 @@ form input[type="submit"] {
 
   @media (max-width: 768px) {
 
+    main {
+        align-items: center;
+        padding: 0 5px 0 5px;
+    }
+
+    form, .infos_pagamento, main h4 {
+        margin-left: 0px;
+    }
+
     main, form input {
         font-size: 13px;
     }

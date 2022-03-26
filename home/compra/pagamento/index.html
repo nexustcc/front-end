@@ -77,7 +77,7 @@
                         <div class="input_instituicao sucesso">
                             <label for="inputNomeInstituicao">Nome da Instituição</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text" placeholder="Nome da Instituição"/>
+                                <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text" placeholder="Nome da Instituição" maxlength="255"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                         <div class="input_instituicao erro">
                             <label for="inputEmailInstituicao">E-mail Institucional</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email" placeholder="E-mail Institucional"/>
+                                <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email" placeholder="E-mail Institucional" maxlength="255"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                         <div class="input_instituicao">
                             <label for="inputSenhaInstituicao">Senha</label>
                             <div class="input_dados_instituicao">
-                                <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password" placeholder="Senha"/>
+                                <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password" placeholder="Senha" maxlength="255"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>
@@ -136,12 +136,12 @@
 
                         <div class="infos_cartao_inputs">
                             <div class="input_cartao_instituicao">
-                                <input id="inputNumeroCartao" name="inputNumeroCartao" type="number" placeholder="Número do cartão" />
+                                <input id="inputNumeroCartao" name="inputNumeroCartao" type="text" placeholder="Número do cartão" minlength="9" maxlength="19" onkeypress="isInputNumber(event)"/>
                                 <p><small>Error mesage</small></p>
                             </div>
 
                             <div class="input_cartao_instituicao">
-                                <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão"/>
+                                <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão" maxlength="45"/>
                                 <p><small>Error mesage</small></p>
                             </div>
 
@@ -152,7 +152,7 @@
                                 </div>
                                 
                                 <div class="input_cartao_instituicao">
-                                    <input id="inputCvvCartao" name="inputCvvCartao" type="number" placeholder="Código de segurança"/>
+                                    <input id="inputCvvCartao" name="inputCvvCartao" type="text" placeholder="Código de segurança" minlength="3" maxlength="4" onkeypress="isInputNumber(event)"/>
                                     <p><small>Error mesage</small></p>
                                 </div>
                             </div>
