@@ -150,7 +150,7 @@
 
                             <div class="inputs_cartao">
                                 <div class="input_cartao_instituicao">
-                                    <input id="inputDataValidadeCartao" name="inputDataValidadeCartao" type="text" placeholder="Data de validade (mm/aaaa)" />
+                                    <input id="inputDataValidadeCartao" name="inputDataValidadeCartao" type="text" placeholder="Data de validade (mm/aa)" />
                                     <p><small>Error mesage</small></p>
                                 </div>
                                 
@@ -163,7 +163,19 @@
                         </div>
 
 
-                        <div class="infos_cartao_svg"><img src="img/cartao.svg" alt="cartao"></div>
+                        <div class="infos_cartao_svg">
+                            <div id="cartao">
+                                <div id="cartao-top">
+                                    <select id="cartao_tipo">
+                                        <option class="cartao_tipo_option" value="credit">Crédito</option>
+                                        <option class="cartao_tipo_option" value="debit">Débito</option>
+                                    </select>
+                                    <input type="text" id="cartao_validade" placeholder="../.." disabled>
+                                </div>
+                                <input type="text" id="cartao_numero" placeholder=".... .... .... ...." disabled>
+                                <input type="text" id="cartao_nome" placeholder="Nome Completo" disabled>
+                            </div>
+                        </div>
 
                     </div>
 

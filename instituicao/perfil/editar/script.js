@@ -9,7 +9,7 @@ function exibirDados(instituicao) {
 }
 
 async function getInfoInstituicao() {
-    const idInstituicao = 11;
+    const idInstituicao = 9;
 
     const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`
 
@@ -22,7 +22,7 @@ async function getInfoInstituicao() {
 async function editarInstituicao(){
     event.preventDefault();
 
-    const idInstituicao = 11;
+    const idInstituicao = 9;
 
     const instituicao = {
         "nome": document.getElementById('nome_instituicao').value,

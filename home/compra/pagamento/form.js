@@ -13,30 +13,40 @@ const inputNomeCartao = document.getElementById('inputNomeCartao');
 const inputDataValidadeCartao = document.getElementById('inputDataValidadeCartao');
 const inputCvvCartao = document.getElementById('inputCvvCartao');
 
+const textCartaoNumero = document.getElementById('cartao_numero');
+const textCartaoNome = document.getElementById('cartao_nome');
+const textCartaoValidade = document.getElementById('cartao_validade');
+
 $(document).ready(function(){        
     $(inputCnpjInstituicao).mask("99.999.999/0001-99");
     $(inputTelefoneInstituicao).mask("(99) 9999-9999");
-    $(inputDataValidadeCartao).mask('99/99');
+    // $(inputDataValidadeCartao).mask('99/99');
 });
+
+const preencherCartao = (input, text) => {
+    text.value = input.value.toUpperCase()
+}
 
 inputNumeroCartao.addEventListener('input', function (e) {
     e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
-  });
+    preencherCartao(inputNumeroCartao, textCartaoNumero)
+});
+inputNomeCartao.addEventListener('input', function (e) { preencherCartao(inputNomeCartao, textCartaoNome) });
 
-$(inputConfirmarEmail).on('keydown', function () {
-    
+inputDataValidadeCartao.addEventListener('input', function (e) {
+    preencherCartao(inputDataValidadeCartao, textCartaoValidade)
+});
+
+$(inputConfirmarEmail).on('keydown', function () {    
     validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail);
-  });
+});
 
-$(inputConfirmarSenha).on('keydown', function () {
-    
+$(inputConfirmarSenha).on('keydown', function () {   
     validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha);
 });
 
 const isInputNumber = (evt) =>{
-
     let char = String.fromCharCode(evt.which);
-
     if(!(/[0-9]/.test(char))) {
         evt.preventDefault();
     }
@@ -87,7 +97,6 @@ const converterData = (inputValue) => {
 }
 
 const validarVazio = (input) => {
-
     if (input.value == '') {
         errorValidation(input, 'Preencha todos os campos')
         return false;
@@ -96,13 +105,10 @@ const validarVazio = (input) => {
         sucessValidation(input);
         return true;
     }
-
 }
 
 const checkInputs = () => {
-
     console.log('check')
-    
     if(
         validarVazio(inputNomeInstituicao) &&
         validarVazio(inputEmailInstituicao) &&
@@ -134,7 +140,7 @@ form.addEventListener('submit', (e) => {
     checkInputs();
 })
 
-//INTEGRAÇÃO COM O BACK-END
+
 const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituicao, telefoneInstituicao, cnpjInstituicao, numeroCartao, nomeCartao, validadeCartao, cvvCartao) => {
 
 
@@ -152,17 +158,17 @@ const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituica
     
     console.log(instituicao)
     
-        // const config = {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(instituicao)
-        // }
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(instituicao)
+    }
     
-        // fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         console.log(data)
-        //     });
+    fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+        });
 }
