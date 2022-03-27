@@ -1,7 +1,7 @@
 "use strict";
 
 async function getInfoCartao() {
-    const idInstituicao = 3;
+    const idInstituicao = 9;
 
     const url = `http://localhost:3000/cartao/listarCartao/${idInstituicao}`;
 

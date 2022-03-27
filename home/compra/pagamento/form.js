@@ -15,12 +15,11 @@ const inputCvvCartao = document.getElementById('inputCvvCartao');
 
 const textCartaoNumero = document.getElementById('cartao_numero');
 const textCartaoNome = document.getElementById('cartao_nome');
-const textCartaoValidade = document.getElementById('cartao_validade');
 
 $(document).ready(function(){        
     $(inputCnpjInstituicao).mask("99.999.999/0001-99");
     $(inputTelefoneInstituicao).mask("(99) 9999-9999");
-    // $(inputDataValidadeCartao).mask('99/99');
+    $(inputDataValidadeCartao).mask('99/99');
 });
 
 const preencherCartao = (input, text) => {
@@ -32,10 +31,6 @@ inputNumeroCartao.addEventListener('input', function (e) {
     preencherCartao(inputNumeroCartao, textCartaoNumero)
 });
 inputNomeCartao.addEventListener('input', function (e) { preencherCartao(inputNomeCartao, textCartaoNome) });
-
-inputDataValidadeCartao.addEventListener('input', function (e) {
-    preencherCartao(inputDataValidadeCartao, textCartaoValidade)
-});
 
 $(inputConfirmarEmail).on('keydown', function () {    
     validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail);
@@ -165,6 +160,8 @@ const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituica
         },
         body: JSON.stringify(instituicao)
     }
+
+    console.log(instituicao)
     
     fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
         .then((res) => res.json())
