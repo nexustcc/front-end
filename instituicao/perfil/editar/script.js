@@ -9,7 +9,7 @@ function exibirDados(instituicao) {
 }
 
 async function getInfoInstituicao() {
-    const idInstituicao = 9;
+    const idInstituicao = 1;
 
     const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`
 
