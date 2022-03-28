@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
 
-  <script type="text/javascript" src="../../../jquery/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="../../../jquery/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="../../../../jquery/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../../../jquery/jquery.mask.min.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
@@ -30,7 +30,7 @@
 <body>
   <div class="container mt-5 container">
     <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>
-    <form onsubmit="validacao()" class="row g-3">
+    <form onsubmit="editarInstituicao()" class="row g-3">
 
       <div class="col-md-12" id="icon">
         <label for="numero_do_cartao" class="form-label">Número do cartão</label>
@@ -46,7 +46,7 @@
 
       <div class="col-md-6" id="icon">
         <label for="validade" class="form-label">Validade</label>
-        <input id="input_validate" type="text" class="form-control validade" required>
+        <input id="input_validade" type="text" class="form-control validade" required>
         <i class="fa fa-edit" style="font-size:24px"></i>
       </div>
 
