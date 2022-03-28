@@ -1,60 +1,65 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
 
-    <script src="./script.js" defer></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
 
-    <title>EDITAR INFORMAÇÕES DE PAGAMENTO</title>
-  </head>
-  <body>
-    <div class="container mt-5 container">
-        <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>
-        <form onsubmit="validacao()" class="row g-3">
+  <script src="./script.js" defer></script>
 
-          <div class="col-md-12" id="icon">
-            <label for="numero_do_cartao" class="form-label">Número do cartão</label>
-            <input type="text" class="form-control numero_do_cartao">
-            <i class="fa fa-edit" style="font-size:24px"></i>
-          </div>
+  <title>EDITAR INFORMAÇÕES DE PAGAMENTO</title>
+</head>
 
-          <div class="col-md-12" id="icon">
-            <label for="nome_no_cartao" class="form-label">Nome no cartão</label>
-            <input type="text" class="form-control nome_no_cartao">
-            <i class="fa fa-edit" style="font-size:24px"></i>
-          </div>
+<body>
+  <div class="container mt-5 container">
+    <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>
+    <form onsubmit="validacao()" class="row g-3">
 
-          <div class="col-md-6" id="icon">
-            <label for="validade" class="form-label">Validade</label>
-            <input type="text" class="form-control validade">
-            <i class="fa fa-edit" style="font-size:24px"></i>
-          </div>
+      <div class="col-md-12" id="icon">
+        <label for="numero_do_cartao" class="form-label">Número do cartão</label>
+        <input id="input_numero_do_cartao" type="text" class="form-control numero_do_cartao">
+        <i class="fa fa-edit" style="font-size:24px"></i>
+      </div>
 
-          <div class="col-md-6" id="icon">
-            <label for="cvv" class="form-label">CVV</label>
-            <input type="text" class="form-control cvv">
-            <i class="fa fa-edit" style="font-size:24px"></i>
-          </div>
+      <div class="col-md-12" id="icon">
+        <label for="nome_no_cartao" class="form-label">Nome no cartão</label>
+        <input id="input_nome_do_cartao" type="text" class="form-control nome_no_cartao">
+        <i class="fa fa-edit" style="font-size:24px"></i>
+      </div>
 
-          <div class="buttons">
-            <div class="col-md-3">
-            <a href="../index.html"><button id="primeiro_botao" type="button">CANCELAR</button></a> 
-          </div>
+      <div class="col-md-6" id="icon">
+        <label for="validade" class="form-label">Validade</label>
+        <input id="input_validate" type="text" class="form-control validade">
+        <i class="fa fa-edit" style="font-size:24px"></i>
+      </div>
 
-          <div class="col-md-3">
-            <a href="../../../index.html"><button id="segundo_botao" type="button">SALVAR</button></a>
-          </div>
-          </div>
-          
-        </form>
-    </div>
-  </body>
+      <div class="col-md-6" id="icon">
+        <label for="cvv" class="form-label">CVV</label>
+        <input id="input_cvv" type="text" class="form-control cvv">
+        <i class="fa fa-edit" style="font-size:24px"></i>
+      </div>
+
+      <div class="buttons">
+        <div class="col-md-3">
+          <a href="../index.html"><button id="primeiro_botao" type="button">CANCELAR</button></a>
+        </div>
+
+        <div class="col-md-3">
+          <input id="segundo_botao" type="submit" value="SALVAR">
+          <!-- <button id="segundo_botao" type=""><a href="../../../index.html">SALVAR</a></button> -->
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
 </html>

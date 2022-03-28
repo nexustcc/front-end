@@ -23,30 +23,34 @@
     <form class="row g-3">
       <div class="col-md-12">
         <label for="numero_do_cartao" class="form-label">Número do cartão</label>
-        <input type="text" class="form-control numero_do_cartao" placeholder="xxxx xxxx xxxx xxxx">
+        <input id="input_numero_do_cartao" type="text" class="form-control numero_do_cartao" disabled />
       </div>
 
       <div class="col-md-12">
         <label for="nome_no_cartao" class="form-label">Nome no cartão</label>
-        <input type="text" class="form-control nome_no_cartao" placeholder="xxxxxxxx xxxxxxxx">
+        <input id="input_nome_no_cartao" type="text" class="form-control nome_no_cartao" disabled />
       </div>
 
       <div class="col-md-6 for-cnp">
         <label for="validade" class="form-label">Validade</label>
-        <input type="text" class="form-control validade" placeholder="xx/xx">
+        <input id="input_validade" type="text" class="form-control validade" disabled />
       </div>
 
       <div class="col-md-6">
         <label for="cvv" class="form-label">CVV</label>
-        <input type="text" class="form-control cvv" placeholder="xxx">
+        <input id="input_cvv" type="text" class="form-control cvv" disabled />
       </div>
 
       <div class="buttons">
-        <div class="col-md-3 primeiro_botao"> 
-          <a href="../../../instituicao/index.html"><button id="segundo_botao" type="button">CANCELAR</button></a>
+        <div class="col-md-3 primeiro_botao">
+          <button id="segundo_botao" type="submit">
+            <a href="../../../instituicao/index.html">CANCELAR</a>
+          </button>
         </div>
         <div class="col-md-3 primeiro_botao">
-         <a href="./editar/index.html"><button id="primeiro_botao" type="button">EDITAR</button></a>
+          <button id="primeiro_botao">
+            <a href="./editar/index.html">EDITAR</a>
+          </button>
         </div>
       </div>
     </form>

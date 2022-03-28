@@ -18,30 +18,30 @@
   <body>
     <div class="container mt-5 container">
         <h1>EDITAR PERFIL DA INSTITUIÇÃO</h1>
-        <form class="row g-3">
+        <form onsubmit="editarInstituicao()" class="row g-3">
           <div class="col-md-12" id="icon">
             <label for="email_institucional" class="form-label">E-mail institucional</label>
-            <input type="email" class="form-control email_institucional"> 
+            <input id="input_email_institucional" type="email" class="form-control email_institucional"> 
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
           <div class="col-md-6" id="icon">
             <label for="nome_da_instituicao" class="form-label">Nome da instituição</label>
-            <input type="text" class="form-control nome_da_instituicao">
+            <input id="nome_da_instituicao" type="text" class="form-control nome_da_instituicao">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
           <div class="col-md-6" id="icon">
             <label for="cnpj" class="form-label">CNPJ</label>
-            <input type="text" class="form-control cnpj">
+            <input id="cnpj_instituicao" type="text" class="form-control cnpj">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
           <div class="col-md-6" id="icon">
             <label for="telefone" class="form-label">Telefone</label>
-            <input type="text" class="form-control telefone">
+            <input id="telefone_instituicao" type="text" class="form-control telefone">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
           <div class="col-md-6" id="icon">
             <label for="senha" class="form-label">Senha</label>
-            <input type="senha" class="form-control senha">
+            <input id="senha_instituicao" type="senha" class="form-control senha">
             <i class="fa fa-edit" style="font-size:24px"></i>
           </div>
 
