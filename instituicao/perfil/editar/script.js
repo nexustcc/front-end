@@ -1,5 +1,14 @@
 'use-strict'
 
+const inputCnpjInstituicao = document.getElementById('cnpj_instituicao');
+const inputTelefoneInstituicao = document.getElementById('telefone_instituicao');
+
+$(document).ready(function(){        
+    $(inputCnpjInstituicao).mask("99.999.999/0001-99");
+    $(inputTelefoneInstituicao).mask("(99) 9999-9999");
+});
+
+
 function exibirDados(instituicao) {
     document.getElementById('input_email_institucional').value = instituicao.usuario.email;
     document.getElementById('nome_instituicao').value = instituicao.usuario.nome;
@@ -9,6 +18,7 @@ function exibirDados(instituicao) {
 }
 
 async function getInfoInstituicao() {
+
     const idInstituicao = 1;
 
     const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`
@@ -22,7 +32,7 @@ async function getInfoInstituicao() {
 async function editarInstituicao(){
     event.preventDefault();
 
-    const idInstituicao = 9;
+    const idInstituicao = 1;
 
     const instituicao = {
         "nome": document.getElementById('nome_instituicao').value,
