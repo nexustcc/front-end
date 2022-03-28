@@ -158,6 +158,10 @@ button {
     margin-right: 5%;
 }
 
+#primeiro_botao:hover{
+    
+}
+
 #segundo_botao_modal {
     margin-top: 2vh;
     width: 100%;
@@ -168,18 +172,4 @@ button {
     font-weight: 700;
     border: none;
     padding: 15px
-}
-
-.erro{
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border: 4px solid #A71E34;
-    padding: 15px;
-}
-
-#p-senha-incorreta {
-    display: none;
-    justify-content: center;
-    margin-top: 16px;
-    color: #A71E34;
 }

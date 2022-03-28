@@ -21,7 +21,7 @@
 
 <body>
     <div class="container">
-        
+
         <div class="col-md-6 for-cnp turmas_existentes" id="icon">
             <label for="turmas_ex" class="form-label">TURMAS EXISTENTES</label>
             <input type="text" class="form-control turmas_ex">
@@ -37,7 +37,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -52,7 +52,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -67,7 +67,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -82,7 +82,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -97,7 +97,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -112,7 +112,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -127,7 +127,7 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -142,7 +142,8 @@
                     <p class="nome">NOME</p>
                 </div>
                 <div class="button">
-                    <h2>Informacoes sobre a turma</h2>
+                    <button type="button" onclick="showModalTurma()" id="segundo_botao">INFORMAÇÕES SOBRE A
+                        TURMA</button>
                     <button onclick="showModal()" id="terceiro_botao">NOVO USUÁRIO</button>
                 </div>
             </li>
@@ -164,7 +165,7 @@
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="senha" class="form-label">Senha</label>
+                <label for="data-termino" class="form-label">data-termino</label>
                 <input type="text" class="form-control senha" placeholder="42.591.538/0001-68">
             </div>
 
@@ -194,11 +195,186 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button id="segundo_botao" onclick="exitModal()" type="button">SALVAR</button>
+                    <button id="terceiro_botao" onclick="exitModal()" type="button">SALVAR</button>
                 </div>
             </div>
         </form>
     </div>
+
+    <div class="container mt-5 container modal modal-turma">
+        <h1>NOME DA TURMA</h1>
+        <form class="row g-7">
+
+            <div class="col-md-12 lab-inp">
+                <label for="turma" class="form-label">Turma</label>
+                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com" disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="numero-estudantes" class="form-label">Número de estudantes</label>
+                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba "
+                    disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="curso-inp" class="form-label">Curso</label>
+                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68" disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="data-inicio" class="form-label">Data de inicio do curso</label>
+                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68" disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="data-termino" class="form-label">Data de termino do curso</label>
+                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68" disabled>
+            </div>
+
+            <div class="buttons">
+                <div class="col-md-3">
+                    <button id="primeiro_botao" type="button" onclick="exitModalTurma()">SAIR</button>
+                </div>
+
+                <div class="col-md-3">
+                    <button id="segundo_botao" type="button" onclick="showModalEditar()">EDITAR</button>
+                </div>
+
+                <div class="col-md-6">
+                    <button id="terceiro_botao" onclick="showModalMembros()" type="button">MEMBROS DA TURMA</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="container mt-5 container modal modal-editar">
+        <h1>NOME DA TURMA</h1>
+        <form class="row g-7">
+
+            <div class="col-md-12 lab-inp" id="icon">
+                <label for="turma" class="form-label">Turma</label>
+                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com">
+                <i class="fa fa-edit" style="font-size:24px"></i>
+            </div>
+
+            <div class="col-md-6 lab-inp" id="icon">
+                <label for="numero-estudantes" class="form-label">Número de estudantes</label>
+                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba ">
+                <i class="fa fa-edit" style="font-size:24px"></i>
+            </div>
+
+            <div class="col-md-6 lab-inp" id="icon">
+                <label for="curso-inp" class="form-label">Curso</label>
+                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68">
+                <i class="fa fa-edit" style="font-size:24px"></i>
+            </div>
+
+            <div class="col-md-6 lab-inp" id="icon">
+                <label for="data-inicio" class="form-label">Data de inicio do curso</label>
+                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68">
+            </div>
+
+            <div class="col-md-6 lab-inp" id="icon">
+                <label for="data-termino" class="form-label">Data de termino do curso</label>
+                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68">
+            </div>
+
+            <div class="buttons">
+                <div class="col-md-3">
+                    <button id="primeiro_botao" type="button" onclick="exitModalTurma()">SAIR</button>
+                </div>
+
+                <div class="col-md-3">
+                    <button id="segundo_botao" type="button" onclick="">EDITAR</button>
+                </div>
+
+                <div class="col-md-6">
+                    <button id="terceiro_botao" onclick="showModalMembros()" type="button">MEMBROS DA TURMA</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="container mt-5 container modal  modal-membros">
+        <h1>USUÁRIOS QUE PERTENCENTES A TURMA</h1>
+
+        <div class="-membro">
+            <ul class="list-group" id="ul-turma">
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                            data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                            data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                            data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                            data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                            data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+            </ul>
+            <div class="buttons">
+                <div class="col-md-6">
+                    <button id="primeiro_botao" type="button" onclick="showModalTurma()">VOLTAR</button>
+                </div>
+            </div>
+        </div>
+
+
 
 </body>
 

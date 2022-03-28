@@ -341,6 +341,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
     padding: 2%;
     border-radius: 20px;
+    width: 100vw;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -383,21 +384,7 @@ h1 {
     color: #05204A;
 }
 
-.nome_do_usuario {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.email_usuario {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
-}
-
-.senha {
+.lab-inp input{
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;

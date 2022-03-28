@@ -60,6 +60,10 @@ body {
     padding: 15px
 }
 
+.lab-inp label{
+    font-weight: 400;
+}
+
 
 #ul::-webkit-scrollbar {
     width: 12px;
@@ -198,6 +202,10 @@ img {
     /* creates padding around scroll thumb */
 }
 
+#book{
+    width: 7vw;
+}
+
 #li {
     border: none;
     display: flex;
@@ -219,14 +227,18 @@ img {
     flex-direction: column;
     align-items: center;
     width: 20vw;
-    height: 20vh;
+    height: 40vh;
     background-color: #F4F4F4;
     border-radius: 20px;
     overflow-y: auto;
     color: #044177;
+    padding: 2%;
+    margin-right: 6%;
 }
 
-#no
+#novo_curso h1{
+    font-weight: 700;
+}
 
 #icon {
     position: relative;
@@ -270,13 +282,12 @@ img {
 #primeiro_botao {
     margin-top: 2vh;
     width: 98%;
-    background-color: #0664B7;
     color: white;
-    font-weight: 700;
+    background-color: #0664B7;
     border-radius: 30px;
+    font-weight: 700;
     border: none;
     padding: 15px;
-    margin-right: 5%;
 }
 
 #segundo_botao {
@@ -301,9 +312,20 @@ img {
     border-radius: 30px;
     font-weight: 700;
     border: none;
-    padding: 15px
+    padding: 15px;
 }
 
+#quarto_botao {
+    margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #A71E34;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+}
 
 .buttons {
     display: flex;
@@ -336,12 +358,76 @@ img {
         font-weight: 100;
 }
 
+.modal-curso {
+    width: 40%;
+    height: 30vh;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
+.modal-excluir {
+    width: 40%;
+    height: 30vh;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    padding: 2%;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
+.modal-excluir h1{
+    font-size: 50px;
+}
+
+.modal-excluir h2{
+    font-size: 20px;
+    color: #A71E34;
+}
+
+.modal-curso h1{
+    font-size: 50px;
+}
+
+#nome_do_curso input{
+    width: 100%;
+}
+
 .modal-selecao h2{
     color: #05204A;
     font-weight: 500;
 }
 
+.modal-curso .buttons button{
+    background-color: red;
+}
+
 @media (max-width: 830px) {
+
+    #book{
+        display: none;
+    }
     .container {
         padding: 2%;
     }
