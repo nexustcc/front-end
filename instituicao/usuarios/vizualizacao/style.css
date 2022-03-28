@@ -4,29 +4,19 @@
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-position: center center;
-    position: relative;
-}
-
 .space {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     align-items: center;
+    margin-top: 2%;
 }
 
 .container-geral {
-    padding: 2% 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 }
 
 .container {
@@ -34,7 +24,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 90vh;
+    height: 50vh;
     width: 100vw;
 }
 
@@ -81,6 +71,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin-top: 2%;
 }
 
 #modal-excluir {
@@ -176,7 +167,7 @@ h1 {
 
 #ul {
     width: 100%;
-    height: 70%;
+    height: 50vw;
     border: 2px solid;
     border-color: #05204A;
     border-radius: 10px;
@@ -203,7 +194,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 30vw;
-    height: 55vh;
+    height: 70vh;
     padding: 1% 5%;
     background-color: #F4F4F4;
     border-radius: 20px;
@@ -445,4 +436,50 @@ h1 {
     border: none;
     padding: 15px;
     background-color: #c2c2c2;
+}
+
+@media (max-width: 830px) {
+    .space {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tipo_usuario ul li {
+        list-style: none;
+        width: 30%;
+        height: 50px;
+        text-align: center;
+        padding: 13px 15px;
+        border: 1px solid #C2C2C2;
+        color: #C2C2C2;
+        font-weight: bold;
+        transform: all 0.2s ease;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    #ul {
+        width: 100%;
+        height: 10%;
+        border: 2px solid;
+        border-color: #05204A;
+        border-radius: 10px;
+        padding: 5%;
+        overflow-y: auto;
+    }
+    
+    #turma_selecionada {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        height: 70vh;
+        background-color: #F4F4F4;
+        border-radius: 20px;
+        overflow-y: auto;
+    }
 }
