@@ -1,6 +1,6 @@
 'use strict'
 
-const form = document.getElementById('form');
+let form = document.getElementById('form');
 const inputNomeInstituicao = document.getElementById('inputNomeInstituicao');
 const inputEmailInstituicao = document.getElementById('inputEmailInstituicao');
 const inputConfirmarEmail = document.getElementById('inputConfirmarEmail');
@@ -13,88 +13,97 @@ const inputNomeCartao = document.getElementById('inputNomeCartao');
 const inputDataValidadeCartao = document.getElementById('inputDataValidadeCartao');
 const inputCvvCartao = document.getElementById('inputCvvCartao');
 
+const textCartaoNumero = document.getElementById('cartao_numero');
+const textCartaoNome = document.getElementById('cartao_nome');
+
 $(document).ready(function(){        
     $(inputCnpjInstituicao).mask("99.999.999/0001-99");
     $(inputTelefoneInstituicao).mask("(99) 9999-9999");
     $(inputDataValidadeCartao).mask('99/99');
 });
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    checkInputs();
-})
+const preencherCartao = (input, text) => {
+    text.value = input.value.toUpperCase()
+}
 
+inputNumeroCartao.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    preencherCartao(inputNumeroCartao, textCartaoNumero)
+});
+inputNomeCartao.addEventListener('input', function (e) { preencherCartao(inputNomeCartao, textCartaoNome) });
+
+$(inputConfirmarEmail).on('input', function () {    
+    validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail);
+});
+
+$(inputConfirmarSenha).on('input', function () {   
+    validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha);
+});
+
+const isInputNumber = (evt) =>{
+    let char = String.fromCharCode(evt.which);
+    if(!(/[0-9]/.test(char))) {
+        evt.preventDefault();
+    }
+}
 
 const errorValidation = (input, message) => {
     const inputDadosInstituicao = input.parentElement;
-    const p = inputDadosInstituicao.querySelector('p');\
+    const p = inputDadosInstituicao.querySelector('p');
     p.style.visibility = 'visible';
     p.innerText = message;
-    inputDadosInstituicao.classList.remove('sucesso');
+
+    if(inputDadosInstituicao.className == 'sucesso') {
+        inputDadosInstituicao.classList.remove('sucesso');
+    }
+    
+    input.focus()
     inputDadosInstituicao.className = 'input_dados_instituicao erro';
 }
 
 const sucessValidation = (input) => {
     const inputDadosInstituicao = input.parentElement;
     const p = inputDadosInstituicao.querySelector('p');
-    inputDadosInstituicao.classList.remove('erro');
+
+    if(inputDadosInstituicao.className == 'erro') {
+        inputDadosInstituicao.classList.remove('erro');
+    }
+
     inputDadosInstituicao.className = 'input_dados_instituicao sucesso';
     p.style.visibility = 'hidden';
 }
 
 const validarCompatibilidadeInputs = (input, inputConfirmacao) => {
-    console.log('validar comopatibilidade')
-    if (input.value == inputConfirmacao.value) { 
-        console.log('valores iguais');
-        console.log('valor 1: ' + input.value);
-        console.log('valor 2: ' + inputConfirmacao.value);
-        sucessValidation(inputConfirmacao)
+    if (input.value != inputConfirmacao.value) { 
+        errorValidation(inputConfirmacao, 'Os valores inseridos não coincidem');
+        inputConfirmacao.focus();
     }
-    else { 
-        console.log('valores diferentes')
-        console.log('valor 1: ' + input.value);
-        console.log('valor 2: ' + inputConfirmacao.value);
-        errorValidation(inputConfirmacao, 'Os valores inseridos não coincidem')
+    else if (input.value == inputConfirmacao.value) { 
+        sucessValidation(inputConfirmacao);
     }
 }
-
-const validarVazio = (input) => {
-
-    if (input.value == '') {
-        errorValidation(input, 'Preencha todos os campos')
-        return false;
-    } else {
-        if( input == document.getElementById('inputConfirmarEmail')){
-            console.log('validação email')
-            validarCompatibilidadeInputs(inputEmailInstituicao, inputConfirmarEmail)
-        }
-
-        // if( input == document.getElementById('inputSenhaInstituicao')){
-        //     validarCompatibilidadeInputs(inputSenhaInstituicao, inputConfirmarSenha)
-        // }
-        
-        if( input == document.getElementById('inputDataValidadeCartao')){
-            converterData(inputDataValidadeCartao.value)
-        }  
-
-        sucessValidation(input)
-        return true;
-    }
-}
-
 
 const converterData = (inputValue) => {
     let splitedDate = inputValue.split(['/'])
     let dateString = '01/' + splitedDate[0] + '/20' + splitedDate[1];
     let splitedDateString = dateString.split(['/']);
     let data = splitedDateString[2]+'-'+splitedDateString[1]+'-'+splitedDateString[0];
-    console.log(data);
+    return data;
+}
+
+const validarVazio = (input) => {
+    if (input.value == '') {
+        errorValidation(input, 'Preencha todos os campos')
+        return false;
+    } 
+     else if (input != '') {
+        sucessValidation(input);
+        return true;
+    }
 }
 
 const checkInputs = () => {
-
     console.log('check')
-
     if(
         validarVazio(inputNomeInstituicao) &&
         validarVazio(inputEmailInstituicao) &&
@@ -108,20 +117,28 @@ const checkInputs = () => {
         validarVazio(inputDataValidadeCartao) &&
         validarVazio(inputCvvCartao)
     ) {
-        cadastrarInstituicao(inputNomeInstituicao.value,
-                            inputEmailInstituicao.value, 
+        cadastrarInstituicao(inputNomeInstituicao.value.trim(),
+                            inputEmailInstituicao.value.trim(), 
                             inputSenhaInstituicao.value,
                             inputTelefoneInstituicao.value,
                             inputCnpjInstituicao.value,
-                            inputNomeCartao.value,
-                            inputDataValidadeCartao.value,
-                            inputCvv.value
-                        )
+                            inputNumeroCartao.value.trim(),
+                            inputNomeCartao.value.trim().toUpperCase(),
+                            converterData(inputDataValidadeCartao.value),
+                            inputCvvCartao.value
+                        )                   
     }
 }
 
-//INTEGRAÇÃO COM O BACK-END
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkInputs();
+})
+
+
 const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituicao, telefoneInstituicao, cnpjInstituicao, numeroCartao, nomeCartao, validadeCartao, cvvCartao) => {
+
+    event.preventDefault();
 
     const instituicao = {
         "nome": nomeInstituicao,
@@ -137,17 +154,19 @@ const cadastrarInstituicao = (nomeInstituicao, emailInstituicao, senhaInstituica
     
     console.log(instituicao)
     
-        // const config = {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(instituicao)
-        // }
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(instituicao)
+    }
+
+    console.log(instituicao)
     
-        // fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         console.log(data)
-        //     });
+    fetch('http://localhost:3000/instituicao/cadastrarInstituicao', config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+        });
 }

@@ -9,13 +9,11 @@ body {
 main {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
     list-style: none;
     text-decoration: none;
     padding: 0px 0 50px;
     gap: 25px;
-    height: 100vh;
 }
 
 main h4 {
