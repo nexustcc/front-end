@@ -30,6 +30,7 @@ inputNumeroCartao.addEventListener('input', function (e) {
     e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
     preencherCartao(inputNumeroCartao, textCartaoNumero)
 });
+
 inputNomeCartao.addEventListener('input', function (e) { preencherCartao(inputNomeCartao, textCartaoNome) });
 
 $(inputConfirmarEmail).on('input', function () {    

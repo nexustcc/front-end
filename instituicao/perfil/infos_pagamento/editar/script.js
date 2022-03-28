@@ -1,7 +1,25 @@
 "use strict";
 
+const inputDataValidadeCartao = document.getElementById('input_validate');
+const inputNumeroCartao = document.getElementById('input_numero_do_cartao');
+
+$(document).ready(function(){        
+    $(inputDataValidadeCartao).mask('99/99');
+});
+
+inputNumeroCartao.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+});
+
+const isInputNumber = (evt) =>{
+    let char = String.fromCharCode(evt.which);
+    if(!(/[0-9]/.test(char))) {
+        evt.preventDefault();
+    }
+}
+
 async function getInfoCartao() {
-    let idInstituicao = 9;
+    let idInstituicao = 1;
 
     const url = `http://localhost:3000/cartao/listarCartao/${idInstituicao}`;
 
@@ -42,7 +60,7 @@ const converterDataBanco = (inputValue) => {
 async function editarInstituicao(nome, dataValidade, cvv, numero){
     event.preventDefault();
 
-    let idInstituicao = 9;
+    let idInstituicao = 1;
 
     // const cartao = {
     //     "nomeNoCartao": "teste",
