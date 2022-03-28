@@ -25,7 +25,7 @@ function exibirDados(instituicao) {
 }
 
 async function getInfoInstituicao() {
-    const url = `http://localhost:3000/instituicao/listarInstituicao/8`
+    const url = `http://localhost:3000/instituicao/listarInstituicao/1`
 
     fetch (url).then(response => response.json).then(console.log)
     const dados = await fetch(url)

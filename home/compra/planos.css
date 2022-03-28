@@ -4,18 +4,17 @@ header, main {
 
 body {
     overflow-x: hidden;
+    height: 100vh;
 }
 
 main {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
     list-style: none;
     text-decoration: none;
-    padding: 0px 0 50px;
+    padding: 0px 0 10vh;
     gap: 25px;
-    height: 100vh;
 }
 
 main h4 {

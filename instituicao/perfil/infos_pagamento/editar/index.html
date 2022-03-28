@@ -10,12 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+
+    <script src="./script.js" defer></script>
+
     <title>EDITAR INFORMAÇÕES DE PAGAMENTO</title>
   </head>
   <body>
     <div class="container mt-5 container">
         <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>
-        <form class="row g-3">
+        <form onsubmit="validacao()" class="row g-3">
 
           <div class="col-md-12" id="icon">
             <label for="numero_do_cartao" class="form-label">Número do cartão</label>

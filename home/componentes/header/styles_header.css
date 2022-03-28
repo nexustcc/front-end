@@ -27,11 +27,84 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    /* background-color: black; */
+    width: 100%;
 }
 
 header img {
     width: 72px;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.navegacao .hamburguer {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.navegacao .hamburguer:before,
+.navegacao .hamburguer:after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navegacao .hamburguer:before {
+    top: -10px;
+    width: 20px;
+}
+
+.navegacao .hamburguer:after {
+    top: 10px;
+    width: 25px;
+}
+
+.navegacao .toggle-menu {
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.navegacao .hamburguer,
+.navegacao .toggle-menu {
+    display: none;
+}
+
+.navegacao input:checked ~ .hamburguer {
+    background: transparent;
+}
+
+.navegacao input:checked ~ .hamburguer::before {
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+.navegacao input:checked ~ .hamburguer::after {
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+}
+
+.navegacao input:checked ~ .nav_links {
+    left: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -40,24 +113,27 @@ header img {
 
 .nav_links {
     list-style: none;
-}
-
-.nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    gap: 40px;
 }
 
 .nav_links li a {
+    display: block;
+    line-height: 1;
     transition: all 0.3s ease 0s;
 }
 
 .nav_links li a:hover {
-    color: #0987F7;
+    color: #0987f7;
 }
 
 header button {
     padding: 9px 25px;
-    background-color: #49A6F9;
+    background-color: #49a6f9;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -66,7 +142,7 @@ header button {
 }
 
 header button:hover {
-    background-color: #0987F7; 
+    background-color: #0987f7;
 }
 
 .login_adquirir {
@@ -76,14 +152,65 @@ header button:hover {
 }
 
 .login_link:hover {
-    color: #0987F7;
+    color: #0987f7;
     transition: all 0.3s ease 0s;
 }
 
-@media (max-width: 768px) {
-    
+@media (max-width: 992px) {
+    header img {
+        position: absolute;
+        left: 20%;
+        top: 20px;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    .toggle-menu {
+        z-index: -99;
+    }
+
+    .navegacao .hamburguer,
+    .navegacao .toggle-menu {
+        display: block;
+        position: absolute;
+        left: 0;
+        margin-left: 7%;
+        top: 40px;
+    }
+
     .nav_links {
-        display: none;
+        justify-content: start;
+        flex-direction: column;
+        gap: 0px;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        background-color: #044177;
+        width: 300px;
+        height: 100%;
+        padding-top: 75px;
+    }
+
+    .nav_links li {
+        width: 100%;
+    }
+
+    .nav_links li a {
+        transition: 0.3s;
+    }
+
+    .nav_links li a:hover {
+        transform: scale(1.05);
+        color: #fff;
+    }
+
+    .nav_links li a,
+    .nav_links li a:hover {
+        padding: 30px;
+        font-size: 24px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
     }
 
     header button {
@@ -92,6 +219,6 @@ header button:hover {
 
     .login_adquirir {
         gap: 15px;
+        margin-top: 15px;
     }
-
 }
