@@ -402,7 +402,7 @@ h1 {
     width: 100%;
 }
 
-#primeiro_botao {
+.terceiro_botao {
     margin-top: 2vh;
     width: 98%;
     background-color: rgba(240, 248, 255, 0);
@@ -414,7 +414,7 @@ h1 {
     background-color: #A71E34;
 }
 
-#segundo_botao {
+.segundo_botao {
     margin-top: 2vh;
     width: 98%;
     background-color: rgba(240, 248, 255, 0);
@@ -426,7 +426,7 @@ h1 {
     padding: 15px
 }
 
-#terceiro_botao {
+.primeiro_botao {
     margin-top: 2vh;
     width: 98%;
     background-color: rgba(240, 248, 255, 0);
