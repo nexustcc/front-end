@@ -10,15 +10,14 @@ function exitModal() {
     document.querySelector(".bg").style.display = "none";
 }
 
-function changeModal() {
-    document.querySelector(".modal-selecao").style.display = "flex";
+function showModalEditar() {
+    document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 }
 
-function exitChangeModal() {
-    document.querySelector(".modal").style.display = "none";
+function exitModalEditar() {
+    document.querySelector(".modal-editar").style.display = "none";
     document.querySelector(".bg").style.display = "none";
-    document.querySelector(".modal-selecao").style.display = "none";
 }
 
 function showModalCurso() {
@@ -40,3 +39,7 @@ function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }
+
+document.getElementById("terceiro_botao")
+    .addEventListener("click", showModal);
+

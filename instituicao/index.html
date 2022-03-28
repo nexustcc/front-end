@@ -27,45 +27,45 @@
 
       <div class="col-md-12">
         <label for="email_institucional" class="form-label">E-mail institucional</label>
-        <input id="input_email_institucional" type="email" class="form-control email_institucional" disabled>
+        <input id="input_email_institucional" type="email" class="form-control email_institucional" placeholder="xxxxxxxxxxxx@gmail.com" disabled>
       </div>
 
       <div class="col-md-6">
         <label for="nome_da_instituicao" class="form-label">Nome da instituição</label>
-        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" disabled>
+        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" placeholder="xxxxxxx xx xxxxxxx" disabled>
       </div>
 
       <div class="col-md-6 for-cnp">
         <label for="cnpj" class="form-label">CNPJ</label>
-        <input id="cnpj_instituicao" type="text" class="form-control cnpj" disabled>
+        <input id="cnpj_instituicao" type="text" class="form-control cnpj" placeholder="XX. XXX. XXX/0001-XX" disabled>
       </div>
 
       <div class="col-md-6">
         <label for="telefone" class="form-label">Telefone</label>
-        <input id="telefone_instituicao" type="text" class="form-control telefone" disabled>
+        <input id="telefone_instituicao" type="text" class="form-control telefone" placeholder="(xx)xxxxx-xxxx" disabled>
       </div>
 
       <div class="col-md-6">
         <label for="senha" class="form-label">Senha</label>
-        <input id="senha_instituicao" type="password" class="form-control senha" disabled>
+        <input id="senha_instituicao" type="password" class="form-control senha" placeholder="xxxxxxx" disabled>
       </div>
     </form>
     <div class="button">
       <div class="col-md-6">
-       <a href="../instituicao/perfil/infos_pagamento/index.html"> <button id="primeiro_botao" type="submit"> INFORMAÇÕES DE PAGAMENTO</button></a> 
+       <a href="../instituicao/perfil/infos_pagamento/index.html"> <button id="primeiro_botao" type="button"> INFORMAÇÕES DE PAGAMENTO</button></a> 
       </div>
       <div class="col-md-3">
-        <a href="./perfil/editar/index.html"><button id="segundo_botao" type="submit"> EDITAR</button></a> 
+        <a href="./perfil/editar/index.html"><button id="segundo_botao" type="button"> EDITAR</button></a> 
       </div>
       <div class="col-md-3">
-        <button id="terceiro_botao" type="">EXCLUIR</button>
+        <button id="terceiro_botao" type="button">EXCLUIR</button>
       </div>
     </div>
   </div>
 
   <div class="container mt-5 container modal">
     <div>
-      <h1>Deseja excluir essa conta?</h1>
+      <h1>DESEJA EXCLUIR ESSA CONTA?</h1>
       <h2>Lembre-se que essa é uma ação irreversível!</h2>
     </div>
 
@@ -75,8 +75,8 @@
     </div>
 
     <div class="buttons">
-      <button class="col-md-3" id="primeiro_botao_modal" onclick="exitModal()">CANCELAR</button>
-      <button class="col-md-3" id="segundo_botao_modal" onclick="exitModal()">CONFIRMAR</button>
+      <button class="col-md-6" id="primeiro_botao_modal" onclick="exitModal()">CANCELAR</button>
+      <button class="col-md-6" id="terceiro_botao" onclick="exitModal()">CONFIRMAR</button>
     </div>
 
   </div>

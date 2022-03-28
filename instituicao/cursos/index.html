@@ -32,11 +32,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="curso">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -46,11 +47,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="curso">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -60,11 +62,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="turma">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -74,11 +77,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="turma">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -88,11 +92,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="turma">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -102,11 +107,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="turma">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -116,11 +122,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="turma">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -130,11 +137,12 @@
                 <li id="li" class="list-group-item li">
                     <div id="icone">
                         <p class="turma">Curso:</p>
-                       <img id="book" src="./img/books.svg" alt="book">
+                        <img id="book" src="./img/books.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS PRESENTES NO CURSO</button>
+                        <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
@@ -146,189 +154,6 @@
             <h1>NOVO CURSO</h1>
             <img id="book" src="./img/books.svg" alt="book">
             <button onclick="showModalCurso()" id="primeiro_botao">CRIAR NOVO CURSO</button>
-            <button onclick="showModal()" id="terceiro_botao">CRIAR TURMA NO CURSO</button>
-        </div>
-    </div>
-
-    <div class="container mt-5 container modal">
-        <h1>CRIAR NOVA TURMA</h1>
-        <form class="row g-7">
-
-            <div class="col-md-12 lab-inp">
-                <label for="nome_da_turma" class="form-label">Nome da turma</label>
-                <input type="text" class="form-control nome_da turma" placeholder="ADM 1s">
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="numero_de_estudantes" class="form-label">Número de estudantes</label>
-                <input type="text" class="form-control numero_de_estudantes" placeholder="Universidade De Curitiba ">
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="curso" class="form-label">Curso</label>
-                <select class="form-select curso-select" aria-label="Default select example">
-                    <option selected>Selecione o curso</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="data_inicio" class="form-label">Data de inicio</label>
-                <input type="date" class="form-control data_inicio" placeholder="Universidade De Curitiba ">
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="data_termino" class="form-label">Data de termino</label>
-                <input type="date" class="form-control data_termino" placeholder="Universidade De Curitiba ">
-            </div>
-            <div class="buttons">
-                <div class="buttons-buttons">
-                    <div class="col-md-6">
-                        <button id="terceiro_botao" onclick="changeModal()" type="button">SELECIONAR PARTICIPANTES PARA
-                            COMPOR TURMA</button>
-                    </div>
-                    <div class="col-md-6">
-                        <button id="primeiro_botao" type="button" onclick="exitModal()">CRIAR TURMA SEM
-                            PARTICIPANTES</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <button id="segundo_botao" onclick="exitModal()" type="button">CANCELAR</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="container mt-5 container modal modal-selecao">
-        <div class="participantes">
-            <div class="selecionar">
-                <h2>SELECIONE OS PARTICIPANTES DA TURMA</h2>
-                <div class="ul-1">
-                    <ul id="selected">
-                        <li class="li-user">
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul id="selected">
-                        <li class="li-user">
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="selecionados">
-                <h2>SELECIONADOS PARA COMPOR A TURMA</h2>
-                <div class="col-md-12 lab-inp-participantes">
-                    <input type="text" class="form-control nome_da turma" placeholder="ADM 1s">
-                </div>
-                <div class="ul-2">
-                    <ul id="selected">
-                        <li class="li-user">
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul id="selected">
-                        <li class="li-user">
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                            <div id="icone">
-                                <span class="iconify icone-user" data-icon="carbon:user-avatar-filled-alt"
-                                    style="color: #05204a;" data-width="80" data-height="80"></span>
-                                <p class="nome">NOME</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="buttons-buttons">
-            <div class="col-md-3">
-                <button id="segundo_botao" onclick="exitChangeModal()" type="button">CANCELAR</button>
-            </div>
-            <div class="col-md-3">
-                <button id="terceiro_botao" onclick="exitChangeModal()">SALVAR</button>
-            </div>
         </div>
     </div>
 
@@ -339,9 +164,9 @@
             <div class="lab-inp">
                 <label for="senha-label" class="form-label">Insira o nome desejado para o curso</label>
                 <input type="password" class="form-control senha-label">
-              </div>
+            </div>
 
-           
+
             <div class="buttons">
                 <div class="col-md-6">
                     <button id="terceiro_botao" onclick="exitModalCurso()" type="button">CRIAR</button>
@@ -353,26 +178,40 @@
         </form>
     </div>
 
-    <div class="ccontainer modal modal-excluir">
-        <h1>EXCLUIR CURSO</h1>
-        <h2>Lembre-se que essa é uma ação irreversível!</h2>
+    <div class="ccontainer modal modal-editar">
+        <h1>EDITAR CURSO</h1>
         <form class="row g-7">
 
             <div class="lab-inp">
-                <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
+                <label for="senha-label" class="form-label">Insira o novo nome desejado para o curso</label>
                 <input type="password" class="form-control senha-label">
-              </div>
+            </div>
 
-           
+
             <div class="buttons">
+                <div class="col-md-6">
+                    <button id="terceiro_botao" onclick="exitModalCurso()" type="button">SALVAR</button>
+                </div>
                 <div class="col-md-6">
                     <button id="segundo_botao" onclick="exitModalCurso()" type="button">CANCELAR</button>
                 </div>
-                <div class="col-md-6">
-                    <button id="terceiro_botao" onclick="exitModalCurso()" type="button">CONFIRMAR</button>
-                </div>
             </div>
         </form>
+    </div>
+
+    <div class="ccontainer modal modal-excluir">
+        <h1>DESEJA EXCLUIR ESSE CURSO?</h1>
+        <h2>Lembre-se que essa é uma ação irreversível!</h2>
+
+        <div class="buttons">
+            <div class="col-md-12">
+                <button id="segundo_botao" onclick="exitModalCurso()" type="button">CANCELAR</button>
+            </div>
+            <div class="col-md-12">
+                <button id="quarto_botao" onclick="exitModalCurso()" type="button">CONFIRMAR</button>
+            </div>
+        </div>
+
     </div>
 </body>
 

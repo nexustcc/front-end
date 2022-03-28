@@ -93,8 +93,9 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    width: 90vw;
-    height:40vh;
+    width: 40%;
+    height:35%;
+    padding: 2%;
     background-color: rgb(255, 255, 255);
     display: none;
     align-items: center;
@@ -103,7 +104,6 @@ button {
     justify-content: space-around;
     font-family: 'Poppins', sans-serif;
     border-radius: 20px;
-    padding: 15px;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -114,15 +114,15 @@ button {
 
 .modal h1 {
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 700;
     text-align: center;
     color: #05204A;
 }
 
 .modal h2 {
     margin: 2% 0 2% 0;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 400;
     text-align: center;
     color: #A71E34;
 }
@@ -134,7 +134,7 @@ button {
 }
 
 .modal input {
-    width: 45vw;
+    width: 100%;
 }
 
 .buttons {
@@ -156,10 +156,6 @@ button {
     padding: 15px;
     background-color: #C2C2C2;
     margin-right: 5%;
-}
-
-#primeiro_botao:hover{
-    
 }
 
 #segundo_botao_modal {
