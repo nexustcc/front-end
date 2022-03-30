@@ -48,7 +48,6 @@ function exibirDados(cartao) {
 }
 
 const converterDataBanco = (inputValue) => {
-    console.log(inputValue)
     let splitedDate = inputValue.split(['/'])
     let dateString = '01/' + splitedDate[0] + '/' + '20' + splitedDate[1];
     let splitedDateString = dateString.split(['/']);
@@ -67,8 +66,6 @@ async function editarInstituicao(nome, dataValidade, cvv, numero){
         "cvv": parseInt(document.getElementById('input_cvv').value),
         "numero": document.getElementById('input_numero_do_cartao').value.toString()
     }
-
-    console.log(cartao)
 
     const config = {
         method: 'PUT',
