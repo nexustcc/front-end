@@ -7,7 +7,6 @@
  body{
     width: 100vw;
     height: 100vh;
-    font-family: 'Roboto';
 }
 
 header{
@@ -26,4 +25,17 @@ header .primeira_parte{
 
 header h1{
     font-size: 24px;
+}
+
+@media (max-width: 500px) {
+
+    header .primeira_parte {
+        display: none;
+    }
+
+    header {
+        padding: 10px;
+        justify-content: end;
+    }
+
 }
