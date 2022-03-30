@@ -12,6 +12,7 @@ tiposUsuario.forEach((tipoUsuario) => {
 })
 
 function showModal() {
+    document.querySelector(".modal-editar").style.display = "none";
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 }

@@ -39,7 +39,3 @@ function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }
-
-document.getElementById("terceiro_botao")
-    .addEventListener("click", showModal);
-

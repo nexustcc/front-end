@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 
-    <title>Document</title>
+    <title>CADASTRO DE USUÁRIO</title>
 </head>
 <div class="bg"></div>
 
@@ -152,7 +152,7 @@
 
     <div class="container mt-5 container modal">
         <h1>CRIAR NOVO USUÁRIO</h1>
-        <form class="row g-7">
+        <form class="row g-7" id="modal">
 
             <div class="col-md-12 lab-inp">
                 <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
@@ -171,22 +171,17 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="tipo-select" class="form-label">Tipo</label>
-                <select class="form-select tipo-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select tipo-select" id="tipo-select" aria-label="Default select example">
+                    <option selected>SELECIONE O TIPO DE USUÁRIO</option>
+                    <option value="1">Professor</option>
+                    <option value="2">Aluno</option>
+                    <option value="3">Avaliador</option>
                 </select>
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="turma-select" class="form-label">Turma</label>
-                <select class="form-select turma-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+                <label for="turma" class="form-label">Turma</label>
+                <input type="text" class="form-control turma">
             </div>
 
             <div class="buttons">
@@ -195,7 +190,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="terceiro_botao" onclick="exitModal()" type="button">SALVAR</button>
+                    <button class="terceiro_botao" type="button" onclick="resetForm()">SALVAR</button>
                 </div>
             </div>
         </form>
@@ -222,12 +217,12 @@
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="data-inicio" class="form-label">Data de inicio do curso</label>
+                <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
                 <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="data-termino" class="form-label">Data de termino do curso</label>
+                <label for="data-termino" class="form-label">Data de termino das aulas</label>
                 <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68" disabled>
             </div>
 

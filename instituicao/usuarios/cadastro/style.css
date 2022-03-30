@@ -28,9 +28,6 @@ body {
     width: 100vw;
 }
 
-
-
-
 #ul::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */

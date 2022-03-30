@@ -33,3 +33,7 @@ function showModalEditar() {
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
 }
+
+function resetForm() {
+    document.getElementById("modal").reset();
+}

@@ -461,6 +461,37 @@ img {
     background-color: red;
 }
 
+
+.icon input {
+    padding-right: 50px;
+}
+
+.icon {
+    position: relative;
+}
+
+.icon i {
+    position: absolute;
+    right: 3%;
+    top: 25%;
+    padding: 9px 8px;
+    color: #808080;
+    transition: 0.3s;
+}
+
+.addCurso{
+    background-color: #05204A;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 50px;
+ 
+  border-radius: 50%;
+}
+  .button5 {border-radius: 50%;}
+
 @media (max-width: 830px) {
 
     #book{
