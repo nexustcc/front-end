@@ -13,36 +13,49 @@
   <link
   href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
   rel="stylesheet">
+  <link rel="stylesheet" href="componentes/header/styles_header.css">
   <script src="script.js" defer></script>
-  <title>PERFIL DA INSTITUIÇÃO</title>
+  <title>Perfil</title>
 </head>
 
 <div class="bg"></div>
 
 
 <body>
+
+  <header>
+    <div class="primeira_parte">
+        <img src="componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas">
+        <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+    </div>
+    
+    <a href="index.html">
+        <img src="componentes/header/img/perfil_instituicao.svg" alt="perfil">
+    </a>
+</header>
+
   <div class="container">
     <h1>PERFIL DA INSTITUIÇÃO</h1>
     <form class="row g-3">
 
       <div class="col-md-12">
         <label for="email_institucional" class="form-label">E-mail institucional</label>
-        <input id="input_email_institucional" type="email" class="form-control email_institucional" placeholder="xxxxxxxxxxxx@gmail.com" disabled>
+        <input id="input_email_institucional" type="email" class="form-control email_institucional" placeholder="xxxxxxxxxxxx@email.com" disabled>
       </div>
 
       <div class="col-md-6">
         <label for="nome_da_instituicao" class="form-label">Nome da instituição</label>
-        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" placeholder="xxxxxxx xx xxxxxxx" disabled>
+        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" placeholder="xxxxxxx xxxxxxx" disabled>
       </div>
 
       <div class="col-md-6 for-cnp">
         <label for="cnpj" class="form-label">CNPJ</label>
-        <input id="cnpj_instituicao" type="text" class="form-control cnpj" placeholder="XX. XXX. XXX/0001-XX" disabled>
+        <input id="cnpj_instituicao" type="text" class="form-control cnpj" placeholder="xx.xxx.xxx/0001-xx" disabled>
       </div>
 
       <div class="col-md-6">
         <label for="telefone" class="form-label">Telefone</label>
-        <input id="telefone_instituicao" type="text" class="form-control telefone" placeholder="(xx)xxxxx-xxxx" disabled>
+        <input id="telefone_instituicao" type="text" class="form-control telefone" placeholder="(xx) xxxx-xxxx" disabled>
       </div>
 
       <div class="col-md-6">

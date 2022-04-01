@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
 
-  <script type="text/javascript" src="../../../jquery/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="../../../jquery/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="../../../../jquery/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../../../jquery/jquery.mask.min.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
@@ -22,15 +22,28 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.maskedinput/1.3.1/jquery.maskedinput.js"></script>
 
+  <link rel="stylesheet" href="../../../componentes/header/styles_header.css">
   <script src="./script.js" defer></script>
 
   <title>EDITAR INFORMAÇÕES DE PAGAMENTO</title>
 </head>
 
 <body>
+
+  <header>
+    <div class="primeira_parte">
+        <img src="../../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas">
+        <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+    </div>
+    
+    <a href="../../../index.html">
+        <img src="../../../componentes/header/img/perfil_instituicao.svg" alt="perfil">
+    </a>
+  </header>
+  
   <div class="container mt-5 container">
     <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>
-    <form onsubmit="validacao()" class="row g-3">
+    <form onsubmit="editarInstituicao()" class="row g-3">
 
       <div class="col-md-12" id="icon">
         <label for="numero_do_cartao" class="form-label">Número do cartão</label>
@@ -46,7 +59,7 @@
 
       <div class="col-md-6" id="icon">
         <label for="validade" class="form-label">Validade</label>
-        <input id="input_validate" type="text" class="form-control validade" required>
+        <input id="input_validade" type="text" class="form-control validade" required>
         <i class="fa fa-edit" style="font-size:24px"></i>
       </div>
 
@@ -63,7 +76,6 @@
 
         <div class="col-md-3">
           <input id="segundo_botao" type="submit" value="SALVAR">
-          <!-- <button id="segundo_botao" type=""><a href="../../../index.html">SALVAR</a></button> -->
         </div>
       </div>
 
