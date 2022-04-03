@@ -176,7 +176,6 @@ img {
     overflow-y: auto;
 }
 
-
 #ul::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
@@ -278,7 +277,7 @@ img {
     font-weight: 400;
 }
 
-.lab-inp input{
+.lab-inp input {
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
