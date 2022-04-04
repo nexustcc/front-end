@@ -152,6 +152,7 @@ body {
     background-color: rgba(0, 0, 0, 0.658);
 }
 
+
 img {
     width: 100%;
     margin-bottom: 1%;
@@ -177,8 +178,19 @@ img {
     padding: 2%;
     overflow-y: auto;
 }
+
+#ul-grupo {
+    margin: 1% 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-color: #05204A;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
 #book {
-    width: 7vw;
+    width: 5.5vw;
 }
 
 #li {
@@ -190,13 +202,54 @@ img {
     padding: 0 5%;
 }
 
-#icone {
+#turma {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3%;
+    margin: 1%;
 }
 
+#membro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+}
+
+#grupo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+}
+
+#ul-turma::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#ul-turma::-webkit-scrollbar-thumb {
+    background-color: #05204A;
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+    border: none;
+    /* creates padding around scroll thumb */
+}
+
+#ul-grupo::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#ul-grupo::-webkit-scrollbar-thumb {
+    background-color: #05204A;
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+    border: none;
+    /* creates padding around scroll thumb */
+}
 
 #novo_curso h1 {
     font-weight: 700;
@@ -293,25 +346,6 @@ img {
     flex-direction: row-reverse;
 }
 
-.modal-editar {
-    width: 40%;
-    height: 30vh;
-    display: none;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 20px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    font-weight: 100;
-}
-
 .modal-excluir {
     width: 40%;
     height: 30vh;
@@ -392,28 +426,6 @@ img {
     border-radius: 50%;
     margin-right: 3%;
     margin-bottom: -35%;
-}
-
-.modal-membros {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50vh;
-    background-color: rgb(255, 255, 255);
-    display: none;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
-    padding: 2%;
-    border-radius: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
 }
 
 .buttons-modal{

@@ -209,6 +209,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1%;
 }
 
 .turmas_existentes {
@@ -236,7 +237,7 @@ img {
 
 #icon i {
     position: absolute;
-    right: 6%;
+    right: 4vw;
     top: 65%;
     padding: 9px 8px;
     color: #808080;
@@ -372,20 +373,5 @@ img {
     .livro {
         display: none;
     }
-    #icon {
-        position: relative;
-    }
-    #icon i {
-        position: absolute;
-        right: 7%;
-        top: 65%;
-        padding: 9px 8px;
-        color: #808080;
-        transition: 0.3s;
-    }
-    #icon.inputIconBg i {
-        background-color: #aaa;
-        padding: 9px 4px;
-        border-radius: 4px 0 0 4px;
-    }
+
 }

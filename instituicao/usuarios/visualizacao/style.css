@@ -179,6 +179,15 @@ h1 {
     color: #05204A;
 }
 
+h2 {
+    font-size: 30px;
+    color: #05204A;
+}
+p {
+    font-size: 30px;
+    color: #05204A;
+}
+
 #ul {
     width: 100%;
     height: 50vw;
@@ -197,11 +206,7 @@ h1 {
     justify-content: space-between;
 }
 
-#icone {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 #turma_selecionada {
     display: flex;
@@ -228,19 +233,6 @@ h1 {
     font-weight: 400;
 }
 
-#icon {
-    position: relative;
-}
-
-#icon i {
-    position: absolute;
-    right: 0%;
-    top: 8%;
-    padding: 9px 8px;
-    color: #808080;
-    transition: 0.3s;
-}
-
 #icon.inputIconBg i {
     background-color: #aaa;
     padding: 9px 4px;
@@ -253,7 +245,7 @@ h1 {
 
 #icon-edit i {
     position: absolute;
-    right: 2%;
+    right: 1vw;
     top: 45%;
     padding: 9px 8px;
     color: #808080;
@@ -278,9 +270,6 @@ h1 {
     justify-content: center;
 }
 
-#icone {
-    margin: 0 15% 0 5%;
-}
 
 #selected::-webkit-scrollbar {
     width: 12px;
@@ -360,29 +349,6 @@ h1 {
     margin-bottom: 1%;
 }
 
-.modal-editar {
-    display: none;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50vh;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
-    padding: 2%;
-    border-radius: 20px;
-    width: 100vw;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
 .lab-inp input {
     background-color: #E3E3E3;
     border-radius: 10px;

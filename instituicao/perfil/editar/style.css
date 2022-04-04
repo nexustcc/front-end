@@ -46,7 +46,7 @@ button {
     color: white;
     background-color: #C2C2C2;
     border-radius: 30px;
-    padding: 15px
+    padding: 15px;
 }
 
 .buttons {
@@ -71,7 +71,8 @@ a:hover {
     color: white;
     background-color: #044177;
     border-radius: 30px;
-    padding: 15px
+    padding: 15px;
+    border: #05204A;
 }
 
 #icon input {
@@ -84,7 +85,7 @@ a:hover {
 
 #icon i {
     position: absolute;
-    right: 1%;
+    right: 1vw;
     top: 45%;
     padding: 9px 8px;
     color: #808080;
@@ -95,17 +96,4 @@ a:hover {
     background-color: #aaa;
     padding: 9px 4px;
     border-radius: 4px 0 0 4px;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        padding: 50px;
-    }
-    .container h1 {
-        text-align: center;
-        font-size: clamp(1rem, 10vw, 4.25rem);
-    }
-    form div {
-        max-width: 10px;
-    }
 }

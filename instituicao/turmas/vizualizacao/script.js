@@ -10,6 +10,16 @@ function exitModal() {
     document.querySelector(".modal").style.display = "none";
 }
 
+function showModalGrupos() {
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-grupos").style.display = "flex";
+}
+
+function exitModalGrupos() {
+    document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal-grupos").style.display = "none";
+}
+
 function showModalExcluir() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-excluir").style.display = "flex";
