@@ -1,5 +1,15 @@
 "use strict"
 
+function showModal() {
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal").style.display = "flex";
+}
+
+function exitModal() {
+    document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal").style.display = "none";
+}
+
 function showModalExcluir() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-excluir").style.display = "flex";
