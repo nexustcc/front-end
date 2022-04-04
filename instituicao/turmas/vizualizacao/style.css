@@ -136,20 +136,6 @@ body {
     justify-content: center;
 }
 
-#selected::-webkit-scrollbar {
-    width: 12px;
-    /* width of the entire scrollbar */
-}
-
-#selected::-webkit-scrollbar-thumb {
-    background-color: #05204A;
-    /* color of the scroll thumb */
-    border-radius: 10px;
-    /* roundness of the scroll thumb */
-    border: none;
-    /* creates padding around scroll thumb */
-}
-
 .modal h1 {
     font-size: 70px;
     font-weight: 700;
@@ -182,29 +168,15 @@ img {
 }
 
 #ul-turma {
+    margin: 1% 0;
     width: 100%;
+    height: 100%;
     border: 2px solid;
     border-color: #05204A;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
 }
-
-
-#ul::-webkit-scrollbar {
-    width: 12px;
-    /* width of the entire scrollbar */
-}
-
-#ul::-webkit-scrollbar-thumb {
-    background-color: #05204A;
-    /* color of the scroll thumb */
-    border-radius: 10px;
-    /* roundness of the scroll thumb */
-    border: none;
-    /* creates padding around scroll thumb */
-}
-
 #book {
     width: 7vw;
 }
@@ -401,6 +373,11 @@ img {
     font-size: 50px;
 }
 
+.buttonAddTurma{
+    margin-top: 80vh;
+    margin-right: 2%;
+}
+
 .addTurma {
     background-color: #044177;
     border: none;
@@ -437,6 +414,12 @@ img {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.buttons-modal{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 
