@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 
-    <title>CADASTRO E LISTAGEM DE CURSOS</title>
+    <title>Cursos</title>
 </head>
 <div class="bg"></div>
 
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="col-md-6 for-cnp cursos_existentes" id="icon">
                 <label for="cursos_ex" class="form-label">CURSOS EXISTENTES</label>
-                <input type="text" class="form-control cursos_ex">
+                <input type="text" class="form-control cursos_ex" id="inputBuscarCurso" placeholder="Insira o nome do curso que procura...">
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
@@ -43,7 +43,7 @@
                     <div id="icone">
                         <p class="curso">Curso:</p>
                         <img id="book" src="./img/books.svg" alt="book">
-                        <p class="nome">NOME</p>
+                        <p class="nome" id="textNomeCurso">NOME</p>
                     </div>
                     <div class="button">
                         <button id="terceiro_botao">TURMAS EXISTENTES NO CURSO</button>
@@ -61,7 +61,7 @@
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
-                        <button id="terceiro_botao">TURMAS EXISTENTES NO CURSO</button>
+                        <button id="terceiro_botao" id="btnTurmasCurso">TURMAS EXISTENTES NO CURSO</button>
                         <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">EDITAR</button>
                         <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
                     </div>
@@ -170,19 +170,17 @@
         <form class="row g-7">
 
             <div class="lab-inp">
-                <label for="senha-label" class="form-label">Insira o nome desejado para o curso
-                    ;
-                </label>
-                <input type="password" class="form-control senha-label">
+                <label for="senha-label" class="form-label">Insira o nome desejado para o curso:</label>
+                <input type="text" class="form-control senha-label" id="inputCriarCurso" maxlength="255" required>
             </div>
 
 
             <div class="buttons">
                 <div class="col-md-6">
-                    <button id="terceiro_botao" onclick="exitModalCurso()" type="button">CRIAR</button>
+                    <button id="segundo_botao" onclick="exitModalCurso()" type="button">CANCELAR</button>
                 </div>
                 <div class="col-md-6">
-                    <button id="segundo_botao" onclick="exitModalCurso()" type="button">CANCELAR</button>
+                    <button id="terceiro_botao" type="submit">CRIAR</button>
                 </div>
             </div>
         </form>
@@ -194,17 +192,16 @@
 
             <div class="lab-inp">
                 <label for="senha-label" class="form-label">Insira o novo nome desejado para o curso:</label>
-                <input type="password" class="form-control senha-label">
+                <input id="inputEditarNomeCurso" type="text" class="form-control senha-label" maxlength="255" required>
                 <i class="fa fa-edit" style="font-size: 24px"></i>
             </div>
 
-
             <div class="buttons">
                 <div class="col-md-6">
-                    <button id="terceiro_botao" onclick="exitModalEditar()" type="button">SALVAR</button>
+                    <button id="segundo_botao" onclick="exitModalEditar()" type="button">CANCELAR</button>
                 </div>
                 <div class="col-md-6">
-                    <button id="segundo_botao" onclick="exitModalEditar()" type="button">CANCELAR</button>
+                    <button id="terceiro_botao" type="submit">SALVAR</button>
                 </div>
             </div>
         </form>
@@ -219,7 +216,7 @@
                 <button id="segundo_botao" onclick="exitModalExcluir()" type="button">CANCELAR</button>
             </div>
             <div class="col-md-12">
-                <button id="quarto_botao" onclick="exitModalExcluir()" type="button">CONFIRMAR</button>
+                <button id="quarto_botao" onclick="exitModalExcluir()" type="submit">CONFIRMAR</button>
             </div>
         </div>
 
