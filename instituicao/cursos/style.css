@@ -1,242 +1,534 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    .container-geral {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    body {
-        height: 100vh;
-        position: relative;
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2%;
-        height: 100vh;
-    }
-    
-    .cursos_existentes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        color: #044177;
-        font-size: 50px;
-        font-weight: 700;
-        margin-bottom: 3%;
-    }
-    
-    .cursos_existentes input {
-        background-color: #E3E3E3;
-        border-radius: 10px;
-        border: none;
-        padding: 15px;
-        width: 90%;
-    }
-    
-    .curso-select {
-        background-color: #E3E3E3;
-        border-radius: 10px;
-        border-bottom: 1px solid #05204A;
-        padding: 15px
-    }
-    
-    .lab-inp input {
-        background-color: #E3E3E3;
-        border-radius: 10px;
-        border-bottom: 1px solid #05204A;
-        padding: 15px
-    }
-    
-    .lab-inp label {
-        font-weight: 400;
-    }
-    
-    #ul::-webkit-scrollbar {
-        width: 12px;
-        /* width of the entire scrollbar */
-    }
-    
-    #ul::-webkit-scrollbar-thumb {
-        background-color: #05204A;
-        /* color of the scroll thumb */
-        border-radius: 10px;
-        /* roundness of the scroll thumb */
-        border: none;
-        /* creates padding around scroll thumb */
-    }
-    
-    .modal {
-        margin-top: auto;
-        width: 100%;
-        height: 50vh;
-        background-color: rgb(255, 255, 255);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-geral {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    height: 100vh;
+}
+
+.cursos_existentes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: #044177;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+.cursos_existentes input {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    width: 90%;
+}
+
+.curso-select {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+}
+
+.lab-inp input {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+}
+
+.lab-inp label {
+    font-weight: 400;
+}
+
+#ul_container::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#ul_container::-webkit-scrollbar-thumb {
+    background-color: #05204a;
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+    border: none;
+    /* creates padding around scroll thumb */
+}
+
+.modal {
+    margin-top: auto;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    padding: 2%;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.participantes {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.ul-1 {
+    background-color: #e3e3e3;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.ul-2 {
+    background-color: #e3e3e3;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.modal .lab-inp-participantes input {
+    background-color: #c2c2c2;
+    border-radius: 10px;
+    padding: 15px;
+    width: 90%;
+    position: absolute;
+}
+
+#selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.li-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#selected::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#selected::-webkit-scrollbar-thumb {
+    background-color: #05204a;
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+    border: none;
+    /* creates padding around scroll thumb */
+}
+
+.modal h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #05204a;
+}
+
+.bg {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+
+img {
+    width: 100%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+#ul_container {
+    width: 100%;
+    border: 2px solid;
+    border-color: #05204a;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+#ul_container::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#ul_container::-webkit-scrollbar-thumb {
+    background-color: #05204a;
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+    border: none;
+    /* creates padding around scroll thumb */
+}
+
+#book {
+    width: 7vw;
+}
+
+#li {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+#icone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3%;
+}
+
+#novo_curso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 40vh;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    overflow-y: auto;
+    color: #044177;
+    padding: 2%;
+    margin-right: 6%;
+}
+
+#novo_curso h1 {
+    font-weight: 700;
+}
+
+#icon {
+    position: relative;
+}
+
+#icon i {
+    position: absolute;
+    right: 7%;
+    top: 65%;
+    padding: 9px 8px;
+    color: #808080;
+    transition: 0.3s;
+}
+
+#icon.inputIconBg i {
+    background-color: #aaa;
+    padding: 9px 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+#li h2 {
+    color: #272727;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.lab-inp {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.curso {
+    font-size: 20px;
+}
+
+.nome {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+#primeiro_botao {
+    margin-top: 2vh;
+    width: 98%;
+    color: white;
+    background-color: #0664b7;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+}
+
+#segundo_botao {
+    margin-top: 2vh;
+    width: 98%;
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    padding: 15px;
+    background-color: #c2c2c2;
+    margin-right: 5%;
+}
+
+#terceiro_botao {
+    margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+}
+
+#quarto_botao {
+    margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #a71e34;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.buttons-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.modal-curso {
+    width: 40%;
+    height: 30vh;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
+.modal-editar {
+    width: 40%;
+    height: 30vh;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
+.modal-excluir {
+    width: 40%;
+    height: 30vh;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
+.modal-excluir h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #05204a;
+}
+
+.modal-excluir h2 {
+    margin: 2% 0 2% 0;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: #a71e34;
+}
+
+.modal-excluir label {
+    font-size: 30px;
+    font-weight: 400;
+    color: #05204a;
+}
+
+.modal-excluir input {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.formExcluir {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
+.modal-curso h1 {
+    font-size: 50px;
+}
+
+#nome_do_curso input {
+    width: 100%;
+}
+
+.modal-selecao h2 {
+    color: #05204a;
+    font-weight: 500;
+}
+
+.modal-curso .buttons button {
+    background-color: red;
+}
+
+.icon input {
+    padding-right: 50px;
+}
+
+.icon {
+    position: relative;
+}
+
+.icon i {
+    position: absolute;
+    right: 3%;
+    top: 25%;
+    padding: 9px 8px;
+    color: #808080;
+    transition: 0.3s;
+}
+
+.addCurso {
+    background-color: #044177;
+    border: none;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button5 {
+    border-radius: 50%;
+    margin-right: 3%;
+    margin-bottom: -35%;
+}
+
+@media (max-width: 830px) {
+    #book {
         display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: 'Poppins', sans-serif;
-        padding: 2%;
-        border-radius: 20px;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
     }
-    
-    .participantes {
-        margin-top: 2%;
+
+    .container {
+        padding: 2%;
+    }
+
+    .container h1 {
         display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
+        font-size: clamp(0rem, 10vw, 4.3rem);
         text-align: center;
     }
-    
-    .ul-1 {
-        background-color: #E3E3E3;
-        width: 95%;
-        border-radius: 20px;
+
+    .card_azul h1 {
+        font-size: clamp(0rem, 10vw, 2.3rem);
     }
-    
-    .ul-2 {
-        background-color: #E3E3E3;
-        width: 95%;
-        border-radius: 20px;
-    }
-    
-    .modal .lab-inp-participantes input {
-        background-color: #C2C2C2;
-        border-radius: 10px;
-        padding: 15px;
-        width: 90%;
-        position: absolute;
-    }
-    
-    #selected {
+
+    #li {
         display: flex;
         flex-direction: column;
-        justify-content: center;
     }
-    
-    .li-user {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+
+    .button h2 {
+        font-size: clamp(0rem, 10vw, 1.5rem);
     }
-    
-    #selected::-webkit-scrollbar {
-        width: 12px;
-        /* width of the entire scrollbar */
+
+    .turma {
+        font-size: clamp(0rem, 10vw, 1.5rem);
+        margin-right: 5%;
     }
-    
-    #selected::-webkit-scrollbar-thumb {
-        background-color: #05204A;
-        /* color of the scroll thumb */
-        border-radius: 10px;
-        /* roundness of the scroll thumb */
-        border: none;
-        /* creates padding around scroll thumb */
-    }
-    
-    .modal h1 {
-        font-size: 70px;
-        font-weight: 700;
-        color: #05204A;
-    }
-    
-    .bg {
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        display: none;
-        background-blend-mode: darken;
-        background-color: rgba(0, 0, 0, 0.658);
-    }
-    
-    img {
-        width: 100%;
-        margin-bottom: 1%;
-        margin-top: 2%;
-    }
-    
-    #ul {
-        width: 100%;
-        border: 2px solid;
-        border-color: #05204A;
-        border-radius: 10px;
-        padding: 2%;
-        overflow-y: auto;
-    }
-    
-    #ul::-webkit-scrollbar {
-        width: 12px;
-        /* width of the entire scrollbar */
-    }
-    
-    #ul::-webkit-scrollbar-thumb {
-        background-color: #05204A;
-        /* color of the scroll thumb */
-        border-radius: 10px;
-        /* roundness of the scroll thumb */
-        border: none;
-        /* creates padding around scroll thumb */
-    }
-    
-    #book {
-        width: 7vw;
-    }
-    
-    #li {
-        border: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5%;
-    }
-    
+
     #icone {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 3%;
+        flex-direction: row;
     }
-    
-    #novo_curso {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 20vw;
-        height: 40vh;
-        background-color: #F4F4F4;
-        border-radius: 20px;
-        overflow-y: auto;
-        color: #044177;
-        padding: 2%;
-        margin-right: 6%;
+
+    .livro {
+        display: none;
     }
-    
-    #novo_curso h1 {
-        font-weight: 700;
-    }
-    
+
     #icon {
         position: relative;
     }
-    
+
     #icon i {
         position: absolute;
         right: 7%;
@@ -245,291 +537,10 @@
         color: #808080;
         transition: 0.3s;
     }
-    
+
     #icon.inputIconBg i {
         background-color: #aaa;
         padding: 9px 4px;
         border-radius: 4px 0 0 4px;
     }
-    
-    #li h2 {
-        color: #272727;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-    }
-    
-    .lab-inp {
-        margin-top: 1%;
-        margin-bottom: 1%;
-    }
-    
-    .curso {
-        font-size: 20px;
-    }
-    
-    .nome {
-        font-size: 30px;
-        font-weight: 400;
-    }
-    
-    #primeiro_botao {
-        margin-top: 2vh;
-        width: 98%;
-        color: white;
-        background-color: #0664B7;
-        border-radius: 30px;
-        font-weight: 700;
-        border: none;
-        padding: 15px;
-    }
-    
-    #segundo_botao {
-        margin-top: 2vh;
-        width: 98%;
-        color: white;
-        font-weight: 700;
-        border-radius: 30px;
-        border: none;
-        padding: 15px;
-        background-color: #C2C2C2;
-        margin-right: 5%;
-    }
-    
-    #terceiro_botao {
-        margin-top: 2vh;
-        width: 98%;
-        background-color: rgba(240, 248, 255, 0);
-        color: white;
-        background-color: #044177;
-        border-radius: 30px;
-        font-weight: 700;
-        border: none;
-        padding: 15px;
-    }
-    
-    #quarto_botao {
-        margin-top: 2vh;
-        width: 98%;
-        background-color: rgba(240, 248, 255, 0);
-        color: white;
-        background-color: #A71E34;
-        border-radius: 30px;
-        font-weight: 700;
-        border: none;
-        padding: 15px;
-    }
-    
-    .buttons {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-    
-    .buttons-buttons {
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-    }
-    
-    .modal-curso {
-        width: 40%;
-        height: 30vh;
-        display: none;
-        background-color: rgb(255, 255, 255);
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: 'Poppins', sans-serif;
-        border-radius: 20px;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        font-weight: 100;
-    }
-    
-    .modal-editar {
-        width: 40%;
-        height: 30vh;
-        display: none;
-        background-color: rgb(255, 255, 255);
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: 'Poppins', sans-serif;
-        border-radius: 20px;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        font-weight: 100;
-    }
-    
-    .modal-excluir {
-        width: 40%;
-        height: 30vh;
-        display: none;
-        background-color: rgb(255, 255, 255);
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: 'Poppins', sans-serif;
-        border-radius: 20px;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        font-weight: 100;
-    }
-    
-    .modal-excluir h1 {
-        font-size: 40px;
-        font-weight: 700;
-        text-align: center;
-        color: #05204A;
-    }
-    
-    .modal-excluir h2 {
-        margin: 2% 0 2% 0;
-        font-size: 30px;
-        font-weight: 400;
-        text-align: center;
-        color: #A71E34;
-    }
-    
-    .modal-excluir label {
-        font-size: 30px;
-        font-weight: 400;
-        color: #05204A;
-    }
-    
-    .modal-excluir input {
-        width: 100%;
-    }
-    
-    .buttons {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .formExcluir {
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: 'Poppins', sans-serif;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        font-weight: 100;
-    }
-    
-    .modal-curso h1 {
-        font-size: 50px;
-    }
-    
-    #nome_do_curso input {
-        width: 100%;
-    }
-    
-    .modal-selecao h2 {
-        color: #05204A;
-        font-weight: 500;
-    }
-    
-    .modal-curso .buttons button {
-        background-color: red;
-    }
-    
-    .icon input {
-        padding-right: 50px;
-    }
-    
-    .icon {
-        position: relative;
-    }
-    
-    .icon i {
-        position: absolute;
-        right: 3%;
-        top: 25%;
-        padding: 9px 8px;
-        color: #808080;
-        transition: 0.3s;
-    }
-    
-    .addCurso {
-        background-color: #044177;
-        border: none;
-        color: white;
-        padding: 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-    
-    .button5 {
-        border-radius: 50%;
-        margin-right: 3%;
-        margin-bottom: -35%;
-    }
-    
-    @media (max-width: 830px) {
-        #book {
-            display: none;
-        }
-        .container {
-            padding: 2%;
-        }
-        .container h1 {
-            display: flex;
-            font-size: clamp(0rem, 10vw, 4.3rem);
-            text-align: center;
-        }
-        .card_azul h1 {
-            font-size: clamp(0rem, 10vw, 2.3rem);
-        }
-        #li {
-            display: flex;
-            flex-direction: column;
-        }
-        .button h2 {
-            font-size: clamp(0rem, 10vw, 1.5rem);
-        }
-        .turma {
-            font-size: clamp(0rem, 10vw, 1.5rem);
-            margin-right: 5%;
-        }
-        #icone {
-            display: flex;
-            flex-direction: row;
-        }
-        .livro {
-            display: none;
-        }
-        #icon {
-            position: relative;
-        }
-        #icon i {
-            position: absolute;
-            right: 7%;
-            top: 65%;
-            padding: 9px 8px;
-            color: #808080;
-            transition: 0.3s;
-        }
-        #icon.inputIconBg i {
-            background-color: #aaa;
-            padding: 9px 4px;
-            border-radius: 4px 0 0 4px;
-        }
-    }
+}
