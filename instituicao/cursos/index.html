@@ -51,7 +51,7 @@
 
     <div class="ccontainer modal modal-curso">
         <h1>CRIAR NOVO CURSO</h1>
-        <form class="row g-7">
+        <form onsubmit="cadastrarCurso()" class="row g-7">
             <div class="lab-inp">
                 <label for="senha-label" class="form-label">Insira o nome desejado para o curso:</label>
                 <input type="text" class="form-control senha-label" id="inputCriarCurso" maxlength="255" required />
@@ -72,7 +72,7 @@
 
     <div class="ccontainer modal modal-editar">
         <h1>EDITAR CURSO</h1>
-        <form class="row g-7 icon">
+        <form onsubmit="editarCurso()" class="row g-7 icon">
             <div class="lab-inp">
                 <label for="senha-label" class="form-label">Insira o novo nome desejado para o curso:</label>
                 <input id="inputEditarNomeCurso" type="text" class="form-control senha-label" maxlength="255"

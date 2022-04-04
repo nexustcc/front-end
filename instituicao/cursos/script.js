@@ -1,3 +1,7 @@
+// O PASSO QUE EU ESTOU TENTANDO CONCLUIR É FAZER O NOME DO CURSO APARECER NO INPUT DE EDITAR,
+// EU PRECISO FAZER UM FETCH, POIS EU CONSIGO PEGAR O ID DO CURSO E COM ISSO PRECISO PEGAR O NOME
+// - ARTUR
+
 "use strict";
 
 function showModal() {
@@ -10,7 +14,7 @@ function exitModal() {
     document.querySelector(".bg").style.display = "none";
 }
 
-function showModalEditar() {
+function showModalEditar(idCurso) {
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 }
@@ -35,7 +39,7 @@ function showModalExcluir(idCurso) {
     document.querySelector(".modal-excluir").style.display = "flex";
 }
 
-function exitModalExcluir(idCurso) {
+function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }
@@ -63,10 +67,10 @@ function exibirDados(cursos) {
         </div>
         <div class="button">
             <button id="terceiro_botao">TURMAS EXISTENTES NO CURSO</button>
-            <button onclick="showModalEditar()" class="terceiro" id="primeiro_botao">
+            <button onclick="showModalEditar(${cursos[i].idCurso})" class="terceiro" id="primeiro_botao">
                 EDITAR
             </button>
-            <button onclick="showModalExcluir()" id="quarto_botao">
+            <button onclick="showModalExcluir(${cursos[i].idCurso})" id="quarto_botao">
                 EXCLUIR
             </button>
         </div>
@@ -85,6 +89,60 @@ async function getArrayCursos() {
     const dados = await fetch(url);
     const cursos = await dados.json();
     exibirDados(cursos.cursos);
+}
+
+async function cadastrarCurso(nome) {
+    event.preventDefault();
+
+    const cadastrarCurso = {
+        nome: document.getElementById("inputCriarCurso").value.toString(),
+    };
+
+    console.log(cadastrarCurso);
+
+    const config = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cadastrarCurso),
+    };
+
+    console.log(cadastrarCurso);
+
+    fetch("http://localhost:3000/curso/cadastrarCurso/3", config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .then(() => (window.location.href = "./index.html"));
+}
+
+async function editarCurso(nome) {
+    event.preventDefault();
+
+    const cadastrarCurso = {
+        nome: document.getElementById("inputCriarCurso").value.toString(),
+    };
+
+    console.log(cadastrarCurso);
+
+    const config = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cadastrarCurso),
+    };
+
+    console.log(cadastrarCurso);
+
+    fetch("http://localhost:3000/curso/cadastrarCurso/3", config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .then(() => (window.location.href = "./index.html"));
 }
 
 window.onload = getArrayCursos();
