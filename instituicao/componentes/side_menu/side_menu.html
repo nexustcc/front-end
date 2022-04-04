@@ -1,68 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>SIDE_MENU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
+    <title>Side Menu</title>
 </head>
-
 <body>
-    <div class="menu">
 
-        <div class="titulo">
-            <img src="./IMG/title.svg" alt="title_img">
+    <div class="side_menu">
+        <img src="../../../home/images-global/logo-branca.svg" alt="logo" id="logo">
+
+        <div class="links">
+        <a href="#">
+            <div class="item">
+                <img src="img/icon_livros.svg" alt="livros">
+                <p>CURSOS EXISTENTES</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item">
+                <img src="img/icon_turma.svg" alt="turma">
+                <p>TURMAS EXISTENTES</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item">
+                <img src="img/icon_user.svg" alt="usuário">
+                <p>USUÁRIOS CADASTRADOS</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item">
+                <img src="img/icone_lapis.svg" alt="lápis">
+                <p>FORMULÁRIO DA BANCA</p>
+            </div>
+        </a>
         </div>
 
-        <div class="opcoes">
-            <div class="cursos_existentes">
-                <span id="cursos_existentes_img" class="iconify" data-icon="fluent:backpack-48-regular" data-width="40"
-                    data-height="40"></span>
-                <h2>CURSOS EXISTENTES</h2>
-            </div>
+        <div class="item">
 
-            <div class="adicionar_novo_curso">
-                <span id="adicionar_novo_curso_img" class="iconify" data-icon="fluent:backpack-add-20-regular"
-                    data-width="40" data-height="40"></span>
-                <h2>ADICIONAR NOVO CURSO</h2>
-            </div>
+        <a href="#">
+            <img src="img/icon_sair.svg" alt="sair" id="iconeSair">
+        </a>
 
-            <div class="turmas_existentes">
-                <span id="turmas_existentes_img" class="iconify" data-icon="clarity:group-line" data-width="40"
-                    data-height="40"></span>
-                <h2>TURMAS EXISTENTES</h2>
-            </div>
+        <p>LOG OUT</p>
 
-            <div class="criar_nova_turma">
-                <span id="criar_nova_turma_img" class="iconify" data-icon="uiw:usergroup-add" data-width="40"
-                    data-height="40"></span>
-                <h2>CRIAR NOVA TURMA</h2>
-            </div>
-
-            <div class="usuarios_cadastrados">
-                <span id="usuarios_cadastrados_img" class="iconify" data-icon="ant-design:user-outlined" data-width="40"
-                    data-height="40"></span>
-                <h2>USUÁRIOS CADASTRADOS</h2>
-            </div>
-
-        </div>
-
-        <div class="sair">
-            <span id="sair_img" class="iconify" data-icon="ri:logout-box-line" data-width="40" data-height="40"></span>
-            <h2>SAIR</h2>
         </div>
 
     </div>
-
-
-
+    
 </body>
-
 </html>
