@@ -188,20 +188,41 @@
             </div>
 
             <div class="buttons">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <button class="segundo_botao" type="button" onclick="exitModal()">CANCELAR</button>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <button class="primeiro_botao" onclick="resetForm()" type="button">CRIAR TURMA SEM MEMBROS</button>
                 </div>
 
-                <div class="col-md-4">
-                    <button class="terceiro_botao" onclick="" type="button">ADICIONAR MEMBROS À TURMA</button>
+                <div class="col-md-6">
+                    <button class="terceiro_botao" onclick="showModalAddMembros()" type="button">ADICIONAR MEMBROS À
+                        TURMA</button>
                 </div>
-
             </div>
         </form>
+    </div>
+
+    <div class="container mt-5 container modal modal-add-membros">
+        <h1>ADICIONAR MEMBROS À TURMA</h1>
+        <form class="row g-7" id="modal">
+            <div class="col-md-6 lab-inp">
+                <label for="nome_usuario" class="form-label">Nome do usuário</label>
+                <input type="email" class="form-control nome_usuario">
+            </div>
+        </form>
+        <div class="container-selecionando"></div>
+        <div class="contaainer-selecionado"></div>
+        <div class="buttons">
+            <div class="col-md-3">
+                <button class="segundo_botao" type="button" onclick="showModal()">CANCELAR</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="terceiro_botao" onclick="showModal()" type="button">SALVAR</button>
+            </div>
+        </div>
     </div>
 
     <div class="container mt-5 container modal modal-turma">
@@ -235,15 +256,15 @@
             </div>
 
             <div class="buttons">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <button class="segundo_botao" type="button" onclick="exitModalTurma()">SAIR</button>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <button class="primeiro_botao" type="button" onclick="showModalEditar()">EDITAR</button>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <button class="terceiro_botao" onclick="showModalMembros()" type="button">MEMBROS DA TURMA</button>
                 </div>
             </div>
@@ -266,17 +287,17 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="curso-inp" class="form-label">Curso</label>
-                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68" >
+                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68">
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68" >
+                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68">
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68" >
+                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68">
             </div>
 
             <div class="buttons">
@@ -294,69 +315,174 @@
     <div class="container mt-5 container modal  modal-membros">
         <h1>PARTICIPANTES DA TURMA</h1>
 
-        <ul class="list-group" id="ul-turma">
-            <li id="li" class="list-group-item li">
-                <div id="membro">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>TIPO</h2>
-                </div>
-            </li>
+        <div class="membro-container">
+            <div class="professores">
+                <h1>PROFESSORES</h1>
+                <ul class="list-group" id="ul-professor">
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="membro">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>TIPO</h2>
-                </div>
-            </li>
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="membro">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>TIPO</h2>
-                </div>
-            </li>
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="membro">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>TIPO</h2>
-                </div>
-            </li>
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="alunos">
+                <h1>ALUNOS</h1>
+                <ul class="list-group" id="ul-aluno">
+                    <li id="li" class="list-group-item li">
+                        <div id="membro"> 
+                            <p class="nome">NOME</p>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="membro">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>TIPO</h2>
-                </div>
-            </li>
+                    <li id="li" class="list-group-item li">
+                        <div id="membro"> 
+                            <p class="nome">NOME</p>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li id="li" class="list-group-item li">
+                        <div id="membro"> 
+                            <p class="nome">NOME</p>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li id="li" class="list-group-item li">
+                        <div id="membro"> 
+                            <p class="nome">NOME</p>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="avaliadores">
+                <h1>AVALIADORES</h1>
+                <ul class="list-group" id="ul-avaliador">
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li id="li" class="list-group-item li">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         </ul>
         <div class="buttons-modal">
             <div class="col-md-3">

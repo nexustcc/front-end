@@ -75,6 +75,15 @@ body {
     /* creates padding around scroll thumb */
 }
 
+.container-selecionando{
+    background-color: #E3E3E3;
+}
+
+.container-selecionado{
+    background-color: #E3E3E3;
+}
+
+
 .modal {
     margin-top: auto;
     width: 100%;
@@ -102,6 +111,10 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+}
+
+.membro-container p{
+    font-size: 23px;
 }
 
 .ul-1 {
@@ -142,6 +155,44 @@ body {
     color: #05204A;
 }
 
+.professores{
+        margin: 0 1% 0 0;
+        text-align: center;
+        height: 20vh;
+}
+
+.professores h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #05204A;
+}
+
+.alunos{
+    margin: 0 0 0 0;
+    text-align: center;
+    height: 20vh;
+}
+
+.alunos h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #05204A;
+
+}
+
+.avaliadores{
+    margin: 0 0 0 1%;
+    text-align: center;
+    height: 20vh;
+}
+
+.avaliadores h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #05204A;
+
+}
+
 .bg {
     position: fixed;
     z-index: 1;
@@ -169,6 +220,39 @@ img {
 }
 
 #ul-turma {
+    margin: 1% 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-color: #05204A;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+#ul-professor {
+    margin: 1% 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-color: #05204A;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+#ul-aluno {
+    margin: 1% 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-color: #05204A;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+#ul-avaliador {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -229,20 +313,6 @@ img {
 }
 
 #ul-turma::-webkit-scrollbar-thumb {
-    background-color: #05204A;
-    /* color of the scroll thumb */
-    border-radius: 10px;
-    /* roundness of the scroll thumb */
-    border: none;
-    /* creates padding around scroll thumb */
-}
-
-#ul-grupo::-webkit-scrollbar {
-    width: 12px;
-    /* width of the entire scrollbar */
-}
-
-#ul-grupo::-webkit-scrollbar-thumb {
     background-color: #05204A;
     /* color of the scroll thumb */
     border-radius: 10px;
@@ -341,6 +411,10 @@ img {
     padding: 15px;
 }
 
+.membro-container{
+    display: flex;
+    flex-direction: row;
+}
 .buttons {
     display: flex;
     flex-direction: row-reverse;

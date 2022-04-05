@@ -3,21 +3,25 @@
 function showModal() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal").style.display = "flex";
+    document.querySelector(".modal-add-membros").style.display = "none";
 }
 
 function exitModal() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal").style.display = "none";
+    document.querySelector(".modal-add-membros").style.display = "none";
 }
 
 function showModalGrupos() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-grupos").style.display = "flex";
+    document.querySelector(".modal-add-membros").style.display = "none";
 }
 
 function exitModalGrupos() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-grupos").style.display = "none";
+    document.querySelector(".modal-add-membros").style.display = "none";
 }
 
 function showModalExcluir() {
@@ -41,6 +45,18 @@ function exitModalTurma() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-turma").style.display = "none";
+    document.querySelector(".modal-add-membros").style.display = "none";
+}
+
+function showModalAddMembros() {
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-turma").style.display = "none";
+    document.querySelector(".modal-add-membros").style.display = "flex";
+}
+
+function exitModalAddMembros() {
+    document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal-add-membros").style.display = "none";
 }
 
 function showModalEditar() {
