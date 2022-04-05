@@ -33,6 +33,7 @@ function exitModalExcluir() {
 function showModalTurma() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "flex";
+    document.querySelector(".modal-editar").style.display = "none";
     document.querySelector(".modal-membros").style.display = "none";
 }
 
@@ -41,6 +42,18 @@ function exitModalTurma() {
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-turma").style.display = "none";
 }
+
+function showModalEditar() {
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-turma").style.display = "none";
+    document.querySelector(".modal-editar").style.display = "flex";
+}
+
+function exitModalEditar() {
+    document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal-editar").style.display = "none";
+}
+
 
 function showModalMembros() {
     document.querySelector(".bg").style.display = "flex";
