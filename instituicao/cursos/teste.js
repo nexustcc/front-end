@@ -17,16 +17,6 @@ function exitModal() {
 function showModalEditar(idCurso) {
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
-
-    fetch(`http://localhost:3000/curso/listarCurso/${idCurso}`)
-        .then((res) => res.json())
-        .then((data) => {
-            document.getElementById("inputEditarNomeCurso").value = (data.nome[0].nome)
-        });
-
-    document.getElementById("terceiro_botao").onclick = editarCurso(idCurso)
-
-    
 }
 
 function exitModalEditar() {
@@ -54,7 +44,23 @@ function exitModalExcluir() {
     document.querySelector(".modal-excluir").style.display = "none";
 }
 
-function exibirDados(cursos) {
+async function getArrayCursos() {
+    const url = `http://localhost:3000/curso/listarCursos/3`;
+
+    fetch(url)
+        .then((response) => response.json)
+        .then(console.log);
+    const dados = await fetch(url);
+    const cursos = await dados.json();
+    return cursos.cursos;
+}
+
+function exibirDados() {
+
+    let cursos = getArrayCursos;
+
+    console.log(cursos);
+
     const container = document.getElementById("ul_container");
 
     for (var i = 0; i < cursos.length; i++) {
@@ -90,17 +96,6 @@ function exibirDados(cursos) {
     }
 }
 
-async function getArrayCursos() {
-    const url = `http://localhost:3000/curso/listarCursos/3`;
-
-    fetch(url)
-        .then((response) => response.json)
-        .then(console.log);
-    const dados = await fetch(url);
-    const cursos = await dados.json();
-    exibirDados(cursos.cursos);
-}
-
 async function cadastrarCurso(nome) {
     event.preventDefault();
 
@@ -128,11 +123,11 @@ async function cadastrarCurso(nome) {
         .then(() => (window.location.href = "./index.html"));
 }
 
-async function editarCurso(idCurso) {
+async function editarCurso(cursos) {
     event.preventDefault();
 
     const editarCurso = {
-        "nome": document.getElementById("inputEditarNomeCurso").value.toString()
+        nome: document.getElementById("inputEditarNomeCurso").value.toString(),
     };
 
     console.log(editarCurso);
@@ -145,13 +140,14 @@ async function editarCurso(idCurso) {
         body: JSON.stringify(editarCurso),
     };
 
-    console.log(config);
+    console.log(editarCurso);
 
-    fetch(`http://localhost:3000/curso/editarCurso/${idCurso}`, config)
+    fetch(`http://localhost:3000/curso/editarCurso/${cursos[i].idCurso}`, config)
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-        });
+        })
+        .then(() => (window.location.href = "./index.html"));
 }
 
-window.onload = getArrayCursos();
+window.onload = exibirDados();
