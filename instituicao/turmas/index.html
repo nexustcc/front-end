@@ -25,17 +25,17 @@
 <body>
     <div class="container-geral">
         <div class="container">
-            <div class="col-md-6 for-cnp cursos_existentes" id="icon">
+            <div class="col-md-6 for-cnp cursos_existentes icon">
                 <label for="cursos_ex" class="form-label">TURMAS EXISTENTES</label>
                 <input type="text" class="form-control cursos_ex">
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
-            <ul class="list-group" id="ul">
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+            <ul class="list-group">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -47,10 +47,10 @@
 
                 <img src="./img/Line.svg" alt="">
 
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -61,25 +61,10 @@
                 </li>
                 <img src="./img/Line.svg" alt="">
 
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-
-                <img src="./img/Line.svg" alt="">
-
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
-                        <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -91,10 +76,10 @@
 
                 <img src="./img/Line.svg" alt="">
 
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -106,10 +91,10 @@
 
                 <img src="./img/Line.svg" alt="">
 
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -121,10 +106,10 @@
 
                 <img src="./img/Line.svg" alt="">
 
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -136,10 +121,25 @@
 
                 <img src="./img/Line.svg" alt="">
 
-                <li id="li" class="list-group-item li">
-                    <div id="turma">
+                <li class="list-group-item li">
+                    <div class="turma">
                         <p class="turma">Turma:</p>
-                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li class="list-group-item li">
+                    <div class="turma">
+                        <p class="turma">Turma:</p>
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
                     <div class="button">
@@ -156,7 +156,7 @@
 
     <div class="container mt-5 container modal">
         <h1>CADASTRO DE TURMA</h1>
-        <form class="row g-7" id="modal">
+        <form class="row g-7">
 
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
@@ -202,17 +202,17 @@
 
     <div class="container mt-5 container modal modal-add-membros">
         <h1>ADICIONAR MEMBROS À TURMA</h1>
-        <div class="col-md-6 lab-inp-modal">
-            <label for="nome_usuario" class="form-label">Nome do usuário</label>
-            <input type="email" class="form-control nome_usuario">
+        <div class="col-md-6 lab-inp-modal icon-membro">
+            <input type="email" class="form-control nome_usuario" placeholder="Insira o nome do usuário que deseja atrelar à turma...">
+            <i class="fa fa-search" style="font-size:24px"></i>
         </div>
 
         <div class="container-cadastro-membro">
             <div class="container-selecionando">
                 <h1>SELECIONE OS MEMBROS</h1>
-                <ul class="list-group" id="ul-membro">
-                    <li id="li-membro" class="list-group-item li-membro">
-                        <div id="membro">
+                <ul class="list-group ul-membro">
+                    <li class="list-group-item li-membro">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -222,8 +222,8 @@
                         </div>
                     </li>
 
-                    <li id="li-membro" class="list-group-item li-membro">
-                        <div id="membro">
+                    <li class="list-group-item li-membro">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -236,9 +236,9 @@
             </div>
             <div class="container-selecionado">
                 <h1>MEMBROS SELECIONADOS</h1>
-                <ul class="list-group" id="ul-membro">
-                    <li id="li-membro" class="list-group-item li-membro">
-                        <div id="membro-selecionar">
+                <ul class="list-group ul-membro">
+                    <li class="list-group-item li-membro">
+                        <div class="membro-selecionar">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -248,8 +248,8 @@
                         </div>
                     </li>
 
-                    <li id="li-membro" class="list-group-item li-membro">
-                        <div id="membro">
+                    <li class="list-group-item li-membro">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -365,9 +365,9 @@
         <div class="membro-container">
             <div class="professores">
                 <h1>PROFESSORES</h1>
-                <ul class="list-group" id="ul-professor">
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                <ul class="list-group ul-professor">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -379,8 +379,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -392,8 +392,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -405,8 +405,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -419,9 +419,9 @@
             </div>
             <div class="alunos">
                 <h1>ALUNOS</h1>
-                <ul class="list-group" id="ul-aluno">
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                <ul class="list-group ul-aluno">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -434,8 +434,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -448,8 +448,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -462,8 +462,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -477,9 +477,9 @@
             </div>
             <div class="avaliadores">
                 <h1>AVALIADORES</h1>
-                <ul class="list-group" id="ul-avaliador">
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                <ul class="list-group ul-avaliador">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -491,8 +491,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -504,8 +504,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -517,8 +517,8 @@
 
                     <img src="./img/Line.svg" alt="">
 
-                    <li id="li" class="list-group-item li">
-                        <div id="membro">
+                    <li class="list-group-item li">
+                        <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
@@ -536,7 +536,7 @@
                 <button class="segundo_botao" type="button" onclick="showModalTurma()">VOLTAR</button>
             </div>
             <div class="col-md-3">
-                <button class="terceiro_botao" type="button" onclick="">ADICIONAR MEMBROS</button>
+                <button class="terceiro_botao" type="button" onclick="showModalAddMembros()">ADICIONAR MEMBROS</button>
             </div>
         </div>
     </div>
@@ -546,63 +546,30 @@
         <h1>GRUPOS DE TCC DA TURMA</h1>
 
 
-        <ul class="list-group" id="ul-grupo">
-            <li id="li" class="list-group-item li">
-                <div id="grupo">
+        <ul class="list-group ul-grupo">
+            <li class="list-group-item li">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
                     <p class="numero">Número do grupo</p>
                     <p class="tema"> TEMA</p>
                 </div>
-                <div id="grupo">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
                     <p class="numero">Número do grupo</p>
                     <p class="tema"> TEMA</p>
                 </div>
-                <div id="grupo">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
                     <p class="numero">Número do grupo</p>
                     <p class="tema"> TEMA</p>
                 </div>
-                <div id="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                        data-width="130" data-height="130"></span>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-            </li>
-
-            <img src="./img/Line.svg" alt="">
-
-            <li id="li" class="list-group-item li">
-                <div id="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                        data-width="130" data-height="130"></span>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div id="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                        data-width="130" data-height="130"></span>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div id="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                        data-width="130" data-height="130"></span>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div id="grupo">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
@@ -612,29 +579,62 @@
             </li>
 
             <img src="./img/Line.svg" alt="">
-            <li id="li" class="list-group-item li">
-                <div id="grupo">
+
+            <li class="list-group-item li">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
                     <p class="numero">Número do grupo</p>
                     <p class="tema"> TEMA</p>
                 </div>
-                <div id="grupo">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
                     <p class="numero">Número do grupo</p>
                     <p class="tema"> TEMA</p>
                 </div>
-                <div id="grupo">
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>
                     <p class="numero">Número do grupo</p>
                     <p class="tema"> TEMA</p>
                 </div>
-                <div id="grupo">
+                <div class="grupo">
+                    <p class="prof_orientador">Professor Orientador:</p>
+                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
+                        data-width="130" data-height="130"></span>
+                    <p class="numero">Número do grupo</p>
+                    <p class="tema"> TEMA</p>
+                </div>
+            </li>
+
+            <img src="./img/Line.svg" alt="">
+            <li class="list-group-item li">
+                <div class="grupo">
+                    <p class="prof_orientador">Professor Orientador:</p>
+                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
+                        data-width="130" data-height="130"></span>
+                    <p class="numero">Número do grupo</p>
+                    <p class="tema"> TEMA</p>
+                </div>
+                <div class="grupo">
+                    <p class="prof_orientador">Professor Orientador:</p>
+                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
+                        data-width="130" data-height="130"></span>
+                    <p class="numero">Número do grupo</p>
+                    <p class="tema"> TEMA</p>
+                </div>
+                <div class="grupo">
+                    <p class="prof_orientador">Professor Orientador:</p>
+                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
+                        data-width="130" data-height="130"></span>
+                    <p class="numero">Número do grupo</p>
+                    <p class="tema"> TEMA</p>
+                </div>
+                <div class="grupo">
                     <p class="prof_orientador">Professor Orientador:</p>
                     <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                         data-width="130" data-height="130"></span>

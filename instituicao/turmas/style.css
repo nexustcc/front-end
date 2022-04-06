@@ -61,12 +61,12 @@ body {
     font-weight: 400;
 }
 
-#ul::-webkit-scrollbar {
+ul::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
 }
 
-#ul::-webkit-scrollbar-thumb {
+ul::-webkit-scrollbar-thumb {
     background-color: #05204A;
     /* color of the scroll thumb */
     border-radius: 10px;
@@ -76,11 +76,13 @@ body {
 }
 
 .container-selecionando{
+    width: 100%;
     height: 50%;
     margin: 0 1% 0 0;
 }
 
 .container-selecionado{
+    width: 100%;
     height: 50%;
 }
 
@@ -138,7 +140,7 @@ body {
     position: absolute;
 }
 
-#selected {
+.selected {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,7 +213,7 @@ img {
     margin-top: 2%;
 }
 
-#ul {
+ul {
     width: 100%;
     border: 2px solid;
     border-color: #05204A;
@@ -220,7 +222,7 @@ img {
     overflow-y: auto;
 }
 
-#ul-turma {
+.ul-turma {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -231,7 +233,7 @@ img {
     overflow-y: auto;
 }
 
-#ul-professor {
+.ul-professor {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -242,7 +244,7 @@ img {
     overflow-y: auto;
 }
 
-#ul-membro {
+.ul-membro {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -263,13 +265,21 @@ img {
 }
 
 .container-cadastro-membro{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     font-size: 23px;
     text-align: center;
 }
 
-#ul-aluno {
+.container-cadastro-membro .buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+}
+
+.ul-aluno {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -280,7 +290,7 @@ img {
     overflow-y: auto;
 }
 
-#ul-avaliador {
+.ul-avaliador {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -291,7 +301,7 @@ img {
     overflow-y: auto;
 }
 
-#ul-grupo {
+.ul-grupo {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -305,7 +315,7 @@ img {
     width: 5.5vw;
 }
 
-#li {
+.li {
     border: none;
     display: flex;
     flex-direction: row;
@@ -314,7 +324,7 @@ img {
     padding: 0 5%;
 }
 
-#li-membro {
+.li-membro {
     background-color: #E3E3E3;
     border: none;
     display: flex;
@@ -324,33 +334,33 @@ img {
     padding: 0 5%;
 }
 
-#turma {
+.turma {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1%;
 }
 
-#membro {
+.membro {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1%;
 }
 
-#grupo {
+.grupo {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1%;
 }
 
-#ul-turma::-webkit-scrollbar {
+.ul-turma::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
 }
 
-#ul-turma::-webkit-scrollbar-thumb {
+.ul-turma::-webkit-scrollbar-thumb {
     background-color: #05204A;
     /* color of the scroll thumb */
     border-radius: 10px;
@@ -359,15 +369,15 @@ img {
     /* creates padding around scroll thumb */
 }
 
-#novo_curso h1 {
+.novo_curso h1 {
     font-weight: 700;
 }
 
-#icon {
+.icon {
     position: relative;
 }
 
-#icon i {
+.icon i {
     position: absolute;
     right: 6%;
     top: 65%;
@@ -376,13 +386,26 @@ img {
     transition: 0.3s;
 }
 
-#icon.inputIconBg i {
+.icon.inputIconBg i {
     background-color: #aaa;
     padding: 9px 4px;
     border-radius: 4px 0 0 4px;
 }
 
-#li h2 {
+.icon-membro {
+    position: relative;
+}
+
+.icon-membro i {
+    position: absolute;
+    right: 1vw;
+    top: 10%;
+    padding: 9px 8px;
+    color: #808080;
+    transition: 0.3s;
+}
+
+.li h2 {
     color: #272727;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -566,7 +589,7 @@ img {
         flex-direction: column;
     }
 
-    #book {
+    .book {
         display: none;
     }
     .container {
@@ -584,13 +607,13 @@ img {
         text-align: center;
     }
 
-    #ul{
+    ul{
         margin-top: 1%;
         height: 100%;
     }
 
 
-    #li {
+    li {
         display: flex;
         flex-direction: column;
     }
@@ -604,7 +627,7 @@ img {
         font-size: clamp(0rem, 10vw, 1.5rem);
     }
 
-    #icon label {
+    .icon label {
         font-size: clamp(0rem, 10vw, 1.5rem);
         margin-right: 5%;
     }
@@ -617,21 +640,21 @@ img {
         text-align: justify;
     }
 
-    #turma {
+    .turma {
         display: flex;
         flex-direction: row;
     }
-    #icone {
+    .icone {
         display: flex;
         flex-direction: row;
     }
     .livro {
         display: none;
     }
-    #icon {
+    .icon {
         position: relative;
     }
-    #icon i {
+    .icon i {
         position: absolute;
         right: 7%;
         top: 50%;
@@ -639,7 +662,7 @@ img {
         color: #808080;
         transition: 0.3s;
     }
-    #icon.inputIconBg i {
+    .icon.inputIconBg i {
         background-color: #aaa;
         padding: 9px 4px;
         border-radius: 4px 0 0 4px;
@@ -672,7 +695,7 @@ img {
         flex-direction: column;
     }
 
-    #ul-professor {
+    .ul-professor {
         margin: 1% 0;
         width: 100%;
         height: 70%;
@@ -683,17 +706,17 @@ img {
         overflow-y: auto;
     }
 
-#ul-professor #li{
+.ul-professor li{
     display: flex;
     flex-direction: row;
 }
 
-#ul-aluno #li{
+.ul-aluno .li{
     display: flex;
     flex-direction: row;
 }
 
-#ul-avaliador #li{
+.ul-avaliador .li{
     display: flex;
     flex-direction: row;
 }
@@ -702,7 +725,7 @@ img {
     height: 50px;
 }
 
-    #ul-aluno {
+    .ul-aluno {
         margin: 1% 0;
         width: 100%;
         height: 70%;
@@ -713,7 +736,7 @@ img {
         overflow-y: auto;
     }
 
-    #ul-avaliador{
+    .ul-avaliador{
         margin: 1% 0;
         width: 100%;
         height: 70%;
