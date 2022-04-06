@@ -1,7 +1,3 @@
-// O PASSO QUE EU ESTOU TENTANDO CONCLUIR É FAZER O NOME DO CURSO APARECER NO INPUT DE EDITAR,
-// EU PRECISO FAZER UM FETCH, POIS EU CONSIGO PEGAR O ID DO CURSO E COM ISSO PRECISO PEGAR O NOME
-// - ARTUR
-
 "use strict";
 
 function showModal() {
@@ -21,12 +17,11 @@ function showModalEditar(idCurso) {
     fetch(`http://localhost:3000/curso/listarCurso/${idCurso}`)
         .then((res) => res.json())
         .then((data) => {
-            document.getElementById("inputEditarNomeCurso").value = (data.nome[0].nome)
+            document.getElementById("inputEditarNomeCurso").value = data.nome[0].nome;
         });
 
-    document.getElementById("terceiro_botao").onclick = editarCurso(idCurso)
-
-    
+    document.getElementById("terceiro_botao").onclick = () =>
+        editarCurso(idCurso);
 }
 
 function exitModalEditar() {
@@ -63,8 +58,6 @@ function exibirDados(cursos) {
             nome: cursos[i].nome,
         };
 
-        console.log(cursosJson);
-
         const curso = document.createElement("li");
         curso.classList = "list-group-item li";
         curso.id = "li";
@@ -76,8 +69,8 @@ function exibirDados(cursos) {
             <p class="nome">${cursos[i].nome}</p>
         </div>
         <div class="button">
-            <button id="terceiro_botao">TURMAS EXISTENTES NO CURSO</button>
-            <button onclick="showModalEditar(${cursos[i].idCurso})" class="terceiro" id="primeiro_botao">
+            <button>TURMAS EXISTENTES NO CURSO</button>
+            <button type="button" onclick="showModalEditar(${cursos[i].idCurso})" class="terceiro" id="primeiro_botao">
                 EDITAR
             </button>
             <button onclick="showModalExcluir(${cursos[i].idCurso})" id="quarto_botao">
@@ -132,7 +125,7 @@ async function editarCurso(idCurso) {
     event.preventDefault();
 
     const editarCurso = {
-        "nome": document.getElementById("inputEditarNomeCurso").value.toString()
+        nome: document.getElementById("inputEditarNomeCurso").value.toString(),
     };
 
     console.log(editarCurso);
@@ -151,7 +144,8 @@ async function editarCurso(idCurso) {
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-        });
+        })
+        .then(() => (window.location.href = "./index.html"));
 }
 
 window.onload = getArrayCursos();

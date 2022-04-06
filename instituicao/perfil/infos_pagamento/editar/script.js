@@ -1,22 +1,25 @@
 "use strict";
 
-const inputDataValidadeCartao = document.getElementById('input_validade');
-const inputNumeroCartao = document.getElementById('input_numero_do_cartao');
+const inputDataValidadeCartao = document.getElementById("input_validade");
+const inputNumeroCartao = document.getElementById("input_numero_do_cartao");
 
-$(document).ready(function(){        
-    $(inputDataValidadeCartao).mask('99/99');
+$(document).ready(function () {
+    $(inputDataValidadeCartao).mask("99/99");
 });
 
-inputNumeroCartao.addEventListener('input', function (e) {
-    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+inputNumeroCartao.addEventListener("input", function (e) {
+    e.target.value = e.target.value
+        .replace(/[^\dA-Z]/g, "")
+        .replace(/(.{4})/g, "$1 ")
+        .trim();
 });
 
-const isInputNumber = (evt) =>{
+const isInputNumber = (evt) => {
     let char = String.fromCharCode(evt.which);
-    if(!(/[0-9]/.test(char))) {
+    if (!/[0-9]/.test(char)) {
         evt.preventDefault();
     }
-}
+};
 
 async function getInfoCartao() {
     let idInstituicao = 1;
@@ -30,66 +33,78 @@ async function getInfoCartao() {
 }
 
 const converterData = (dataValidade) => {
-    let dataValidadeSlipt = dataValidade.split(['T'])
-    let dataValidadeArray = dataValidadeSlipt[0]
-    let dataValidadeArraySplit = dataValidadeArray.split(['-'])
-    let dataValidadeFinal = dataValidadeArraySplit[1] + '/' + dataValidadeArraySplit[0]
-    let a = dataValidadeFinal.split(['/'])
-    let b = a[1].match(/.{1,2}/g)
-    let c = a[0]+'/'+b[1]
-    return c
-}
+    let dataValidadeSlipt = dataValidade.split(["T"]);
+    let dataValidadeArray = dataValidadeSlipt[0];
+    let dataValidadeArraySplit = dataValidadeArray.split(["-"]);
+    let dataValidadeFinal =
+        dataValidadeArraySplit[1] + "/" + dataValidadeArraySplit[0];
+    let a = dataValidadeFinal.split(["/"]);
+    let b = a[1].match(/.{1,2}/g);
+    let c = a[0] + "/" + b[1];
+    return c;
+};
 
 function exibirDados(cartao) {
     document.getElementById("input_numero_do_cartao").value = cartao.numero;
     document.getElementById("input_nome_do_cartao").value = cartao.nomeNoCartao;
-    document.getElementById("input_validade").value = converterData(cartao.dataValidade);
+    document.getElementById("input_validade").value = converterData(
+        cartao.dataValidade
+    );
     document.getElementById("input_cvv").value = cartao.cvv;
 }
 
 const converterDataBanco = (inputValue) => {
-    let splitedDate = inputValue.split(['/'])
-    let dateString = '01/' + splitedDate[0] + '/' + '20' + splitedDate[1];
-    let splitedDateString = dateString.split(['/']);
-    let data = splitedDateString[2]+'-'+splitedDateString[1]+'-'+splitedDateString[0];
+    let splitedDate = inputValue.split(["/"]);
+    let dateString = "01/" + splitedDate[0] + "/" + "20" + splitedDate[1];
+    let splitedDateString = dateString.split(["/"]);
+    let data =
+        splitedDateString[2] +
+        "-" +
+        splitedDateString[1] +
+        "-" +
+        splitedDateString[0];
     return data;
-}
+};
 
-async function editarInstituicao(nome, dataValidade, cvv, numero){
+async function editarInstituicao(nome, dataValidade, cvv, numero) {
     event.preventDefault();
 
     let idInstituicao = 1;
 
     const cartao = {
-        "nomeNoCartao": document.getElementById('input_nome_do_cartao').value.toString(),
-        "dataValidade": converterDataBanco(document.getElementById('input_validade').value.toString()),
-        "cvv": parseInt(document.getElementById('input_cvv').value),
-        "numero": document.getElementById('input_numero_do_cartao').value.toString()
-    }
+        nomeNoCartao: document
+            .getElementById("input_nome_do_cartao")
+            .value.toString(),
+        dataValidade: converterDataBanco(
+            document.getElementById("input_validade").value.toString()
+        ),
+        cvv: parseInt(document.getElementById("input_cvv").value),
+        numero: document.getElementById("input_numero_do_cartao").value.toString(),
+    };
 
     const config = {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
         },
-        body: JSON.stringify(cartao)
-    }
-    
-    fetch(`http://localhost:3000/cartao/editarCartao/${idInstituicao}`, config)
-        .then(() => window.location.href = "../index.html")
+        body: JSON.stringify(cartao),
+    };
+
+    fetch(
+        `http://localhost:3000/cartao/editarCartao/${idInstituicao}`,
+        config
+    ).then(() => (window.location.href = "../index.html"));
 }
 
 const validacao = () => {
-    event.preventDefault()
-    
+    event.preventDefault();
+
     editarInstituicao(
         document.getElementById("input_nome_no_cartao").value,
         converterDataBanco(document.getElementById("input_validade").value),
         document.getElementById("input_cvv").value,
         document.getElementById("input_numero_do_cartao").value
-    )
-}
-
-
+    );
+};
 
 window.onload = getInfoCartao();
