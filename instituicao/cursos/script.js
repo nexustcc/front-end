@@ -42,6 +42,12 @@ function exitModalCurso() {
 function showModalExcluir(idCurso) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-excluir").style.display = "flex";
+
+    document
+        .getElementById("quarto_botao_confirmar")
+        .addEventListener("click", () => {
+            deletarCurso(idCurso);
+        });
 }
 
 function exitModalExcluir() {
@@ -138,9 +144,18 @@ async function editarCurso(idCurso) {
         body: JSON.stringify(editarCurso),
     };
 
-    console.log(config);
-
     fetch(`http://localhost:3000/curso/editarCurso/${idCurso}`, config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .then(() => (window.location.href = "./index.html"));
+}
+
+async function deletarCurso(idCurso) {
+    fetch(`http://localhost:3000/curso/deletarCurso/${idCurso}`, {
+            method: "DELETE",
+        })
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
