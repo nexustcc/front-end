@@ -23,7 +23,6 @@
 </div>
 
 <body>
-
     <div class="container-geral">
         <div class="container">
             <div class="col-md-6 for-cnp cursos_existentes" id="icon">
@@ -35,7 +34,7 @@
             <ul class="list-group" id="ul">
                 <li id="li" class="list-group-item li">
                     <div id="turma">
-                        <p class="curso">Curso:</p>
+                        <p class="turma">Turma:</p>
                         <img id="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
@@ -50,7 +49,7 @@
 
                 <li id="li" class="list-group-item li">
                     <div id="turma">
-                        <p class="curso">Curso:</p>
+                        <p class="turma">Turma:</p>
                         <img id="book" src="./img/icone_turma.svg" alt="book">
                         <p class="nome">NOME</p>
                     </div>
@@ -60,7 +59,6 @@
                         <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
                     </div>
                 </li>
-
                 <img src="./img/Line.svg" alt="">
 
                 <li id="li" class="list-group-item li">
@@ -152,10 +150,8 @@
                 </li>
             </ul>
         </div>
-        <div class="buttonAddTurma">
-            <button onclick="showModal()" class="addTurma button5"> <i class="fa fa-plus"
-                    style="font-size:36px"></i></button>
-        </div>
+        <button onclick="showModal()" class="button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
+
     </div>
 
     <div class="container mt-5 container modal">
@@ -206,14 +202,65 @@
 
     <div class="container mt-5 container modal modal-add-membros">
         <h1>ADICIONAR MEMBROS À TURMA</h1>
-        <form class="row g-7" id="modal">
-            <div class="col-md-6 lab-inp">
-                <label for="nome_usuario" class="form-label">Nome do usuário</label>
-                <input type="email" class="form-control nome_usuario">
+        <div class="col-md-6 lab-inp-modal">
+            <label for="nome_usuario" class="form-label">Nome do usuário</label>
+            <input type="email" class="form-control nome_usuario">
+        </div>
+
+        <div class="container-cadastro-membro">
+            <div class="container-selecionando">
+                <h1>SELECIONE OS MEMBROS</h1>
+                <ul class="list-group" id="ul-membro">
+                    <li id="li-membro" class="list-group-item li-membro">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <li id="li-membro" class="list-group-item li-membro">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </form>
-        <div class="container-selecionando"></div>
-        <div class="contaainer-selecionado"></div>
+            <div class="container-selecionado">
+                <h1>MEMBROS SELECIONADOS</h1>
+                <ul class="list-group" id="ul-membro">
+                    <li id="li-membro" class="list-group-item li-membro">
+                        <div id="membro-selecionar">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <li id="li-membro" class="list-group-item li-membro">
+                        <div id="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="nome">NOME</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="buttons">
             <div class="col-md-3">
                 <button class="segundo_botao" type="button" onclick="showModal()">CANCELAR</button>
@@ -312,7 +359,7 @@
         </form>
     </div>
 
-    <div class="container mt-5 container modal  modal-membros">
+    <div class="container mt-5 container modal modal-membros">
         <h1>PARTICIPANTES DA TURMA</h1>
 
         <div class="membro-container">
@@ -374,7 +421,7 @@
                 <h1>ALUNOS</h1>
                 <ul class="list-group" id="ul-aluno">
                     <li id="li" class="list-group-item li">
-                        <div id="membro"> 
+                        <div id="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -388,7 +435,7 @@
                     <img src="./img/Line.svg" alt="">
 
                     <li id="li" class="list-group-item li">
-                        <div id="membro"> 
+                        <div id="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -402,7 +449,7 @@
                     <img src="./img/Line.svg" alt="">
 
                     <li id="li" class="list-group-item li">
-                        <div id="membro"> 
+                        <div id="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -416,7 +463,7 @@
                     <img src="./img/Line.svg" alt="">
 
                     <li id="li" class="list-group-item li">
-                        <div id="membro"> 
+                        <div id="membro">
                             <p class="nome">NOME</p>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -487,6 +534,9 @@
         <div class="buttons-modal">
             <div class="col-md-3">
                 <button class="segundo_botao" type="button" onclick="showModalTurma()">VOLTAR</button>
+            </div>
+            <div class="col-md-3">
+                <button class="terceiro_botao" type="button" onclick="">ADICIONAR MEMBROS</button>
             </div>
         </div>
     </div>

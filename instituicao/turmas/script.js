@@ -34,6 +34,42 @@ function exitModalExcluir() {
     document.querySelector(".modal-excluir").style.display = "none";
 }
 
+function exibirDados(turma) {
+    const container = document.getElementById("ul_container");
+
+    for (var i = 0; i < turma.length; i++) {
+        var turmaJson = {
+            idturma: turma[i].idCurso,
+            nome: turma[i].nome,
+        };
+
+        console.log(turmaJson);
+
+        const curso = document.createElement("li");
+        curso.classList = "list-group-item li";
+        curso.id = "li";
+
+        curso.innerHTML += `
+        <li id="li" class="list-group-item li">
+                    <div id="turma">
+                        <p class="curso">Curso:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">${turma[i].nome}</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma(${turma[i].idturma})" class="terceiro_botao">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos(${turma[i].idturma})" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir(${turma[i].idturma})" class="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+        `;
+
+        container.appendChild(turma);
+    }
+}
+
 function showModalTurma() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "flex";
