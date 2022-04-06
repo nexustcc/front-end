@@ -266,7 +266,6 @@ ul {
 
 .container-cadastro-membro{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: row;
     font-size: 23px;
@@ -276,7 +275,6 @@ ul {
 .container-cadastro-membro .buttons{
     display: flex;
     flex-direction: row;
-    margin-top: 0;
 }
 
 .ul-aluno {
@@ -353,20 +351,6 @@ ul {
     flex-direction: column;
     align-items: center;
     margin: 1%;
-}
-
-.ul-turma::-webkit-scrollbar {
-    width: 12px;
-    /* width of the entire scrollbar */
-}
-
-.ul-turma::-webkit-scrollbar-thumb {
-    background-color: #05204A;
-    /* color of the scroll thumb */
-    border-radius: 10px;
-    /* roundness of the scroll thumb */
-    border: none;
-    /* creates padding around scroll thumb */
 }
 
 .novo_curso h1 {
