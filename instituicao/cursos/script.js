@@ -1,3 +1,5 @@
+//CRUD foi finalizado, o que estou tentando fazer agora é fazer o nome da instituição aparecer - Artur (Linha 60 a 82)
+
 "use strict";
 
 function showModal() {
@@ -54,6 +56,30 @@ function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }
+
+///////////////////////////////////////////////////////////////
+function exibirNome(instituicao) {
+    document.getElementById("nomeInstituicao").value = instituicao.usuario.nome;
+
+    console.log(document.getElementById("nomeInstituicao"))
+    console.log(instituicao.usuario.nome)
+}
+
+async function getInfoInstituicao() {
+    const idInstituicao = 3;
+
+    const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    const instituicao = await dados.json();
+    exibirNome(instituicao.instituicao[0]);
+
+    console.log(exibirNome);
+
+    console.log(instituicao.instituicao[0].usuario.nome);
+}
+///////////////////////////////////////////////////////////////
 
 function exibirDados(cursos) {
     const container = document.getElementById("ul_container");
@@ -164,3 +190,4 @@ async function deletarCurso(idCurso) {
 }
 
 window.onload = getArrayCursos();
+window.onload = getInfoInstituicao();
