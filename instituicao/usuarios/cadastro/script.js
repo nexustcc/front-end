@@ -1,4 +1,8 @@
 "use strict"
+  
+const select = document.getElementById('option')
+const turma = document.getElementById('turma')
+
 
 function showModal() {
     document.querySelector(".modal").style.display = "flex";
@@ -37,3 +41,14 @@ function showModalEditar() {
 function resetForm() {
     document.getElementById("modal").reset();
 }
+
+
+
+const deletarCampo = () => {
+    if (select.value == '3'){
+        turma.remove()
+    }else{  
+    }  
+}
+
+document.getElementById('select-tipo').addEventListener("click", deletarCampo)

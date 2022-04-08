@@ -97,6 +97,16 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.li {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+
 .modal-membros {
     top: 0;
     right: 0;
@@ -117,6 +127,16 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.membro-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.membro-container p {
+    font-size: 23px;
 }
 
 .modal h1 {
@@ -203,6 +223,51 @@ img {
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
+}
+
+.ul-professor {
+    margin: 1% 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-color: #05204A;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.ul-aluno {
+    margin: 1% 0;
+    height: 100%;
+    border: 2px solid;
+    border-color: #05204A;
+    border-radius: 10px;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.professores {
+    margin: 0 1% 0 0;
+    text-align: center;
+    height: 20vh;
+}
+
+.professores h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #05204A;
+}
+
+.alunos {
+    margin: 0 0 0 0;
+    text-align: center;
+    height: 20vh;
+}
+
+.alunos h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #05204A;
 }
 
 #icone {
