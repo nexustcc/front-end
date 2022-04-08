@@ -1,0 +1,66 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .grupo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90vh;
+        max-width: 80%;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: #272727;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    body h1 {
+        margin-left: 2%;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    
+    body p {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .tema {
+        text-align: center;
+    }
+    
+    .ul-integrantes {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        text-align: center;
+    }
+    
+    .li-integrantes {
+        display: flex;
+        margin-right: 0.8%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .ul-orientadores {
+        display: flex;
+        margin-right: 0.8%;
+        flex-direction: row;
+        list-style: none;
+        text-align: center;
+    }
+    
+    .li-orientadores {
+        display: flex;
+        margin-right: 0.8%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
