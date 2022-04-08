@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Menu</title>
+    <link rel="stylesheet" href="styles_side_menu.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo">
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#">
+                    <i class='bx bx-group' ></i>
+                    <span class="links_name">Minhas turmas</span>
+                </a>
+                <span class="tooltip">Turmas</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-plus' ></i>
+                    <span class="links_name">Criar novo grupo</span>
+                </a>
+                <span class="tooltip">Novo grupo</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-graduation'></i>
+                    <span class="links_name">Atividades</span>
+                </a>
+                <span class="tooltip">Atividades</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-folder-open' ></i>
+                    <span class="links_name">Arquivos e links</span>
+                </a>
+                <span class="tooltip">Arquivos</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-edit'></i>
+                    <span class="links_name">Editar usuário</span>
+                </a>
+                <span class="tooltip">Editar usuário</span>
+            </li>
+            <li class="profile">
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Log Out</span>
+                </a>
+                <span class="tooltip">Log Out</span>
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
