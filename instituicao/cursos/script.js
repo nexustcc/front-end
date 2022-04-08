@@ -1,4 +1,4 @@
-//É necessário fazer o nome da instituicao aparecer, o erro não foi identificado e os códigos com essa função estão entre 
+//É necessário fazer o nome da instituicao aparecer, o erro não foi identificado e os códigos com essa função estão entre
 
 "use strict";
 
@@ -61,8 +61,8 @@ function exitModalExcluir() {
 function exibirNome(instituicao) {
     document.getElementById("nomeInstituicao").value = instituicao.usuario.nome;
 
-    console.log(document.getElementById("nomeInstituicao"))
-    console.log(instituicao.usuario.nome)
+    console.log(document.getElementById("nomeInstituicao"));
+    console.log(instituicao.usuario.nome);
 }
 
 async function getInfoInstituicao() {
@@ -82,6 +82,8 @@ async function getInfoInstituicao() {
 ///////////////////////////////////////////////////////////////
 
 function exibirDados(cursos) {
+    console.log(cursos);
+
     const container = document.getElementById("ul_container");
 
     for (var i = 0; i < cursos.length; i++) {
@@ -115,6 +117,70 @@ function exibirDados(cursos) {
     }
 }
 
+const exibirDadosPesquisa = (cursos) => {
+    const htmlString = cursos
+        .map((cursos) => {
+            return `
+        <div id="icone">
+            <p class="curso">Curso:</p>
+            <img id="book" src="./img/books.svg" alt="book" />
+            <p class="nome">${cursos.nome}</p>
+        </div>
+        <div class="button">
+            <button>TURMAS EXISTENTES NO CURSO</button>
+            <button type="button" onclick="showModalEditar(${cursos.idCurso})" class="terceiro" id="primeiro_botao">
+                EDITAR
+            </button>
+            <button onclick="showModalExcluir(${cursos.idCurso})" id="quarto_botao">
+                EXCLUIR
+            </button>
+        </div> `;
+        })
+        .join("");
+    document.getElementById("ul_container").innerHTML = htmlString;
+};
+
+const searchBar = document.getElementById("inputBuscarCurso");
+
+let cursos = [];
+searchBar.addEventListener("keyup", (e) => {
+    const searchString = e.target.value.toLowerCase();
+
+    const cursosFiltrados = cursos.cursos.filter((curso) => {
+        // exibirDados(curso.nome.toLowerCase().includes(searchString))
+        return curso.nome.toLowerCase().includes(searchString);
+    });
+    exibirDadosPesquisa(cursosFiltrados);
+});
+
+// const inputBuscarCusro = document
+//     .getElementById("inputBuscarCurso")
+//     .addEventListener("input", function (e) {
+//         buscarCurso();
+
+//         async function buscarCurso() {
+//             const pesquisarCurso = {
+//                 pesquisa: inputBuscarCurso.value + "%",
+//             };
+
+//             const config = {
+//                 method: "GET",
+//                 headers: {
+//                     "Content-Type": "application/json",
+//                 },
+//                 body: JSON.stringify(pesquisarCurso),
+//             };
+
+//             console.log(pesquisarCurso);
+
+//             fetch("http://localhost:3000/curso/pesquisarCursos/3", config)
+//                 .then((res) => res.json())
+//                 .then((data) => {
+//                     console.log(data);
+//                 });
+//         }
+//     });
+
 async function getArrayCursos() {
     const url = `http://localhost:3000/curso/listarCursos/3`;
 
@@ -122,7 +188,8 @@ async function getArrayCursos() {
         .then((response) => response.json)
         .then(console.log);
     const dados = await fetch(url);
-    const cursos = await dados.json();
+    cursos = await dados.json();
+    console.log(cursos);
     exibirDados(cursos.cursos);
 }
 
