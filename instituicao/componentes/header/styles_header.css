@@ -1,34 +1,33 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
- }
+    box-sizing: border-box;
+}
 
- body{
+body {
     width: 100vw;
     height: 100vh;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     padding: 30px 70px;
     color: hsl(208, 93%, 24%);
 }
 
-header .primeira_parte{
+header .primeira_parte {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5vh;
 }
 
-header h1{
+header h1 {
     font-size: 24px;
 }
 
 @media (max-width: 500px) {
-
     header .primeira_parte {
         display: none;
     }
@@ -37,5 +36,4 @@ header h1{
         padding: 10px;
         justify-content: end;
     }
-
 }

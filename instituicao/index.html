@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="componentes/header/styles_header.css">
   <script src="script.js" defer></script>
   <title>Perfil</title>
@@ -25,14 +25,14 @@
 
   <header>
     <div class="primeira_parte">
-        <img src="componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas">
-        <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+      <img src="componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas">
+      <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
     </div>
-    
+
     <a href="index.html">
-        <img src="componentes/header/img/perfil_instituicao.svg" alt="perfil">
+      <img src="componentes/header/img/perfil_instituicao.svg" alt="perfil">
     </a>
-</header>
+  </header>
 
   <div class="container">
     <h1>PERFIL DA INSTITUIÇÃO</h1>
@@ -40,12 +40,14 @@
 
       <div class="col-md-12">
         <label for="email_institucional" class="form-label">E-mail institucional</label>
-        <input id="input_email_institucional" type="email" class="form-control email_institucional" placeholder="xxxxxxxxxxxx@email.com" disabled>
+        <input id="input_email_institucional" type="email" class="form-control email_institucional"
+          placeholder="xxxxxxxxxxxx@email.com" disabled>
       </div>
 
       <div class="col-md-6">
         <label for="nome_da_instituicao" class="form-label">Nome da instituição</label>
-        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" placeholder="xxxxxxx xxxxxxx" disabled>
+        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" placeholder="xxxxxxx xxxxxxx"
+          disabled>
       </div>
 
       <div class="col-md-6 for-cnp">
@@ -55,7 +57,8 @@
 
       <div class="col-md-6">
         <label for="telefone" class="form-label">Telefone</label>
-        <input id="telefone_instituicao" type="text" class="form-control telefone" placeholder="(xx) xxxx-xxxx" disabled>
+        <input id="telefone_instituicao" type="text" class="form-control telefone" placeholder="(xx) xxxx-xxxx"
+          disabled>
       </div>
 
       <div class="col-md-6">
@@ -65,10 +68,11 @@
     </form>
     <div class="button">
       <div class="col-md-6">
-       <a href="../instituicao/perfil/infos_pagamento/index.html"> <button id="primeiro_botao" type="button"> INFORMAÇÕES DE PAGAMENTO</button></a> 
+        <a href="../instituicao/perfil/infos_pagamento/index.html"> <button id="primeiro_botao" type="button">
+            INFORMAÇÕES DE PAGAMENTO</button></a>
       </div>
       <div class="col-md-3">
-        <a href="./perfil/editar/index.html"><button id="segundo_botao" type="button"> EDITAR</button></a> 
+        <a href="./perfil/editar/index.html"><button id="segundo_botao" type="button"> EDITAR</button></a>
       </div>
       <div class="col-md-3">
         <button id="terceiro_botao" type="button">EXCLUIR</button>
@@ -84,12 +88,13 @@
 
     <div>
       <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
-      <input type="password" class="form-control senha-label">
+      <input type="password" id="senhaInstituicao" class="form-control senha-label">
+      <p id="p-senha-incorreta">Senha Incorreta</p>
     </div>
 
     <div class="buttons">
       <button class="col-md-6" id="primeiro_botao_modal" onclick="exitModal()">CANCELAR</button>
-      <button class="col-md-6" id="terceiro_botao" onclick="exitModal()">CONFIRMAR</button>
+      <button class="col-md-6" id="terceiro_botao" onclick="excluirConta()">CONFIRMAR</button>
     </div>
 
   </div>

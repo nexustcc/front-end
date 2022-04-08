@@ -1,4 +1,4 @@
-//CRUD foi finalizado, o que estou tentando fazer agora é fazer o nome da instituição aparecer - Artur (Linha 60 a 82)
+//É necessário fazer o nome da instituicao aparecer, o erro não foi identificado e os códigos com essa função estão entre 
 
 "use strict";
 
