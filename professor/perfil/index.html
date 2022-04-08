@@ -13,58 +13,38 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="componentes/header/styles_header.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="./perfil.css">
   <title>Perfil</title>
 </head>
 
 <div class="bg"></div>
 
-
 <body>
 
   <div class="container">
-    <h1>PERFIL DA INSTITUIÇÃO</h1>
+    <h1>PERFIL DE USUÁRIO</h1>
     <form class="row g-3">
 
       <div class="col-md-12">
-        <label for="email_institucional" class="form-label">E-mail institucional</label>
-        <input id="input_email_institucional" type="email" class="form-control email_institucional"
+        <label for="email_professor" class="form-label">E-mail:</label>
+        <input id="input_email_professor" type="email" class="form-control email_professor"
           placeholder="xxxxxxxxxxxx@email.com" disabled>
       </div>
 
       <div class="col-md-6">
-        <label for="nome_da_instituicao" class="form-label">Nome da instituição</label>
-        <input id="nome_instituicao" type="text" class="form-control nome_da_instituicao" placeholder="xxxxxxx xxxxxxx"
-          disabled>
-      </div>
-
-      <div class="col-md-6 for-cnp">
-        <label for="cnpj" class="form-label">CNPJ</label>
-        <input id="cnpj_instituicao" type="text" class="form-control cnpj" placeholder="xx.xxx.xxx/0001-xx" disabled>
-      </div>
-
-      <div class="col-md-6">
-        <label for="telefone" class="form-label">Telefone</label>
-        <input id="telefone_instituicao" type="text" class="form-control telefone" placeholder="(xx) xxxx-xxxx"
+        <label for="nome_professor" class="form-label">Nome:</label>
+        <input id="nome_professor" type="text" class="form-control nome_professor" placeholder="xxxxxxx xxxxxxx"
           disabled>
       </div>
 
       <div class="col-md-6">
-        <label for="senha" class="form-label">Senha</label>
-        <input id="senha_instituicao" type="password" class="form-control senha" placeholder="xxxxxxx" disabled>
+        <label for="senha" class="form-label">Senha:</label>
+        <input id="senha_professor" type="password" class="form-control senha" placeholder="xxxxxxx" disabled>
       </div>
     </form>
     <div class="button">
-      <div class="col-md-6">
-        <a href="../instituicao/perfil/infos_pagamento/index.html"> <button id="primeiro_botao" type="button">
-            INFORMAÇÕES DE PAGAMENTO</button></a>
-      </div>
       <div class="col-md-3">
-        <a href="./perfil/editar/index.html"><button id="segundo_botao" type="button"> EDITAR</button></a>
-      </div>
-      <div class="col-md-3">
-        <button id="terceiro_botao" type="button">EXCLUIR</button>
+        <a href="./editar/index.html"><button id="segundo_botao" type="button"> EDITAR</button></a>
       </div>
     </div>
   </div>
@@ -77,7 +57,7 @@
 
     <div>
       <label for="senha-label" class="form-label">Insira sua senha para confirmar a ação:</label>
-      <input type="password" id="senhaInstituicao" class="form-control senha-label">
+      <input type="password" id="senhaProfessor" class="form-control senha-label">
       <p id="p-senha-incorreta">Senha Incorreta</p>
     </div>
 
