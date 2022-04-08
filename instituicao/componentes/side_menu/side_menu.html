@@ -1,59 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles_side_menu.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap" rel="stylesheet">
     <title>Side Menu</title>
+    <link rel="stylesheet" href="styles_side_menu.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-    <div class="side_menu">
-
-        <img src="../../../home/images-global/logo-branca.svg" alt="logo" id="logo">
-
-        <div class="links">
-        <a href="#">
-            <div class="item">
-                <img src="img/icon_livros.svg" alt="livros">
-                <p>CURSOS EXISTENTES</p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="item">
-                <img src="img/icon_turma.svg" alt="turma">
-                <p>TURMAS EXISTENTES</p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="item">
-                <img src="img/icon_user.svg" alt="usuário">
-                <p>USUÁRIOS CADASTRADOS</p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="item">
-                <img src="img/icone_lapis.svg" alt="lápis">
-                <p>FORMULÁRIO DA BANCA</p>
-            </div>
-        </a>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo">
+            <i class='bx bx-menu' id="btn"></i>
         </div>
-
-        <div class="item">
-
-        <a href="#">
-            <img src="img/icon_sair.svg" alt="sair" id="iconeSair">
-        </a>
-
-        <p>LOG OUT</p>
-
-        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#">
+                    <i class='bx bx-group' ></i>
+                    <span class="links_name">Turmas existentes</span>
+                </a>
+                <span class="tooltip">Turmas</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Usuários cadastrados</span>
+                </a>
+                <span class="tooltip">Usuários</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-plus' ></i>
+                    <span class="links_name">Cadastrar novo usuário</span>
+                </a>
+                <span class="tooltip">Novo usuário</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-edit'></i>
+                    <span class="links_name">Formulário da banca</span>
+                </a>
+                <span class="tooltip">Avaliações</span>
+            </li>
+            <li class="profile">
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Log Out</span>
+                </a>
+                <span class="tooltip">Log Out</span>
+            </li>
+        </ul>
 
     </div>
-    
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+
 </body>
+
 </html>
