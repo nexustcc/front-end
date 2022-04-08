@@ -184,7 +184,7 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="tipo-select" class="form-label">Tipo</label>
-                <select class="form-select tipo-select" id="tipo-select" aria-label="Default select example">
+                <select class="form-select tipo-select" id="select-tipo" aria-label="Default select example">
                     <option selected>SELECIONE O TIPO DE USUÁRIO</option>
                     <option value="1">Professor</option>
                     <option value="2">Aluno</option>
@@ -192,7 +192,7 @@
                 </select>
             </div>
 
-            <div class="col-md-6 lab-inp">
+            <div class="col-md-6 lab-inp" id="turma">
                 <label for="turma" class="form-label">Turma</label>
                 <input type="text" class="form-control turma">
             </div>
@@ -253,72 +253,139 @@
 
     </div>
 
-    <div class="container mt-5 container modal  modal-membros">
-        <h1>PARTICIPANTES DA TURMA</h1>
+    <div class="container mt-5 container modal modal-membros">
+        <h1>MEMBROS DA TURMA</h1>
 
-        <ul class="list-group" id="ul-turma">
-            <li id="li" class="list-group-item li">
-                <div id="icone">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>PROFESSOR</h2>
-                </div>
-            </li>
+        <div class="membro-container">
+            <div class="professores">
+                <h1>PROFESSORES</h1>
+                <ul class="list-group ul-professor">
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>PROFESSOR</h2>
-                </div>
-            </li>
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>PROFESSOR</h2>
-                </div>
-            </li>
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>PROFESSOR</h2>
-                </div>
-            </li>
+                    <li class="list-group-itemli">
+                        <div class="membro">
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="alunos">
+                <h1>ALUNOS</h1>
+                <ul class="list-group ul-aluno">
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
 
-            <img src="./img/Line.svg" alt="">
+                    <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
-                    <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
-                        data-width="100" data-height="100"></span>
-                    <p class="nome">NOME</p>
-                </div>
-                <div class="button">
-                    <h2>PROFESSOR</h2>
-                </div>
-            </li>
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+
+                    <img src="./img/Line.svg" alt="">
+
+                    <li class="list-group-item li">
+                        <div class="membro">
+                            <div class="nome">
+                                <p>NOME</p>
+                            </div>
+                            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
+                                data-width="100" data-height="100"></span>
+                            <p class="grupo">GRUPO</p>
+                        </div>
+                        <div class="button">
+                            <p>TIPO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         </ul>
         <div class="buttons-modal">
             <div class="col-md-3">
@@ -326,7 +393,6 @@
             </div>
         </div>
     </div>
-
 
 
 </body>

@@ -181,18 +181,6 @@ ul::-webkit-scrollbar-thumb {
     color: #05204A;
 }
 
-.avaliadores {
-    margin: 0 0 0 1%;
-    text-align: center;
-    height: 20vh;
-}
-
-.avaliadores h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #05204A;
-}
-
 .bg {
     position: fixed;
     z-index: 1;
@@ -224,7 +212,7 @@ ul {
     height: 100%;
     border: 2px solid;
     border-color: #05204A;
-    border-radius: 10px;
+    border-radius: 100px;
     padding: 2%;
     overflow-y: auto;
 }
@@ -251,16 +239,20 @@ ul {
 }
 
 .container-selecionando h1 {
-    font-size: 40px;
+    margin-top: 2%;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .container-selecionado h1 {
-    font-size: 40px;
+    margin-top: 2%;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .container-cadastro-membro {
     width: 100%;
-    height: 50%;
+    height: 45%;
     display: flex;
     flex-direction: row;
     font-size: 23px;
@@ -282,22 +274,10 @@ ul {
     padding: 2%;
     overflow-y: auto;
 }
-
-.ul-avaliador {
-    margin: 1% 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid;
-    border-color: #05204A;
-    border-radius: 10px;
-    padding: 2%;
-    overflow-y: auto;
-}
-
 .ul-grupo {
     margin: 1% 0;
     width: 100%;
-    height: 1000%;
+    height: 100%;
     border: 2px solid;
     border-color: #05204A;
     border-radius: 10px;
@@ -325,7 +305,7 @@ ul {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;
+    margin-top: 5%;
 }
 
 .turma {
@@ -419,8 +399,17 @@ ul {
 }
 
 .nome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 30px;
     font-weight: 400;
+}
+
+.nome img{
+    width: 25px;
+    margin-left: 0.5vw;
+    margin-top: -1.5vh;
 }
 
 .primeiro_botao {
@@ -500,6 +489,25 @@ ul {
     font-weight: 100;
 }
 
+.modal-excluir-membro {
+    width: 40%;
+    height: 30vh;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+}
+
 .modal-excluir h1 {
     font-size: 40px;
     font-weight: 700;
@@ -522,6 +530,31 @@ ul {
 }
 
 .modal-excluir input {
+    width: 100%;
+}
+
+.modal-excluir-membro h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #05204A;
+}
+
+.modal-excluir-membro h2 {
+    margin: 2% 0 2% 0;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: #A71E34;
+}
+
+.modal-excluir-membro label {
+    font-size: 30px;
+    font-weight: 400;
+    color: #05204A;
+}
+
+.modal-excluir-membro input {
     width: 100%;
 }
 
@@ -560,6 +593,19 @@ ul {
 }
 
 @media (max-width: 700px) {
+    .modal {
+        width: 100%;
+        height: 50vh;
+        padding: 2%;
+        border-radius: 10px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-weight: 100;
+    }
+    
     .container-geral {
         height: 100vh;
         width: 100vw;
@@ -581,12 +627,18 @@ ul {
         height: 100vh;
         align-items: center;
         text-align: center;
+        font-size: 15px;
     }
-    ul {
+
+    .lab-inp input{
+        font-size: 15px;
+        height: 40px;
+    }
+    .ul {
         margin-top: 1%;
         height: 100%;
     }
-    li {
+    .li {
         display: flex;
         flex-direction: column;
     }
@@ -610,6 +662,7 @@ ul {
     .turma {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
     .icone {
         display: flex;
@@ -674,10 +727,7 @@ ul {
         display: flex;
         flex-direction: row;
     }
-    .ul-avaliador .li {
-        display: flex;
-        flex-direction: row;
-    }
+
     .iconify {
         height: 50px;
     }
@@ -691,14 +741,5 @@ ul {
         padding: 2%;
         overflow-y: auto;
     }
-    .ul-avaliador {
-        margin: 1% 0;
-        width: 100%;
-        height: 70%;
-        border: 2px solid;
-        border-color: #05204A;
-        border-radius: 10px;
-        padding: 2%;
-        overflow-y: auto;
-    }
+
 }
