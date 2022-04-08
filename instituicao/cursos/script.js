@@ -121,20 +121,22 @@ const exibirDadosPesquisa = (cursos) => {
     const htmlString = cursos
         .map((cursos) => {
             return `
-        <div id="icone">
-            <p class="curso">Curso:</p>
-            <img id="book" src="./img/books.svg" alt="book" />
-            <p class="nome">${cursos.nome}</p>
-        </div>
-        <div class="button">
-            <button>TURMAS EXISTENTES NO CURSO</button>
-            <button type="button" onclick="showModalEditar(${cursos.idCurso})" class="terceiro" id="primeiro_botao">
-                EDITAR
-            </button>
-            <button onclick="showModalExcluir(${cursos.idCurso})" id="quarto_botao">
-                EXCLUIR
-            </button>
-        </div> `;
+        <li class="list-group-item li" id="li">
+            <div id="icone">
+                <p class="curso">Curso:</p>
+                <img id="book" src="./img/books.svg" alt="book" />
+                <p class="nome">${cursos.nome}</p>
+            </div>
+            <div class="button">
+                <button>TURMAS EXISTENTES NO CURSO</button>
+                <button type="button" onclick="showModalEditar(${cursos.idCurso})" class="terceiro" id="primeiro_botao">
+                    EDITAR
+                </button>
+                <button onclick="showModalExcluir(${cursos.idCurso})" id="quarto_botao">
+                    EXCLUIR
+                </button>
+            </div> 
+        </li>`;
         })
         .join("");
     document.getElementById("ul_container").innerHTML = htmlString;
