@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../componentes/header/styles_header.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>LISTAGEM DE TURMAS</title>
+</head>
+<div class="bg">
+
+</div>
+
+<body>
+
+    <div class="container-geral">
+        <div class="container">
+            <div class="col-md-6 for-cnp cursos_existentes" id="icon">
+                <label for="cursos_ex" class="form-label">CURSOS EXISTENTES</label>
+                <input type="text" class="form-control cursos_ex">
+                <i class="fa fa-search" style="font-size:24px"></i>
+            </div>
+
+            <ul class="list-group" id="ul">
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="curso">Curso:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="curso">Curso:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="turma">Turma:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="turma">Turma:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="turma">Turma:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="turma">Turma:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="turma">Turma:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <p class="turma">Turma:</p>
+                        <img id="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" id="terceiro_botao">SOBRE A TURMA</button>
+                        <button class="terceiro" id="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalExcluir()" id="quarto_botao">EXCLUIR</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <button onclick="showModalCurso()" class="addCurso button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
+
+    </div>
+
+
+    <div class="container mt-5 container modal modal-turma">
+        <h1>NOME DA TURMA</h1>
+        <form class="row g-7">
+
+            <div class="col-md-12 lab-inp">
+                <label for="turma" class="form-label">Turma</label>
+                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com" disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="numero-estudantes" class="form-label">Número de estudantes</label>
+                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba " disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="curso-inp" class="form-label">Curso</label>
+                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68" disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
+                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68" disabled>
+            </div>
+
+            <div class="col-md-6 lab-inp">
+                <label for="data-termino" class="form-label">Data de termino das aulas</label>
+                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68" disabled>
+            </div>
+
+            <div class="buttons">
+                <div class="col-md-3">
+                    <button class="primeiro_botao" type="button" onclick="exitModalTurma()">SAIR</button>
+                </div>
+
+                <div class="col-md-3">
+                    <button class="terceiro_botao" onclick="showModalMembros()" type="button">MEMBROS DA TURMA</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="container mt-5 container modal  modal-membros">
+        <h1>USUÁRIOS QUE PERTENCENTES A TURMA</h1>
+
+        <div class="-membro">
+            <ul class="list-group" id="ul-turma">
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;" data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;" data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;" data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;" data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+
+                <img src="./img/Line.svg" alt="">
+
+                <li id="li" class="list-group-item li">
+                    <div id="icone">
+                        <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;" data-width="100" data-height="100"></span>
+                        <p class="nome">NOME</p>
+                    </div>
+                    <div class="button">
+                        <h2>PROFESSOR</h2>
+                    </div>
+                </li>
+            </ul>
+            <div class="buttons">
+                <div class="col-md-6">
+                    <button class="segundo_botao" type="button" onclick="showModalTurma()">VOLTAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ccontainer modal modal-excluir">
+        <h1>DESEJA EXCLUIR ESSA TURMA?</h1>
+        <h2>Lembre-se que essa é uma ação irreversível!</h2>
+
+        <div class="buttons">
+            <div class="col-md-12">
+                <button id="segundo_botao" onclick="exitModalExcluir()" type="button">CANCELAR</button>
+            </div>
+            <div class="col-md-12">
+                <button id="quarto_botao" onclick="exitModalExcluir()" type="button">CONFIRMAR</button>
+            </div>
+        </div>
+
+    </div>
+</body>

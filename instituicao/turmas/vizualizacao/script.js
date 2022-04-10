@@ -1,16 +1,13 @@
 "use strict"
 
-const turma = document.getElementById('turma')
-
-
-function showModal() {
-    document.querySelector(".modal").style.display = "flex";
+function showModalExcluir() {
     document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-excluir").style.display = "flex";
 }
 
-function exitModal() {
-    document.querySelector(".modal").style.display = "none";
+function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal-excluir").style.display = "none";
 }
 
 function showModalTurma() {
@@ -36,21 +33,3 @@ function showModalEditar() {
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
 }
-
-function resetForm() {
-    document.getElementById("modal").reset();
-}
-
-
-
-function deletarCampo() {
-    if (document.getElementById('select-tipo').value == "3") {
-        document.querySelector("#turma").style.display = "none";
-        document.querySelector("#grupo").style.display = "flex";
-    } else {
-        document.querySelector("#turma").style.display = "flex";
-        document.querySelector("#grupo").style.display = "none";
-    }
-}
-
-document.getElementById('select-tipo').addEventListener("click", deletarCampo)

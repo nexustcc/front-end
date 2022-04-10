@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2%;
-    height: 100vh;
+    height: 80%;
     width: 100vw;
 }
 
@@ -106,7 +106,6 @@ body {
     padding: 0 5%;
 }
 
-
 .modal-membros {
     top: 0;
     right: 0;
@@ -133,7 +132,6 @@ body {
     display: flex;
     flex-direction: row;
 }
-
 
 .membro-container p {
     font-size: 23px;
@@ -330,6 +328,18 @@ img {
     font-size: 20px;
 }
 
+#turma {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#grupo {
+    font-size: 16px;
+    display: none;
+    flex-direction: column;
+}
+
 .nome {
     font-size: 30px;
     font-weight: 400;
@@ -386,8 +396,6 @@ img {
     color: #C2C2C2;
 }
 
-
-
 .turma-select {
     background-color: #E3E3E3;
     border-radius: 10px;
@@ -401,12 +409,11 @@ img {
     flex-direction: row-reverse;
 }
 
-.buttons-modal{
+.buttons-modal {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
 }
-
 
 @media (max-width: 830px) {
     .container {
@@ -438,5 +445,4 @@ img {
     .livro {
         display: none;
     }
-
 }
