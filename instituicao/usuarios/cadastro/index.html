@@ -22,7 +22,7 @@
     <header>
         <div class="primeira_parte">
             <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas">
-            <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+            <h1 class="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
         </div>
 
         <a href="../../index.html">
@@ -32,15 +32,15 @@
 
     <div class="container">
 
-        <div class="col-md-6 for-cnp turmas_existentes" id="icon">
+        <div class="col-md-6 for-cnp turmas_existentes icon">
             <label for="turmas_ex" class="form-label">CADASTRAR USUÁRIO</label>
             <input type="text" class="form-control turmas_ex">
             <i class="fa fa-search" style="font-size:24px"></i>
         </div>
 
-        <ul class="list-group" id="ul">
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+        <ul class="list-group ul">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -53,8 +53,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -67,8 +67,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -81,8 +81,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -95,8 +95,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -109,8 +109,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -123,8 +123,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -137,8 +137,8 @@
 
             <img src="./img/Line.svg" alt="">
 
-            <li id="li" class="list-group-item li">
-                <div id="icone">
+            <li class="list-group-item li">
+                <div class="icone">
                     <p class="turma">Turma:</p>
                     <span class="iconify livro" data-icon="bx:book-reader" style="color: #05204a;" data-width="100" data-height="100"></span>
                     <p class="nome">NOME</p>
@@ -154,7 +154,7 @@
 
     <div class="container mt-5 container modal">
         <h1>CRIAR NOVO USUÁRIO</h1>
-        <form class="row g-7" id="modal">
+        <form class="row g-7">
 
             <div class="col-md-12 lab-inp">
                 <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
@@ -172,12 +172,12 @@
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="tipo-select" class="form-label">Tipo</label>
-                <select class="form-select tipo-select" id="select-tipo" aria-label="Default select example">
+                <label for="tipo-select"  class="form-label">Tipo</label>
+                <select class="form-select tipo-select" id="tipo-select" onChange="deletarCampo()" aria-label="Default select example">
                     <option selected>SELECIONE O TIPO DE USUÁRIO</option>
-                    <option id="option3" value="1">Professor</option>
-                    <option id="option3" value="2">Aluno</option>
-                    <option id="option3" value="3">Avaliador</option>
+                    <option value="1">Professor</option>
+                    <option value="2">Aluno</option>
+                    <option value="3">Avaliador</option>
                 </select>
             </div>
 

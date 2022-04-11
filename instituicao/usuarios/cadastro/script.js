@@ -41,10 +41,8 @@ function resetForm() {
     document.getElementById("modal").reset();
 }
 
-
-
 function deletarCampo() {
-    if (document.getElementById('select-tipo').value == "3") {
+    if (document.getElementById('tipo-select').value == "3") {
         document.querySelector("#turma").style.display = "none";
         document.querySelector("#grupo").style.display = "flex";
     } else {
@@ -52,5 +50,3 @@ function deletarCampo() {
         document.querySelector("#grupo").style.display = "none";
     }
 }
-
-document.getElementById('select-tipo').addEventListener("click", deletarCampo)
