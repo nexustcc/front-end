@@ -149,39 +149,10 @@ searchBar.addEventListener("keyup", (e) => {
     const searchString = e.target.value.toLowerCase();
 
     const cursosFiltrados = cursos.cursos.filter((curso) => {
-        // exibirDados(curso.nome.toLowerCase().includes(searchString))
         return curso.nome.toLowerCase().includes(searchString);
     });
     exibirDadosPesquisa(cursosFiltrados);
 });
-
-// const inputBuscarCusro = document
-//     .getElementById("inputBuscarCurso")
-//     .addEventListener("input", function (e) {
-//         buscarCurso();
-
-//         async function buscarCurso() {
-//             const pesquisarCurso = {
-//                 pesquisa: inputBuscarCurso.value + "%",
-//             };
-
-//             const config = {
-//                 method: "GET",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                 },
-//                 body: JSON.stringify(pesquisarCurso),
-//             };
-
-//             console.log(pesquisarCurso);
-
-//             fetch("http://localhost:3000/curso/pesquisarCursos/3", config)
-//                 .then((res) => res.json())
-//                 .then((data) => {
-//                     console.log(data);
-//                 });
-//         }
-//     });
 
 async function getArrayCursos() {
     const url = `http://localhost:3000/curso/listarCursos/3`;
