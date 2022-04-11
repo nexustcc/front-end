@@ -19,12 +19,12 @@ body {
     width: 100vw;
 }
 
-#ul::-webkit-scrollbar {
+ul::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
 }
 
-#ul::-webkit-scrollbar-thumb {
+ul::-webkit-scrollbar-thumb {
     background-color: #05204A;
     /* color of the scroll thumb */
     border-radius: 10px;
@@ -166,7 +166,7 @@ img {
     margin-top: 2%;
 }
 
-#ul {
+.ul {
     width: 100%;
     border: 2px solid;
     border-color: #05204A;
@@ -175,7 +175,7 @@ img {
     overflow-y: auto;
 }
 
-#ul-turma {
+.ul-turma {
     margin: 1% 0;
     width: 100%;
     height: 100%;
@@ -186,12 +186,12 @@ img {
     overflow-y: auto;
 }
 
-#ul::-webkit-scrollbar {
+ul::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
 }
 
-#ul::-webkit-scrollbar-thumb {
+ul::-webkit-scrollbar-thumb {
     background-color: #05204A;
     /* color of the scroll thumb */
     border-radius: 10px;
@@ -200,12 +200,12 @@ img {
     /* creates padding around scroll thumb */
 }
 
-#ul-turma::-webkit-scrollbar {
+.ul-turma::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
 }
 
-#ul-turma::-webkit-scrollbar-thumb {
+.ul-turma::-webkit-scrollbar-thumb {
     background-color: #05204A;
     /* color of the scroll thumb */
     border-radius: 10px;
@@ -214,7 +214,7 @@ img {
     /* creates padding around scroll thumb */
 }
 
-#li {
+li {
     border: none;
     display: flex;
     flex-direction: row;
@@ -294,11 +294,11 @@ img {
     width: 90%;
 }
 
-#icon {
+.icon {
     position: relative;
 }
 
-#icon i {
+.icon i {
     position: absolute;
     right: 4vw;
     top: 65%;
@@ -307,13 +307,13 @@ img {
     transition: 0.3s;
 }
 
-#icon.inputIconBg i {
+.icon.inputIconBg i {
     background-color: #aaa;
     padding: 9px 4px;
     border-radius: 4px 0 0 4px;
 }
 
-#li h2 {
+.li h2 {
     color: #272727;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -324,7 +324,7 @@ img {
     margin-bottom: 1%;
 }
 
-.turma {
+#turma {
     font-size: 20px;
 }
 
@@ -427,7 +427,7 @@ img {
     .card_azul h1 {
         font-size: clamp(0rem, 10vw, 2.3rem);
     }
-    #li {
+    li {
         display: flex;
         flex-direction: column;
     }
@@ -438,7 +438,7 @@ img {
         font-size: clamp(0rem, 10vw, 1.5rem);
         margin-right: 5%;
     }
-    #icone {
+    .icone {
         display: flex;
         flex-direction: row;
     }
