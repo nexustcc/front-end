@@ -14,6 +14,8 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <script type="text/javascript" src="../../../jquery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../../jquery/jquery.mask.min.js"></script>
@@ -35,6 +37,13 @@
     <div class="container mt-5 container">
         <h1>EDITAR PERFIL</h1>
         <form class="row g-3">
+
+            <div class="profile-pic-div">
+                <img class="profile_image" id="fotoPerfilProfessor" src="img/perfil.jpeg" alt="foto de perfil">
+                <input type="file" id="inputFotoProfessor" accept="image/*">
+                <label for="file">Escolher foto</label>
+              </div>
+
             <div class="col-md-12" id="icon">
                 <label for="email_professor" class="form-label">E-mail:</label>
                 <input id="input_email_professor" type="email" class="form-control email_professor"

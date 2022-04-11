@@ -11,7 +11,7 @@
     align-items: center;
     color: #05204A;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 body {
@@ -27,11 +27,44 @@ body {
     background-color: #E3E3E3;
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
-    padding: 15px
+    padding: 15px;
 }
 
 .container label {
     margin-top: 5px;
+}
+
+.container .profile-pic-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .profile_image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+     margin-bottom: 10px;
+}
+
+.container .profile-pic-div input {
+    /* width: 150px; */
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    border-radius: 0%;
+    display: none;
+}
+
+.container .profile-pic-div label {
+    height: 60px;
+    width: 250px;
+    background-color:#044177;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -108,5 +141,10 @@ a:hover {
 
     .container h1 {
         font-size: 50px;
+    }
+
+    .container .profile_image {
+        width: 100px;
+        height: 100px;
     }
 }
