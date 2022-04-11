@@ -1,0 +1,77 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   height: 100vh;
+   font-family: "Poppins", sans-serif;
+   width: 100vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+
+.container{
+   width: 30%;
+}
+#imgPerfil {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.formPerfil{
+   margin-top: 5%;
+}
+
+.lab-inp {
+   margin-top: 1%;
+   margin-bottom: 1%;
+}
+
+.lab-inp input {
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
+}
+
+.botao_editar {
+   margin-top: 2vh;
+   width: 100%;
+   background-color: rgba(240, 248, 255, 0);
+   color: white;
+   background-color: #044177;
+   border-radius: 30px;
+   font-weight: 700;
+   border: none;
+   padding: 15px
+}
+
+.buttons {
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+@media (max-width: 830px) {
+   .container{
+      width: 70%;
+   }
+   #imgPerfil {
+     object-fit: cover;
+     object-position: center center;
+     height: 150px;
+     width: 150px;
+   }
+   
+   .formPerfil{
+      margin-top: 5%;
+   }
+
+   .botao_editar {
+      width: 100%;
+   } 
+}

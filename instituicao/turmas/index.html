@@ -172,6 +172,26 @@
         </form>
     </div>
 
+    <div class="container mt-5 container modal modal-excluir modal-trocar-turma">
+        <h1>TROCAR TURMA</h1>
+        <form class="row g-7">
+
+            <div class="col-md-12 lab-inp">
+                <label for="turma" class="form-label">Nova turma</label>
+                <input type="text" class="form-control turma">
+            </div>
+
+            <div class="buttons">
+                <div class="col-md-6">
+                    <button class="segundo_botao" type="button" onclick="showModalMembros()">CANCELAR</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="terceiro_botao" onclick="showModalMembros()" type="button">SALVAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="container mt-5 container modal modal-add-membros">
         <h1>ADICIONAR MEMBROS À TURMA</h1>
         <div class="col-md-6 lab-inp-modal icon-membro">
@@ -190,8 +210,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
 
@@ -201,8 +222,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
                 </ul>
@@ -216,8 +238,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
 
@@ -227,8 +250,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
                 </ul>
@@ -264,8 +288,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
 
@@ -277,8 +302,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
                 </ul>
@@ -292,8 +318,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
 
@@ -305,8 +332,9 @@
                                 data-width="100" data-height="100"></span>
                             <p class="nome">NOME</p>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+
                         </div>
                     </li>
                 </ul>
@@ -424,11 +452,12 @@
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
 
@@ -440,11 +469,12 @@
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
 
@@ -456,11 +486,12 @@
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
 
@@ -472,11 +503,12 @@
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                         </div>
-                        <div class="button">
+                        <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
                 </ul>
@@ -488,14 +520,15 @@
                         <div class="membro">
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="grupo">GRUPO</p>
                         </div>
-                        <div class="button">
+                         <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
 
@@ -505,14 +538,15 @@
                         <div class="membro">
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="grupo">GRUPO</p>
                         </div>
-                        <div class="button">
+                         <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
 
@@ -522,31 +556,32 @@
                         <div class="membro">
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="grupo">GRUPO</p>
                         </div>
-                        <div class="button">
+                         <div class="tipo">
                             <p>TIPO</p>
+                            <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
                         </div>
                     </li>
 
-                    <img src="./img/Line.svg" alt="">
+
 
                     <li class="list-group-item li">
                         <div class="membro">
                             <div class="nome">
                                 <p>NOME</p>
-                                <img src="./img/trocar-turma.svg" alt="">
+
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <p class="grupo">GRUPO</p>
                         </div>
-                        <div class="button">
-                            <p>TIPO</p>
+                        <div class="tipo">
+                            <p>TIPO</p> <img src="./img/trocar-turma.svg" onclick="showModalTrocarTurma()" alt="">
                         </div>
                     </li>
                 </ul>

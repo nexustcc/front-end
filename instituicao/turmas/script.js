@@ -13,6 +13,18 @@ function exitModal() {
     document.querySelector(".modal-add-membros").style.display = "none";
 }
 
+function showModalTrocarTurma() {
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-trocar-turma").style.display = "flex";
+    document.querySelector(".modal-membros").style.display = "none";
+}
+
+function exitModalTrocarTurma() {
+    document.querySelector(".bg").style.display = "none";
+    document.querySelector(".modal-trocar-turma").style.display = "none";
+    document.querySelector(".modal-membros").style.display = "flex";
+}
+
 function showModalGrupos() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-grupos").style.display = "flex";
