@@ -40,31 +40,48 @@ body {
     flex-direction: column;
 }
 
+.container .profile-pic-div .img_professor {
+    display: flex;
+    justify-content: center;
+}
+
 .container .profile_image {
     width: 150px;
     height: 150px;
     border-radius: 100px;
-     margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-.container .profile-pic-div input {
-    /* width: 150px; */
-    background-color: #fff;
-    border: none;
-    padding: 0;
-    border-radius: 0%;
+#fotoPerfilProfessor {
+    background-position: center;
+    background-size: cover;
+}
+
+.container .upload_foto {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.container .upload_foto .input_foto {
     display: none;
 }
 
-.container .profile-pic-div label {
-    height: 60px;
-    width: 250px;
-    background-color:#044177;
+.container .upload_foto .btn_upload_foto {
+    background: #044177;
+    border: 2px solid #044177;
+    border-radius: 4px;
+    outline: none;
+    padding: 0.5em 0.8em;
     color: #fff;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container .upload_foto .btn_upload_foto:active {
+    background: #0987F7;
 }
 
 button {
