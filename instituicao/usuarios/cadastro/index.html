@@ -169,9 +169,9 @@
         </ul>
     </div>
 
-    <div class="container mt-5 container modal">
+    <div class="container mt-5 container modal" id="modal">
         <h1>CRIAR NOVO USUÁRIO</h1>
-        <form class="row g-7">
+        <form class="row g-7" id="modal-form">
 
             <div class="col-md-6 lab-inp">
                 <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
@@ -185,7 +185,7 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="text" class="form-control senha">
+                <input type="text" class="form-control senha" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
@@ -198,12 +198,9 @@
                 </select>
             </div>
 
-            <style>
-                
-            </style>
-            <div class="col-md-6 lab-inp">
+            <div class="col-md-6 lab-inp" id="curso">
                 <label for="tipo-select" class="form-label">Curso</label>
-                <select class="form-select tipo-select mul-select" id="tipo-select" multiple="true">
+                <select class="form-select mul-select" multiple="true">
                     <option value="Cambodia">Cambodia</option>
                     <option value="Khmer">Khmer</option>
                     <option value="Thiland">Thiland</option>
@@ -215,7 +212,7 @@
             </div>
 
             <div class="col-md-6 lab-inp" id="turma">
-                <label for="tipo-select" class="form-label" >Turma</label>
+                <label for="tipo-select" class="form-label">Turma</label>
                 <select class="mul-select" multiple="true">
                     <option value="Cambodia">Cambodia</option>
                     <option value="Khmer">Khmer</option>
@@ -240,9 +237,30 @@
                 </select>
             </div>
 
+            <div class="col-md-6 lab-inp" id="curso-aluno">
+                <label for="tipo-select" class="form-label">Curso</label>
+                <select class="form-select tipo-select" id="tipo-select" onChange="deletarCampo()">
+                    <option selected></option>
+                    <option value="1">Professor</option>
+                    <option value="2">Aluno</option>
+                    <option value="3">Avaliador</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 lab-inp" id="turma-aluno">
+                <label for="tipo-select" class="form-label">Turma</label>
+                <select class="form-select tipo-select" id="tipo-select" onChange="deletarCampo()">
+                    <option selected></option>
+                    <option value="1">Professor</option>
+                    <option value="2">Aluno</option>
+                    <option value="3">Avaliador</option>
+                </select>
+            </div>
+
             <script>
                 $(document).ready(function () {
                     $(".mul-select").select2({
+
                     });
                 })
             </script>

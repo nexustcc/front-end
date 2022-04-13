@@ -38,35 +38,27 @@ function showModalEditar() {
 }
 
 function resetForm() {
-    document.getElementById("modal").reset();
+    document.getElementById("modal-form").reset();
 }
 
 function deletarCampo() {
     if (document.getElementById('tipo-select').value == "3") {
         document.querySelector("#turma").style.display = "none";
         document.querySelector("#grupo").style.display = "flex";
+        document.querySelector("#turma-aluno").style.display = "none";
+        document.querySelector("#curso-aluno").style.display = "none";
+        document.querySelector("#curso").style.display = "flex";
+    }else if(document.getElementById('tipo-select').value == "2"){
+        document.querySelector("#turma-aluno").style.display = "flex";
+        document.querySelector("#curso-aluno").style.display = "flex";
+        document.querySelector("#turma").style.display = "none";
+        document.querySelector("#curso").style.display = "none";
+        document.querySelector("#grupo").style.display = "none";
     } else {
         document.querySelector("#turma").style.display = "flex";
         document.querySelector("#grupo").style.display = "none";
-    }
-}
-
-function xx(){
-    $(document).ready(function () {
-        $(".mul-select").select2({
-            placeholder: "Insira o curso", //placeholder
-            tags: true,
-            tokenSeparators: ['/', ',', ';', " "]
-        });
-    })
-
-    document.getElementById('submitForm').onclick = function () {
-        var selected = [];
-        for (var option of document.getElementById('multiSelect').options) {
-            if (option.selected) {
-                selected.push(option.value);
-            }
-        }
-        console.log(selected);
+        document.querySelector("#turma-aluno").style.display = "none";
+        document.querySelector("#curso-aluno").style.display = "none";
+        document.querySelector("#curso").style.display = "flex";
     }
 }

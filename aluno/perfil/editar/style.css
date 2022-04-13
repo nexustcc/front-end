@@ -39,6 +39,73 @@ body {
    padding: 15px
 }
 
+.alert-vazado{
+   display: flex;
+   flex-direction: row;
+}
+
+.info_vazado_nome{
+   display: flex;
+   margin-left: 5%;
+}
+
+.info_preenchido_nome{
+   display: none;
+   margin-left: 5%;
+}
+
+.info_vazado_email{
+   display: flex;
+   margin-left: 5%;
+}
+
+.info_preenchido_email{
+   display: none;
+   margin-left: 5%;
+}
+
+.alert_text_nome{
+   display: none;
+   flex-direction: column;
+   height: 100%;
+   width: 50%;
+   background-color: #044177;
+   color: white;
+   padding: 1%;
+   text-align: center;
+   border-radius: 20px;
+   margin-left: 5%;
+}
+
+.alert_text_nome h1{
+   font-size: 25px;
+}
+
+.alert_text_nome p{
+   font-size: 10px;
+}
+
+.alert_text_email{
+   display: none;
+   flex-direction: column;
+   height: 100%;
+   width: 50%;
+   background-color: #044177;
+   color: white;
+   padding: 1%;
+   text-align: center;
+   border-radius: 20px;
+   margin-left: 5%;
+}
+
+.alert_text_email h1{
+   font-size: 25px;
+}
+
+.alert_text_email p{
+   font-size: 10px;
+}
+
 .botao_editar {
    margin-top: 2vh;
    width: 100%;

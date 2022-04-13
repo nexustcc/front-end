@@ -25,20 +25,46 @@
     <div class="text-center"> <img src="./img/pessoa-sorrindo.webp" id="imgPerfil" width="200" height="200"
         class="rounded-circle">
     </div>
+
     <form class="row g-3 formPerfil">
-
-      <div class="col-md-12 lab-inp">
-        <label for="nome" class="form-label">NOME</label>
-        <div class="inp">
-          <input id="nome" type="text" class="form-control nome" placeholder="Alice" disabled>
-          <img src="./" alt="">
+      <div class="col-md-12 container">
+        <div class="col-md-12 lab-inp">
+          <label for="nome" class="form-label">NOME</label>
+          <div class="alert-vazado" id="alert-nome">
+            <div class="col-md-12 input-vazado">
+              <input id="nome" type="text" class="form-control nome" placeholder="Alice" disabled>
+            </div>
+          </div>
         </div>
-
+        <div class="alet-div-nome">
+          <img class="info_vazado_nome" src="./img/info_vazado.svg" alt="" onmouseenter="infoStatusNome()"
+            onmouseleave="resetStatusNome()">
+          <img class="info_preenchido_nome" src="./img/info_preenchido.svg" alt="">
+          <div class="col-md-12 alert_text_nome" id="alert_text_nome">
+            <h1>AVISO!</h1>
+            <p>Apenas sua escola ou um dos seus professores podem alterar seu nome. Em caso de erro entre em contato com
+              eles para solucionar o problema.</p>
+          </div>
+        </div>
       </div>
+
 
       <div class="col-md-12 lab-inp">
         <label for="email" class="form-label">E-MAIL</label>
-        <input id="email" type="email" class="form-control email" placeholder="ALICE@GMAIL.COM" disabled>
+        <div class="alert-vazado" id="alert-email">
+          <div class="col-md-12 input-vazado">
+            <input id="emal" type="email" class="form-control email" placeholder="alice@gmail.com" disabled>
+          </div>
+          <img class="info_vazado_email" src="./img/info_vazado.svg" alt="" onmouseenter="infoStatusEmail()"
+            onmouseleave="resetStatusEmail()">
+          <img class="info_preenchido_email" src="./img/info_preenchido.svg" alt="">
+          <div class="col-md-12 alert_text_email" id="alert_text_email">
+            <h1>AVISO!</h1>
+            <p>Apenas sua escola ou um dos seus professores podem alterar seu email. Em caso de erro entre em contato
+              com
+              eles para solucionar o problema.</p>
+          </div>
+        </div>
       </div>
 
       <div class="col-md-12 lab-inp">

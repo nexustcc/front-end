@@ -215,7 +215,7 @@
                         <button class="segundo_botao" type="button" onclick="showModal()">SALVAR</button>
                     </div>
                 </div>
-
+                <button class="col-md-3 quinto_botao" onclick="showModalTrocarTurma()">TROCAR TURMA</button>
             </form>
         </div>
 
@@ -232,6 +232,26 @@
                     <button class="terceiro_botao" type="button" onclick="exitchangeModalExcluir()">CONFIRMAR</button>
                 </div>
             </div>
+        </div>
+
+        <div class="container mt-5 container modal modal-excluir modal-trocar-turma">
+            <h1>TROCAR TURMA</h1>
+            <form class="row g-7">
+    
+                <div class="col-md-12 lab-inp">
+                    <label for="turma" class="form-label">Nova turma</label>
+                    <input type="text" class="form-control turma">
+                </div>
+    
+                <div class="buttons">
+                    <div class="col-md-6">
+                        <button class="segundo_botao" type="button" onclick="showModalMembros()">CANCELAR</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="terceiro_botao" onclick="showModalMembros()" type="button">SALVAR</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>

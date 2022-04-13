@@ -67,7 +67,7 @@ ul::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border-color: #aaa;
     border-bottom: 1px solid #05204A;
-    padding: 15px
+    padding: 15px 0 15px 0;
   }
   
   .select2.select2-container .select2-selection .select2-selection__rendered {
@@ -133,7 +133,6 @@ ul::-webkit-scrollbar-thumb {
   }
   
   .select2.select2-container .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
-
     height: 22px;
     width: 22px;
     margin: 0;
@@ -164,6 +163,10 @@ ul::-webkit-scrollbar-thumb {
   .select2-container .select2-dropdown .select2-results {
     padding: 0;
   }
+
+  ol, ul {
+    padding-left: 0rem; 
+}
   
   .select2-container .select2-dropdown .select2-results ul {
     background: #f8f8f8;
@@ -226,6 +229,27 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
+}
+
+#curso{
+    display: flex;
+    flex-direction: column;
+}
+
+#curso li {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+#curso-aluno {
+    display: none;
+    flex-direction: column;
+}
+#turma-aluno {
+    display: none;
+    flex-direction: column;
 }
 
 .modal-membros {
@@ -472,6 +496,13 @@ li {
     border-radius: 10px;
     border-bottom: 1px solid #05204A;
     padding: 15px
+}
+
+#curso .lab-inp input {
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204A;
+    padding: 0px
 }
 
 .primeiro_botao {
