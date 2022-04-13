@@ -57,27 +57,15 @@ function exitModalExcluir() {
     document.querySelector(".modal-excluir").style.display = "none";
 }
 
-///////////////////////////////////////////////////////////////
-function exibirNome(instituicao) {
-    document.getElementById("nomeInstituicao").value = instituicao.usuario.nome;
-
-    console.log(document.getElementById("nomeInstituicao"));
-    console.log(instituicao.usuario.nome);
-}
-
 async function getInfoInstituicao() {
-    const idInstituicao = 3;
-
+    const idInstituicao = 1;
     const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     const instituicao = await dados.json();
-    exibirNome(instituicao.instituicao[0]);
 
-    console.log(exibirNome);
-
-    console.log(instituicao.instituicao[0].usuario.nome);
+    document.getElementById("nomeInstituicao").innerHTML = instituicao.instituicao[0].usuario.nome;    
 }
 ///////////////////////////////////////////////////////////////
 
@@ -155,7 +143,9 @@ searchBar.addEventListener("keyup", (e) => {
 });
 
 async function getArrayCursos() {
-    const url = `http://localhost:3000/curso/listarCursos/3`;
+    let idInstituicao = 1;
+
+    const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
 
     fetch(url)
         .then((response) => response.json)
@@ -182,10 +172,10 @@ async function cadastrarCurso(nome) {
         },
         body: JSON.stringify(cadastrarCurso),
     };
+    
+    let idInstituicao = 1;
 
-    console.log(cadastrarCurso);
-
-    fetch("http://localhost:3000/curso/cadastrarCurso/3", config)
+    fetch(`http://localhost:3000/curso/cadastrarCurso/${idInstituicao}`, config)
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
@@ -199,8 +189,6 @@ async function editarCurso(idCurso) {
     const editarCurso = {
         nome: document.getElementById("inputEditarNomeCurso").value.toString(),
     };
-
-    console.log(editarCurso);
 
     const config = {
         method: "PUT",
