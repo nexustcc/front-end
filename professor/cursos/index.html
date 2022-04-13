@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Side Menu</title>
-    <link rel="stylesheet" href="styles_side_menu.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cursos.css">
+    <link rel="stylesheet" href="../componentes/header/styles_header.css">
+    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <title>Cursos</title>
 </head>
-
 <body>
 
     <div class="sidebar">
@@ -55,7 +59,7 @@
                 <span class="tooltip">Editar usuário</span>
             </li>
             <li class="profile">
-                <a href="#">
+                <a href="">
                     <i class='bx bx-log-out' id="log_out"></i>
                     <span class="links_name">Log Out</span>
                 </a>
@@ -64,6 +68,19 @@
         </ul>
 
     </div>
+
+    <header>
+        <div class="primeira_parte">
+            <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas">
+            <h1 id="nomeProfessor">NOME DO PROFESSOR</h1>
+        </div>
+        
+        <a href="../perfil/index.html">
+            <div class="icone_perfil">
+                <img id="iconePerfil" src="../componentes/header/img/icone_perfil_professor.svg" alt="icone">
+            </div>
+        </a>
+    </header>
 
     <script>
         let sidebar = document.querySelector(".sidebar");
@@ -84,5 +101,4 @@
     </script>
 
 </body>
-
 </html>
