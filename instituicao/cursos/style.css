@@ -297,7 +297,7 @@ img {
     margin-right: 5%;
 }
 
-#terceiro_botao {
+.terceiro_botao {
     margin-top: 2vh;
     width: 98%;
     background-color: rgba(240, 248, 255, 0);
