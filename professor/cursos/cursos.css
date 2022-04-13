@@ -13,6 +13,7 @@ body {
     height: 100vh;
     position: relative;
     font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
 }
 
 .container {
@@ -25,6 +26,17 @@ body {
 
 .list-group-item img {
     cursor: pointer;
+}
+
+.curso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.curso .curso {
+    font-size: 16px;
 }
 
 .cursos_existentes {
@@ -74,6 +86,7 @@ ul::-webkit-scrollbar-thumb {
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
+    height: 75%;
 }
 
 .container-geral .li {
@@ -98,56 +111,8 @@ ul::-webkit-scrollbar-thumb {
     transition: 0.3s;
 }
 
-.icon.inputIconBg i {
-    background-color: #aaa;
-    padding: 9px 4px;
-    border-radius: 4px 0 0 4px;
-}
-
-.icon-membro {
-    position: relative;
-}
-
-.icon-membro i {
-    position: absolute;
-    right: 1vw;
-    top: 10%;
-    padding: 9px 8px;
-    color: #808080;
-    transition: 0.3s;
-}
-
-.li h2 {
-    color: #272727;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-}
-
-.lab-inp {
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-.lab-inp-modal {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 100%;
-}
-
-.lab-inp-modal input {
-    background-color: #E3E3E3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px;
-    width: 100%;
-}
-
 .lab-inp-modal label {
     font-weight: 400;
-}
-
-.curso {
-    font-size: 20px;
 }
 
 .nome {
@@ -156,40 +121,6 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     font-size: 30px;
     font-weight: 400;
-}
-
-.tipo img{
-    width: 25px;
-    margin-left: 0.5vw;
-    margin-top: -1.5vh;
-}
-
-.tipo{
-    display: flex;
-    flex-direction: column;
-}
-
-.primeiro_botao {
-    margin-top: 2vh;
-    width: 98%;
-    color: white;
-    background-color: #0664B7;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-}
-
-.segundo_botao {
-    margin-top: 2vh;
-    width: 98%;
-    color: white;
-    font-weight: 700;
-    border-radius: 30px;
-    border: none;
-    padding: 15px;
-    background-color: #C2C2C2;
-    margin-right: 5%;
 }
 
 .terceiro_botao {
@@ -204,177 +135,7 @@ ul::-webkit-scrollbar-thumb {
     padding: 15px;
 }
 
-.quinto_botao {
-    width: 100%;
-    font-size: 13px;
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
-    background-color: #044177;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-}
-
-
-.quarto_botao {
-    margin-top: 2vh;
-    width: 98%;
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
-    background-color: #A71E34;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-}
-
-.membro-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-}
-
-.modal-excluir {
-    width: 40%;
-    height: 30vh;
-    display: none;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 20px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    font-weight: 100;
-}
-
-.modal-excluir-membro {
-    width: 40%;
-    height: 30vh;
-    display: none;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 20px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    font-weight: 100;
-}
-
-.modal-excluir h1 {
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: #05204A;
-}
-
-.modal-excluir h2 {
-    margin: 2% 0 2% 0;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-    color: #A71E34;
-}
-
-.modal-excluir label {
-    font-size: 30px;
-    font-weight: 400;
-    color: #05204A;
-}
-
-.modal-excluir input {
-    width: 100%;
-}
-
-.modal-excluir-membro h1 {
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: #05204A;
-}
-
-.modal-excluir-membro h2 {
-    margin: 2% 0 2% 0;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-    color: #A71E34;
-}
-
-.modal-excluir-membro label {
-    font-size: 30px;
-    font-weight: 400;
-    color: #05204A;
-}
-
-.modal-excluir-membro input {
-    width: 100%;
-}
-
-.formExcluir {
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    font-weight: 100;
-}
-
-.modal-curso h1 {
-    font-size: 50px;
-}
-
-.button5 {
-    color: white;
-    border: none;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 3%;
-    margin-bottom: -35%;
-    background-color: #044177;
-}
-
-.buttons-modal {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
 @media (max-width: 700px) {
-    .modal {
-        width: 100%;
-        height: 50vh;
-        padding: 2%;
-        border-radius: 10px;
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        font-weight: 100;
-    }
     
     .container-geral {
         height: 100vh;
@@ -382,132 +143,24 @@ ul::-webkit-scrollbar-thumb {
         display: flex;
         flex-direction: column;
     }
+
     .book {
         display: none;
     }
-    .container {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 5%;
-        height: 80vh;
-        width: 90%;
-        padding: 2%;
-    }
-    body {
-        height: 100vh;
-        align-items: center;
-        text-align: center;
-        font-size: 15px;
-    }
 
-    .lab-inp input{
-        font-size: 15px;
-        height: 40px;
-    }
-    .ul {
-        margin-top: 1%;
-        height: 100%;
-    }
-    .li {
-        display: flex;
-        flex-direction: column;
-    }
     .curso {
         font-size: clamp(0rem, 10vw, 1.5rem);
         margin-right: 5%;
     }
+
     .nome {
         font-size: clamp(0rem, 10vw, 1.5rem);
     }
-    .icon label {
-        font-size: clamp(0rem, 10vw, 1.5rem);
-        margin-right: 5%;
-    }
-    .modal h1 {
-        font-size: clamp(0rem, 10vw, 1.5rem);
-    }
-    .modal {
-        text-align: justify;
-    }
+
     .curso {
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-    .icone {
-        display: flex;
-        flex-direction: row;
-    }
-    .livro {
-        display: none;
-    }
-    .icon {
-        position: relative;
-    }
-    .icon i {
-        position: absolute;
-        padding: 9px 8px;
-        color: #808080;
-        transition: 0.3s;
-    }
-    .icon.inputIconBg i {
-        background-color: #aaa;
-        padding: 9px 4px;
-        border-radius: 4px 0 0 4px;
-    }
-    .button5 {
-        width: 90%;
-        background-color: rgba(240, 248, 255, 0);
-        color: white;
-        background-color: #044177;
-        border-radius: 20px;
-        font-weight: 700;
-        border: none;
-        padding: 15px;
-        margin-bottom: 2%;
-    }
-    button {
-        font-size: clamp(0rem, 10vw, 0.8rem);
-    }
-    .modal .buttons {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .membro-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .ul-professor {
-        margin: 1% 0;
-        width: 100%;
-        height: 70%;
-        border: 2px solid;
-        border-color: #05204A;
-        border-radius: 10px;
-        padding: 2%;
-        overflow-y: auto;
-    }
-    .ul-professor li {
-        display: flex;
-        flex-direction: row;
-    }
-    .ul-aluno .li {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .iconify {
-        height: 50px;
-    }
-    .ul-aluno {
-        margin: 1% 0;
-        width: 100%;
-        height: 70%;
-        border: 2px solid;
-        border-color: #05204A;
-        border-radius: 10px;
-        padding: 2%;
-        overflow-y: auto;
     }
 
 }
