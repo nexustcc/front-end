@@ -56,3 +56,25 @@ function exitModalTrocarTurma() {
     document.querySelector(".modal-trocar-turma").style.display = "none";
     document.querySelector(".modal-membros").style.display = "flex";
 }
+
+function deletarCampo() {
+    if (document.getElementById('tipo-select-edit').value == "3") {
+        document.querySelector("#turma").style.display = "none";
+        document.querySelector("#grupo").style.display = "flex";
+        document.querySelector("#turma-aluno").style.display = "none";
+        document.querySelector("#curso-aluno").style.display = "none";
+        document.querySelector("#curso").style.display = "flex";
+    }else if(document.getElementById('tipo-select-edit').value == "2"){
+        document.querySelector("#turma-aluno").style.display = "flex";
+        document.querySelector("#curso-aluno").style.display = "flex";
+        document.querySelector("#turma").style.display = "none";
+        document.querySelector("#curso").style.display = "none";
+        document.querySelector("#grupo").style.display = "none";
+    } else {
+        document.querySelector("#turma").style.display = "flex";
+        document.querySelector("#grupo").style.display = "none";
+        document.querySelector("#turma-aluno").style.display = "none";
+        document.querySelector("#curso-aluno").style.display = "none";
+        document.querySelector("#curso").style.display = "flex";
+    }
+}

@@ -42,8 +42,8 @@ body {
 .alert-vazado{
    display: flex;
    flex-direction: row;
+   align-items: center;
 }
-
 .info_vazado_nome{
    display: flex;
    margin-left: 5%;
@@ -154,4 +154,140 @@ body {
    .botao_editar {
       width: 100%;
    } 
+}
+
+.container input {
+   background-color: #E3E3E3;
+   border-radius: 10px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px;
+}
+
+.container label {
+   margin-top: 5px;
+}
+
+.container .profile-pic-div {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.container .profile-pic-div .img_professor {
+   display: flex;
+   justify-content: center;
+}
+
+.container .profile_image {
+   width: 150px;
+   height: 150px;
+   border-radius: 100px;
+   margin-bottom: 10px;
+}
+
+#fotoPerfilProfessor {
+   background-position: center;
+   background-size: cover;
+}
+
+.container .upload_foto {
+   display: flex;
+   align-items: center;
+   font-size: 15px;
+   justify-content: center;
+}
+
+.container .upload_foto .input_foto {
+   display: none;
+}
+
+.container .upload_foto .btn_upload_foto {
+   background: #044177;
+   border: 2px solid #044177;
+   border-radius: 4px;
+   outline: none;
+   padding: 0.5em 0.8em;
+   color: #fff;
+   font-size: 1em;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.container .upload_foto .btn_upload_foto:active {
+   background: #0987F7;
+}
+
+button {
+   padding: 10px;
+   border: 5px solid;
+   font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+   font-family: 'Hind', sans-serif;
+}
+
+#primeiro_botao {
+   margin-top: 2vh;
+   width: 100%;
+   background-color: rgba(240, 248, 255, 0);
+   color: white;
+   background-color: #C2C2C2;
+   border-radius: 30px;
+   padding: 15px;
+}
+
+.buttons {
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+a:hover {
+   text-decoration: none;
+   color: white;
+}
+
+#segundo_botao {
+   margin-top: 2vh;
+   width: 100%;
+   background-color: rgba(240, 248, 255, 0);
+   color: white;
+   background-color: #044177;
+   border-radius: 30px;
+   padding: 15px;
+   border: #05204A;
+}
+
+#space{
+   width:90%;
+   margin-left: 0 20% 0 10%;
+   padding: 50px;
+}
+#icon input {
+   padding-right: 50px;
+}
+
+#icon {
+   position: relative;
+}
+
+#icon i {
+   position: absolute;
+   right: 1vw;
+   top: 45%;
+   padding: 9px 8px;
+   color: #808080;
+   transition: 0.3s;
+}
+
+#icon.inputIconBg i {
+   background-color: #aaa;
+   padding: 9px 4px;
+   border-radius: 4px 0 0 4px;
 }

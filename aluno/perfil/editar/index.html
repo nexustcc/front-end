@@ -22,21 +22,26 @@
 
 <body>
   <div class="container">
-    <div class="text-center"> <img src="./img/pessoa-sorrindo.webp" id="imgPerfil" width="200" height="200"
-        class="rounded-circle">
-    </div>
+    <div class="profile-pic-div">
+
+      <div class="img_professor">
+          <div class="profile_image" id="fotoPerfilProfessor"></div>
+      </div>
+
+      <div class="upload_foto">
+          <input type="file" id="inputFotoProfessor" class="input_foto" accept="image/*">
+          <button class="btn_upload_foto" type="button">Escolher Imagem</button>
+      </div>
+
+  </div>
 
     <form class="row g-3 formPerfil">
-      <div class="col-md-12 container">
-        <div class="col-md-12 lab-inp">
-          <label for="nome" class="form-label">NOME</label>
-          <div class="alert-vazado" id="alert-nome">
-            <div class="col-md-12 input-vazado">
-              <input id="nome" type="text" class="form-control nome" placeholder="Alice" disabled>
-            </div>
+      <div class="col-md-12 lab-inp">
+        <label for="nome" class="form-label">NOME</label>
+        <div class="alert-vazado" id="alert-nome">
+          <div class="col-md-12 input-vazado">
+            <input id="nome" type="text" class="form-control nome" placeholder="Alice" disabled>
           </div>
-        </div>
-        <div class="alet-div-nome">
           <img class="info_vazado_nome" src="./img/info_vazado.svg" alt="" onmouseenter="infoStatusNome()"
             onmouseleave="resetStatusNome()">
           <img class="info_preenchido_nome" src="./img/info_preenchido.svg" alt="">
