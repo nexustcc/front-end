@@ -22,6 +22,7 @@ body {
     align-items: center;
     padding: 2%;
     height: 100vh;
+    width: 100vw;
 }
 
 .cursos_existentes {
@@ -593,14 +594,19 @@ ul {
     font-size: 50px;
 }
 
+.container button{
+ 
+}
 .button5 {
     color: white;
+    position: static;
     border: none;
     width: 80px;
     height: 80px;
+    margin-bottom: 0%;
     border-radius: 50%;
     margin-right: 3%;
-    margin-bottom: -35%;
+    margin-bottom: -88vh;
     background-color: #044177;
 }
 
