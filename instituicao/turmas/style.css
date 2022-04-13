@@ -192,7 +192,7 @@ ul::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.658);
 }
 
-img {
+.container-geral img {
     width: 100%;
     margin-bottom: 1%;
     margin-top: 2%;
