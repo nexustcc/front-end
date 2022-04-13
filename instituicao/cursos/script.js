@@ -67,19 +67,24 @@ async function getInfoInstituicao() {
 
     document.getElementById("nomeInstituicao").innerHTML = instituicao.instituicao[0].usuario.nome;    
 }
-///////////////////////////////////////////////////////////////
+
+async function turmasCurso(idCurso) {
+    const url = `http://localhost:3000/curso/nomeCurso/${idCurso}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    const curso = await dados.json();
+
+    let nome = curso.nome[0].nome;
+    window.location.href = `../turmas/index.html/${nome}`
+}
+
 
 function exibirDados(cursos) {
-    console.log(cursos);
 
     const container = document.getElementById("ul_container");
 
     for (var i = 0; i < cursos.length; i++) {
-        var cursosJson = {
-            idCurso: cursos[i].idCurso,
-            nome: cursos[i].nome,
-        };
-
         const curso = document.createElement("li");
         curso.classList = "list-group-item li";
         curso.id = "li";
@@ -91,19 +96,17 @@ function exibirDados(cursos) {
             <p class="nome">${cursos[i].nome}</p>
         </div>
         <div class="button">
-            <button>TURMAS EXISTENTES NO CURSO</button>
-            <button type="button" onclick="showModalEditar(${cursos[i].idCurso})" class="terceiro" id="primeiro_botao">
-                EDITAR
-            </button>
-            <button onclick="showModalExcluir(${cursos[i].idCurso})" id="quarto_botao">
-                EXCLUIR
-            </button>
+            <button class="terceiro_botao" onclick="turmasCurso(${cursos[i].idCurso})">TURMAS EXISTENTES NO CURSO</button>
+            <button type="button" onclick="showModalEditar(${cursos[i].idCurso})" class="terceiro" id="primeiro_botao">EDITAR</button>
+            <button onclick="showModalExcluir(${cursos[i].idCurso})" id="quarto_botao">EXCLUIR</button>
         </div>
         `;
 
         container.appendChild(curso);
     }
 }
+
+
 
 const exibirDadosPesquisa = (cursos) => {
     const htmlString = cursos
@@ -116,7 +119,7 @@ const exibirDadosPesquisa = (cursos) => {
                 <p class="nome">${cursos.nome}</p>
             </div>
             <div class="button">
-                <button>TURMAS EXISTENTES NO CURSO</button>
+                <button class="terceiro_botao" onclick="turmasCurso(${cursos.nome})>TURMAS EXISTENTES NO CURSO</button>
                 <button type="button" onclick="showModalEditar(${cursos.idCurso})" class="terceiro" id="primeiro_botao">
                     EDITAR
                 </button>
@@ -148,11 +151,9 @@ async function getArrayCursos() {
     const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
 
     fetch(url)
-        .then((response) => response.json)
-        .then(console.log);
+        .then((response) => response.json);
     const dados = await fetch(url);
     cursos = await dados.json();
-    console.log(cursos);
     exibirDados(cursos.cursos);
 }
 
@@ -162,8 +163,6 @@ async function cadastrarCurso(nome) {
     const cadastrarCurso = {
         nome: document.getElementById("inputCriarCurso").value.toString(),
     };
-
-    console.log(cadastrarCurso);
 
     const config = {
         method: "POST",
@@ -177,9 +176,6 @@ async function cadastrarCurso(nome) {
 
     fetch(`http://localhost:3000/curso/cadastrarCurso/${idInstituicao}`, config)
         .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-        })
         .then(() => (window.location.href = "./index.html"));
 }
 
@@ -200,9 +196,6 @@ async function editarCurso(idCurso) {
 
     fetch(`http://localhost:3000/curso/editarCurso/${idCurso}`, config)
         .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-        })
         .then(() => (window.location.href = "./index.html"));
 }
 
@@ -211,9 +204,6 @@ async function deletarCurso(idCurso) {
             method: "DELETE",
         })
         .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-        })
         .then(() => (window.location.href = "./index.html"));
 }
 
