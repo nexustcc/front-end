@@ -99,6 +99,11 @@ ul::-webkit-scrollbar-thumb {
     padding: 0 5%;
 }
 
+#btnEntrarCurso {
+    text-decoration: none;
+    list-style: none;
+}
+
 .icon {
     position: relative;
 }
@@ -140,11 +145,17 @@ ul::-webkit-scrollbar-thumb {
 @media (max-width: 1550px) {
 
     .container-geral {
-        /* width: 80vw; */
         margin-left: 8vw;
     }
 } 
 
+@media (max-width: 1050px) {
+
+    .container-geral {
+        margin-left: 10vw;
+    }
+}
+ 
 @media (max-width: 818px) {
 
     .book {
@@ -175,4 +186,43 @@ ul::-webkit-scrollbar-thumb {
         display: flex;
     }
 
+}
+
+@media (max-width: 678px) {
+
+    .container-geral {
+        margin-left: 17vw;
+        width: 80vw;
+        margin-top: 8%;
+    }
+
+    .nome {
+        font-size: 18px;
+    }
+
+    .terceiro_botao {
+        font-size: 13px;
+        margin-top: 0vh;
+        width: 10px;
+    }
+
+    #btnEntrarCurso {
+        width: 135px;
+    }
+
+    .curso .curso {
+        font-size: 13px;
+    }
+
+    .cursos_existentes input {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .container-geral {
+        margin-left: 20vw;
+    }
 }
