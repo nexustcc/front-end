@@ -26,19 +26,6 @@ body {
 .formPerfil{
    margin-top: 5%;
 }
-
-.lab-inp {
-   margin-top: 1%;
-   margin-bottom: 1%;
-}
-
-.lab-inp input {
-   background-color: #E3E3E3;
-   border-radius: 10px;
-   border-bottom: 1px solid #05204A;
-   padding: 15px
-}
-
 .alert-vazado{
    display: flex;
    flex-direction: row;
@@ -67,7 +54,7 @@ body {
 .alert_text_nome{
    display: none;
    flex-direction: column;
-   height: 100%;
+   height: 100px;
    width: 50%;
    background-color: #044177;
    color: white;
@@ -78,17 +65,29 @@ body {
 }
 
 .alert_text_nome h1{
-   font-size: 25px;
+   font-size: 20px;
 }
 
 .alert_text_nome p{
    font-size: 10px;
 }
 
+#alert-nome{
+   height: 50px;
+   width: 100%;
+   position: relative;
+}
+
+#alert-email{
+   height: 50px;
+   width: 100%;
+   position: relative;
+}
+
 .alert_text_email{
    display: none;
    flex-direction: column;
-   height: 100%;
+   height: 100px;
    width: 50%;
    background-color: #044177;
    color: white;
@@ -99,7 +98,7 @@ body {
 }
 
 .alert_text_email h1{
-   font-size: 25px;
+   font-size: 20px;
 }
 
 .alert_text_email p{
@@ -163,10 +162,6 @@ body {
    padding: 15px;
 }
 
-.container label {
-   margin-top: 5px;
-}
-
 .container .profile-pic-div {
    display: flex;
    justify-content: center;
@@ -179,8 +174,8 @@ body {
 }
 
 .container .profile_image {
-   width: 150px;
-   height: 150px;
+   width: 200px;
+   height: 200px;
    border-radius: 100px;
    margin-bottom: 10px;
 }
