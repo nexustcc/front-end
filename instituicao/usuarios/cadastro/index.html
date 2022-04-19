@@ -190,9 +190,10 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="tipo-select" class="form-label">Tipo</label>
-                <select class="form-select tipo-select" id="tipo-select" onChange="deletarCampo()">
-                    <option selected>SELECIONE O TIPO DE USUÁRIO</option>
-                    <option value="1">Professor</option>
+                <select class="form-select tipo-select" on=""  id="tipo-select"
+                    onChange="deletarCampo(); disableSelected()">
+                    <option  value="selected" disabled="disabled" selected>SELECIONE O TIPO DE USUÁRIO</option>
+                    <option  value="1">Professor</option>
                     <option value="2">Aluno</option>
                     <option value="3">Avaliador</option>
                 </select>
@@ -200,7 +201,7 @@
 
             <div class="col-md-6 lab-inp" id="curso">
                 <label for="tipo-select" class="form-label">Curso</label>
-                <select class="form-select mul-select" multiple="true">
+                <select disabled class="form-select mul-select" id="input-curso" multiple="true">
                     <option value="Cambodia">Cambodia</option>
                     <option value="Khmer">Khmer</option>
                     <option value="Thiland">Thiland</option>
@@ -213,7 +214,7 @@
 
             <div class="col-md-6 lab-inp" id="turma">
                 <label for="tipo-select" class="form-label">Turma</label>
-                <select class="mul-select" multiple="true">
+                <select disabled class="form-select mul-select" id="input-turma" multiple="true">
                     <option value="Cambodia">Cambodia</option>
                     <option value="Khmer">Khmer</option>
                     <option value="Thiland">Thiland</option>
@@ -271,7 +272,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="terceiro_botao" type="button" onclick="resetForm()">SALVAR</button>
+                    <button class="terceiro_botao" id="button_salvar" type="button" onclick="resetForm()">SALVAR</button>
                 </div>
             </div>
         </form>

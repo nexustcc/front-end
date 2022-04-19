@@ -146,9 +146,15 @@ body p {
     border-radius: 100px;
 }
 
+.documentacao_div{
+    display: flex;
+    width: 100%;
+}
+
 .documentacao{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .documentacao label{
@@ -170,7 +176,7 @@ body p {
     margin-bottom: 5%;
 }
 
-.editar {
+.editar_div{ 
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
