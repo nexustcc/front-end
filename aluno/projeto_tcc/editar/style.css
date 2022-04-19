@@ -22,15 +22,23 @@ body {
    align-items: center;
 }
 
-.filterForm input{ 
+.lab-inp input{
    background-color: #E3E3E3;
    border-radius: 10px;
-   border: 1px solid #05204A;
-   padding: 15px;
+   border-bottom: 1px solid #05204A;
+   padding: 15px
 }
 
-.container{
-   width: 90%;
+
+
+#fileList{
+   list-style: none;
+}
+
+.anexado_div{
+   display: flex;
+   flex-direction: column;
+ 
 }
 
 .formPerfil{
@@ -50,13 +58,15 @@ body {
 }
 
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+	display: none;
 }
+
+.custom-file-upload {
+   border: 1px solid #ccc;
+   display: inline-block;
+   padding: 6px 12px;
+   cursor: pointer;
+ }
 
 .inputfile + label {
    font-size: 15px;
@@ -74,7 +84,8 @@ body {
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-    background-color: red;
+    background-color: #E3E3E3;
+    color: black;
 }
 
 .inputfile + label {

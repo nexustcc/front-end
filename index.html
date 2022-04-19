@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <input type="file" name="file" id="file" class="inputfile" />
-<label for="file">Choose a file</label>
+    <input type="file" name="file" id="file" multiple onchange="javascript:updateList()" />
+    <br />Selected files:
+    <div id="fileList"></div>
+
+    <script>
+        updateList = function () {
+            var input = document.getElementById('file');
+            var output = document.getElementById('fileList');
+
+            output.innerHTML = '<ul>';
+            for (var i = 0; i < input.files.length; ++i) {
+                output.innerHTML += '<li>' + input.files.item(i).name + '</li>';
+            }
+            output.innerHTML += '</ul>';
+        }
+    </script>
 </body>
+
 </html>
