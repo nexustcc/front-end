@@ -86,16 +86,14 @@
         </div>
 
         <a href="../../perfil/index.html">
-            <div class="icone_perfil">
-                <img id="iconePerfil" src="../../componentes/header/img/icone_perfil_professor.svg" alt="icone">
-            </div>
+                <img class="iconePerfilProfessor" src="../../componentes/header/img/perfil_professor.svg" alt="icone">
         </a>
     </header>
 
     <div class="container-geral">
         <div class="container">
             <div class="col-md-6 for-cnp cursos_existentes icon">
-                <input type="text" placeholder="Insira a turma procurada:" class="form-control cursos_ex">
+                <input type="text" placeholder="Insira a turma procurada:" class="form-control cursos_ex" id="inputBuscarTurmas">
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
@@ -104,11 +102,11 @@
                     <div class="turma">
                         <p class="turma">Turma:</p>
                         <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
+                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
                     </div>
                     <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE TCC</button>
                     </div>
                 </li>
 
@@ -118,11 +116,11 @@
                     <div class="turma">
                         <p class="turma">Turma:</p>
                         <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
+                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
                     </div>
                     <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE TCC</button>
                     </div>
                 </li>
                 <img src="./img/linha.svg" alt="">
@@ -131,25 +129,11 @@
                     <div class="turma">
                         <p class="turma">Turma:</p>
                         <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
+                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
                     </div>
                     <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE TCC</button>
                     </div>
                 </li>
 
@@ -159,11 +143,11 @@
                     <div class="turma">
                         <p class="turma">Turma:</p>
                         <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
+                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
                     </div>
                     <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE TCC</button>
                     </div>
                 </li>
 
@@ -173,11 +157,25 @@
                     <div class="turma">
                         <p class="turma">Turma:</p>
                         <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
+                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
                     </div>
                     <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
+                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE TCC</button>
+                    </div>
+                </li>
+
+                <img src="./img/linha.svg" alt="">
+
+                <li class="list-group-item li">
+                    <div class="turma">
+                        <p class="turma">Turma:</p>
+                        <img class="book" src="./img/icone_turma.svg" alt="book">
+                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
+                    </div>
+                    <div class="button">
+                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A TURMA</button>
+                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE TCC</button>
                     </div>
                 </li>
 
@@ -187,28 +185,28 @@
 
     </div>
     <div class="container mt-5 container modal modal-turma" id="modal-turma">
-        <h1>NOME DA TURMA</h1>
+        <h1 id="nomeCursoModalProfessor">NOME DO CURSO</h1>
         <form class="row g-7">
 
-            <div class="col-md-12 lab-inp">
+            <div class="col-md-6 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
-                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com" disabled>
+                <input type="text" class="form-control turma" id="inputNomeTurmaModal" placeholder="DS3M" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="numero-estudantes" class="form-label">Número de estudantes</label>
-                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba "
+                <input type="email" class="form-control numero-estudantes" id="inputNumeroEstudantesModal" placeholder="53"
                     disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68" disabled>
+                <label for="data-inicio" class="form-label">Data de início das aulas</label>
+                <input type="text" class="form-control data-inicio" id="inputDataInicioAulasModal" placeholder="10/08/2018" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
-                <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68" disabled>
+                <label for="data-termino" class="form-label">Data de término das aulas</label>
+                <input type="text" class="form-control data-termino" id="inputDataTerminoAulasModal" placeholder="15/12/2019" disabled>
             </div>
 
             <div class="buttons">
@@ -217,47 +215,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="primeiro_botao" type="button" onclick="showModalEditar()">EDITAR</button>
-                </div>
-
-                <div class="col-md-6">
-                    <button class="terceiro_botao" onclick="showModalMembros()" type="button">MEMBROS DA TURMA</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="container mt-5 container modal modal-editar">
-        <h1>NOME DA TURMA</h1>
-        <form class="row g-7">
-
-            <div class="col-md-12 lab-inp">
-                <label for="turma" class="form-label">Turma</label>
-                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com">
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="numero-estudantes" class="form-label">Número de estudantes</label>
-                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba ">
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68">
-            </div>
-
-            <div class="col-md-6 lab-inp">
-                <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68">
-            </div>
-
-            <div class="buttons">
-                <div class="col-md-3">
-                    <button class="segundo_botao" type="button" onclick="showModalTurma()">CANCELAR</button>
-                </div>
-
-                <div class="col-md-3">
-                    <button class="terceiro_botao" onclick="showModalTurma()" type="button">SALVAR</button>
+                    <button class="terceiro_botao" onclick="showModalMembros()" type="button" id="membrosTurmaModal">MEMBROS DA TURMA</button>
                 </div>
             </div>
         </form>
@@ -275,12 +233,9 @@
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
-                                <p>NOME</p>
+                                <p id="nomeProfessorModal">NOME</p>
 
                             </div>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
                         </div>
                     </li>
 
@@ -291,12 +246,8 @@
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeProfessorModal">NOME</p>
                             </div>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
                         </div>
                     </li>
 
@@ -307,30 +258,23 @@
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeProfessorModal">NOME</p>
                             </div>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
                         </div>
                     </li>
 
                     <img src="./img/linha.svg" alt="">
 
-                    <li class="list-group-itemli">
+                    <li class="list-group-item li">
                         <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeProfessorModal">NOME</p>
                             </div>
                         </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
-                        </div>
                     </li>
+
                 </ul>
             </div>
             <div class="alunos">
@@ -339,15 +283,11 @@
                     <li class="list-group-item li">
                         <div class="membro">
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeAlunoModal">NOME</p>
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
-                            <p class="grupo">GRUPO</p>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
+                            <span><p class="grupo">GRUPO </p> <p id="numeroGrupoAlunoModal"></p></span>
                         </div>
                     </li>
 
@@ -356,15 +296,11 @@
                     <li class="list-group-item li">
                         <div class="membro">
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeAlunoModal">NOME</p>
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
-                            <p class="grupo">GRUPO</p>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
+                            <span><p class="grupo">GRUPO </p> <p id="numeroGrupoAlunoModal"></p></span>
                         </div>
                     </li>
 
@@ -373,30 +309,24 @@
                     <li class="list-group-item li">
                         <div class="membro">
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeAlunoModal">NOME</p>
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
-                            <p class="grupo">GRUPO</p>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p>
+                            <span><p class="grupo">GRUPO </p> <p id="numeroGrupoAlunoModal"></p></span>
                         </div>
                     </li>
+
+                    <img src="./img/linha.svg" alt="">
 
                     <li class="list-group-item li">
                         <div class="membro">
                             <div class="nome">
-                                <p>NOME</p>
-
+                                <p id="nomeAlunoModal">NOME</p>
                             </div>
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
-                            <p class="grupo">GRUPO</p>
-                        </div>
-                        <div class="tipo">
-                            <p>TIPO</p> <img src="./img/trocar-turma.svg" onclick="showModalTrocarTurma()" alt="">
+                            <span><p class="grupo">GRUPO </p> <p id="numeroGrupoAlunoModal"></p></span>
                         </div>
                     </li>
                 </ul>
@@ -407,52 +337,48 @@
             <div class="col-md-3">
                 <button class="segundo_botao" type="button" onclick="showModalTurma()">VOLTAR</button>
             </div>
-            <div class="col-md-3">
-                <button class="terceiro_botao" type="button" onclick="showModalAddMembrosTurmaCriada()">ADICIONAR
-                    MEMBROS</button>
-            </div>
         </div>
     </div>
 
-    <div class="container mt-5 container modal modal-grupos">
-        <h1>GRUPOS DE TCC DA TURMA</h1>
+    <div class="container mt-5 container modal modal-grupos" id="modal-grupos">
+        <h1>GRUPOS DA TURMA</h1>
         <ul class="list-group ul-grupo">
             <li class="list-group-item li">
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
             </li>
 
@@ -461,80 +387,80 @@
 
             <li class="list-group-item li">
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
             </li>
 
             <img src="./img/linha.svg" alt="">
             <li class="list-group-item li">
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
                 <div class="grupo">
-                    <p class="prof_orientador">Professor Orientador:</p>
-                    <a href="./vizualizacao_grupo/">
+                    <span><p class="prof_orientador">Professor Orientador: </p> <p id="nomeProfessorOrientadorModalGrupos"></p></span>
+                    <a href="grupo/index.html">
                         <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
                             data-width="130" data-height="130"></span>
                     </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
+                    <span><p class="numero">Grupo </p> <p id="numeroGrupoModalGrupos"></p></span>
+                    <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                 </div>
             </li>
 
@@ -542,6 +468,10 @@
         <div class="buttons">
             <div class="col-md-3 botao_cancelar">
                 <button class="segundo_botao" onclick="exitModalGrupos()" type="button">CANCELAR</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="terceiro_botao" type="button" onclick="showModalAddMembrosTurmaCriada()">EDITAR GRUPOS</button>
             </div>
         </div>
     </div>
