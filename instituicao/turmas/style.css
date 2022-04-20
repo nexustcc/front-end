@@ -643,7 +643,7 @@ ul {
         flex-direction: column;
         align-items: center;
         margin-bottom: 5%;
-        height: 80vh;
+        height: auto;
         width: 90%;
         padding: 2%;
     }
@@ -671,6 +671,7 @@ ul {
         margin-right: 5%;
     }
     .nome {
+        margin-top: 10%;
         font-size: clamp(0rem, 10vw, 1.5rem);
     }
     .icon label {
@@ -682,6 +683,14 @@ ul {
     }
     .modal {
         text-align: justify;
+    }
+
+    .modal-grupos{
+        height: 80vh;
+    }
+
+    .modal-grupos img{
+        display: none;
     }
     .turma {
         display: flex;
