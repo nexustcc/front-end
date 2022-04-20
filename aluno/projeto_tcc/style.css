@@ -20,7 +20,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
+    list-style: none;
 }
 
 body h1 {
@@ -42,6 +43,19 @@ body p {
 .descricao {
     margin-bottom: 2%;
 }
+
+.terceiro_botao{
+    font-size: 15px;
+    width: 50%;
+    background-color: rgba(240, 248, 255, 0);
+    color: rgb(255, 255, 255);
+    background-color: #044177;
+    border-radius: 10px;
+    font-weight: 300;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5%;
+ }
 
 .ul-integrantes {
     display: flex;
@@ -123,9 +137,59 @@ body p {
     /* creates padding around scroll thumb */
 }
 
-.barra_progresso{
-    margin-top: 5%;
+.documentacao{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .inputfile {
+     display: none;
+ }
+ 
+ .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+ 
+ .inputfile + label {
+    font-size: 15px;
+    width: 30%;
+    background-color: rgba(240, 248, 255, 0);
+    color: rgb(255, 255, 255);
+    background-color: #044177;
+    border-radius: 10px;
+    font-weight: 300;
+    border: none;
+    padding: 10px;
     margin-bottom: 5%;
+    text-align: center;
+ }
+ 
+ .inputfile:focus + label,
+ .inputfile + label:hover {
+     background-color: #E3E3E3;
+     color: black;
+ }
+ .inputfile:focus + label,
+ .inputfile + label:hover {
+     background-color: #E3E3E3;
+     color: black;
+ }
+ 
+ .inputfile + label {
+     cursor: pointer; /* "hand" cursor */
+ }
+.barra_progresso{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.primeiro_botao:hover{
+    background-color: #E3E3E3;
+    color: black;
 }
 
 .barra_progresso label{
@@ -154,14 +218,30 @@ body p {
 .documentacao{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100%;;
 }
 
 .documentacao label{
-    margin-left: 2%;
+    margin-bottom: 1%
+}
+
+.documentacao label{
     font-size: 18px;
     font-weight: 300;
+    width: 100%;
+  
 }
+
+.documentacao .arquivo_anexado{
+    font-size: 15px;
+    font-weight: 300;  
+    width: 20%;
+}
+
+.documentacao .label-title{
+    margin-left: 2%;
+}
+
 
 .primeiro_botao {
     font-size: 15px;
@@ -173,7 +253,21 @@ body p {
     font-weight: 300;
     border: none;
     padding: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+ 
+}
+
+.primeiro_botao_anexo {
+    font-size: 15px;
+    width: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 10px;
+    font-weight: 300;
+    border: none;
+    padding: 10px;
+    margin-bottom: 2%;
 }
 
 .editar_div{ 

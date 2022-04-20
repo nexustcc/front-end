@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>GRUPO</title>
 </head>
 
@@ -240,25 +241,19 @@
                     aria-valuemin="0" aria-valuemax="100">90%</div>
             </div>
         </div>
-
-        <div class="col-md-3 documentacao_div">
+        <div class="anexos">
             <div class="documentacao">
-                <label>Documentação do projeto:</label>
+                <label class="label-title">Documentação do projeto:</label>
                 <a href=""><button type="button" class="primeiro_botao">VISUALIZAR PDF</button></a>
+                <input type="file" name="file" id="file" class="inputfile" multiple onchange="updateList()"></input>
+                <label class="arquivo_anexado" for="file">ANEXAR OUTRO ARQUIVO</label>
+            </div>
+
+            <div class="col-md-4 anexado">
+                <label id="fileList" class="terceiro_botao"></label>
             </div>
         </div>
-
-
-        <div class="editar_div">
-            <a class="col-md-3 editar" href="./editar/index.html">
-                <button type="button" class="segundo_botao ">EDITAR</button>
-            </a>
-        </div>
-
-
     </div>
-
-
 </body>
 
 </html>
