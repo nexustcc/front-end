@@ -185,7 +185,7 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control senha" disabled>
+                <input type="password" class="form-control senha" placeholder="*A SENHA SERÁ ENVIADA NO E-MAIL DO USUÁRIO" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
@@ -238,9 +238,10 @@
                 </select>
             </div>
 
-            <div class="col-md-6 lab-inp" id="curso-aluno">
+
+            <div class="col-md-4 lab-inp" id="curso-aluno">
                 <label for="tipo-select" class="form-label">Curso</label>
-                <select class="form-select tipo-select" id="tipo-select">
+                <select class="form-select tipo-select" id="curso-select">
                     <option selected></option>
                     <option value="1">Professor</option>
                     <option value="2">Aluno</option>
@@ -248,9 +249,19 @@
                 </select>
             </div>
 
-            <div class="col-md-6 lab-inp" id="turma-aluno">
+            <div class="col-md-4 lab-inp" id="turma-aluno">
                 <label for="tipo-select" class="form-label">Turma</label>
-                <select class="form-select tipo-select" id="tipo-select">
+                <select class="form-select tipo-select" id="turma-select">
+                    <option selected></option>
+                    <option value="1">Professor</option>
+                    <option value="2">Aluno</option>
+                    <option value="3">Avaliador</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 lab-inp" id="grupo-aluno">
+                <label for="tipo-select" class="form-label">Grupo</label>
+                <select class="form-select tipo-select" id="grupo-select">
                     <option selected></option>
                     <option value="1">Professor</option>
                     <option value="2">Aluno</option>
@@ -267,12 +278,16 @@
             </script>
 
             <div class="buttons">
+                
                 <div class="col-md-3">
                     <button class="primeiro_botao" type="button" onclick="exitModal()">CANCELAR</button>
                 </div>
 
                 <div class="col-md-3">
                     <button class="terceiro_botao" id="button_salvar" type="button" onclick="resetForm()">SALVAR</button>
+                </div>
+                <div class="col-md-6 msg-div">
+                    <p class="msg">**USUÁRIO CADASTRADO COM SUCESSO</p>
                 </div>
             </div>
         </form>

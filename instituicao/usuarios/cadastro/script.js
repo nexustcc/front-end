@@ -47,17 +47,20 @@ function deletarCampo() {
         document.querySelector("#turma-aluno").style.display = "none";
         document.querySelector("#curso-aluno").style.display = "none";
         document.querySelector("#curso").style.display = "flex";
+        document.querySelector("#grupo-aluno").style.display = "none";
     }else if(document.getElementById('tipo-select').value == "2"){
         document.querySelector("#turma-aluno").style.display = "flex";
         document.querySelector("#curso-aluno").style.display = "flex";
         document.querySelector("#turma").style.display = "none";
         document.querySelector("#curso").style.display = "none";
         document.querySelector("#grupo").style.display = "none";
+        document.querySelector("#grupo-aluno").style.display = "flex";
     } else if(document.getElementById('tipo-select').value == "1"){
         document.querySelector("#turma").style.display = "flex";
         document.querySelector("#grupo").style.display = "none";
         document.querySelector("#turma-aluno").style.display = "none";
         document.querySelector("#curso-aluno").style.display = "none";
+        document.querySelector("#grupo-aluno").style.display = "none";
         document.querySelector("#curso").style.display = "flex";
     }else{
         document.querySelector("#turma").style.display = "flex";

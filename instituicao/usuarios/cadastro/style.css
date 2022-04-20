@@ -252,6 +252,32 @@ ul::-webkit-scrollbar-thumb {
     flex-direction: column;
 }
 
+.msg-div{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.msg{
+    display: flex;
+    margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: #05204A;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    border: none;
+    padding: 15px 15px 15px 0
+}
+
+#grupo-aluno {
+    display: none;
+    flex-direction: column;
+}
+
 .modal-membros {
     top: 0;
     right: 0;
