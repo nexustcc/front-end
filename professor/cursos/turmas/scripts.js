@@ -22,7 +22,6 @@ function showModalGrupos() {
 function exitModalGrupos() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-grupos").style.display = "none";
-    document.querySelector(".modal-add-membros").style.display = "flex";
 }
 
 function showModalTurma() {
@@ -50,10 +49,12 @@ const showModalCriarGrupo = () => {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-criar-grupo").style.display = "flex";
     document.querySelector(".modal-membros").style.display = "none";
+    document.querySelector(".modal-grupos").style.display = "none";
 };
 
 const exitModalCriarGrupo = () => {
     document.querySelector(".modal-criar-grupo").style.display = "none";
+    document.querySelector(".modal-grupos").style.display = "flex";
 };
 
 function showModalExcluirGrupo() {
