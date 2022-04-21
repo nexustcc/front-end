@@ -65,7 +65,8 @@ async function getInfoInstituicao() {
     const dados = await fetch(url);
     const instituicao = await dados.json();
 
-    document.getElementById("nomeInstituicao").innerHTML = instituicao.instituicao[0].usuario.nome;    
+    document.getElementById("nomeInstituicao").innerHTML =
+        instituicao.instituicao[0].usuario.nome;
 }
 
 async function turmasCurso(idCurso) {
@@ -76,12 +77,10 @@ async function turmasCurso(idCurso) {
     const curso = await dados.json();
 
     let nome = curso.nome[0].nome;
-    window.location.href = `../turmas/index.html/${nome}`
+    window.location.href = `../turmas/index.html/${nome}`;
 }
 
-
 function exibirDados(cursos) {
-
     const container = document.getElementById("ul_container");
 
     for (var i = 0; i < cursos.length; i++) {
@@ -105,8 +104,6 @@ function exibirDados(cursos) {
         container.appendChild(curso);
     }
 }
-
-
 
 const exibirDadosPesquisa = (cursos) => {
     const htmlString = cursos
@@ -150,8 +147,7 @@ async function getArrayCursos() {
 
     const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
 
-    fetch(url)
-        .then((response) => response.json);
+    fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     cursos = await dados.json();
     exibirDados(cursos.cursos);
@@ -171,7 +167,7 @@ async function cadastrarCurso(nome) {
         },
         body: JSON.stringify(cadastrarCurso),
     };
-    
+
     let idInstituicao = 1;
 
     fetch(`http://localhost:3000/curso/cadastrarCurso/${idInstituicao}`, config)

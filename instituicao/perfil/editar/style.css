@@ -9,8 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #05204A;
-    font-family: 'Poppins', sans-serif;
+    color: #05204a;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -23,20 +23,20 @@ body {
 }
 
 .container input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
 }
 
 button {
     padding: 10px;
     border: 5px solid;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
- ::placeholder {
-    font-family: 'Hind', sans-serif;
+::placeholder {
+    font-family: "Hind", sans-serif;
 }
 
 #primeiro_botao {
@@ -44,7 +44,7 @@ button {
     width: 100%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
-    background-color: #C2C2C2;
+    background-color: #c2c2c2;
     border-radius: 30px;
     padding: 15px;
 }
@@ -72,7 +72,7 @@ a:hover {
     background-color: #044177;
     border-radius: 30px;
     padding: 15px;
-    border: #05204A;
+    border: #05204a;
 }
 
 #icon input {

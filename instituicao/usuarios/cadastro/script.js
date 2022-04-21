@@ -1,7 +1,6 @@
-"use strict"
+"use strict";
 
-const turma = document.getElementById('turma')
-
+const turma = document.getElementById("turma");
 
 function showModal() {
     document.querySelector(".modal").style.display = "flex";
@@ -40,39 +39,40 @@ function showModalEditar() {
 function resetForm() {
     document.getElementById("modal-form").reset();
 }
+
 function deletarCampo() {
-    if (document.getElementById('tipo-select').value == "3") {
+    if (document.getElementById("tipo-select").value == "3") {
         document.querySelector("#turma").style.display = "none";
         document.querySelector("#grupo").style.display = "flex";
         document.querySelector("#turma-aluno").style.display = "none";
         document.querySelector("#curso-aluno").style.display = "none";
         document.querySelector("#curso").style.display = "flex";
         document.querySelector("#grupo-aluno").style.display = "none";
-    }else if(document.getElementById('tipo-select').value == "2"){
+    } else if (document.getElementById("tipo-select").value == "2") {
         document.querySelector("#turma-aluno").style.display = "flex";
         document.querySelector("#curso-aluno").style.display = "flex";
         document.querySelector("#turma").style.display = "none";
         document.querySelector("#curso").style.display = "none";
         document.querySelector("#grupo").style.display = "none";
         document.querySelector("#grupo-aluno").style.display = "flex";
-    } else if(document.getElementById('tipo-select').value == "1"){
+    } else if (document.getElementById("tipo-select").value == "1") {
         document.querySelector("#turma").style.display = "flex";
         document.querySelector("#grupo").style.display = "none";
         document.querySelector("#turma-aluno").style.display = "none";
         document.querySelector("#curso-aluno").style.display = "none";
         document.querySelector("#grupo-aluno").style.display = "none";
         document.querySelector("#curso").style.display = "flex";
-    }else{
+    } else {
         document.querySelector("#turma").style.display = "flex";
         document.querySelector("#grupo").style.display = "flex";
     }
 }
 
 function disableSelected() {
-    if(document.getElementById('tipo-select').value == "selected") {
+    if (document.getElementById("tipo-select").value == "selected") {
         document.getElementById("input-curso").disabled = true;
         document.getElementById("input-turma").disabled = true;
-    }else{
+    } else {
         document.getElementById("input-curso").disabled = false;
         document.getElementById("input-turma").disabled = false;
     }

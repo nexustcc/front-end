@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     position: relative;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     overflow-y: hidden;
 }
 
@@ -15,7 +15,6 @@ body {
     display: flex;
     align-items: center;
 }
-
 
 .container {
     display: flex;
@@ -38,7 +37,7 @@ body {
 }
 
 .cursos_existentes input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
     border: none;
     padding: 15px;
@@ -46,17 +45,17 @@ body {
 }
 
 .curso-select {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
 }
 
 .lab-inp input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
 }
 
 .lab-inp label {
@@ -69,7 +68,7 @@ ul::-webkit-scrollbar {
 }
 
 ul::-webkit-scrollbar-thumb {
-    background-color: #05204A;
+    background-color: #05204a;
     /* color of the scroll thumb */
     border-radius: 10px;
     /* roundness of the scroll thumb */
@@ -92,14 +91,18 @@ ul::-webkit-scrollbar-thumb {
     border: none;
 }
 
-#modal-turma, #modal-membros, #modal-grupos, #modal-criar-grupo, #modal-excluir-grupo{
+#modal-turma,
+#modal-membros,
+#modal-grupos,
+#modal-criar-grupo,
+#modal-excluir-grupo {
     width: 100%;
     height: 50vh;
     background-color: rgb(255, 255, 255);
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 2%;
     border-radius: 20px;
     margin: 0;
@@ -140,19 +143,19 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .ul-1 {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     width: 95%;
     border-radius: 20px;
 }
 
 .ul-2 {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     width: 95%;
     border-radius: 20px;
 }
 
 .modal .lab-inp-participantes input {
-    background-color: #C2C2C2;
+    background-color: #c2c2c2;
     border-radius: 10px;
     padding: 15px;
     width: 90%;
@@ -174,7 +177,7 @@ ul::-webkit-scrollbar-thumb {
 .modal h1 {
     font-size: 70px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
 }
 
 .professores {
@@ -186,7 +189,7 @@ ul::-webkit-scrollbar-thumb {
 .professores h1 {
     font-size: 40px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
 }
 
 .alunos {
@@ -198,7 +201,7 @@ ul::-webkit-scrollbar-thumb {
 .alunos h1 {
     font-size: 40px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
 }
 
 .bg {
@@ -219,7 +222,7 @@ ul::-webkit-scrollbar-thumb {
 .container-geral ul {
     width: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -231,7 +234,7 @@ ul::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 100px;
     padding: 2%;
     overflow-y: auto;
@@ -242,7 +245,7 @@ ul::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -255,7 +258,7 @@ ul::-webkit-scrollbar-thumb {
     margin: 1% 0;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -271,7 +274,7 @@ ul::-webkit-scrollbar-thumb {
     color: #212529;
 }
 
-.btnExcluirGrupo{
+.btnExcluirGrupo {
     border: none;
     background: none;
     align-self: flex-end;
@@ -310,7 +313,7 @@ ul::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -324,7 +327,7 @@ ul::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -414,7 +417,7 @@ ul::-webkit-scrollbar-thumb {
 
 .li h2 {
     color: #272727;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
 
@@ -430,9 +433,9 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .lab-inp-modal input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
+    border-bottom: 1px solid #05204a;
     padding: 15px;
     width: 100%;
 }
@@ -453,13 +456,13 @@ ul::-webkit-scrollbar-thumb {
     font-weight: 400;
 }
 
-.tipo img{
+.tipo img {
     width: 25px;
     margin-left: 0.5vw;
     margin-top: -1.5vh;
 }
 
-.tipo{
+.tipo {
     display: flex;
     flex-direction: column;
 }
@@ -468,7 +471,7 @@ ul::-webkit-scrollbar-thumb {
     margin-top: 2vh;
     width: 98%;
     color: white;
-    background-color: #0664B7;
+    background-color: #0664b7;
     border-radius: 30px;
     font-weight: 700;
     border: none;
@@ -483,7 +486,7 @@ ul::-webkit-scrollbar-thumb {
     border-radius: 30px;
     border: none;
     padding: 15px;
-    background-color: #C2C2C2;
+    background-color: #c2c2c2;
     margin-right: 5%;
 }
 
@@ -505,14 +508,15 @@ ul::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
-.professores, .alunos {
+.professores,
+.alunos {
     width: 50%;
 }
 
 .list-group-item {
     display: flex;
     justify-content: center;
-} 
+}
 
 .membro-container img {
     margin-left: 25%;
@@ -532,7 +536,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     border-radius: 20px;
     margin: 0;
     position: absolute;
@@ -551,7 +555,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     border-radius: 20px;
     margin: 0;
     position: absolute;
@@ -566,7 +570,7 @@ ul::-webkit-scrollbar-thumb {
     font-size: 40px;
     font-weight: 700;
     text-align: center;
-    color: #05204A;
+    color: #05204a;
 }
 
 .modal-excluir h2 {
@@ -574,13 +578,13 @@ ul::-webkit-scrollbar-thumb {
     font-size: 30px;
     font-weight: 400;
     text-align: center;
-    color: #A71E34;
+    color: #a71e34;
 }
 
 .modal-excluir label {
     font-size: 30px;
     font-weight: 400;
-    color: #05204A;
+    color: #05204a;
 }
 
 .modal-excluir input {
@@ -591,7 +595,7 @@ ul::-webkit-scrollbar-thumb {
     font-size: 40px;
     font-weight: 700;
     text-align: center;
-    color: #05204A;
+    color: #05204a;
 }
 
 .modal-excluir-membro h2 {
@@ -599,13 +603,13 @@ ul::-webkit-scrollbar-thumb {
     font-size: 30px;
     font-weight: 400;
     text-align: center;
-    color: #A71E34;
+    color: #a71e34;
 }
 
 .modal-excluir-membro label {
     font-size: 30px;
     font-weight: 400;
-    color: #05204A;
+    color: #05204a;
 }
 
 .modal-excluir-membro input {
@@ -616,7 +620,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -661,16 +665,18 @@ ul::-webkit-scrollbar-thumb {
         transform: translate(-50%, -50%);
         font-weight: 100;
     }
-    
+
     .container-geral {
         height: 100vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
     }
+
     .book {
         display: none;
     }
+
     .container {
         flex-direction: column;
         align-items: center;
@@ -679,6 +685,7 @@ ul::-webkit-scrollbar-thumb {
         width: 90%;
         padding: 2%;
     }
+
     body {
         height: 100vh;
         align-items: center;
@@ -686,52 +693,64 @@ ul::-webkit-scrollbar-thumb {
         font-size: 15px;
     }
 
-    .lab-inp input{
+    .lab-inp input {
         font-size: 15px;
         height: 40px;
     }
+
     .ul {
         margin-top: 1%;
         height: 100%;
     }
+
     .li {
         display: flex;
         flex-direction: column;
     }
+
     .turma {
         font-size: clamp(0rem, 10vw, 1.5rem);
         margin-right: 5%;
     }
+
     .nome {
         font-size: clamp(0rem, 10vw, 1.5rem);
     }
+
     .icon label {
         font-size: clamp(0rem, 10vw, 1.5rem);
         margin-right: 5%;
     }
+
     .modal h1 {
         font-size: clamp(0rem, 10vw, 1.5rem);
     }
+
     .modal {
         text-align: justify;
     }
+
     .turma {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
+
     .icone {
         display: flex;
         flex-direction: row;
     }
+
     .livro {
         display: none;
     }
+
     .icon.inputIconBg i {
         background-color: #aaa;
         padding: 9px 4px;
         border-radius: 4px 0 0 4px;
     }
+
     .button5 {
         width: 90%;
         background-color: rgba(240, 248, 255, 0);
@@ -743,31 +762,37 @@ ul::-webkit-scrollbar-thumb {
         padding: 15px;
         margin-bottom: 2%;
     }
+
     button {
         font-size: clamp(0rem, 10vw, 0.8rem);
     }
+
     .modal .buttons {
         display: flex;
         flex-direction: column-reverse;
     }
+
     .membro-container {
         display: flex;
         flex-direction: column;
     }
+
     .ul-professor {
         margin: 1% 0;
         width: 100%;
         height: 70%;
         border: 2px solid;
-        border-color: #05204A;
+        border-color: #05204a;
         border-radius: 10px;
         padding: 2%;
         overflow-y: auto;
     }
+
     .ul-professor li {
         display: flex;
         flex-direction: row;
     }
+
     .ul-aluno .li {
         display: flex;
         flex-direction: row;
@@ -776,15 +801,15 @@ ul::-webkit-scrollbar-thumb {
     .iconify {
         height: 50px;
     }
+
     .ul-aluno {
         margin: 1% 0;
         width: 100%;
         height: 70%;
         border: 2px solid;
-        border-color: #05204A;
+        border-color: #05204a;
         border-radius: 10px;
         padding: 2%;
         overflow-y: auto;
     }
-
 }

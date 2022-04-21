@@ -15,7 +15,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #272727;
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ body p {
     max-width: 100%;
     height: fit-content;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 1%;
     margin-bottom: 2%;
@@ -104,7 +104,7 @@ body p {
     max-width: 100%;
     height: fit-content;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 1%;
 }
@@ -123,41 +123,41 @@ body p {
     /* creates padding around scroll thumb */
 }
 
-.barra_progresso{
+.barra_progresso {
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
-.barra_progresso label{
+.barra_progresso label {
     margin-left: 2%;
     font-size: 18px;
     font-weight: 300;
 }
 
-.progress_bar{
+.progress_bar {
     background-color: #044177;
     border-radius: 100px;
     font-size: 20px;
     font-weight: 300;
 }
 
-.progress{
+.progress {
     height: 80%;
     border-radius: 100px;
 }
 
-.documentacao_div{
+.documentacao_div {
     display: flex;
     width: 100%;
 }
 
-.documentacao{
+.documentacao {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.documentacao label{
+.documentacao label {
     margin-left: 2%;
     font-size: 18px;
     font-weight: 300;
@@ -176,12 +176,12 @@ body p {
     margin-bottom: 5%;
 }
 
-.primeiro_botao:hover{
-    background-color: #E3E3E3;
+.primeiro_botao:hover {
+    background-color: #e3e3e3;
     color: black;
 }
 
-.editar_div{ 
+.editar_div {
     display: flex;
     flex-direction: row-reverse;
     width: 100%;

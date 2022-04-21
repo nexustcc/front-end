@@ -15,15 +15,16 @@ body {
    position: relative;
 }
 
-.container{
+.container {
    width: 30%;
 }
+
 #imgPerfil {
-  object-fit: cover;
-  object-position: center center;
+   object-fit: cover;
+   object-position: center center;
 }
 
-.formPerfil{
+.formPerfil {
    margin-top: 5%;
 }
 
@@ -33,10 +34,10 @@ body {
 }
 
 .lab-inp input {
-   background-color: #E3E3E3;
+   background-color: #e3e3e3;
    border-radius: 10px;
-   border-bottom: 1px solid #05204A;
-   padding: 15px
+   border-bottom: 1px solid #05204a;
+   padding: 15px;
 }
 
 .botao_editar {
@@ -48,13 +49,14 @@ body {
    border-radius: 30px;
    font-weight: 700;
    border: none;
-   padding: 15px
+   padding: 15px;
 }
+
 input {
-   background-color: #E3E3E3;
+   background-color: #e3e3e3;
    border-radius: 10px;
-   border-bottom: 1px solid #05204A;
-   padding: 15px
+   border-bottom: 1px solid #05204a;
+   padding: 15px;
 }
 
 .buttons {
@@ -63,21 +65,22 @@ input {
 }
 
 @media (max-width: 830px) {
-   .container{
+   .container {
       width: 70%;
    }
+
    #imgPerfil {
-     object-fit: cover;
-     object-position: center center;
-     height: 150px;
-     width: 150px;
+      object-fit: cover;
+      object-position: center center;
+      height: 150px;
+      width: 150px;
    }
-   
-   .formPerfil{
+
+   .formPerfil {
       margin-top: 5%;
    }
 
    .botao_editar {
       width: 100%;
-   } 
+   }
 }

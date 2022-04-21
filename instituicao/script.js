@@ -32,8 +32,7 @@ async function getInfoInstituicao() {
 }
 
 async function excluirConta() {
-
-    console.log('TesteConsole')
+    console.log("TesteConsole");
     let idInstituicao = 3;
 
     let inputSenhaInstituicao = document.getElementById("senhaInstituicao");

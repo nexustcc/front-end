@@ -15,43 +15,46 @@ body {
    position: relative;
 }
 
-.container{
+.container {
    width: 30%;
 }
+
 #imgPerfil {
-  object-fit: cover;
-  object-position: center center;
+   object-fit: cover;
+   object-position: center center;
 }
 
-.formPerfil{
+.formPerfil {
    margin-top: 5%;
 }
-.alert-vazado{
+
+.alert-vazado {
    display: flex;
    flex-direction: row;
    align-items: center;
 }
-.info_vazado_nome{
+
+.info_vazado_nome {
    display: flex;
    margin-left: 5%;
 }
 
-.info_preenchido_nome{
+.info_preenchido_nome {
    display: none;
    margin-left: 5%;
 }
 
-.info_vazado_email{
+.info_vazado_email {
    display: flex;
    margin-left: 5%;
 }
 
-.info_preenchido_email{
+.info_preenchido_email {
    display: none;
    margin-left: 5%;
 }
 
-.alert_text_nome{
+.alert_text_nome {
    display: none;
    flex-direction: column;
    height: 100px;
@@ -64,27 +67,27 @@ body {
    margin-left: 5%;
 }
 
-.alert_text_nome h1{
+.alert_text_nome h1 {
    font-size: 20px;
 }
 
-.alert_text_nome p{
+.alert_text_nome p {
    font-size: 10px;
 }
 
-#alert-nome{
+#alert-nome {
    height: 50px;
    width: 100%;
    position: relative;
 }
 
-#alert-email{
+#alert-email {
    height: 50px;
    width: 100%;
    position: relative;
 }
 
-.alert_text_email{
+.alert_text_email {
    display: none;
    flex-direction: column;
    height: 100px;
@@ -97,11 +100,11 @@ body {
    margin-left: 5%;
 }
 
-.alert_text_email h1{
+.alert_text_email h1 {
    font-size: 20px;
 }
 
-.alert_text_email p{
+.alert_text_email p {
    font-size: 10px;
 }
 
@@ -114,7 +117,7 @@ body {
    border-radius: 30px;
    font-weight: 700;
    border: none;
-   padding: 15px
+   padding: 15px;
 }
 
 .botao_cancelar {
@@ -127,7 +130,7 @@ body {
    border-radius: 30px;
    font-weight: 700;
    border: none;
-   padding: 15px
+   padding: 15px;
 }
 
 .buttons {
@@ -136,29 +139,30 @@ body {
 }
 
 @media (max-width: 830px) {
-   .container{
+   .container {
       width: 70%;
    }
+
    #imgPerfil {
-     object-fit: cover;
-     object-position: center center;
-     height: 150px;
-     width: 150px;
+      object-fit: cover;
+      object-position: center center;
+      height: 150px;
+      width: 150px;
    }
-   
-   .formPerfil{
+
+   .formPerfil {
       margin-top: 5%;
    }
 
    .botao_editar {
       width: 100%;
-   } 
+   }
 }
 
 .container input {
-   background-color: #E3E3E3;
+   background-color: #e3e3e3;
    border-radius: 10px;
-   border-bottom: 1px solid #05204A;
+   border-bottom: 1px solid #05204a;
    padding: 15px;
 }
 
@@ -209,17 +213,17 @@ body {
 }
 
 .container .upload_foto .btn_upload_foto:active {
-   background: #0987F7;
+   background: #0987f7;
 }
 
 button {
    padding: 10px;
    border: 5px solid;
-   font-family: 'Poppins', sans-serif;
+   font-family: "Poppins", sans-serif;
 }
 
 ::placeholder {
-   font-family: 'Hind', sans-serif;
+   font-family: "Hind", sans-serif;
 }
 
 #primeiro_botao {
@@ -227,7 +231,7 @@ button {
    width: 100%;
    background-color: rgba(240, 248, 255, 0);
    color: white;
-   background-color: #C2C2C2;
+   background-color: #c2c2c2;
    border-radius: 30px;
    padding: 15px;
 }
@@ -256,14 +260,15 @@ a:hover {
    background-color: #044177;
    border-radius: 30px;
    padding: 15px;
-   border: #05204A;
+   border: #05204a;
 }
 
-#space{
-   width:90%;
+#space {
+   width: 90%;
    margin-left: 0 20% 0 10%;
    padding: 50px;
 }
+
 #icon input {
    padding-right: 50px;
 }

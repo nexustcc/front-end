@@ -1,16 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
- }
+    box-sizing: border-box;
+}
 
- body{
+body {
     width: 100vw;
     height: 100vh;
 }
 
-header{
-    font-family: 'Roboto', sans-serif;
+header {
+    font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: space-between;
     padding: 30px 70px;
@@ -18,19 +18,18 @@ header{
     margin-left: 75px;
 }
 
-header .primeira_parte{
+header .primeira_parte {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5vh;
 }
 
-header h1{
+header h1 {
     font-size: 23px;
 }
 
 @media (max-width: 992px) {
-
     header {
         margin-left: 60px;
     }
@@ -41,7 +40,6 @@ header h1{
 }
 
 @media (max-width: 540px) {
-
     header .primeira_parte {
         display: none;
     }
@@ -52,5 +50,4 @@ header h1{
         margin-right: 15px;
         justify-content: end;
     }
-
 }

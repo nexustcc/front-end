@@ -1,10 +1,11 @@
-"use strict"
+"use strict";
 
 function showModal() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".modal-add-membros").style.display = "none";
-    document.querySelector(".modal-add-membros-turma-criada").style.display = "none"
+    document.querySelector(".modal-add-membros-turma-criada").style.display =
+        "none";
 }
 
 function exitModal() {
@@ -30,7 +31,7 @@ function showModalExcluir() {
     document.querySelector(".modal-excluir").style.display = "flex";
 }
 
-function exitModalExcluir() { 
+function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }
@@ -63,12 +64,14 @@ function exitModalAddMembros() {
 function showModalAddMembrosTurmaCriada() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-membros").style.display = "none";
-    document.querySelector(".modal-add-membros-turma-criada").style.display = "flex";
+    document.querySelector(".modal-add-membros-turma-criada").style.display =
+        "flex";
 }
 
 function exitModalAddMembrosTurmaCriada() {
     document.querySelector(".bg").style.display = "none";
-    document.querySelector(".modal-add-membros-turma-criada").style.display = "none";
+    document.querySelector(".modal-add-membros-turma-criada").style.display =
+        "none";
 }
 
 function showModalEditar() {
@@ -82,12 +85,12 @@ function exitModalEditar() {
     document.querySelector(".modal-editar").style.display = "none";
 }
 
-
 function showModalMembros() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-membros").style.display = "flex";
-    document.querySelector(".modal-add-membros-turma-criada").style.display = "none"
+    document.querySelector(".modal-add-membros-turma-criada").style.display =
+        "none";
 }
 
 function showModalEditar() {

@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
@@ -6,10 +6,10 @@ tiposUsuario.forEach((tipoUsuario) => {
     tipoUsuario.addEventListener("click", () => {
         tiposUsuario.forEach((tipoUsuario) => {
             tipoUsuario.classList.remove("ativo");
-        })
+        });
         tipoUsuario.classList.add("ativo");
-    })
-})
+    });
+});
 
 function showModal() {
     document.querySelector(".modal-editar").style.display = "none";
@@ -58,13 +58,13 @@ function exitModalTrocarTurma() {
 }
 
 function deletarCampo() {
-    if (document.getElementById('tipo-select-edit').value == "3") {
+    if (document.getElementById("tipo-select-edit").value == "3") {
         document.querySelector("#turma").style.display = "none";
         document.querySelector("#grupo").style.display = "flex";
         document.querySelector("#turma-aluno").style.display = "none";
         document.querySelector("#curso-aluno").style.display = "none";
         document.querySelector("#curso").style.display = "flex";
-    }else if(document.getElementById('tipo-select-edit').value == "2"){
+    } else if (document.getElementById("tipo-select-edit").value == "2") {
         document.querySelector("#turma-aluno").style.display = "flex";
         document.querySelector("#curso-aluno").style.display = "flex";
         document.querySelector("#turma").style.display = "none";

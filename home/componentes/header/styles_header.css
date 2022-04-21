@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Hind', sans-serif;
+    font-family: "Hind", sans-serif;
 }
 
 body {
@@ -53,7 +53,7 @@ header img {
 
 .navegacao .hamburguer:before,
 .navegacao .hamburguer:after {
-    content: '';
+    content: "";
     position: absolute;
     height: 4px;
     left: 0;
@@ -86,23 +86,23 @@ header img {
     display: none;
 }
 
-.navegacao input:checked ~ .hamburguer {
+.navegacao input:checked~.hamburguer {
     background: transparent;
 }
 
-.navegacao input:checked ~ .hamburguer::before {
+.navegacao input:checked~.hamburguer::before {
     top: 0;
     transform: rotate(-45deg);
     width: 30px;
 }
 
-.navegacao input:checked ~ .hamburguer::after {
+.navegacao input:checked~.hamburguer::after {
     top: 0;
     transform: rotate(45deg);
     width: 30px;
 }
 
-.navegacao input:checked ~ .nav_links {
+.navegacao input:checked~.nav_links {
     left: 0;
     box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
 }

@@ -1,10 +1,11 @@
-"use strict"
+"use strict";
 
 function showModal() {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".modal-add-membros").style.display = "none";
-    document.querySelector(".modal-add-membros-turma-criada").style.display = "none"
+    document.querySelector(".modal-add-membros-turma-criada").style.display =
+        "none";
 }
 
 function exitModal() {
@@ -49,22 +50,22 @@ const showModalCriarGrupo = () => {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-criar-grupo").style.display = "flex";
     document.querySelector(".modal-membros").style.display = "none";
-}
+};
 
 const exitModalCriarGrupo = () => {
     document.querySelector(".modal-criar-grupo").style.display = "none";
-}
+};
 
 function showModalExcluirGrupo() {
     document.querySelector(".modal-grupos").style.display = "none";
-    document.querySelector(".modal-excluir-grupo").style.display = "flex";   
+    document.querySelector(".modal-excluir-grupo").style.display = "flex";
 }
 
-function exitModalExcluirGrupo() { 
+function exitModalExcluirGrupo() {
     document.querySelector(".modal-excluir-grupo").style.display = "none";
     document.querySelector(".modal-grupos").style.display = "flex";
 }
 
 const excluirGrupo = (idGrupo) => {
-    console.log('excluir grupo')
-}
+    console.log("excluir grupo");
+};

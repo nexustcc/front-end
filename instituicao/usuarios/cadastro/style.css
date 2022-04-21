@@ -25,7 +25,7 @@ ul::-webkit-scrollbar {
 }
 
 ul::-webkit-scrollbar-thumb {
-    background-color: #05204A;
+    background-color: #05204a;
     /* color of the scroll thumb */
     border-radius: 10px;
     /* roundness of the scroll thumb */
@@ -33,7 +33,7 @@ ul::-webkit-scrollbar-thumb {
     /* creates padding around scroll thumb */
 }
 
-.mul-select{
+.mul-select {
     display: none;
 }
 
@@ -46,7 +46,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 2%;
     border-radius: 20px;
     margin: 0;
@@ -55,28 +55,28 @@ ul::-webkit-scrollbar-thumb {
     left: 50%;
     margin-right: -50%;
     z-index: 1;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
-  
-  .select2.select2-container {
+
+.select2.select2-container {
     width: 100% !important;
-  }
-  
-  .select2.select2-container .select2-selection {
-    background-color: #E3E3E3;
+}
+
+.select2.select2-container .select2-selection {
+    background-color: #e3e3e3;
     border-radius: 10px;
     border-color: #aaa;
-    border-bottom: 1px solid #05204A;
+    border-bottom: 1px solid #05204a;
     padding: 15px 0 15px 0;
-  }
-  
-  .select2.select2-container .select2-selection .select2-selection__rendered {
+}
+
+.select2.select2-container .select2-selection .select2-selection__rendered {
     color: #333;
     line-height: 32px;
     padding-right: 33px;
-  }
-  
-  .select2.select2-container .select2-selection .select2-selection__arrow {
+}
+
+.select2.select2-container .select2-selection .select2-selection__arrow {
     background: #f8f8f8;
     border-left: 1px solid #ccc;
     -webkit-border-radius: 0 3px 3px 0;
@@ -84,40 +84,40 @@ ul::-webkit-scrollbar-thumb {
     border-radius: 0 3px 3px 0;
     height: 32px;
     width: 33px;
-  }
-  
-  .select2.select2-container.select2-container--open .select2-selection.select2-selection--single {
+}
+
+.select2.select2-container.select2-container--open .select2-selection.select2-selection--single {
     background: #f8f8f8;
-  }
-  
-  .select2.select2-container.select2-container--open .select2-selection.select2-selection--single .select2-selection__arrow {
+}
+
+.select2.select2-container.select2-container--open .select2-selection.select2-selection--single .select2-selection__arrow {
     -webkit-border-radius: 0 3px 0 0;
     -moz-border-radius: 0 3px 0 0;
     border-radius: 0 3px 0 0;
-  }
-  
-  .select2.select2-container.select2-container--open .select2-selection.select2-selection--multiple {
+}
+
+.select2.select2-container.select2-container--open .select2-selection.select2-selection--multiple {
     border: 1px solid #34495e;
-  }
-  
-  .select2.select2-container .select2-selection--multiple {
+}
+
+.select2.select2-container .select2-selection--multiple {
     height: 90%;
     min-height: 34px;
-  }
-  
-  .select2.select2-container .select2-selection--multiple .select2-search--inline .select2-search__field {
+}
+
+.select2.select2-container .select2-selection--multiple .select2-search--inline .select2-search__field {
     margin-top: 0;
     height: 32px;
-  }
-  
-  .select2.select2-container .select2-selection--multiple .select2-selection__rendered {
+}
+
+.select2.select2-container .select2-selection--multiple .select2-selection__rendered {
     display: block;
     padding: 0 4px;
     line-height: 29px;
-  }
-  
-  .select2.select2-container .select2-selection--multiple .select2-selection__choice {
-    background-color: #C2C2C2;
+}
+
+.select2.select2-container .select2-selection--multiple .select2-selection__choice {
+    background-color: #c2c2c2;
     border: 1px solid #ccc;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -130,9 +130,9 @@ ul::-webkit-scrollbar-thumb {
     position: relative;
     color: white;
     font-weight: 300;
-  }
-  
-  .select2.select2-container .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
+}
+
+.select2.select2-container .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
     height: 22px;
     width: 22px;
     margin: 0;
@@ -140,43 +140,44 @@ ul::-webkit-scrollbar-thumb {
     color: #a71e34;
     font-weight: bold;
     font-size: 16px;
-  }
-  
-  .select2-container .select2-dropdown {
+}
+
+.select2-container .select2-dropdown {
     background: transparent;
     border: none;
     margin-top: -5px;
-  }
-  
-  .select2-container .select2-dropdown .select2-search {
+}
+
+.select2-container .select2-dropdown .select2-search {
     padding: 0;
-  }
-  
-  .select2-container .select2-dropdown .select2-search input {
+}
+
+.select2-container .select2-dropdown .select2-search input {
     outline: none !important;
     border: none;
     border: 1px solid #34495e !important;
     border-bottom: none !important;
     padding: 4px 6px !important;
-  }
-  
-  .select2-container .select2-dropdown .select2-results {
-    padding: 0;
-  }
-
-  ol, ul {
-    padding-left: 0rem; 
 }
-  
-  .select2-container .select2-dropdown .select2-results ul {
+
+.select2-container .select2-dropdown .select2-results {
+    padding: 0;
+}
+
+ol,
+ul {
+    padding-left: 0rem;
+}
+
+.select2-container .select2-dropdown .select2-results ul {
     background: #f8f8f8;
     border-radius: 0px 0px 10px 10px;
     border: 1px solid #34495e;
-  }
-  
-  .select2-container .select2-dropdown .select2-results ul .select2-results__option--highlighted[aria-selected] {
-    background-color: #C2C2C2;
-  }
+}
+
+.select2-container .select2-dropdown .select2-results ul .select2-results__option--highlighted[aria-selected] {
+    background-color: #c2c2c2;
+}
 
 .modal-editar {
     top: 0;
@@ -190,7 +191,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 2%;
     border-radius: 20px;
     position: absolute;
@@ -212,7 +213,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 2%;
     border-radius: 20px;
     position: absolute;
@@ -231,7 +232,7 @@ ul::-webkit-scrollbar-thumb {
     padding: 0 5%;
 }
 
-#curso{
+#curso {
     display: flex;
     flex-direction: column;
 }
@@ -243,34 +244,36 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     padding: 0;
 }
+
 #curso-aluno {
     display: none;
     flex-direction: column;
 }
+
 #turma-aluno {
     display: none;
     flex-direction: column;
 }
 
-.msg-div{
+.msg-div {
     display: flex;
     align-items: center;
     text-align: center;
 }
 
-.msg{
+.msg {
     display: flex;
     margin-top: 2vh;
     width: 98%;
     background-color: rgba(240, 248, 255, 0);
-    color: #05204A;
+    color: #05204a;
     border-radius: 10px;
     font-weight: 300;
     font-size: 20px;
     text-align: center;
     align-items: center;
     border: none;
-    padding: 15px 15px 15px 0
+    padding: 15px 15px 15px 0;
 }
 
 #grupo-aluno {
@@ -290,7 +293,7 @@ ul::-webkit-scrollbar-thumb {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 2%;
     border-radius: 20px;
     position: absolute;
@@ -312,13 +315,13 @@ ul::-webkit-scrollbar-thumb {
 .modal h1 {
     font-size: 70px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
 }
 
 .modal-turma h1 {
     font-size: 70px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
     text-align: center;
 }
 
@@ -341,7 +344,7 @@ img {
 .ul {
     width: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -352,7 +355,7 @@ img {
     width: 100%;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -364,7 +367,7 @@ ul::-webkit-scrollbar {
 }
 
 ul::-webkit-scrollbar-thumb {
-    background-color: #05204A;
+    background-color: #05204a;
     /* color of the scroll thumb */
     border-radius: 10px;
     /* roundness of the scroll thumb */
@@ -378,7 +381,7 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .ul-turma::-webkit-scrollbar-thumb {
-    background-color: #05204A;
+    background-color: #05204a;
     /* color of the scroll thumb */
     border-radius: 10px;
     /* roundness of the scroll thumb */
@@ -400,7 +403,7 @@ li {
     width: 100%;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -410,7 +413,7 @@ li {
     margin: 1% 0;
     height: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -425,7 +428,7 @@ li {
 .professores h1 {
     font-size: 40px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
 }
 
 .alunos {
@@ -437,7 +440,7 @@ li {
 .alunos h1 {
     font-size: 40px;
     font-weight: 700;
-    color: #05204A;
+    color: #05204a;
 }
 
 #icone {
@@ -459,7 +462,7 @@ li {
 }
 
 .turmas_existentes input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
     border: none;
     padding: 15px;
@@ -487,7 +490,7 @@ li {
 
 .li h2 {
     color: #272727;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
 
@@ -518,17 +521,17 @@ li {
 }
 
 .lab-inp input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
 }
 
 #curso .lab-inp input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 0px
+    border-bottom: 1px solid #05204a;
+    padding: 0px;
 }
 
 .primeiro_botao {
@@ -539,7 +542,7 @@ li {
     border-radius: 30px;
     border: none;
     padding: 15px;
-    background-color: #C2C2C2;
+    background-color: #c2c2c2;
     margin-right: 5%;
 }
 
@@ -548,11 +551,11 @@ li {
     width: 98%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
-    background-color: #0664B7;
+    background-color: #0664b7;
     border-radius: 30px;
     font-weight: 700;
     border: none;
-    padding: 15px
+    padding: 15px;
 }
 
 .terceiro_botao {
@@ -564,32 +567,32 @@ li {
     border-radius: 30px;
     font-weight: 700;
     border: none;
-    padding: 15px
+    padding: 15px;
 }
 
 .tipo-select {
     height: 64%;
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
+    border-bottom: 1px solid #05204a;
     padding: 15px;
     color: #272727;
 }
 
 .curso-select {
     height: 64%;
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
+    border-bottom: 1px solid #05204a;
     padding: 15px;
-    color: #C2C2C2;
+    color: #c2c2c2;
 }
 
 .turma-select {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
-    border-bottom: 1px solid #05204A;
-    padding: 15px
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
 }
 
 .buttons {
@@ -614,9 +617,12 @@ div.searchable {
     height: 50px;
     font-size: 18px;
     padding: 10px;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box; /* Firefox, other Gecko */
-    box-sizing: border-box; /* Opera/IE 8+ */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
     display: block;
     font-weight: 400;
     line-height: 1.6;
@@ -624,9 +630,9 @@ div.searchable {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center/8px 10px;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center/8px 10px;
 }
 
 .searchable ul {
@@ -654,33 +660,41 @@ div.searchable {
     background-color: #e8e8e8;
     color: #333;
 }
+
 @media (max-width: 830px) {
     .container {
         padding: 2%;
     }
+
     .container h1 {
         display: flex;
         font-size: clamp(0rem, 10vw, 4.3rem);
         text-align: center;
     }
+
     .card_azul h1 {
         font-size: clamp(0rem, 10vw, 2.3rem);
     }
+
     li {
         display: flex;
         flex-direction: column;
     }
+
     .button h2 {
         font-size: clamp(0rem, 10vw, 1.5rem);
     }
+
     .turma {
         font-size: clamp(0rem, 10vw, 1.5rem);
         margin-right: 5%;
     }
+
     .icone {
         display: flex;
         flex-direction: row;
     }
+
     .livro {
         display: none;
     }

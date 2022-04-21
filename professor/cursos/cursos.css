@@ -13,7 +13,7 @@
 body {
     height: 100vh;
     position: relative;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     overflow-y: hidden;
 }
 
@@ -52,13 +52,12 @@ body {
 }
 
 .cursos_existentes input {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     border-radius: 10px;
     border: none;
     padding: 15px;
     width: 90%;
 }
-
 
 ul::-webkit-scrollbar {
     width: 12px;
@@ -66,7 +65,7 @@ ul::-webkit-scrollbar {
 }
 
 ul::-webkit-scrollbar-thumb {
-    background-color: #05204A;
+    background-color: #05204a;
     /* color of the scroll thumb */
     border-radius: 10px;
     /* roundness of the scroll thumb */
@@ -82,7 +81,7 @@ ul::-webkit-scrollbar-thumb {
 .container-geral ul {
     width: 100%;
     border: 2px solid;
-    border-color: #05204A;
+    border-color: #05204a;
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
@@ -140,23 +139,19 @@ ul::-webkit-scrollbar-thumb {
     padding: 15px;
 }
 
-
 @media (max-width: 1550px) {
-
     .container-geral {
         margin-left: 8vw;
     }
-} 
+}
 
 @media (max-width: 1050px) {
-
     .container-geral {
         margin-left: 10vw;
     }
 }
- 
-@media (max-width: 818px) {
 
+@media (max-width: 818px) {
     .book {
         display: none;
     }
@@ -184,11 +179,9 @@ ul::-webkit-scrollbar-thumb {
         justify-content: center;
         display: flex;
     }
-
 }
 
 @media (max-width: 678px) {
-
     .container-geral {
         margin-left: 17vw;
         width: 80vw;
@@ -216,11 +209,9 @@ ul::-webkit-scrollbar-thumb {
     .cursos_existentes input {
         font-size: 14px;
     }
-
 }
 
 @media (max-width: 500px) {
-
     .container-geral {
         margin-left: 20vw;
     }
