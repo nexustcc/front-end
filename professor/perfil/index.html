@@ -14,12 +14,74 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./perfil.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../componentes/header/styles_header.css">
+  <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <title>Perfil</title>
 </head>
 
 <div class="bg"></div>
 
 <body>
+
+  <div class="sideMenu">
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+
+        <li>
+            <a href="../cursos/index.html">
+                <i class="bx bx-group"></i>
+                <span class="links_name">Cursos</span>
+            </a>
+            <span class="tooltip">Cursos</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bxs-graduation"></i>
+                <span class="links_name">Atividades</span>
+            </a>
+            <span class="tooltip">Atividades</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-folder-open"></i>
+                <span class="links_name">Arquivos e links</span>
+            </a>
+            <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+            <a href="../usuarios/index.html">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Usuários</span>
+            </a>
+            <span class="tooltip">Usuários</span>
+        </li>
+        <li class="profile">
+            <a href="../../../home/login/index.html">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
+    </div>
+  </div>
+
+    <header>
+        <div class="primeira_parte">
+            <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+            <h1 class="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+        </div>
+
+        <a href="./index.html">
+            <img src="../componentes/header/img/perfil_professor.svg" alt="perfil" />
+        </a>
+    </header>
 
   <div class="container">
     <h1>PERFIL DE USUÁRIO</h1>
@@ -73,6 +135,25 @@
   </div>
 
   </div>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+    });
+
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    }
+</script>
+
 </body>
 
 </html>

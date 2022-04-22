@@ -138,6 +138,37 @@ ul::-webkit-scrollbar-thumb {
     height: 50vh;
 }
 
+#professoresNovoGrupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.tipo-select {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+}
+
+.tipo-select-edit {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+}
+
+.select2.select2-container .select2-selection--multiple {
+    height: 90%;
+    min-height: 34px;
+}
+.select2.select2-container .select2-selection {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-color: #aaa;
+    border-bottom: 1px solid #05204a;
+    padding: 15px 0 15px 0;
+}
+
 .g-7 input {
     width: 100%;
 }

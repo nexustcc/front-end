@@ -12,7 +12,7 @@
         rel="stylesheet" />
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="usuarios.css" />
     <link rel="stylesheet" href="../../componentes/header/styles_header.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js" defer></script>
@@ -22,32 +22,30 @@
     <link rel="stylesheet" href="../componentes/header/styles_header.css" />
     <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css" />
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>USUÁRIOS EXISTENTES</title>
+    <title>Usuários</title>
 </head>
+
 <div class="bg"></div>
 
 <body>
     <div class="sideMenu">
         <div class="sidebar">
             <div class="logo-details">
-                <img class="icone_empresa" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+                <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
                 <i class="bx bx-menu" id="btn"></i>
             </div>
-
+    
             <li>
-                <a href="#">
+                <a href="../cursos/index.html">
                     <i class="bx bx-group"></i>
                     <span class="links_name">Cursos</span>
                 </a>
                 <span class="tooltip">Cursos</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-user-plus"></i>
-                    <span class="links_name">Criar novo grupo</span>
-                </a>
-                <span class="tooltip">Novo grupo</span>
             </li>
             <li>
                 <a href="#">
@@ -64,14 +62,14 @@
                 <span class="tooltip">Arquivos</span>
             </li>
             <li>
-                <a href="#">
-                    <i class="bx bx-edit"></i>
-                    <span class="links_name">Editar usuário</span>
+                <a href="./index.html">
+                    <i class="bx bx-user"></i>
+                    <span class="links_name">Usuários</span>
                 </a>
-                <span class="tooltip">Editar usuário</span>
+                <span class="tooltip">Usuários</span>
             </li>
             <li class="profile">
-                <a href="#">
+                <a href="../../../home/login/index.html">
                     <i class="bx bx-log-out" id="log_out"></i>
                     <span class="links_name">Log Out</span>
                 </a>
@@ -79,36 +77,21 @@
             </li>
         </div>
 
-        <script>
-            let sidebar = document.querySelector(".sidebar");
-            let closeBtn = document.querySelector("#btn");
-
-            closeBtn.addEventListener("click", () => {
-                sidebar.classList.toggle("open");
-                menuBtnChange();
-            });
-
-            function menuBtnChange() {
-                if (sidebar.classList.contains("open")) {
-                    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-                } else {
-                    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-                }
-            }
-        </script>
-    </div>
-
-    <div class="container-geral">
         <header>
             <div class="primeira_parte">
                 <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
                 <h1 class="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
             </div>
 
-            <a href="../../index.html">
+            <a href="../perfil/index.html">
                 <img src="../componentes/header/img/perfil_professor.svg" alt="perfil" />
             </a>
         </header>
+
+    </div>
+
+    <div class="container-geral">
+
         <div class="container">
             <h1>USUÁRIOS EXISTENTES</h1>
 
@@ -126,10 +109,10 @@
                         <div class="usuario">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
-                            <p class="nome">NOME</p>
+                            <p class="nome" id="txtNomeUsuario">NOME</p>
                         </div>
 
-                        <h2>ALUNO</h2>
+                        <h2 id="txtTipoUsuario">ALUNO</h2>
                     </li>
 
                     <img src="./img/Line.svg" alt="" />
@@ -138,10 +121,10 @@
                         <div class="usuario">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
-                            <p class="nome">NOME</p>
+                            <p class="nome" id="txtNomeUsuario">NOME</p>
                         </div>
 
-                        <h2>ALUNO</h2>
+                        <h2 id="txtTipoUsuario">AVALIADOR</h2>
                     </li>
 
                     <img src="./img/Line.svg" alt="" />
@@ -150,10 +133,10 @@
                         <div class="usuario">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
-                            <p class="nome">NOME</p>
+                            <p class="nome" id="txtNomeUsuario">NOME</p>
                         </div>
 
-                        <h2>ALUNO</h2>
+                        <h2 id="txtTipoUsuario">ALUNO</h2>
                     </li>
 
                     <img src="./img/Line.svg" alt="" />
@@ -162,10 +145,10 @@
                         <div class="usuario">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
-                            <p class="nome">NOME</p>
+                            <p class="nome" id="txtNomeUsuario">NOME</p>
                         </div>
 
-                        <h2>ALUNO</h2>
+                        <h2 id="txtTipoUsuario">ALUNO</h2>
                     </li>
 
                     <img src="./img/Line.svg" alt="" />
@@ -174,10 +157,10 @@
                         <div class="usuario">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
-                            <p class="nome">NOME</p>
+                            <p class="nome" id="txtNomeUsuario">NOME</p>
                         </div>
 
-                        <h2>ALUNO</h2>
+                        <h2 id="txtTipoUsuario">ALUNO</h2>
                     </li>
 
                     <img src="./img/Line.svg" alt="" />
@@ -186,47 +169,55 @@
                         <div class="usuario">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
-                            <p class="nome">NOME</p>
+                            <p class="nome" id="txtNomeUsuario">NOME</p>
                         </div>
 
-                        <h2>ALUNO</h2>
+                        <h2 id="txtTipoUsuario">ALUNO</h2>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="container mt-5 container modal">
-            <h1>NOME DO USUARIO</h1>
+        <button onclick="showModalCriarUsuario(), alterarInputTipoUsuario()" class="button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
+
+        <div class="container mt-5 container modal" id="modalInfoUsuario">
+            <h1 id="txtNomeUsuarioModal">NOME DO USUÁRIO</h1>
             <form class="row g-7">
                 <div class="col-md-6 lab-inp">
-                    <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
-                    <input type="text" class="form-control nome_do_usuario" placeholder="joao" disabled />
+                    <label for="nome_do_usuario" class="form-label">Nome:</label>
+                    <input type="text" class="form-control nome_do_usuario" placeholder="João" id="inputNomeUsuarioModal" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="email_usuario" class="form-label">Email do usuário</label>
-                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" disabled />
+                    <label for="email_usuario" class="form-label">Email:</label>
+                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" id="inputEmailUsuarioModal" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="senha" class="form-label">Senha</label>
-                    <input type="password" class="form-control senha" placeholder="4259" disabled />
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="password" class="form-control senha" placeholder="4259" id="inputSenhaUsuarioModal" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="tipo-select" class="form-label">Tipo</label>
-                    <input type="text" class="form-control tipo" placeholder="Aluno" disabled />
+                    <label for="tipo-select" class="form-label">Tipo:</label>
+                    <input type="text" class="form-control tipo" placeholder="Aluno" id="inputTipoUsuarioModal" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="turma-select" class="form-label">Curso</label>
-                    <input type="text" class="form-control curso" placeholder="Adiministração" disabled />
+                    <label for="turma-select" class="form-label">Curso:</label>
+                    <input type="text" class="form-control curso" placeholder="Administração" id="inputCursoUsuarioModal" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="turma-select" class="form-label">Turma</label>
-                    <input type="text" class="form-control turma" placeholder="Administração" disabled />
+                    <label for="turma-select" class="form-label">Turma:</label>
+                    <input type="text" class="form-control turma" placeholder="ADMT1" id="inputTurmaUsuarioModal" disabled />
                 </div>
+
+                <div class="col-md-12 lab-inp">
+                    <label for="turma-select" class="form-label">Grupo:</label>
+                    <input type="text" class="form-control grupo" placeholder="Nexus TCC" id="inputNomeGrupoUsuarioModal" disabled />
+                </div>
+
             </form>
             <div class="buttons">
                 <div class="col-md-3">
@@ -236,6 +227,12 @@
                 </div>
 
                 <div class="col-md-3">
+                    <button class="terceiro_botao" type="button" onclick="showModalExcluirUsuario()">
+                        EXCLUIR
+                    </button>
+                </div>
+
+                <div class="col-md-6">
                     <button class="segundo_botao" type="button" onclick="changeModalEditar()">
                         EDITAR
                     </button>
@@ -247,35 +244,35 @@
             <h1>EDITAR USUÁRIO</h1>
             <form class="row g-7">
                 <div class="col-md-6 lab-inp icon-edit">
-                    <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
-                    <input type="text" class="form-control nome_do_usuario" placeholder="unicuritiba@gmail.com" />
+                    <label for="nome_do_usuario" class="form-label">Nome:</label>
+                    <input type="text" class="form-control nome_do_usuario" placeholder="João" id="inputNomeUsuarioModalEditar" required maxlength="255">
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
-                    <label for="email_usuario" class="form-label">Email do usuário</label>
-                    <input type="email" class="form-control email_usuario" placeholder="Universidade De Curitiba " />
+                    <label for="email_usuario" class="form-label">Email:</label>
+                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" id="inputEmailUsuarioModalEditar" required maxlength="255"/>
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
-                    <label for="senha" class="form-label">Senha</label>
-                    <input type="password" class="form-control senha" placeholder="42.591.538/0001-68" />
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="text" class="form-control senha" placeholder="4259" id="inputSenhaUsuarioModalEditar" required maxlength="255"/>
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="tipo-select" class="form-label">Tipo</label>
-                    <select class="form-select tipo-select" id="tipo-select-edit" onChange="deletarCampo()">
-                        <option selected>SELECIONE O TIPO DE USUÁRIO</option>
+                    <label for="tipo-select" class="form-label">Tipo:</label>
+                    <select class="form-select tipo-select" id="tipo-select-edit" id="tipoUsuarioModalEditar" onChange="deletarCampo()">
+                        <option selected>SELECIONE O TIPO DO USUÁRIO</option>
                         <option value="2">Aluno</option>
                         <option value="3">Avaliador</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="curso">
-                    <label for="tipo-select" class="form-label">Curso</label>
-                    <select class="form-select mul-select" multiple="true">
+                    <label for="tipo-select" class="form-label">Curso:</label>
+                    <select class="form-select mul-select" multiple="true" id="cursoUsuarioModalEditar" required>
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -287,8 +284,8 @@
                 </div>
 
                 <div class="col-md-6 lab-inp" id="turma">
-                    <label for="tipo-select" class="form-label">Turma</label>
-                    <select class="mul-select" multiple="true">
+                    <label for="tipo-select" class="form-label">Turma:</label>
+                    <select class="mul-select" multiple="true" id="turmaUsuarioModalEditar">
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -300,8 +297,8 @@
                 </div>
 
                 <div class="col-md-6 lab-inp" id="grupo">
-                    <label for="tipo-select" class="form-label">Grupo</label>
-                    <select class="mul-select" multiple="true">
+                    <label for="tipo-select" class="form-label">Grupo:</label>
+                    <select class="mul-select" multiple="true" id="grupoUsuarioModalEditar" required>
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -313,22 +310,41 @@
                 </div>
 
                 <div class="col-md-6 lab-inp" id="curso-aluno">
-                    <label for="tipo-select" class="form-label">Curso</label>
-                    <select class="form-select tipo-select" id="tipo-select">
-                        <option selected></option>
-                        <option value="1">ALUNO</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
+                    <label for="tipo-select" class="form-label">Curso:</label>
+                    <select class="form-select tipo-select" id="cursoAlunoModalEditar">
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="turma-aluno">
-                    <label for="tipo-select" class="form-label">Turma</label>
-                    <select class="form-select tipo-select" id="tipo-select">
-                        <option selected></option>
-                        <option value="1">ALUNO</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
+                    <label for="tipo-select" class="form-label">Turma:</label>
+                    <select class="form-select tipo-select" id="turmaAlunoModalEditar">
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12 lab-inp" id="grupo-aluno">
+                    <label for="tipo-select" class="form-label">Grupo:</label>
+                    <select class="form-select tipo-select" id="grupoAlunoModalEditar">
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
                     </select>
                 </div>
 
@@ -337,6 +353,7 @@
                         $(".mul-select").select2({});
                     });
                 </script>
+                
                 <div class="buttons">
                     <div class="col-md-3">
                         <button class="primeiro_botao" type="button" onclick="showModal()">
@@ -345,14 +362,175 @@
                     </div>
 
                     <div class="col-md-3">
-                        <button class="segundo_botao" type="button" onclick="showModal()">
+                        <button class="segundo_botao" type="submit">
                             SALVAR
                         </button>
                     </div>
                 </div>
             </form>
         </div>
+
+        <div class="container modal modal-excluir-usuario" id="modal-excluir-usuario">
+            <h1>DESEJA EXCLUIR ESSE USUÁRIO?</h1>
+            <h2>Lembre-se que essa é uma ação irreversível!</h2>
+    
+            <div class="col-md-12 buttons">
+                <div class="col-md-6">
+                    <button class="segundo_botao" onclick="exitModalExcluirUsuario()" type="button" id="btnCancelarExclusao">CANCELAR</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="segundo_botao" id="btnConfirmarExclusao" onclick="exitModalsUsuario()" type="submit">CONFIRMAR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 container modal modal-criar" id="modal-criar">
+            <h1>NOVO USUÁRIO</h1>
+            <form class="row g-7">
+                <div class="col-md-6 lab-inp icon-edit">
+                    <label for="nome_do_usuario" class="form-label">Nome:</label>
+                    <input type="text" class="form-control nome_do_usuario" id="inputNomeNovoUsuarioModal" required maxlength="255">
+                </div>
+
+                <div class="col-md-6 lab-inp icon-edit">
+                    <label for="email_usuario" class="form-label">Email:</label>
+                    <input type="email" class="form-control email_usuario" id="inputEmailNovoUsuarioModal" required maxlength="255"/>
+                </div>
+
+                <div class="col-md-6 lab-inp icon-edit">
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="text" class="form-control senha" id="inputSenhaNovoUsuarioModal" required maxlength="255"/>
+                </div>
+
+                <div class="col-md-6 lab-inp">
+                    <label for="tipo-select" class="form-label">Tipo:</label>
+                    <select class="form-select tipo-select" id="tipo-select-criar" onChange="alterarInputTipoUsuario()">
+                        <option selected>SELECIONE O TIPO DO USUÁRIO</option>
+                        <option value="2">Aluno</option>
+                        <option value="3">Avaliador</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="cursoNovoUsuario">
+                    <label for="tipo-select" class="form-label">Curso:</label>
+                    <select class="form-select mul-select" multiple="true" id="cursoNovoUsuarioModal" >
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="turmaNovoUsuario">
+                    <label for="tipo-select" class="form-label">Turma:</label>
+                    <select class="mul-select" multiple="true" id="turmaNovoUsuarioModal" required>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="grupoNovoUsuario">
+                    <label for="tipo-select" class="form-label">Grupo:</label>
+                    <select class="mul-select" multiple="true" id="grupoNovoUsuarioModal" required>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="curso-novo-aluno">
+                    <label for="tipo-select" class="form-label">Curso:</label>
+                    <select class="form-select tipo-select" id="cursoNovoAlunoModal">
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="turma-novo-aluno">
+                    <label for="tipo-select" class="form-label">Turma:</label>
+                    <select class="form-select tipo-select" id="turmaNovoAlunoModal">
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12 lab-inp" id="grupo-novo-aluno">
+                    <label for="tipo-select" class="form-label">Grupo:</label>
+                    <select class="form-select tipo-select" id="grupoNovoAlunoModal">
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Khmer">Khmer</option>
+                        <option value="Thiland">Thiland</option>
+                        <option value="Koren">Koren</option>
+                        <option value="China">China</option>
+                        <option value="English">English</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <script>
+                    $(document).ready(function () {
+                        $(".mul-select").select2({});
+                    });
+                </script>
+                
+                <div class="buttons">
+                    <div class="col-md-3">
+                        <button class="primeiro_botao" type="button" onclick="exitModalCriarUsuario()">
+                            CANCELAR
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="segundo_botao" type="submit">
+                            SALVAR
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+
 </body>
 
 </html>
