@@ -70,3 +70,10 @@ function exitModalExcluirGrupo() {
 const excluirGrupo = (idGrupo) => {
     console.log("excluir grupo");
 };
+
+const isInputNumber = (evt) => {
+    let char = String.fromCharCode(evt.which);
+    if (!/[0-9]/.test(char)) {
+        evt.preventDefault();
+    }
+};
