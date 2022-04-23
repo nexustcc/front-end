@@ -38,6 +38,19 @@ main p {
     font-weight: 500;
 }
 
+main input {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #ced4da;
+}
+
+main .tema input {
+    width: 50%;
+}
+
 .tema {
     text-align: center;
     margin-bottom: 2%;
@@ -127,6 +140,14 @@ main p {
     /* creates padding around scroll thumb */
 }
 
+.data-apresentacao {
+    margin-top: 50px;
+}
+
+.hora-apresentacao {
+    margin-top: 30px;
+}
+
 .barra_progresso {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -178,6 +199,10 @@ main p {
     border: none;
     padding: 10px;
     margin-bottom: 5%;
+}
+
+#btnSalvarAlteracoes {
+    background-color: #0664B7;
 }
 
 .editar_div {
