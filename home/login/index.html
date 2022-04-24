@@ -42,7 +42,7 @@
         <img id="logo_form" src="img/logo.svg" alt="logo" />
         <form method="post">
             <div class="txt_field">
-                <input type="text" required />
+                <input id="inputEmail" type="text" required />
                 <span></span>
                 <label>Email</label>
                 <img src="img/person.svg" alt="email" />
@@ -56,7 +56,11 @@
             <a href="esqueceu_a_senha.html">
                 <div class="forgot_password">Esqueceu sua senha?</div>
             </a>
-            <input type="submit" value="ENTRAR" />
+
+            <div id="div_invalid">
+                <p id="p_invalid">EMAIL OU SENHA INVÁLIDOS</p>
+            </div>
+            <input type="button" value="ENTRAR" onclick="formValidation()"/>
         </form>
     </div>
 
