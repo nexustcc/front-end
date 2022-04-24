@@ -1,5 +1,7 @@
 "use-strict";
 
+let localStorageUser = [];
+
 const inputCnpjInstituicao = document.getElementById("cnpj_instituicao");
 const inputTelefoneInstituicao = document.getElementById(
     "telefone_instituicao"
@@ -21,9 +23,7 @@ function exibirDados(instituicao) {
 }
 
 async function getInfoInstituicao() {
-    const idInstituicao = 1;
-
-    const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`;
+    const url = `http://localhost:3000/instituicao/listarInstituicao/${localStorageUser.idTipo}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
@@ -33,8 +33,6 @@ async function getInfoInstituicao() {
 
 async function editarInstituicao() {
     event.preventDefault();
-
-    const idInstituicao = 1;
 
     const instituicao = {
         nome: document.getElementById("nome_instituicao").value,
@@ -53,9 +51,39 @@ async function editarInstituicao() {
     };
 
     fetch(
-        `http://localhost:3000/instituicao/editarInstituicao/${idInstituicao}`,
+        `http://localhost:3000/instituicao/editarInstituicao/${localStorageUser.idTipo}`,
         config
     ).then(() => (window.location.href = "../../index.html"));
 }
 
-window.onload = getInfoInstituicao();
+const checkLogin = () => {
+    if(localStorage.user != ''){
+        localStorageUser = JSON.parse(localStorage.user)
+        if(localStorageUser.tipo == 'instituição'){    
+            getInfoInstituicao()
+            document.getElementById('nomeInstituicao').innerHTML = localStorageUser.nome
+        } 
+        else{
+            switch (localStorageUser.tipo) {
+                case 'professor':
+                    window.location.href = '../professor/'
+                  break;
+      
+                case 'aluno':
+                    window.location.href = '../professor/'
+                  break;
+      
+                case 'avaliador':
+                  alert('O acesso dos Avaliadores a plataforma é feito pelo APP, para baixar entre em ...')
+                  break;
+      
+                default:
+                    window.location.href = '../home/'
+              }
+        }
+    } else{
+        window.location.href = '../home/login/index.html'
+    }
+}
+
+window.onload = checkLogin();

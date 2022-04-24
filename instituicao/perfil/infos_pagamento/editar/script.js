@@ -1,5 +1,7 @@
 "use strict";
 
+let localStorageUser = [];
+
 const inputDataValidadeCartao = document.getElementById("input_validade");
 const inputNumeroCartao = document.getElementById("input_numero_do_cartao");
 
@@ -22,14 +24,12 @@ const isInputNumber = (evt) => {
 };
 
 async function getInfoCartao() {
-    let idInstituicao = 1;
-
-    const url = `http://localhost:3000/cartao/listarCartao/${idInstituicao}`;
+    const url = `http://localhost:3000/cartao/listarCartao/${localStorageUser.idTipo}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     const cartao = await dados.json();
-    exibirDados(cartao.response[0]);
+    exibirDados(cartao.cartao[0]);
 }
 
 const converterData = (dataValidade) => {
@@ -69,8 +69,6 @@ const converterDataBanco = (inputValue) => {
 async function editarInstituicao(nome, dataValidade, cvv, numero) {
     event.preventDefault();
 
-    let idInstituicao = 1;
-
     const cartao = {
         nomeNoCartao: document
             .getElementById("input_nome_do_cartao")
@@ -91,7 +89,7 @@ async function editarInstituicao(nome, dataValidade, cvv, numero) {
     };
 
     fetch(
-        `http://localhost:3000/cartao/editarCartao/${idInstituicao}`,
+        `http://localhost:3000/cartao/editarCartao/${localStorageUser.idTipo}`,
         config
     ).then(() => (window.location.href = "../index.html"));
 }
@@ -107,4 +105,34 @@ const validacao = () => {
     );
 };
 
-window.onload = getInfoCartao();
+const checkLogin = () => {
+    if(localStorage.user != ''){
+        localStorageUser = JSON.parse(localStorage.user)
+        if(localStorageUser.tipo == 'instituição'){    
+            getInfoCartao()
+            document.getElementById('nomeInstituicao').innerHTML = localStorageUser.nome
+        } 
+        else{
+            switch (localStorageUser.tipo) {
+                case 'professor':
+                    window.location.href = '../professor/'
+                  break;
+      
+                case 'aluno':
+                    window.location.href = '../professor/'
+                  break;
+      
+                case 'avaliador':
+                  alert('O acesso dos Avaliadores a plataforma é feito pelo APP, para baixar entre em ...')
+                  break;
+      
+                default:
+                    window.location.href = '../home/'
+              }
+        }
+    } else{
+        window.location.href = '../home/login/index.html'
+    }
+}
+
+window.onload = checkLogin();

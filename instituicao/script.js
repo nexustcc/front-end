@@ -37,8 +37,6 @@ async function excluirConta() {
         senha: inputSenhaInstituicao.value,
     };
 
-    console.log(senha);
-
     const config = {
         method: "DELETE",
         headers: {
@@ -71,6 +69,7 @@ const checkLogin = () => {
         localStorageUser = JSON.parse(localStorage.user)
         if(localStorageUser.tipo == 'instituição'){    
             getInfoInstituicao()
+            document.getElementById('nomeInstituicao').innerHTML = localStorageUser.nome
         } 
         else{
             switch (localStorageUser.tipo) {
