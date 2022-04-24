@@ -34,16 +34,14 @@ async function login (email, senha) {
     )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       if(data.message == 'email ou senha inválidos'){
         document.getElementById('p_invalid').style.display = 'flex'
       } else{
         document.getElementById('p_invalid').style.display = 'none'
 
-        // localStorage.removeItem(usuario)
-
         const usuario = {
           idUsuario: data.idUsuario, 
+          idTipo: data.idTipo,
           nome: data.nome,
           tipo: data.tipo
         }
@@ -54,7 +52,7 @@ async function login (email, senha) {
 
         switch (localStorageUser.tipo) {
           case 'instituição':
-            console.log('instituição')
+            window.location.href = '../../instituicao/'
             break;
 
           case 'professor':

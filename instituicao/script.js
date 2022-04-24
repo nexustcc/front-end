@@ -1,5 +1,7 @@
 "use strict";
 
+let localStorageUser = [];
+
 function showModal() {
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
@@ -12,18 +14,15 @@ function exitModal() {
 document.getElementById("terceiro_botao").addEventListener("click", showModal);
 
 function exibirDados(instituicao) {
-    document.getElementById("input_email_institucional").value =
-        instituicao.usuario.email;
+    document.getElementById("input_email_institucional").value = instituicao.usuario.email;
     document.getElementById("nome_instituicao").value = instituicao.usuario.nome;
     document.getElementById("cnpj_instituicao").value = instituicao.cnpj;
     document.getElementById("telefone_instituicao").value = instituicao.telefone;
-    document.getElementById("senha_instituicao").value =
-        instituicao.usuario.senha;
+    document.getElementById("senha_instituicao").value = instituicao.usuario.senha;
 }
 
 async function getInfoInstituicao() {
-    const idInstituicao = 3;
-    const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`;
+    const url = `http://localhost:3000/instituicao/listarInstituicao/${localStorageUser.idTipo}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
@@ -32,9 +31,6 @@ async function getInfoInstituicao() {
 }
 
 async function excluirConta() {
-    console.log("TesteConsole");
-    let idInstituicao = 3;
-
     let inputSenhaInstituicao = document.getElementById("senhaInstituicao");
 
     const senha = {
@@ -52,7 +48,7 @@ async function excluirConta() {
     };
 
     fetch(
-            `http://localhost:3000/instituicao/deletarInstituicao/${idInstituicao}`,
+            `http://localhost:3000/instituicao/deletarInstituicao/${localStorageUser.idTipo}`,
             config
         )
         .then((res) => res.json())
@@ -64,10 +60,39 @@ async function excluirConta() {
                 inputSenhaInstituicao.classList.add("erro");
                 document.getElementById("p-senha-incorreta").style.display = "flex";
             } else {
-                // log-out
+                localStorage.removeItem('localStorage.user')
                 window.location.href = "../home";
             }
         });
 }
 
-window.onload = getInfoInstituicao();
+const checkLogin = () => {
+    if(localStorage.user != ''){
+        localStorageUser = JSON.parse(localStorage.user)
+        if(localStorageUser.tipo == 'instituição'){    
+            getInfoInstituicao()
+        } 
+        else{
+            switch (localStorageUser.tipo) {
+                case 'professor':
+                    window.location.href = '../professor/'
+                  break;
+      
+                case 'aluno':
+                    window.location.href = '../professor/'
+                  break;
+      
+                case 'avaliador':
+                  alert('O acesso dos Avaliadores a plataforma é feito pelo APP, para baixar entre em ...')
+                  break;
+      
+                default:
+                    window.location.href = '../home/'
+              }
+        }
+    } else{
+        window.location.href = '../home/login/index.html'
+    }
+}
+
+window.onload = checkLogin();
