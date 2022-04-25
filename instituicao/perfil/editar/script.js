@@ -57,7 +57,7 @@ async function editarInstituicao() {
 }
 
 const checkLogin = () => {
-    if(localStorage.user != ''){
+    if(localStorage.user != undefined){
         localStorageUser = JSON.parse(localStorage.user)
         if(localStorageUser.tipo == 'instituição'){    
             getInfoInstituicao()
@@ -66,19 +66,20 @@ const checkLogin = () => {
         else{
             switch (localStorageUser.tipo) {
                 case 'professor':
-                    window.location.href = '../professor/'
+                    window.location.href = '../professor/perfil/index.html'
                   break;
       
                 case 'aluno':
-                    window.location.href = '../professor/'
+                    window.location.href = '../aluno/perfil/index.html'
                   break;
       
                 case 'avaliador':
-                  alert('O acesso dos Avaliadores a plataforma é feito pelo APP, para baixar entre em ...')
+                    window.location.href = '../home/index.html'
+                    alert('O acesso dos Avaliadores a plataforma é feito pelo APP')
                   break;
       
                 default:
-                    window.location.href = '../home/'
+                    window.location.href = '../home/index.html'
               }
         }
     } else{

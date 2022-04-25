@@ -82,11 +82,12 @@ const checkLogin = () => {
                   break;
       
                 case 'avaliador':
+                    window.location.href = '../home/index.html'
                     alert('O acesso dos Avaliadores a plataforma é feito pelo APP')
                   break;
       
                 default:
-                    window.location.href = '../home/'
+                    window.location.href = '../home/index.html'
               }
         }
     } else{
