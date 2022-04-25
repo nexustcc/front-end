@@ -39,15 +39,49 @@ header h1 {
     }
 }
 
-@media (max-width: 540px) {
-    header .primeira_parte {
+@media (max-width: 668px) {
+
+    header {
+        padding: 30px 30px;
+    }
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    header img {
+        width: 35px;
+    }
+}
+
+@media (max-width: 578px) {
+
+
+    header {
+        padding: 30px 30px;
+    }
+}
+
+@media (max-width: 458px) {
+
+
+    header {
+        padding: 30px 30px;
+    }
+
+    header h1 {
+        font-size: 13px;
+    }
+
+    header img {
+        width: 30px;
+    }
+}
+
+@media (max-width: 398px) {
+
+    header .primeira_parte img {
         display: none;
     }
 
-    header {
-        padding: 0px;
-        margin-top: 30px;
-        margin-right: 15px;
-        justify-content: end;
-    }
 }

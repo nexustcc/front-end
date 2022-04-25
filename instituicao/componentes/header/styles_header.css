@@ -10,10 +10,12 @@ body {
 }
 
 header {
+    font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: space-between;
     padding: 30px 70px;
     color: hsl(208, 93%, 24%);
+    margin-left: 75px;
 }
 
 header .primeira_parte {
@@ -24,16 +26,62 @@ header .primeira_parte {
 }
 
 header h1 {
-    font-size: 24px;
+    font-size: 23px;
 }
 
-@media (max-width: 500px) {
-    header .primeira_parte {
+@media (max-width: 992px) {
+    header {
+        margin-left: 60px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 668px) {
+
+    header {
+        padding: 30px 30px;
+    }
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    header img {
+        width: 35px;
+    }
+}
+
+@media (max-width: 578px) {
+
+
+    header {
+        padding: 30px 30px;
+    }
+}
+
+@media (max-width: 458px) {
+
+
+    header {
+        padding: 30px 30px;
+    }
+
+    header h1 {
+        font-size: 13px;
+    }
+
+    header img {
+        width: 30px;
+    }
+}
+
+@media (max-width: 398px) {
+
+    header .primeira_parte img {
         display: none;
     }
 
-    header {
-        padding: 10px;
-        justify-content: end;
-    }
 }
