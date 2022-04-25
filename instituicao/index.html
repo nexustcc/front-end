@@ -10,10 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="componentes/header/styles_header.css">
+  <link rel="stylesheet" href="./componentes/side_menu/styles_side_menu.css">
   <script src="script.js" defer></script>
   <title>Perfil</title>
 </head>
@@ -23,16 +25,77 @@
 
 <body>
 
-  <header>
+  <header id="header">
     <div class="primeira_parte">
-        <img src="componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
-        <h1 id="nomeInstituicao"></h1>
+      <img src="./img/grupo_pessoas.svg" alt="grupo_pessoas" />
+      <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
     </div>
 
-    <a href="index.html">
-        <img src="componentes/header/img/perfil_instituicao.svg" alt="perfil" />
+    <a href="../../index.html">
+      <img src="./img/perfil_instituicao.svg" alt="perfil" />
     </a>
   </header>
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    
+      <li>
+        <a href="#">
+          <i class="bx bx-group"></i>
+          <span class="links_name">Turmas existentes</span>
+        </a>
+        <span class="tooltip">Turmas</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-user"></i>
+          <span class="links_name">Usuários cadastrados</span>
+        </a>
+        <span class="tooltip">Usuários</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-user-plus"></i>
+          <span class="links_name">Cadastrar novo usuário</span>
+        </a>
+        <span class="tooltip">Novo usuário</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-edit"></i>
+          <span class="links_name">Formulário da banca</span>
+        </a>
+        <span class="tooltip">Avaliações</span>
+      </li>
+      <li class="profile">
+        <a href="#">
+          <i class="bx bx-log-out" id="log_out"></i>
+          <span class="links_name">Log Out</span>
+        </a>
+        <span class="tooltip">Log Out</span>
+      </li>
+  </div>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+
+    function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+  </script>
 
   <div class="container">
     <h1>PERFIL DA INSTITUIÇÃO</h1>

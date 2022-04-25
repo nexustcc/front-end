@@ -7,7 +7,7 @@
 body {
    width: 100vw;
    height: 100vh;
-   background: url("./images-global/background.svg");
+   background: url("./background.svg");
    background-blend-mode: darken;
    background-color: rgba(0, 0, 0, 0.452);
    background-position: center center;
