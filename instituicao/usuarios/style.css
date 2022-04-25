@@ -303,13 +303,77 @@ ul {
     border-bottom-right-radius: 25px;
 }
 
+#curso-cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+#curso-aluno-cadastro {
+    display: none;
+    flex-direction: column;
+}
+
+#turma-cadastro{
+    display: flex;
+    flex-direction: column;
+}
+
+#turma-aluno-cadastro {
+    display: none;
+    flex-direction: column;
+}
+
+#grupo-cadastro{
+    display: none;
+    flex-direction: column;
+}
+
+#grupo-aluno-cadastro {
+    display: none;
+    flex-direction: column;
+}
+
+.modal h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #05204a;
+}
+
+.msg-div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.msg {
+    display: flex;
+    margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: #05204a;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    border: none;
+    padding: 15px 15px 15px 0;
+}
+
+.modal-turma h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #05204a;
+    text-align: center;
+}
+
 .tipo_usuario ul li:hover,
 .tipo_usuario ul li.ativo {
     background-color: #044177;
     color: #fff;
 }
 
-img {
+.container-geral img {
     width: 100%;
     margin-bottom: 1%;
     margin-top: 2%;
