@@ -645,6 +645,25 @@ overflow: hidden;
     background-color: #c2c2c2;
 }
 
+@media (max-width: 1508px) {
+
+    .space{
+        width: 90%;
+    }
+}
+
+@media (max-width: 1078px) {
+
+    .space{
+        width: 80%;
+    }
+
+    .container-geral h1 {
+
+        font-size: 40px;
+    }
+}
+
 @media (max-width: 830px) {
     .space {
         display: flex;
@@ -652,6 +671,11 @@ overflow: hidden;
         align-items: center;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .container-geral h1 {
+
+        font-size: 30px;
     }
 
     .tipo_usuario ul li {
