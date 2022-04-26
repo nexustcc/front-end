@@ -58,7 +58,7 @@ function exitModalExcluir() {
 }
 
 async function getInfoInstituicao() {
-    const idInstituicao = 1;
+    const idInstituicao = 3;
     const url = `http://localhost:3000/instituicao/listarInstituicao/${idInstituicao}`;
 
     fetch(url).then((response) => response.json);
@@ -143,7 +143,7 @@ searchBar.addEventListener("keyup", (e) => {
 });
 
 async function getArrayCursos() {
-    let idInstituicao = 1;
+    let idInstituicao = 3;
 
     const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
 
@@ -168,7 +168,7 @@ async function cadastrarCurso(nome) {
         body: JSON.stringify(cadastrarCurso),
     };
 
-    let idInstituicao = 1;
+    let idInstituicao = 3;
 
     fetch(`http://localhost:3000/curso/cadastrarCurso/${idInstituicao}`, config)
         .then((res) => res.json())

@@ -44,22 +44,12 @@ body {
     width: 90%;
 }
 
-.curso-select {
-    background-color: #e3e3e3;
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
     border-radius: 10px;
-    border-bottom: 1px solid #05204a;
-    padding: 15px;
-}
-
-.lab-inp input {
-    background-color: #e3e3e3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204a;
-    padding: 15px;
-}
-
-.lab-inp label {
-    font-weight: 400;
 }
 
 ul::-webkit-scrollbar {
@@ -593,9 +583,6 @@ ul {
 .modal-curso h1 {
     font-size: 50px;
 }
-
-.container button {}
-
 .button5 {
     color: white;
     position: static;
