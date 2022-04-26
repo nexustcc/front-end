@@ -379,18 +379,18 @@ ul {
     margin-top: 2%;
 }
 
-h1 {
+.container-geral h1 {
     font-size: 50px;
     font-weight: 700;
     color: #05204a;
 }
 
-h2 {
+.container-geral h2 {
     font-size: 30px;
     color: #05204a;
 }
 
-p {
+.container-geral p {
     font-size: 30px;
     color: #05204a;
 }
