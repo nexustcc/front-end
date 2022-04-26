@@ -139,3 +139,31 @@ function alterarInputTipoUsuario() {
         document.querySelector("#modal-criar").style.height = "50vh";
     }
 }
+
+async function cadastrarAluno(nome, email, senha, curso, turma, grupo){
+    event.preventDefault();
+
+    
+}
+
+// async function cadastrarCurso(nome) {
+//     event.preventDefault();
+
+//     const cadastrarCurso = {
+//         nome: document.getElementById("inputCriarCurso").value.toString(),
+//     };
+
+//     const config = {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(cadastrarCurso),
+//     };
+
+//     let idInstituicao = 3;
+
+//     fetch(`http://localhost:3000/curso/cadastrarCurso/${idInstituicao}`, config)
+//         .then((res) => res.json())
+//         .then(() => (window.location.href = "./index.html"));
+// }
