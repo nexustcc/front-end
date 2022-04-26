@@ -8,15 +8,16 @@ body {
    height: 100vh;
    font-family: "Poppins", sans-serif;
    width: 100vw;
+}
+
+.container {
+   width: 30%;
+   height: 75vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    position: relative;
-}
-
-.container {
-   width: 30%;
 }
 
 #imgPerfil {

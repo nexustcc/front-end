@@ -8,15 +8,16 @@ body {
    height: 100vh;
    font-family: "Poppins", sans-serif;
    width: 100vw;
+}
+
+.container {
+   width: 30%;
+   height: 75vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    position: relative;
-}
-
-.container {
-   width: 30%;
 }
 
 #imgPerfil {
@@ -133,7 +134,7 @@ body {
    padding: 15px;
 }
 
-.buttons {
+.container .buttons {
    display: flex;
    flex-direction: row-reverse;
 }
@@ -216,7 +217,7 @@ body {
    background: #0987f7;
 }
 
-button {
+.container button {
    padding: 10px;
    border: 5px solid;
    font-family: "Poppins", sans-serif;
@@ -236,18 +237,18 @@ button {
    padding: 15px;
 }
 
-.buttons {
+.container .buttons {
    display: flex;
    flex-direction: row-reverse;
    align-items: center;
 }
 
-a {
+.container a {
    text-decoration: none;
    color: white;
 }
 
-a:hover {
+.container a:hover {
    text-decoration: none;
    color: white;
 }
