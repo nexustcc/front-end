@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Side Menu</title>
+    <link rel="stylesheet" href="styles_side_menu.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+
+        <li>
+            <a href="#">
+                <i class='bx bx-info-circle'></i>
+                <span class="links_name">Informações do projeto</span>
+            </a>
+            <span class="tooltip">Projeto</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-task' ></i>
+                <span class="links_name">Tarefas</span>
+            </a>
+            <span class="tooltip">Tarefas</span>
+        </li>
+        <li>
+
+            <li>
+                <a href="#">
+                    <i class="bx bxs-graduation"></i>
+                    <span class="links_name">Atividades</span>
+                </a>
+                <span class="tooltip">Atividades</span>
+            </li>
+            <li>
+
+            <a href="#">
+                <i class="bx bx-folder-open"></i>
+                <span class="links_name">Arquivos e links</span>
+            </a>
+            <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-edit"></i>
+                <span class="links_name">Relatório da banca</span>
+            </a>
+            <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+            <a href="../../../home/login/index.html">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+</body>
+
+</html>
