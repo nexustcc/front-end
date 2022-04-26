@@ -138,7 +138,7 @@ a:hover {
 #space {
     width: 90%;
     margin-left: 0 20% 0 10%;
-    padding: 50px;
+    height: 75vh;
 }
 
 #icon input {
