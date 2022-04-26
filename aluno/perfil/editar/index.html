@@ -13,14 +13,84 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../componentes/header/styles_header.css">
+  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
   <script src="script.js" defer></script>
-  <title>Perfil</title>
+  <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
+  <title>Editar perfil</title>
 </head>
 
 <div class="bg"></div>
 
 
 <body>
+
+  <header>
+    <div class="primeira_parte">
+        <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+        <h1 id="nomeGrupoAluno">NOME DO GRUPO</h1>
+    </div>
+
+    <a href="../index.html">
+        <img id="fotoPerfilAluno" src="../../componentes/header/img/foto_padrao.svg" alt="foto" />
+    </a>
+</header>
+
+<div class="sidebar">
+  <div class="logo-details">
+      <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+      <i class="bx bx-menu" id="btn"></i>
+  </div>
+
+  <li>
+      <a href="../../projeto_tcc/index.html">
+          <i class='bx bx-info-circle'></i>
+          <span class="links_name">Informações do projeto</span>
+      </a>
+      <span class="tooltip">Projeto</span>
+  </li>
+  <li>
+      <a href="#">
+          <i class='bx bx-task' ></i>
+          <span class="links_name">Tarefas</span>
+      </a>
+      <span class="tooltip">Tarefas</span>
+  </li>
+  <li>
+
+      <li>
+          <a href="#">
+              <i class="bx bxs-graduation"></i>
+              <span class="links_name">Atividades</span>
+          </a>
+          <span class="tooltip">Atividades</span>
+      </li>
+      <li>
+
+      <a href="#">
+          <i class="bx bx-folder-open"></i>
+          <span class="links_name">Arquivos e links</span>
+      </a>
+      <span class="tooltip">Arquivos</span>
+  </li>
+  <li>
+      <a href="#">
+          <i class="bx bx-edit"></i>
+          <span class="links_name">Relatório da banca</span>
+      </a>
+      <span class="tooltip">Avaliações</span>
+  </li>
+  <li class="profile">
+      <a href="../../../home/login/index.html">
+          <i class="bx bx-log-out" id="log_out"></i>
+          <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+  </li>
+</div>
+
   <div class="container">
     <div class="profile-pic-div">
 
@@ -96,9 +166,29 @@
         </div>
 
       </div>
+
   </div>
   </form>
   </div>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+  
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+    });
+  
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    }
+  </script>
+
 </body>
 
 </html>
