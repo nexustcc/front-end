@@ -64,6 +64,11 @@ async function excluirConta() {
         });
 }
 
+const logout = () => {
+    localStorage.removeItem('user')
+    window.location.href = '../home'
+}
+
 const checkLogin = () => {
     if(localStorage.user != undefined){
         localStorageUser = JSON.parse(localStorage.user)

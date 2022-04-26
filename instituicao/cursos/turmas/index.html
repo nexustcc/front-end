@@ -97,97 +97,11 @@
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
-            <ul class="list-group ul-turma-existen">
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao">SOBRE A TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir()" class="quarto_botao">EXCLUIR</button>
-                    </div>
-                </li>
-
+            <ul id="turma-container" class="list-group ul-turma-existen">
 
             </ul>
         </div>
+
         <button onclick="showModal()" class="button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
 
     </div>
@@ -404,28 +318,27 @@
 
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
-                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com" disabled>
+                <input id="input-nome-turma" type="text" class="form-control turma" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="numero-estudantes" class="form-label">Número de estudantes</label>
-                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba "
-                    disabled>
+                <input id="input-numero-alunos-turma" type="email" class="form-control numero-estudantes" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="curso-inp" class="form-label">Curso</label>
-                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68" disabled>
+                <input id="input-nome-curso" type="text" class="form-control curso-inp" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68" disabled>
+                <input id="input-data-inicio" type="date" class="form-control data-inicio" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68" disabled>
+                <input id="input-data-conclusao" type="date" class="form-control data-termino" disabled>
             </div>
 
             <div class="buttons">
