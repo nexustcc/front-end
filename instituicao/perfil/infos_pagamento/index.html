@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../componentes/header/styles_header.css" />
   <script defer src="./script.js"></script>
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
   <title>INFORMAÇÕES DE PAGAMENTO</title>
 </head>
 
@@ -29,6 +31,59 @@
       <img src="../../componentes/header/img/perfil_instituicao.svg" alt="perfil" />
     </a>
   </header>
+
+  <div class="sidebar">
+    <div class="logo-details">
+        <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+        <li>
+            <a href="../../cursos/index.html">
+                <i class="bx bx-group"></i>
+                <span class="links_name">Cursos existentes</span>
+            </a>
+            <span class="tooltip">Cursos</span>
+        </li>
+        <li>
+            <a href="../../usuarios/index.html">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Usuários cadastrados</span>
+            </a>
+            <span class="tooltip">Usuários</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-edit"></i>
+                <span class="links_name">Formulário da banca</span>
+            </a>
+            <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+            <a href="../../../home/login/index.html">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
+</div>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+    });
+
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    }
+</script>
 
   <div class="container mt-5 container">
     <h1>INFORMAÇÕES DE PAGAMENTO</h1>

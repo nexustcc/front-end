@@ -309,6 +309,19 @@ body {
     padding: 15px;
 }
 
+#botao-criar{
+       margin-top: 2vh;
+    width: 98%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+}
+
+
 #quarto_botao {
     margin-top: 2vh;
     width: 98%;

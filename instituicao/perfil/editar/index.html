@@ -13,6 +13,7 @@
   <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap"
     rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script type="text/javascript" src="../../../jquery/jquery-3.3.1.min.js"></script>
@@ -22,6 +23,8 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.maskedinput/1.3.1/jquery.maskedinput.js"></script>
   <link rel="stylesheet" href="../../componentes/header/styles_header.css" />
+  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css"
+  >
   <script defer src="./script.js"></script>
 
   <title>Editar Perfil</title>
@@ -39,6 +42,59 @@
         <img src="./img/perfil_instituicao.svg" alt="perfil" />
     </a>
 </header>
+
+<div class="sidebar">
+  <div class="logo-details">
+      <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+      <i class="bx bx-menu" id="btn"></i>
+  </div>
+      <li>
+          <a href="../../cursos/index.html">
+              <i class="bx bx-group"></i>
+              <span class="links_name">Cursos existentes</span>
+          </a>
+          <span class="tooltip">Cursos</span>
+      </li>
+      <li>
+          <a href="../../usuarios/index.html">
+              <i class="bx bx-user"></i>
+              <span class="links_name">Usuários cadastrados</span>
+          </a>
+          <span class="tooltip">Usuários</span>
+      </li>
+      <li>
+          <a href="#">
+              <i class="bx bx-edit"></i>
+              <span class="links_name">Formulário da banca</span>
+          </a>
+          <span class="tooltip">Avaliações</span>
+      </li>
+      <li class="profile">
+          <a href="../../../home/login/index.html">
+              <i class="bx bx-log-out" id="log_out"></i>
+              <span class="links_name">Log Out</span>
+          </a>
+          <span class="tooltip">Log Out</span>
+      </li>
+</div>
+
+<script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+
+  closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+  });
+
+  function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+  }
+</script>
 
   <div class="container mt-5 container">
     <h1>EDITAR PERFIL</h1>
