@@ -13,12 +13,12 @@
     font-family: "Poppins", sans-serif;
 }
 
-a {
+.container a {
     text-decoration: none;
     color: white;
 }
 
-a:hover {
+.container a:hover {
     text-decoration: none;
     color: white;
 }
@@ -26,6 +26,10 @@ a:hover {
 body {
     width: 100vw;
     height: 100vh;
+}
+
+.container {
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +43,7 @@ body {
     padding: 15px;
 }
 
-button {
+.container button {
     padding: 10px;
     border: 5px solid;
     font-family: "Poppins", sans-serif;

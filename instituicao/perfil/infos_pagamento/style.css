@@ -16,10 +16,14 @@
 body {
     width: 100vw;
     height: 100vh;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-position: center center;
+    height: 75vh;
 }
 
 .container input {
@@ -29,13 +33,13 @@ body {
     padding: 15px;
 }
 
-button {
+.container button {
     padding: 10px;
     border: 5px solid;
     font-family: "Poppins", sans-serif;
 }
 
-::placeholder {
+.container ::placeholder {
     font-family: "Hind", sans-serif;
 }
 
@@ -44,12 +48,12 @@ button {
     flex-direction: row-reverse;
 }
 
-a {
+.container a {
     text-decoration: none;
     color: white;
 }
 
-a:hover {
+.container a:hover {
     text-decoration: none;
     color: white;
 }
