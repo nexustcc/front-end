@@ -52,6 +52,16 @@ body {
     border-radius: 10px;
 }
 
+.list-group-item{
+    width: 100%;
+}
+
+#turma-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 ul::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
@@ -140,6 +150,7 @@ ul::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
 .modal h1 {

@@ -2,6 +2,8 @@
 
 let localStorageUser = [];
 
+let nomeCurso
+
 function showModal() {
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
@@ -12,18 +14,16 @@ function exitModal() {
     document.querySelector(".bg").style.display = "none";
 }
 
-function showModalEditar(idCurso) {
+function showModalEditar(idCurso, nomeCurso) {
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 
-    fetch(`http://localhost:3000/curso/listarCurso/${idCurso}`)
-        .then((res) => res.json())
-        .then((data) => {
-            document.getElementById("inputEditarNomeCurso").value = data.nome[0].nome;
-        });
+    console.log(idCurso)
 
-    document.getElementById("terceiro_botao").onclick = () =>
-        editarCurso(idCurso);
+    let valorInputEditar = document.getElementById('inputEditarNomeCurso')
+    valorInputEditar.value = nomeCurso
+
+    document.getElementById("terceiro_botao").onclick = () => editarCurso(idCurso, valorInputEditar);
 }
 
 function exitModalEditar() {
@@ -73,6 +73,8 @@ function exibirDados(cursos) {
         curso.classList = "list-group-item li";
         curso.id = "li";
 
+        nomeCurso = cursos[i].nome
+
         curso.innerHTML += `
             <div id="icone">
                 <p class="curso">Curso:</p>
@@ -81,7 +83,7 @@ function exibirDados(cursos) {
             </div>
             <div class="button">
                 <button class="terceiro_botao" onclick="turmasCurso(${cursos[i].idCurso})">TURMAS EXISTENTES NO CURSO</button>
-                <button type="button" onclick="showModalEditar(${cursos[i].idCurso})" class="terceiro" id="primeiro_botao">EDITAR</button>
+                <button type="button" onclick='showModalEditar(${cursos[i].idCurso}, "${nomeCurso.toString()}")' class="terceiro" id="primeiro_botao">EDITAR</button>
                 <button onclick="showModalExcluir(${cursos[i].idCurso})" id="quarto_botao">EXCLUIR</button>
             </div>
         `;
@@ -153,11 +155,11 @@ async function cadastrarCurso(nome) {
         .then(() => (window.location.href = "./index.html"));
 }
 
-async function editarCurso(idCurso) {
+async function editarCurso(idCurso, nomeCurso) {
     event.preventDefault();
 
     const editarCurso = {
-        nome: document.getElementById("inputEditarNomeCurso").value.toString(),
+        nome: nomeCurso
     };
 
     const config = {
@@ -168,13 +170,13 @@ async function editarCurso(idCurso) {
         body: JSON.stringify(editarCurso),
     };
 
-    fetch(`http://localhost:3000/curso/editarCurso/${localStorageUser.idTipo}`, config)
+    fetch(`http://localhost:3000/curso/editarCurso/${idCurso}`, config)
         .then((res) => res.json())
         .then(() => (window.location.href = "./index.html"));
 }
 
 async function deletarCurso(idCurso) {
-    fetch(`http://localhost:3000/curso/deletarCurso/${localStorageUser.idTipo}`, {
+    fetch(`http://localhost:3000/curso/deletarCurso/${idCurso}`, {
             method: "DELETE",
         })
         .then((res) => res.json())
