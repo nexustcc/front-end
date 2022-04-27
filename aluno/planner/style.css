@@ -128,7 +128,7 @@ body {
 }
 
 .modal-add-tarefa{
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color:#F4F4F4;
     border-radius: 20px;
@@ -200,18 +200,32 @@ body {
 
 }
 
-.modal-add-tarefa button{
- border-radius: 0 0 30px 30px;
+.buttons{
+    display: flex;
 }
 
-.primeiro-botao {
-    margin-top: 2vh;
+.modal-add-tarefa .primeiro-botao{
+    border-radius: 0 0 20px 0px;
     width: 100%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
     background-color: #044177;
-    
     font-weight: 700;
     border: none;
     padding: 15px;
+    margin-top: 2vh;
 }
+
+.modal-add-tarefa .segundo-botao{
+    border-radius: 0 0 0 20px;
+    margin-top: 2vh;
+    width: 100%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #e3e3e3;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+   }
+
+   
