@@ -10,478 +10,546 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../componentes/header/styles_header.css">
     <title>Tarefas</title>
 </head>
 
 <body>
-    <div class="tipo_usuario">
-        <ul>
-            <li data-tabs="todos" class="ativo">MINHAS TAREFAS</li>
-            <li data-tabs="anual">TAREFAS GERAIS</li>
-        </ul>
-    </div>
 
-    <div class="col-md-12 container-topicos">
-        <div class="col-md-10 listagem-topicos">
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 topico">
-                <div class="col-md-12 titulo">
-                    <h1>NOME DO TÓPICO</h1>
-                    <img src="./img/menu.svg" alt="">
-                </div>
-                <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt=""> Adicionar tarefa</button>
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-
-                <div class="col-md-12 card-tarefa">
-                    <div class="tarefa">
-                        <div class="nome-tarefa">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p>Nome da tarefa</p>
-                        </div>
-                        <img src="./img/menu.svg" alt="">
-                    </div>
-
-                    <div class="data-tarefa">
-                        <img src="./img/calendario.svg" alt="">
-                        <p>XX/XX/XX</p>
-                    </div>
-                </div>
-            </div>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+            <i class="bx bx-menu" id="btn"></i>
         </div>
 
-        <div class="col-md-2 add-topico">
-            <button class="col-md-12 botao-add-topico">ADICIONAR TÓPICO</button>
-        </div>
+        <li>
+            <a href="#">
+                <i class='bx bx-info-circle'></i>
+                <span class="links_name">Informações do projeto</span>
+            </a>
+            <span class="tooltip">Projeto</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-task'></i>
+                <span class="links_name">Tarefas</span>
+            </a>
+            <span class="tooltip">Tarefas</span>
+        </li>
+        <li>
 
+        <li>
+            <a href="#">
+                <i class="bx bxs-graduation"></i>
+                <span class="links_name">Atividades</span>
+            </a>
+            <span class="tooltip">Atividades</span>
+        </li>
+        <li>
+
+            <a href="#">
+                <i class="bx bx-folder-open"></i>
+                <span class="links_name">Arquivos e links</span>
+            </a>
+            <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-edit"></i>
+                <span class="links_name">Relatório da banca</span>
+            </a>
+            <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+            <a href="../../../home/login/index.html">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
     </div>
 
-    <div class="modal">
-        <input type="text" class="form-control inserir-tarefa" maxlength="255" placeholder="Insira o nome da tarefa"
-            required />
-        <div class="col-md-12">
-            <button id="quarto_botao_confirmar" type="submit">CONFIRMAR</button>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+<header>
+            <div class="primeira_parte">
+                <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+                <h1 id="nomeGrupoAluno">NOME DO GRUPO</h1>
+            </div>
+    
+            <a href="#">
+                <img id="fotoPerfilAluno" src="../componentes/header/img/foto_padrao.svg" alt="foto" />
+            </a>
+        </header>
+    <div class="container-geral">
+        
+        <div class="tipo_usuario">
+            <ul>
+                <li data-tabs="todos" class="ativo">MINHAS TAREFAS</li>
+                <li data-tabs="anual">TAREFAS GERAIS</li>
+            </ul>
+        </div>
+
+        <div class="col-md-12 container-topicos">
+            <div class="col-md-10 listagem-topicos">
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                        <img src="./img/menu.svg" alt="">
+                    </div>
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg"
+                                alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="modal-add-tarefa">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome da tarefa" required />
+                            <input type="date" class="col-md-10 inserir-data-conclusao"
+                                placeholder="Insira uma data de conclusão" required />
+
+                            <button class="col-md-12 primeiro-botao" type="submit">CONFIRMAR</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 card-tarefa">
+                        <div class="tarefa">
+                            <div class="nome-tarefa">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Nome da tarefa</p>
+                            </div>
+                            <img src="./img/menu.svg" alt="">
+                        </div>
+
+                        <div class="data-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p>XX/XX/XX</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-2 add-topico">
+                <button class="col-md-12 botao-add-topico">ADICIONAR TÓPICO</button>
+            </div>
+
         </div>
     </div>
+
+
 </body>
 
 </html>
