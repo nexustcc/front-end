@@ -398,14 +398,16 @@ main .tema input {
 
 .primeiro_botao {
     margin-top: 2vh;
-    width: 98%;
+    width: 30%;
     color: white;
-    font-weight: 700;
-    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 15px;
     border: none;
-    padding: 15px;
+    padding: 10px;
     background-color: #c2c2c2;
-    margin-right: 5%;
+    margin-bottom: 5%;
+    /* margin-right: 5%; */
 }
 
 .acoes-form-grupo  {
@@ -420,11 +422,15 @@ main .tema input {
     background-color: #0664B7;
     width: 10vw;
     height: 40%;
-    margin: 0;
-    padding: 0;
     align-items: center;
     display: flex;
     justify-content: center;
+    transition: 0.3s;
+}
+
+#btnVerDocumentacao {
+    background-color: #044177;
+    transition: 0.3s;
 }
 
 #btnVoltar {
@@ -434,6 +440,16 @@ main .tema input {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.3s;
+}
+
+#btnVerDocumentacao:hover, #btnSalvarAlteracoes:hover {
+    color: #000;
+    background-color: #e3e3e3;
+}
+
+#btnVoltar:hover {
+    color: #000;
 }
 
 .acoes-form-grupo a {
