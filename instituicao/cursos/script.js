@@ -57,13 +57,9 @@ function exitModalExcluir() {
     document.querySelector(".modal-excluir").style.display = "none";
 }
 
-
-
 async function turmasCurso(idCurso) {
     window.location.href = `turmas/index.html?idCurso=${idCurso}`;
 }
-
-
 
 function exibirDados(cursos) {
     const container = document.getElementById("ul_container");
@@ -126,7 +122,6 @@ searchBar.addEventListener("keyup", (e) => {
 });
 
 async function getArrayCursos() {
-
     const url = `http://localhost:3000/curso/listarCursos/${localStorageUser.idTipo}`;
 
     fetch(url).then((response) => response.json);
@@ -150,7 +145,10 @@ async function cadastrarCurso(nome) {
         body: JSON.stringify(cadastrarCurso),
     };
 
-    fetch(`http://localhost:3000/curso/cadastrarCurso/${localStorageUser.idTipo}`, config)
+    fetch(
+            `http://localhost:3000/curso/cadastrarCurso/${localStorageUser.idTipo}`,
+            config
+        )
         .then((res) => res.json())
         .then(() => (window.location.href = "./index.html"));
 }
@@ -170,7 +168,14 @@ async function editarCurso(idCurso, nomeCurso) {
         body: JSON.stringify(editarCurso),
     };
 
+<<<<<<< Updated upstream
     fetch(`http://localhost:3000/curso/editarCurso/${idCurso}`, config)
+=======
+    fetch(
+            `http://localhost:3000/curso/editarCurso/${localStorageUser.idTipo}`,
+            config
+        )
+>>>>>>> Stashed changes
         .then((res) => res.json())
         .then(() => (window.location.href = "./index.html"));
 }
@@ -184,39 +189,39 @@ async function deletarCurso(idCurso) {
 }
 
 const logout = () => {
-    localStorage.removeItem('user')
-    window.location.href = '../home'
-}
+    localStorage.removeItem("user");
+    window.location.href = "../home";
+};
 
 const checkLogin = () => {
-    if(localStorage.user != undefined){
-        localStorageUser = JSON.parse(localStorage.user)
-        if(localStorageUser.tipo == 'instituição'){    
-            getArrayCursos()
-            document.getElementById('nomeInstituicao').innerHTML = localStorageUser.nome
-        } 
-        else{
+    if (localStorage.user != undefined) {
+        localStorageUser = JSON.parse(localStorage.user);
+        if (localStorageUser.tipo == "instituição") {
+            getArrayCursos();
+            document.getElementById("nomeInstituicao").innerHTML =
+                localStorageUser.nome;
+        } else {
             switch (localStorageUser.tipo) {
-                case 'professor':
-                    window.location.href = '../professor/perfil/index.html'
-                  break;
-      
-                case 'aluno':
-                    window.location.href = '../aluno/perfil/index.html'
-                  break;
-      
-                case 'avaliador':
-                    window.location.href = '../home/index.html'
-                    alert('O acesso dos Avaliadores a plataforma é feito pelo APP')
-                  break;
-      
+                case "professor":
+                    window.location.href = "../professor/perfil/index.html";
+                    break;
+
+                case "aluno":
+                    window.location.href = "../aluno/perfil/index.html";
+                    break;
+
+                case "avaliador":
+                    window.location.href = "../home/index.html";
+                    alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
+                    break;
+
                 default:
-                    window.location.href = '../home/index.html'
-              }
+                    window.location.href = "../home/index.html";
+            }
         }
-    } else{
-        window.location.href = '../home/login/index.html'
+    } else {
+        window.location.href = "../home/login/index.html";
     }
-}
+};
 
 window.onload = checkLogin();

@@ -1,5 +1,7 @@
 "use strict";
 
+// NO BACK END EU DEVO COLOCAR O RETORNO DO ID DO GRUPO
+
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
 tiposUsuario.forEach((tipoUsuario) => {
@@ -140,9 +142,150 @@ function alterarInputTipoUsuario() {
     }
 }
 
-async function cadastrarAluno(nome, email, senha, curso, turma, grupo){
+let cursos = [];
+let dropdownCursos = document.getElementById("cursoNovoAlunoModal");
+
+async function getArrayCursosAluno() {
+    let idInstituicao = 3;
+    const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    cursos = await dados.json();
+
+    dropdownCursos.length = 0;
+
+    let defaultOption = document.createElement("option");
+    defaultOption.text = "SELECIONE UM CURSO";
+    defaultOption.disabled = true;
+    defaultOption.value = "";
+
+    dropdownCursos.add(defaultOption);
+    dropdownCursos.selectedIndex = 0;
+
+    let option;
+    for (let i = 0; i < cursos.cursos.length; i++) {
+        option = document.createElement("option");
+        option.text = cursos.cursos[i].nome;
+        option.value = cursos.cursos[i].idCurso;
+        dropdownCursos.add(option);
+    }
+}
+
+let turmas = [];
+let dropdownTurmas = document.getElementById("turmaNovoAlunoModal");
+
+async function getArrayTurmasAluno() {
+    if (dropdownCursos.options[dropdownCursos.selectedIndex].value != "") {
+        console.log(dropdownCursos.value);
+
+        let idCurso = dropdownCursos.value;
+        const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
+
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        turmas = await dados.json();
+
+        if (dropdownTurmas.length == 1) {
+            let option;
+            for (let i = 0; i < turmas.turma.length; i++) {
+                option = document.createElement("option");
+                option.text = turmas.turma[i].nome;
+                option.value = turmas.turma[i].idTurma;
+                dropdownTurmas.add(option);
+            }
+        }
+
+        dropdownCursos.addEventListener("change", () => {
+            dropdownTurmas.length = 0;
+
+            let defaultOption = document.createElement("option");
+            defaultOption.text = "SELECIONE UMA TURMA";
+            defaultOption.disabled = true;
+            defaultOption.value = "";
+
+            dropdownTurmas.add(defaultOption);
+            dropdownTurmas.selectedIndex = 0;
+        });
+    }
+}
+
+let grupos = [];
+let dropdownGrupos = document.getElementById("grupoNovoAlunoModal");
+
+async function getArrayGruposAluno() {
+    if (dropdownTurmas.options[dropdownTurmas.selectedIndex].value != "") {
+        console.log(dropdownTurmas.value);
+
+        let idTurma = dropdownTurmas.value;
+        const url = `http://localhost:3000/grupo/listarGrupos/${idTurma}`;
+
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        grupos = await dados.json();
+
+        console.log(grupos);
+
+        if (dropdownGrupos.length == 1) {
+            let option;
+            for (let i = 0; i < grupos.grupos.length; i++) {
+                option = document.createElement("option");
+                option.text = "Grupo " + grupos.grupos[i].numeracao;
+                option.value = grupos.grupos[i].idGrupo;
+                console.log(grupos.grupos[i].idGrupo)
+                dropdownGrupos.add(option);
+            }
+        }
+
+        dropdownCursos.addEventListener("change", () => {
+            dropdownGrupos.length = 0;
+
+            let defaultOption = document.createElement("option");
+            defaultOption.text = "SELECIONE UM GRUPO";
+            defaultOption.disabled = true;
+            defaultOption.value = "";
+
+            dropdownGrupos.add(defaultOption);
+            dropdownGrupos.selectedIndex = 0;
+        });
+
+        dropdownTurmas.addEventListener("change", () => {
+            dropdownGrupos.length = 0;
+
+            let defaultOption = document.createElement("option");
+            defaultOption.text = "SELECIONE UM GRUPO";
+            defaultOption.disabled = true;
+            defaultOption.value = "";
+
+            dropdownGrupos.add(defaultOption);
+            dropdownGrupos.selectedIndex = 0;
+        });
+    }
+}
+
+async function cadastrarAluno (nome, email, turma, grupo){
     event.preventDefault();
 
+    const cadastrarAluno = {
+        nome: document.getElementById("inputNomeNovoUsuarioModal").value.toString(),
+        email: document.getElementById("inputEmailNovoUsuarioModal").value.toString(),
+        idGrupo: dropdownGrupos.value,
+        idTurma: dropdownTurmas.value,
+    }
+
+    console.log(dropdownGrupos.value);
+    console.log(dropdownTurmas.value);
+
+        const config = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cadastrarAluno),
+    };
+
+    fetch(`http://localhost:3000/aluno/cadastrarAluno`, config)
+        .then((res) => res.json())
     
 }
 
