@@ -96,7 +96,7 @@ function showModalEditar() {
 }
 
 function resetForm() {
-    document.getElementById("modal").reset();
+    document.querySelector(".form-modal-turma").reset();
 }
 
 

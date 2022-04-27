@@ -93,7 +93,7 @@
         <div class="container">
             <div class="col-md-6 for-cnp cursos_existentes icon">
                 <label for="cursos_ex" class="form-label">TURMAS EXISTENTES</label>
-                <input type="text" class="form-control cursos_ex">
+                <input type="text" class="form-control cursos_ex" placeholder="Insira o nome da turma que procura...">
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
@@ -108,7 +108,7 @@
 
     <div class="container mt-5 container modal">
         <h1>CADASTRO DE TURMA</h1>
-        <form class="row g-7">
+        <form class="row g-7 form-modal-turma">
 
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
@@ -157,7 +157,7 @@
         <div class="col-md-6 lab-inp-modal icon-membro">
             <input type="email" class="form-control nome_usuario"
                 placeholder="Insira o nome do usuário que deseja atrelar à turma...">
-            <i class="fa fa-search" style="font-size:24px"></i>
+            <i class="fa fa-search" style="font-size:24px" id="iconInputAddMembros"></i>
         </div>
 
         <div class="container-cadastro-membro">
