@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="arquivos.css">
+    <link rel="stylesheet" href="../componentes/header/styles_header.css">
+    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
+    <title>Arquivos e Links</title>
+</head>
+<body>
+    
+    <header>
+        <div class="primeira_parte">
+            <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+            <h1 id="nomeProfessor">NOME DO PROFESSOR</h1>
+        </div>
+
+        <a href="../perfil/index.html">
+            <img src="../componentes/header/img/perfil_professor.svg" alt="icone" />
+        </a>
+    </header>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+
+        <li>
+            <a href="../cursos/index.html">
+                <i class="bx bx-group"></i>
+                <span class="links_name">Cursos</span>
+            </a>
+            <span class="tooltip">Cursos</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bxs-graduation"></i>
+                <span class="links_name">Atividades</span>
+            </a>
+            <span class="tooltip">Atividades</span>
+        </li>
+        <li>
+            <a href="./index.html">
+                <i class="bx bx-folder-open"></i>
+                <span class="links_name">Arquivos e links</span>
+            </a>
+            <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+            <a href="../usuarios/index.html">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Usuários</span>
+            </a>
+            <span class="tooltip">Usuários</span>
+        </li>
+        <li class="profile">
+            <a href="../../../home/login/index.html">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+
+</body>
+</html>
