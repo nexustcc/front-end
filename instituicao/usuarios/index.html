@@ -44,6 +44,7 @@
             <img class="icon" src="../../home/images-global/logo-branca.svg" alt="logo" />
             <i class="bx bx-menu" id="btn"></i>
         </div>
+<<<<<<< Updated upstream
             <li>
                 <a href="../cursos/index.html">
                     <i class="bx bx-group"></i>
@@ -72,6 +73,36 @@
                 </a>
                 <span class="tooltip">Log Out</span>
             </li>
+=======
+        <li>
+            <a href="../cursos/index.html">
+                <i class="bx bx-group"></i>
+                <span class="links_name">Cursos existentes</span>
+            </a>
+            <span class="tooltip">Cursos</span>
+        </li>
+        <li>
+            <a href="../usuarios/index.html">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Usuários cadastrados</span>
+            </a>
+            <span class="tooltip">Usuários</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-edit"></i>
+                <span class="links_name">Formulário da banca</span>
+            </a>
+            <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+            <a href="../../home/login/index.html">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
+>>>>>>> Stashed changes
     </div>
 
     <script>
@@ -91,6 +122,8 @@
             }
         }
     </script>
+
+
 
     <div class="container-geral">
         <div class="container">
@@ -181,8 +214,8 @@
         </div>
 
         <div class="buttonAddUsuario">
-                <button onclick="showModal()" type="button" class="addUsuario button5">
-                    <i class="fa fa-plus" style="font-size: 36px"></i></button>
+            <button onclick="showModal()" type="button" class="addUsuario button5">
+                <i class="fa fa-plus" style="font-size: 36px"></i></button>
         </div>
 
         <div class="container mt-5 container modal modal-listagem">
@@ -369,25 +402,25 @@
         </div>
 
         <div class="container mt-5 container modal modal-cadastro" id="modal">
-            <h1>CRIAR NOVO USUÁRIO</h1>
+            <h1>CADASTRAR NOVO USUÁRIO</h1>
             <form class="row g-7" id="modal-form">
-    
+
                 <div class="col-md-6 lab-inp">
                     <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
                     <input type="text" class="form-control nome_do_usuario">
                 </div>
-    
+
                 <div class="col-md-6 lab-inp">
                     <label for="email_usuario" class="form-label">Email do usuário</label>
                     <input type="email" class="form-control email_usuario">
                 </div>
-    
+
                 <div class="col-md-6 lab-inp">
                     <label for="senha" class="form-label">Senha</label>
                     <input type="password" class="form-control senha"
                         placeholder="*A SENHA SERÁ ENVIADA NO E-MAIL DO USUÁRIO" disabled>
                 </div>
-    
+
                 <div class="col-md-6 lab-inp">
                     <label for="tipo-select" class="form-label">Tipo</label>
                     <select class="form-select tipo-select" on="" id="tipo-select-criar"
@@ -398,7 +431,7 @@
                         <option value="3">Avaliador</option>
                     </select>
                 </div>
-    
+
                 <div class="col-md-6 lab-inp" id="curso-cadastro">
                     <label for="tipo-select" class="form-label">Curso</label>
                     <select disabled class="form-select mul-select" id="input-curso" multiple="true">
@@ -411,7 +444,7 @@
                         <option value="USA">USA</option>
                     </select>
                 </div>
-    
+
                 <div class="col-md-6 lab-inp" id="turma-cadastro">
                     <label for="tipo-select" class="form-label">Turma</label>
                     <select disabled class="form-select mul-select" id="input-turma" multiple="true">
@@ -424,7 +457,7 @@
                         <option value="USA">USA</option>
                     </select>
                 </div>
-    
+
                 <div class="col-md-6 lab-inp" id="grupo-cadastro">
                     <label for="tipo-select" class="form-label">Grupo</label>
                     <select class="mul-select" multiple="true">
@@ -437,8 +470,8 @@
                         <option value="USA">USA</option>
                     </select>
                 </div>
-    
-    
+
+
                 <div class="col-md-4 lab-inp" id="curso-aluno-cadastro">
                     <label for="tipo-select" class="form-label">Curso</label>
                     <select class="form-select tipo-select" id="curso-select-cadastro">
@@ -448,7 +481,7 @@
                         <option value="3">Avaliador</option>
                     </select>
                 </div>
-    
+
                 <div class="col-md-4 lab-inp" id="turma-aluno-cadastro">
                     <label for="tipo-select" class="form-label">Turma</label>
                     <select class="form-select tipo-select" id="turma-select-cadastro">
@@ -458,7 +491,7 @@
                         <option value="3">Avaliador</option>
                     </select>
                 </div>
-    
+
                 <div class="col-md-4 lab-inp" id="grupo-aluno-cadastro">
                     <label for="tipo-select" class="form-label">Grupo</label>
                     <select class="form-select tipo-select" id="grupo-select-cadastro">
@@ -468,21 +501,21 @@
                         <option value="3">Avaliador</option>
                     </select>
                 </div>
-    
+
                 <script>
                     $(document).ready(function () {
                         $(".mul-select").select2({
-    
+
                         });
                     })
                 </script>
-    
+
                 <div class="buttons">
-    
+
                     <div class="col-md-3">
                         <button class="primeiro_botao" type="button" onclick="exitModal()">CANCELAR</button>
                     </div>
-    
+
                     <div class="col-md-3">
                         <button class="segundo_botao" id="button_salvar" type="button"
                             onclick="resetForm()">SALVAR</button>
@@ -492,7 +525,7 @@
                     </div>
                 </div>
             </form>
-    
+
         </div>
     </div>
 </body>

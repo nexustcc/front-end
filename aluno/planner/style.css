@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    padding: 2%;
+}
+
+.container-topicos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tipo_usuario ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.tipo_usuario ul li {
+    list-style: none;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #c2c2c2;
+    color: #c2c2c2;
+    font-weight: bold;
+    transform: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tipo_usuario ul li:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.tipo_usuario ul li:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.tipo_usuario ul li:hover,
+.tipo_usuario ul li.ativo {
+    background-color: #044177;
+    color: #fff;
+}
+
+.botao-adicionar{
+    border: solid 1px #044177;
+    background-color: #04417700;
+    margin-top: 2vh;
+    border-radius: 30px;
+    font-weight: 700;
+    padding: 15px;
+}
+
+.botao-add-topico{
+    border: solid 1px #044177;
+    background-color: #04417700;
+    border-radius: 30px;
+    font-weight: 700;
+    padding: 15px;
+}
+
+.listagem-topicos::-webkit-scrollbar {
+    width: 12px;
+}
+
+.topico{
+    margin-top: 5rem;
+    margin-right: 5rem;
+    align-items: center;
+   
+}
+
+.add-topico{
+    margin-top: 5rem;
+}
+
+.listagem-topicos{
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto; max-width: 80%;
+}
+
+.card-tarefa{
+    border: solid 1px #044177;
+    background-color: #04417700;
+    margin-top: 2vh;
+    border-radius: 30px;
+    font-weight: 700;
+    padding: 15px;
+}
+
+.nome-tarefa{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.nome-tarefa p{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.data-tarefa{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.data-tarefa p{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.data-tarefa img{
+    width: 30px;
+}
+
+.tarefa{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+}
+
+.titulo img{
+   width: 50px;
+}
+
+.titulo h1{
+    color: #05204A;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.progress{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    border: solid #044177;     
+    transform: rotate(270deg);
+}
+
+.progress-bar{
+    background-color: #044177;
+
+}

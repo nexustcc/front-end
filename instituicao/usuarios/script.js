@@ -131,3 +131,6 @@ function disableSelected() {
         document.getElementById("input-turma").disabled = false;
     }
 }
+
+const form = document.getElementById('modal-form');
+const salvar = document.getElementById('button_salvar')
