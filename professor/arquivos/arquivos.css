@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin-left: 78px;
+    /* background: #000; */
+}
+
+.cursos_existentes input {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    width: 90%;
+}
+
+.icon {
+    position: relative;
+}
+
+.icon i {
+    position: absolute;
+    right: 11%;
+    top: 10%;
+    padding: 9px 8px;
+    color: #808080;
+    transition: 0.3s;
+}
+
+main h4 {
+    color: #A1A1A1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    margin-top: 100px;
+    align-self: baseline;
+    margin-left: 75px;
+}
