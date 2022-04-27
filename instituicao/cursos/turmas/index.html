@@ -98,41 +98,35 @@
             </div>
 
             <ul id="turma-container" class="list-group ul-turma-existen">
-
             </ul>
         </div>
 
-        <button onclick="showModal()" class="button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
+        <button id="button_modal_cadastrar_turma" class="button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
 
     </div>
 
-    <div class="container mt-5 container modal">
+    <div id="modal_cadastro_turma" class="container mt-5 container modal">
         <h1>CADASTRO DE TURMA</h1>
         <form class="row g-7 form-modal-turma">
 
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
-                <input type="text" class="form-control turma">
+                <input id="input-nome-turma" type="text" class="form-control turma">
             </div>
 
-            <div class="col-md-6 lab-inp">
-                <label for="numero-estudantes" class="form-label">Número de estudantes</label>
-                <input type="email" class="form-control numero-estudantes">
-            </div>
-
-            <div class="col-md-6 lab-inp">
+            <div class="col-md-12 lab-inp">
                 <label for="curso-inp" class="form-label">Curso</label>
-                <input type="text" class="form-control curso-inp">
+                <input id="input-curso" type="text" class="form-control curso-inp" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input type="date" class="form-control data-inicio">
+                <input id="input-data-inicio" type="date" class="form-control data-inicio">
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input type="date" class="form-control data-termino">
+                <input id="input-data-conclusao" type="date" class="form-control data-termino">
             </div>
 
             <div class="buttons">
@@ -141,12 +135,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="primeiro_botao" onclick="resetForm()" type="button">CRIAR TURMA SEM MEMBROS</button>
-                </div>
-
-                <div class="col-md-6">
-                    <button class="terceiro_botao" onclick="showModalAddMembros()" type="button">ADICIONAR MEMBROS À
-                        TURMA</button>
+                    <button id="button_cadastrar_turma" class="primeiro_botao" type="button">CRIAR TURMA</button>
                 </div>
             </div>
         </form>
