@@ -41,11 +41,38 @@ main {
     transition: 0.3s;
 }
 
+.caminho-arquivo {
+    display: flex;
+    align-self: baseline;
+    gap: 40px;
+    margin-top: 75px;
+    margin-left: 75px;
+}
+
+main a {
+    text-decoration: none;
+}
+
 main h4 {
     color: #A1A1A1;
     font-family: 'Poppins', sans-serif;
     font-weight: lighter;
-    margin-top: 100px;
-    align-self: baseline;
-    margin-left: 75px;
+}
+
+.container-arquivos {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin-top: 50px;
+    background: blue;
+}
+
+.pasta-arquivo {
+    padding: 10px;
+    gap: 5px;
+    background: beige;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
