@@ -53,12 +53,21 @@ body {
 }
 
 .botao-adicionar{
+    display: flex;
     border: solid 1px #044177;
     background-color: #04417700;
     margin-top: 2vh;
     border-radius: 30px;
-    font-weight: 700;
+    font-weight: 300;
     padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-adicionar img{
+    width: 18px;
+    margin-right: 0.5rem;
 }
 
 .botao-add-topico{
@@ -70,14 +79,14 @@ body {
 }
 
 .listagem-topicos::-webkit-scrollbar {
-    width: 12px;
+    width: 12px;  overflow-y: auto;
 }
 
 .topico{
     margin-top: 5rem;
     margin-right: 5rem;
     align-items: center;
-   
+ 
 }
 
 .add-topico{
