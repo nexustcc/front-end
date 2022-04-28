@@ -146,7 +146,7 @@ let cursos = [];
 let dropdownCursos = document.getElementById("cursoNovoAlunoModal");
 
 async function getArrayCursosAluno() {
-    let idInstituicao = 3;
+    let idInstituicao = 1;
     const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
 
     fetch(url).then((response) => response.json);
