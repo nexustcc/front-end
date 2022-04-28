@@ -1,7 +1,5 @@
 "use strict";
 
-// NO BACK END EU DEVO COLOCAR O RETORNO DO ID DO GRUPO
-
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
 tiposUsuario.forEach((tipoUsuario) => {
@@ -232,7 +230,7 @@ async function getArrayGruposAluno() {
                 option = document.createElement("option");
                 option.text = "Grupo " + grupos.grupos[i].numeracao;
                 option.value = grupos.grupos[i].idGrupo;
-                console.log(grupos.grupos[i].idGrupo)
+                console.log(grupos.grupos[i].idGrupo);
                 dropdownGrupos.add(option);
             }
         }
@@ -263,20 +261,22 @@ async function getArrayGruposAluno() {
     }
 }
 
-async function cadastrarAluno (nome, email, turma, grupo){
+async function cadastrarAluno(nome, email, turma, grupo) {
     event.preventDefault();
 
     const cadastrarAluno = {
         nome: document.getElementById("inputNomeNovoUsuarioModal").value.toString(),
-        email: document.getElementById("inputEmailNovoUsuarioModal").value.toString(),
+        email: document
+            .getElementById("inputEmailNovoUsuarioModal")
+            .value.toString(),
         idGrupo: dropdownGrupos.value,
         idTurma: dropdownTurmas.value,
-    }
+    };
 
     console.log(dropdownGrupos.value);
     console.log(dropdownTurmas.value);
 
-        const config = {
+    const config = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -284,9 +284,9 @@ async function cadastrarAluno (nome, email, turma, grupo){
         body: JSON.stringify(cadastrarAluno),
     };
 
-    fetch(`http://localhost:3000/aluno/cadastrarAluno`, config)
-        .then((res) => res.json())
-    
+    fetch(`http://localhost:3000/aluno/cadastrarAluno`, config).then((res) =>
+        res.json()
+    );
 }
 
 // async function cadastrarCurso(nome) {
