@@ -1,5 +1,7 @@
 "use strict";
 
+let localStorageUser = [];
+
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
 tiposUsuario.forEach((tipoUsuario) => {
@@ -144,8 +146,14 @@ let cursos = [];
 let dropdownCursos = document.getElementById("cursoNovoAlunoModal");
 
 async function getArrayCursosAluno() {
-    let idInstituicao = 1;
-    const url = `http://localhost:3000/curso/listarCursos/${idInstituicao}`;
+
+    const urlIdInstituicao = `http://localhost:3000/professor/pegarInstituicao/${localStorageUser.idTipo}`
+
+    fetch(urlIdInstituicao).then((response) => response.json);
+    const dadosInstituicao = await fetch(urlIdInstituicao);
+    let idInstituicao = await dadosInstituicao.json();
+
+    const url = `http://localhost:3000/curso/listarCursos/${idInstituicao.idInstituicao}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
@@ -207,6 +215,74 @@ async function getArrayTurmasAluno() {
         });
     }
 }
+
+let turmasAvaliador = [];
+let dropdownTurmasAvaliador = document.getElementById("grupoUsuarioModalEditar");
+
+async function getArrayTurmasAvaliador() {
+
+    
+    const urlIdInstituicao = `http://localhost:3000/professor/pegarInstituicao/${localStorageUser.idTipo}`
+
+    fetch(urlIdInstituicao).then((response) => response.json);
+    const dadosInstituicao = await fetch(urlIdInstituicao);
+    let idInstituicao = await dadosInstituicao.json();
+
+    const url = `http://localhost:3000/turma/listarTurmas/${idInstituicao.idInstituicao}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    cursos = await dados.json();
+
+    dropdownTurmasAvaliador.length = 0;
+
+    let defaultOption = document.createElement("option");
+    defaultOption.text = "SELECIONE UM CURSO";
+    defaultOption.disabled = true;
+    defaultOption.value = "";
+
+    dropdownTurmasAvaliador.add(defaultOption);
+    dropdownTurmasAvaliador.selectedIndex = 0;
+
+    let option;
+    for (let i = 0; i < cursos.cursos.length; i++) {
+        option = document.createElement("option");
+        option.text = cursos.cursos[i].nome;
+        option.value = cursos.cursos[i].idCurso;
+        dropdownTurmasAvaliador.add(option);
+    }
+
+
+    // let idCurso = dropdownCursos.value;
+    // const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
+
+    // fetch(url).then((response) => response.json);
+    // const dados = await fetch(url);
+    // turmas = await dados.json();
+
+    // if (dropdownTurmas.length == 1) {
+    //     let option;
+    //     for (let i = 0; i < turmas.turma.length; i++) {
+    //         option = document.createElement("option");
+    //         option.text = turmas.turma[i].nome;
+    //         option.value = turmas.turma[i].idTurma;
+    //         dropdownTurmas.add(option);
+    //     }
+    // }
+
+    // dropdownCursos.addEventListener("change", () => {
+    //     dropdownTurmas.length = 0;
+
+    //     let defaultOption = document.createElement("option");
+    //     defaultOption.text = "SELECIONE UMA TURMA";
+    //     defaultOption.disabled = true;
+    //     defaultOption.value = "";
+
+    //     dropdownTurmas.add(defaultOption);
+    //     dropdownTurmas.selectedIndex = 0;
+    // });
+}
+
 
 let grupos = [];
 let dropdownGrupos = document.getElementById("grupoNovoAlunoModal");
@@ -289,24 +365,40 @@ async function cadastrarAluno(nome, email, turma, grupo) {
     );
 }
 
-// async function cadastrarCurso(nome) {
-//     event.preventDefault();
+const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "../../home/login";
+};
 
-//     const cadastrarCurso = {
-//         nome: document.getElementById("inputCriarCurso").value.toString(),
-//     };
+const checkLogin = () => {
+    if (localStorage.user != undefined) {
+        localStorageUser = JSON.parse(localStorage.user);
+        if (localStorageUser.tipo == "professor") {
+            getArrayCursosAluno();
+            document.getElementById("nomeProfessor").innerHTML =
+                localStorageUser.nome;
+        } else {
+            switch (localStorageUser.tipo) {
+                case "instituição":
+                    window.location.href = "../instituicao/";
+                    break;
 
-//     const config = {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(cadastrarCurso),
-//     };
+                case "aluno":
+                    window.location.href = "../aluno/perfil/index.html";
+                    break;
 
-//     let idInstituicao = 3;
+                case "avaliador":
+                    window.location.href = "../home/index.html";
+                    alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
+                    break;
 
-//     fetch(`http://localhost:3000/curso/cadastrarCurso/${idInstituicao}`, config)
-//         .then((res) => res.json())
-//         .then(() => (window.location.href = "./index.html"));
-// }
+                default:
+                    window.location.href = "../home/index.html";
+            }
+        }
+    } else {
+        window.location.href = "../home/login/index.html";
+    }
+};
+
+window.onload = checkLogin();

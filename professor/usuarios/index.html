@@ -69,7 +69,7 @@
                 <span class="tooltip">Usuários</span>
             </li>
             <li class="profile">
-                <a href="../../../home/login/index.html">
+                <a onclick="logout()">
                     <i class="bx bx-log-out" id="log_out"></i>
                     <span class="links_name">Log Out</span>
                 </a>
@@ -80,7 +80,7 @@
         <header>
             <div class="primeira_parte">
                 <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
-                <h1 class="nomeProfessor">NOME DO PROFESSOR</h1>
+                <h1 id="nomeProfessor" class="nomeProfessor">NOME DO PROFESSOR</h1>
             </div>
 
             <a href="../perfil/index.html">
@@ -485,7 +485,7 @@
 
                     <div class="col-md-3">
                         <button class="segundo_botao" type="submit" id="saveUser" onclick="cadastrarAluno()">
-                            SALVAR2222
+                            SALVAR
                         </button>
                     </div>
                 </div>
