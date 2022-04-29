@@ -45,11 +45,15 @@
 }
 
 .button5 {
-    border-radius: 50%;
-    margin-right: 3%;
+    color: white;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    border: none;
     width: 80px;
     height: 80px;
-    margin-bottom: -35%;
+    border-radius: 50%;
+    background-color: #044177;
 }
 
 .ul::-webkit-scrollbar {
@@ -506,7 +510,7 @@ ul {
 
 .bg {
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     display: none;
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.658);
@@ -547,7 +551,7 @@ ul {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 9999;
 }
 
 #modal-editar {
@@ -571,7 +575,7 @@ ul {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 9999;
 }
 
 .lab-inp {
