@@ -56,11 +56,11 @@ async function login (email, senha) {
             break;
 
           case 'professor':
-            console.log('professor')
+            window.location.href = '../../professor/perfil/'
             break;
 
           case 'aluno':
-            console.log('aluno')
+            window.location.href = '../../aluno/perfil/'
             break;
 
           case 'avaliador':

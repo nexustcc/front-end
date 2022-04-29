@@ -30,7 +30,7 @@
   <header>
     <div class="primeira_parte">
         <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
-        <h1 id="nomeGrupoAluno">NOME DO GRUPO</h1>
+        <h1 id="nomeAluno"></h1>
     </div>
 
     <a href="../index.html">
@@ -98,19 +98,22 @@
         <div class="profile_image" id="fotoPerfilProfessor"></div>
       </div>
 
-      <div class="upload_foto">
-        <input type="file" id="inputFotoProfessor" class="input_foto" accept="image/*">
-        <button class="btn_upload_foto" type="button">Escolher Imagem</button>
-      </div>
+      
 
     </div>
 
-    <form class="row g-3 formPerfil">
+    <form id="formEditarAluno" class="row g-3 formPerfil">
+      
+      <div class="upload_foto">
+        <input type="file" id="file" class="input_foto" accept="image/*">
+        <button class="btn_upload_foto" type="button">Escolher Imagem</button>
+      </div>
+
       <div class="col-md-12 lab-inp">
         <label for="nome" class="form-label">NOME</label>
         <div class="alert-vazado" id="alert-nome">
           <div class="col-md-12 input-vazado">
-            <input id="nome" type="text" class="form-control nome" placeholder="Alice" disabled>
+            <input id="nome" type="text" class="form-control nome" disabled>
           </div>
           <img class="info_vazado_nome" src="./img/info_vazado.svg" alt="" onmouseenter="infoStatusNome()"
             onmouseleave="resetStatusNome()">
@@ -128,7 +131,7 @@
         <label for="email" class="form-label">E-MAIL</label>
         <div class="alert-vazado" id="alert-email">
           <div class="col-md-12 input-vazado">
-            <input id="emal" type="email" class="form-control email" placeholder="alice@gmail.com" disabled>
+            <input id="email" type="email" class="form-control email" disabled>
           </div>
           <img class="info_vazado_email" src="./img/info_vazado.svg" alt="" onmouseenter="infoStatusEmail()"
             onmouseleave="resetStatusEmail()">
@@ -144,12 +147,12 @@
 
       <div class="col-md-12 lab-inp">
         <label for="senha" class="form-label">NOVA SENHA</label>
-        <input id="senha_instituicao" type="password" class="form-control senha" placeholder="******">
+        <input id="senha" type="password" class="form-control senha">
       </div>
 
       <div class="col-md-12 lab-inp">
-        <label for="senha" class="form-label">CONFIRME SUA NOVA SENHA</label>
-        <input id="senha_instituicao" type="password" class="form-control senha" placeholder="******">
+        <label for="confirmar_senha" class="form-label">CONFIRME SUA NOVA SENHA</label>
+        <input id="confirmar_senha" type="password" class="form-control senha">
       </div>
       <div class="buttons">
 
@@ -160,9 +163,7 @@
         </div>
 
         <div class="col-md-6">
-          <a href="../index.html">
             <button class="botao_editar" type="button">SALVAR</button>
-          </a>
         </div>
 
       </div>

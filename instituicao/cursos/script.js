@@ -18,8 +18,6 @@ function showModalEditar(idCurso, nomeCurso) {
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 
-    console.log(idCurso)
-
     let valorInputEditar = document.getElementById('inputEditarNomeCurso')
     valorInputEditar.value = nomeCurso
 
@@ -156,8 +154,8 @@ async function cadastrarCurso(nome) {
 async function editarCurso(idCurso, nomeCurso) {
     event.preventDefault();
 
-    const editarCurso = {
-        nome: nomeCurso
+    const curso = {
+        nome: nomeCurso.value
     };
 
     const config = {
@@ -165,17 +163,10 @@ async function editarCurso(idCurso, nomeCurso) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(editarCurso),
+        body: JSON.stringify(curso),
     };
 
-<<<<<<< Updated upstream
     fetch(`http://localhost:3000/curso/editarCurso/${idCurso}`, config)
-=======
-    fetch(
-            `http://localhost:3000/curso/editarCurso/${localStorageUser.idTipo}`,
-            config
-        )
->>>>>>> Stashed changes
         .then((res) => res.json())
         .then(() => (window.location.href = "./index.html"));
 }

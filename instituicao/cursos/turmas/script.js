@@ -90,10 +90,39 @@ function exitModal() {
     document.querySelector(".modal-add-membros").style.display = "none";
 }
 
-function showModalGrupos() {
+
+const exibirDadosGrupos = (grupos) => {
+    const container = document.getElementById("li_grupos");
+
+    for (let g = 0; g < grupos.length; g++) {
+        const grupo = document.createElement("li");
+        grupo.classList = "list-group-item li";
+    
+        grupo.innerHTML += `
+            <div class="grupo">
+                <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}>
+                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span>
+                </a>
+                <p class="numero">${grupos[g].numeracao}</p>
+                <p class="tema">${grupos[g].nomeProjeto}</p>
+            </div>
+            `;
+    
+        container.appendChild(grupo);
+    }
+}
+
+const showModalGrupos = async (idTurma) => {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-grupos").style.display = "flex";
     document.querySelector(".modal-add-membros").style.display = "none";
+
+    const url = `http://localhost:3000/grupo/listarGrupos/${idTurma}`
+    
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    let grupos = await dados.json();
+    exibirDadosGrupos(grupos.grupos)
 }
 
 function exitModalGrupos() {
@@ -102,9 +131,15 @@ function exitModalGrupos() {
     document.querySelector(".modal-add-membros").style.display = "none";
 }
 
-function showModalExcluir() {
+function showModalExcluir(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-excluir").style.display = "flex";
+
+    document.getElementById('button_excluir_turma').addEventListener('click', () => {
+        fetch(`http://localhost:3000/turma/deletarTurma/${idTurma}`, { method: "DELETE",})
+        .then((res) => res.json())
+        .then(() => (window.location.href = `../turmas/index.html?idCurso=${idCurso}`));
+    })
 }
 
 function exitModalExcluir() {
@@ -163,10 +198,12 @@ function showModalMembros() {
     document.querySelector(".modal-add-membros-turma-criada").style.display = "none";
 }
 
-function showModalEditar() {
+function showModalEditar(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
+
+    console.log(idTurma)
 }
 
 function resetForm() {
@@ -198,8 +235,6 @@ async function showModalTurma(idTurma, nomeCurso) {
 
 
 const exibirDados = (turmas) => {
-    console.log(turmas.length)
-
     const container = document.getElementById("turma-container");
 
     if(turmas.length == 0){
@@ -221,7 +256,7 @@ const exibirDados = (turmas) => {
                     <div class="button">
                         <button onclick="showModalTurma(${turmas[i].idTurma})" class="terceiro_botao">SOBRE A TURMA</button>
                         <button onclick="showModalGrupos(${turmas[i].idTurma})" class="primeiro_botao">GRUPOS DE TCC</button>
-                        <button onclick="showModalExcluir({turmas[i].idcurso})" class="quarto_botao">EXCLUIR</button>
+                        <button onclick="showModalExcluir(${turmas[i].idTurma})" class="quarto_botao">EXCLUIR</button>
                     </div>
             `;
     

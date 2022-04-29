@@ -109,9 +109,9 @@
         <h1>CADASTRO DE TURMA</h1>
         <form class="row g-7 form-modal-turma">
 
+            <input id="input-nome-turma" type="text" class="form-control turma">
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
-                <input id="input-nome-turma" type="text" class="form-control turma">
             </div>
 
             <div class="col-md-12 lab-inp">
@@ -543,121 +543,15 @@
     <div class="container mt-5 container modal modal-grupos">
         <h1>GRUPOS DE TCC DA TURMA</h1>
         <ul class="list-group ul-grupo">
-            <li class="list-group-item li">
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-            </li>
-
-
-            <img src="./img/linha.svg" alt="">
-
-            <li class="list-group-item li">
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-            </li>
-
-            <img src="./img/linha.svg" alt="">
-            <li class="list-group-item li">
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-                <div class="grupo">
-                    <a href="./vizualizacao_grupo/">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                    </a>
-                    <p class="numero">Número do grupo</p>
-                    <p class="tema"> TEMA</p>
-                </div>
-            </li>
-
+            <li id="li_grupos" class="list-group-item li"> </li>
         </ul>
+
         <div class="buttons">
             <div class="col-md-3 botao_cancelar">
                 <button class="segundo_botao" onclick="exitModalGrupos()" type="button">CANCELAR</button>
             </div>
         </div>
+        
     </div>
 
     <div class="container modal modal-excluir">
@@ -669,7 +563,7 @@
                 <button class="segundo_botao" onclick="exitModalExcluir()" type="button">CANCELAR</button>
             </div>
             <div class="col-md-6">
-                <button class="quarto_botao" onclick="exitModalExcluir()" type="button">CONFIRMAR</button>
+                <button id="button_excluir_turma" class="quarto_botao" type="button">CONFIRMAR</button>
             </div>
         </div>
     </div>
