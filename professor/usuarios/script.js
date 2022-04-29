@@ -217,7 +217,7 @@ async function getArrayTurmasAluno() {
 }
 
 let turmasAvaliador = [];
-let dropdownTurmasAvaliador = document.getElementById("grupoUsuarioModalEditar");
+let dropdownTurmasAvaliador = document.getElementById("turmaNovoUsuarioModal");
 
 async function getArrayTurmasAvaliador() {
 
@@ -232,55 +232,21 @@ async function getArrayTurmasAvaliador() {
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
-    cursos = await dados.json();
+    turmas = await dados.json();
 
     dropdownTurmasAvaliador.length = 0;
 
-    let defaultOption = document.createElement("option");
-    defaultOption.text = "SELECIONE UM CURSO";
-    defaultOption.disabled = true;
-    defaultOption.value = "";
-
-    dropdownTurmasAvaliador.add(defaultOption);
     dropdownTurmasAvaliador.selectedIndex = 0;
 
+    console.log(turmas.turma.length)
+
     let option;
-    for (let i = 0; i < cursos.cursos.length; i++) {
+    for (let i = 0; i < turmas.turma.length; i++) {
         option = document.createElement("option");
-        option.text = cursos.cursos[i].nome;
-        option.value = cursos.cursos[i].idCurso;
+        option.text = turmas.turma[i].nome;
+        option.value = turmas.turma[i].idTurma;
         dropdownTurmasAvaliador.add(option);
     }
-
-
-    // let idCurso = dropdownCursos.value;
-    // const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
-
-    // fetch(url).then((response) => response.json);
-    // const dados = await fetch(url);
-    // turmas = await dados.json();
-
-    // if (dropdownTurmas.length == 1) {
-    //     let option;
-    //     for (let i = 0; i < turmas.turma.length; i++) {
-    //         option = document.createElement("option");
-    //         option.text = turmas.turma[i].nome;
-    //         option.value = turmas.turma[i].idTurma;
-    //         dropdownTurmas.add(option);
-    //     }
-    // }
-
-    // dropdownCursos.addEventListener("change", () => {
-    //     dropdownTurmas.length = 0;
-
-    //     let defaultOption = document.createElement("option");
-    //     defaultOption.text = "SELECIONE UMA TURMA";
-    //     defaultOption.disabled = true;
-    //     defaultOption.value = "";
-
-    //     dropdownTurmas.add(defaultOption);
-    //     dropdownTurmas.selectedIndex = 0;
-    // });
 }
 
 
@@ -334,6 +300,78 @@ async function getArrayGruposAluno() {
             dropdownGrupos.add(defaultOption);
             dropdownGrupos.selectedIndex = 0;
         });
+    }
+}
+
+document.getElementById('grupoNovoUsuarioModal').onclick = function() {
+    var select = document.getElementById('pets');
+    var selected = [...select.options]
+                    .filter(option => option.selected)
+                    .map(option => option.value);
+    alert(selected);
+}
+
+let gruposAvaliador = [];
+let dropdownGruposAvaliador = document.getElementById("grupoNovoUsuarioModal");
+
+async function getArrayGruposAvaliador() {
+
+    var selected = [...dropdownTurmasAvaliador.options]
+                    .filter(option => option.selected)
+                    .map(option => option.value);
+
+    console.log(selected)
+
+    //console.log(dropdownTurmasAvaliador.options[1].attributes[0].value);
+
+    //console.log(dropdownTurmasAvaliador.options[dropdownTurmasAvaliador.selectedIndex].value);
+
+    if (dropdownTurmasAvaliador.options[dropdownTurmasAvaliador.selectedIndex].value != "") {
+        console.log(dropdownTurmas.value);
+
+        let idTurma = dropdownTurmas.value;
+        // const url = `http://localhost:3000/grupo/listarGrupos/${idTurma}`;
+
+        // fetch(url).then((response) => response.json);
+        // const dados = await fetch(url);
+        // grupos = await dados.json();
+
+        // console.log(grupos);
+
+        // if (dropdownGrupos.length == 1) {
+        //     let option;
+        //     for (let i = 0; i < grupos.grupos.length; i++) {
+        //         option = document.createElement("option");
+        //         option.text = "Grupo " + grupos.grupos[i].numeracao;
+        //         option.value = grupos.grupos[i].idGrupo;
+        //         console.log(grupos.grupos[i].idGrupo);
+        //         dropdownGrupos.add(option);
+        //     }
+        // }
+
+        // dropdownCursos.addEventListener("change", () => {
+        //     dropdownGrupos.length = 0;
+
+        //     let defaultOption = document.createElement("option");
+        //     defaultOption.text = "SELECIONE UM GRUPO";
+        //     defaultOption.disabled = true;
+        //     defaultOption.value = "";
+
+        //     dropdownGrupos.add(defaultOption);
+        //     dropdownGrupos.selectedIndex = 0;
+        // });
+
+        // dropdownTurmas.addEventListener("change", () => {
+        //     dropdownGrupos.length = 0;
+
+        //     let defaultOption = document.createElement("option");
+        //     defaultOption.text = "SELECIONE UM GRUPO";
+        //     defaultOption.disabled = true;
+        //     defaultOption.value = "";
+
+        //     dropdownGrupos.add(defaultOption);
+        //     dropdownGrupos.selectedIndex = 0;
+        // });
     }
 }
 
