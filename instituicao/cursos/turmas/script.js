@@ -90,27 +90,43 @@ function exitModal() {
     document.querySelector(".modal-add-membros").style.display = "none";
 }
 
+let qtdCursos = 0;
 
 const exibirDadosGrupos = (grupos) => {
+    
     const container = document.getElementById("li_grupos");
-
+    
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    
+    if(grupos.length == 0 || grupos == null){
+        document.getElementById('p_nenhuma_turma').innerHTML = 'Nenhum grupo cadastrado'
+    } else{
+        document.getElementById('p_nenhuma_turma').innerHTML = ''
+    }
+    
     for (let g = 0; g < grupos.length; g++) {
         const grupo = document.createElement("li");
         grupo.classList = "list-group-item li";
-    
+        
+        if(grupos[g].nomeProjeto == null) {
+            grupos[g].nomeProjeto = 'sem nome*'
+        }
+        
         grupo.innerHTML += `
-            <div class="grupo">
-                <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}>
-                    <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span>
-                </a>
-                <p class="numero">${grupos[g].numeracao}</p>
-                <p class="tema">${grupos[g].nomeProjeto}</p>
-            </div>
-            `;
-    
+        <div class="grupo">
+        <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
+        <p class="numero">Grupo ${grupos[g].numeracao}</p>
+        <p class="tema">${grupos[g].nomeProjeto}</p>
+        </div>
+        `;
+        
         container.appendChild(grupo);
     }
+
 }
+
 
 const showModalGrupos = async (idTurma) => {
     document.querySelector(".bg").style.display = "flex";
@@ -124,6 +140,8 @@ const showModalGrupos = async (idTurma) => {
     let grupos = await dados.json();
     exibirDadosGrupos(grupos.grupos)
 }
+
+
 
 function exitModalGrupos() {
     document.querySelector(".bg").style.display = "none";
@@ -146,8 +164,6 @@ function exitModalExcluir() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-excluir").style.display = "none";
 }
-
-
 
 function exitModalTurma() {
     document.querySelector(".bg").style.display = "none";
