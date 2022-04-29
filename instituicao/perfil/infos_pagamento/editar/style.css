@@ -60,22 +60,26 @@ body {
 
 #primeiro_botao {
     margin-top: 2vh;
-    width: 100%;
+    width: 98%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
     background-color: #c2c2c2;
     border-radius: 30px;
     padding: 15px;
+    font-weight: 700;
+    border: none;
 }
 
 #segundo_botao {
     margin-top: 2vh;
-    width: 100%;
+    width: 98%;
     background-color: rgba(240, 248, 255, 0);
     color: white;
     background-color: #044177;
     border-radius: 30px;
     padding: 15px;
+    font-weight: 700;
+    border: none;
 }
 
 #icon input[type="text"] {
