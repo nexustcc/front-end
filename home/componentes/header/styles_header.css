@@ -161,6 +161,7 @@ header button:hover {
         position: absolute;
         left: 20%;
         top: 20px;
+        width: 62px;
     }
 
     header {
