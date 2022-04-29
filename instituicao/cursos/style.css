@@ -411,7 +411,7 @@ body {
 }
 
 .modal-excluir {
-    width: 40%;
+    width: 25%;
     height: 30vh;
     display: none;
     background-color: rgb(255, 255, 255);
@@ -438,7 +438,7 @@ body {
 
 .modal-excluir h2 {
     margin: 2% 0 2% 0;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     text-align: center;
     color: #a71e34;
@@ -448,10 +448,6 @@ body {
     font-size: 30px;
     font-weight: 400;
     color: #05204a;
-}
-
-.modal-excluir input {
-    width: 100%;
 }
 
 .buttons {
