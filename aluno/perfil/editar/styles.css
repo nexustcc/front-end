@@ -109,6 +109,10 @@ body {
    font-size: 10px;
 }
 
+#show_password, #show_password1 {
+   cursor: pointer;
+ }
+
 .botao_editar {
    margin-top: 2vh;
    width: 100%;
