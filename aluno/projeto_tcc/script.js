@@ -13,14 +13,50 @@ function updateList() {
     output.innerHTML += "</ul>";
 }
 
+const editarGrupo = () => {
+    const url = `http://localhost:3000/grupo/editarGrupoAluno/${localStorageUser.idTipo}`
+
+    event.preventDefault();
+
+    const grupo = {
+        temaProjeto: document.getElementById('p_tema_projeto').value,
+        descricao: document.getElementById('p_descricao_projeto').value
+    };
+
+    console.log(grupo);
+
+    const config = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(grupo),
+    };
+
+    fetch(url, config)
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data.message);
+            document.location.reload(true);
+        });
+}
 
 
+const exibirDadosProjeto = (projeto, andamento) => {
+    if(projeto.temaProjeto == '' || projeto.temaProjeto == undefined || projeto.temaProjeto == null) {
+        document.getElementById('p_tema_projeto').placeholder = 'Insira o tema do seu Projeto' 
+    }
 
-const exibirDadosProjeto = (projeto) => {
-    if(projeto.temaProjeto == '' || projeto.temaProjeto == undefined || projeto.temaProjeto == null) { document.getElementById('p_tema_projeto').innerHTML = '' }
-    if(projeto.tema == '' || projeto.tema == undefined || projeto.tema == null) { document.getElementById('p_descricao_projeto').innerHTML = '' }
-    document.getElementById('p_tema_projeto').innerHTML = projeto.temaProjeto
-    document.getElementById('p_descricao_projeto').innerHTML = projeto.descricao
+    if(projeto.tema == '' || projeto.tema == undefined || projeto.tema == null) {
+        document.getElementById('p_descricao_projeto').placeholder = 'Insira uma breve descrição do seu Projeto'
+    }
+
+    document.getElementById('p_tema_projeto').value = projeto.temaProjeto
+    document.getElementById('p_descricao_projeto').value = projeto.descricao
+
+    let progess_bar = document.getElementById('progress-bar')
+    progess_bar.style.width = 100
+    progess_bar.innerHTML = andamento + '%'
 }
 
 const exibirDadosAlunos = (alunos) => {
@@ -41,23 +77,23 @@ const exibirDadosAlunos = (alunos) => {
     }
 }
 
-// const exibirDadosProfessores = (professores) => {
-//     const container = document.getElementById("ul_professores");
+const exibirDadosProfessores = (professores) => {
+    const container = document.getElementById("ul_professores");
 
-//     for (var i = 0; i < professores.length; i++) {
-//         const li_professor = document.createElement("li");
-//         li_professor.classList = "list-group-item li-integrantes";
+    for (var i = 0; i < professores.length; i++) {
+        const li_professor = document.createElement("li");
+        li_professor.classList = "list-group-item li-integrantes";
 
-//         li_professor.innerHTML += `
-//             <div class="integrantes">
-//                 <span class="iconify icon" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"data-width="80" data-height="80"></span>
-//             </div>
-//             <p>${professores[i]}</p>
-//         `;
+        li_professor.innerHTML += `
+            <div class="integrantes">
+                <span class="iconify icon" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"data-width="80" data-height="80"></span>
+            </div>
+            <p>${professores[i]}</p>
+        `;
 
-//         container.appendChild(li_professor);
-//     }
-// }
+        container.appendChild(li_professor);
+    }
+}
 
 
 const getInfoProjeto = async () => {
@@ -66,9 +102,9 @@ const getInfoProjeto = async () => {
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     const informacoes = await dados.json();
-    exibirDadosProjeto(informacoes.grupo[0])
+    exibirDadosProjeto(informacoes.grupo[0], informacoes.andamento)
     exibirDadosAlunos(informacoes.alunos)
-    // exibirDadosProfessores(informacoes.professores)
+    exibirDadosProfessores(informacoes.professores)
 }
 
 const logout = () => {

@@ -284,3 +284,8 @@ body {
     border: none;
     padding: 15px;
 }
+
+
+#p_tema_projeto, #p_descricao_projeto{
+    width: 100%;
+}
