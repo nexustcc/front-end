@@ -11,7 +11,7 @@
     width: 6px;
     height: 6px;
     border-radius: 5px;
-    background: #00bcd4;
+    background: #05204a;
     margin: 3px 0;
   }
   .middle {
@@ -54,27 +54,57 @@
   .nav {
     margin-left: 20%;
   }
+
+  .pontos{
+    transform: rotate(90deg);
+  }
   .nav > li {
     display: inline-block;
     padding: 1em 18px;
     cursor: pointer;
   }
+
   .nav > li:hover {
     background: #ebebeb;
   }
   .dropdown {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 12rem;
+    padding: 50%;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #f4f4f4;
     right: 0;
     top: 3em;
     transition: all 0.25s ease-out;
     transform: scale(0);
     transform-origin: 100% 0;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   }
+
+  .dropdown ul{
+    padding: 20px;
+  }
+
+  .dropdown img{
+    margin-right: 10%;
+  }
+.abrir{
+  margin-left: 20%;
+}
+
+  .kebab{
+    border-radius: 100px;
+  }
+
   .dropdown li {
-    display: block;
+    display: flex;
+    flex-direction: row;
     width: 100%;
   }
+
   .dropdown li a {
     width: 100%;
     padding: 1em 18px;
@@ -263,6 +293,7 @@ body {
 
 .modal-add-tarefa{
     display: flex;
+    width: 100%;
     flex-direction: column;
     background-color:#F4F4F4;
     border-radius: 20px;

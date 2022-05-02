@@ -214,9 +214,44 @@ button {
     color: #a71e34;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1538px) {
+
+    .container {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 1420px) {
+
+    .container {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1228px) {
+
+    .container{
+        padding: 0 30px;
+    }
+
     .container h1 {
         font-size: 50px;
+    }
+}
+
+@media (max-width: 1028px) {
+
+    .container {
+        padding: 0 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .container h1 {
+        font-size: 40px;
+        align-self: center;
     }
 
     .container .profile_image {
@@ -224,3 +259,42 @@ button {
         height: 100px;
     }
 }
+
+@media (max-width: 575px) {
+
+    .container {
+        padding: 0 70px;
+    }
+}
+
+@media (max-width: 512px) {
+
+    .container h1 {
+        font-size: 30px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 419px) {
+
+    .container h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-height: 800px) {
+
+    .container{
+
+        margin-top: 50px;
+    }
+}
+
+@media (max-height: 788px) {
+
+    .container {
+
+        margin-top: 75px;
+    }
+}
+

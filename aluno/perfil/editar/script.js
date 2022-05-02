@@ -52,10 +52,8 @@ function resetStatusEmail() {
 
 const editarAluno = async (senha, foto) => {
     event.preventDefault();
-    
-    const bodyFoto = foto.name
 
-    console.log(bodyFoto)
+    console.log(foto)
 
     // var data = new FormData()
     // data.append('senha', senha)
@@ -63,15 +61,22 @@ const editarAluno = async (senha, foto) => {
 
     // console.log(data.foto)
 
-    // const config = {
-    //     method: "PUT",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: data
-    // };
+    const aluno = {
+        senha: senha,
+        foto: JSON.stringify(file)
+    }
 
-    // console.log(config)
+    console.log(aluno)
+
+    const config = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(aluno)
+    };
+
+    console.log(config)
 
     // fetch(`http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`, config).
     // then(() => (window.location.href = "../index.html"));

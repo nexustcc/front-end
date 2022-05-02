@@ -145,6 +145,10 @@ ul::-webkit-scrollbar-thumb {
     .container-geral {
         margin-left: 10vw;
     }
+
+    .cursos_existentes input {
+        width: 100%;
+    }
 }
 
 @media (max-width: 818px) {
@@ -184,8 +188,17 @@ ul::-webkit-scrollbar-thumb {
         margin-top: 8%;
     }
 
+    .container-geral ul {
+
+        height: auto;
+    }
+
+    .container {
+        gap: 10px;
+    }
+
     .nome {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .terceiro_botao {
@@ -194,12 +207,18 @@ ul::-webkit-scrollbar-thumb {
         width: 10px;
     }
 
+    .container-geral .li {
+        padding: 4% 5%;
+    }
+
     #btnEntrarCurso {
-        width: 135px;
+        width: 110px;
+        height: 45px;
+        font-size: 10px;
     }
 
     .curso .curso {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .cursos_existentes input {

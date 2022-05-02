@@ -197,3 +197,24 @@ body {
     border: none;
     padding: 15px;
 }
+
+@media (max-width: 900px) {
+    header{
+        top: 0;
+        position: fixed;
+        width: 90%;
+    }
+
+    header a{
+        right: 0;
+    }
+  
+
+  #grupo{
+        width:  clamp(75%, 2.5vw, 30%);
+        height: 100vh;
+        position: fixed;
+        right: 2%;
+        top: 10%;
+    }
+}
