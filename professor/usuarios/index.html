@@ -245,7 +245,7 @@
             <form class="row g-7">
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="nome_do_usuario" class="form-label">Nome:</label>
-                    <input type="text" class="form-control nome_do_usuario" placeholder="João" id="inputNomeUsuarioModalEditar" required maxlength="255">
+                    <input type="text" class="form-control nome_do_usuario" placeholder="João" id="inputNomeUsuarioModalEditar" ge maxlength="255">
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
@@ -427,26 +427,12 @@
                 <div class="col-md-6 lab-inp" id="turmaNovoUsuario">
                     <label for="tipo-select" class="form-label">Turma:</label>
                     <select class="mul-select" multiple="true" id="turmaNovoUsuarioModal" required>
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Thiland">Thiland</option>
-                        <option value="Koren">Koren</option>
-                        <option value="China">China</option>
-                        <option value="English">English</option>
-                        <option value="USA">USA</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="grupoNovoUsuario">
                     <label for="tipo-select" class="form-label">Grupo:</label>
-                    <select class="mul-select" multiple="true" id="grupoNovoUsuarioModal" required>
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Thiland">Thiland</option>
-                        <option value="Koren">Koren</option>
-                        <option value="China">China</option>
-                        <option value="English">English</option>
-                        <option value="USA">USA</option>
+                    <select class="mul-select" multiple="true" id="grupoNovoUsuarioModal" required onclick="getArrayGruposAvaliador()">
                     </select>
                 </div>
 
@@ -484,7 +470,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <button class="segundo_botao" type="submit" id="saveUser" onclick="cadastrarAluno()">
+                        <button class="segundo_botao" type="submit" id="saveUser">
                             SALVAR
                         </button>
                     </div>
