@@ -509,7 +509,8 @@ ul {
     overflow: hidden;
 }
 
-#modal-editar, #modal-criar {
+#modal-editar,
+#modal-criar {
     display: none;
     top: 0;
     right: 0;
@@ -533,27 +534,25 @@ ul {
     z-index: 999;
 }
 
-
-
 #modal-excluir-usuario {
-width: 60%;
-height: 30vh;
-align-items: center;
-font-weight: 100;
-background-color: rgb(255, 255, 255);
-display: none;
-flex-direction: column;
-justify-content: space-between;
-font-family: "Poppins", sans-serif;
-padding: 2%;
-border-radius: 20px;
-margin: 0;
-position: absolute;
-top: 50%;
-left: 50%;
-margin-right: -50%;
-transform: translate(-50%, -50%);
-overflow: hidden;
+    width: 60%;
+    height: 30vh;
+    align-items: center;
+    font-weight: 100;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    padding: 2%;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
 }
 
 #modal-excluir-usuario h2 {
@@ -652,20 +651,17 @@ overflow: hidden;
 }
 
 @media (max-width: 1508px) {
-
-    .space{
+    .space {
         width: 90%;
     }
 }
 
 @media (max-width: 1078px) {
-
-    .space{
+    .space {
         width: 80%;
     }
 
     .container-geral h1 {
-
         font-size: 40px;
     }
 }
@@ -680,7 +676,6 @@ overflow: hidden;
     }
 
     .container-geral h1 {
-
         font-size: 30px;
     }
 
