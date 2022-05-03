@@ -361,7 +361,13 @@ async function cadastrarAvaliador(nome, email, idGrupos){
         body: JSON.stringify(cadastrarAvaliador),
     };
 
-    fetch(`http://localhost:3000/avaliador/cadastrarAvaliador/${localStorageUser.idTipo}`, config).then((res) =>
+    const urlIdInstituicao = `http://localhost:3000/professor/pegarInstituicao/${localStorageUser.idTipo}`;
+
+    fetch(urlIdInstituicao).then((response) => response.json);
+    const dadosInstituicao = await fetch(urlIdInstituicao);
+    let idInstituicao = await dadosInstituicao.json();
+
+    fetch(`http://localhost:3000/avaliador/cadastrarAvaliador/${idInstituicao.idInstituicao}`, config).then((res) =>
         res.json()
     );
 
@@ -395,7 +401,7 @@ async function cadastrarAluno(nome, email, turma, grupo) {
     );
 }
 
-document.getElementById('saveUser').onclick = function() {
+function salvarGruposAvaliador() {
     var select = document.getElementById('grupoNovoUsuarioModal');
     var selectedGrupos = [...select.selectedOptions]
                     .map(option => option.value);
@@ -403,8 +409,9 @@ document.getElementById('saveUser').onclick = function() {
 }
 
 if (document.getElementById("tipo-select-edit").value == "3") {
-    document.getElementById('saveUser').onclick = cadastrarAvaliador()
-} else {
+    document.getElementById('saveUser').onclick = cadastrarAvaliador(), salvarGruposAvaliador();
+    
+} else if (document.getElementById("tipo-select-edit").value == "2") {
     document.getElementById('saveUser').onclick = cadastrarAluno()
 }
 

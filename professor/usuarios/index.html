@@ -251,13 +251,13 @@
 
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="email_usuario" class="form-label">Email:</label>
-                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" id="inputEmailUsuarioModalEditar" required maxlength="255"/>
+                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" id="inputEmailUsuarioModalEditar"  maxlength="255"/>
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="senha" class="form-label">Senha:</label>
-                    <input type="text" class="form-control senha" placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" id="inputSenhaUsuarioModalEditar" required maxlength="255"/>
+                    <input type="text" class="form-control senha" placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" id="inputSenhaUsuarioModalEditar"  maxlength="255"/>
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
@@ -272,7 +272,7 @@
 
                 <div class="col-md-6 lab-inp" id="curso">
                     <label for="tipo-select" class="form-label">Curso:</label>
-                    <select class="form-select mul-select" multiple="true" id="cursoUsuarioModalEditar" required>
+                    <select class="form-select mul-select" multiple="true" id="cursoUsuarioModalEditar" >
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -298,7 +298,7 @@
 
                 <div class="col-md-6 lab-inp" id="grupo">
                     <label for="tipo-select" class="form-label">Grupo:</label>
-                    <select class="mul-select" multiple="true" id="grupoUsuarioModalEditar" required>
+                    <select class="mul-select" multiple="true" id="grupoUsuarioModalEditar" >
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -389,17 +389,17 @@
             <form class="row g-7">
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="nome_do_usuario" class="form-label">Nome:</label>
-                    <input type="text" class="form-control nome_do_usuario" id="inputNomeNovoUsuarioModal" required maxlength="255">
+                    <input type="text" class="form-control nome_do_usuario" id="inputNomeNovoUsuarioModal"  maxlength="255">
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="email_usuario" class="form-label">Email:</label>
-                    <input type="email" class="form-control email_usuario" id="inputEmailNovoUsuarioModal" required maxlength="255"/>
+                    <input type="email" class="form-control email_usuario" id="inputEmailNovoUsuarioModal"  maxlength="255"/>
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="senha" class="form-label">Senha:</label>
-                    <input type="text" class="form-control senha" id="inputSenhaNovoUsuarioModal" placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" disabled required maxlength="255"/>
+                    <input type="text" class="form-control senha" id="inputSenhaNovoUsuarioModal" placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" disabled  maxlength="255"/>
                 </div>
 
                 <div class="col-md-6 lab-inp">
@@ -426,13 +426,13 @@
 
                 <div class="col-md-6 lab-inp" id="turmaNovoUsuario">
                     <label for="tipo-select" class="form-label">Turma:</label>
-                    <select class="mul-select" multiple="true" id="turmaNovoUsuarioModal" required>
+                    <select class="mul-select" multiple="true" id="turmaNovoUsuarioModal" >
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="grupoNovoUsuario">
                     <label for="tipo-select" class="form-label">Grupo:</label>
-                    <select class="mul-select" multiple="true" id="grupoNovoUsuarioModal" required onclick="getArrayGruposAvaliador()">
+                    <select class="mul-select" multiple="true" id="grupoNovoUsuarioModal"  onclick="getArrayGruposAvaliador()">
                     </select>
                 </div>
 
@@ -470,7 +470,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <button class="segundo_botao" type="submit" id="saveUser">
+                        <button class="segundo_botao" type="submit" id="saveUser" onclick="cadastrarAluno()">
                             SALVAR
                         </button>
                     </div>
