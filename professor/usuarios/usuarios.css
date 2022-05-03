@@ -633,6 +633,12 @@ overflow: hidden;
     padding: 15px;
 }
 
+#salvarAvaliador,
+#salvarAluno {
+    justify-content: center;
+    align-items: center;
+}
+
 .primeiro_botao {
     margin-top: 2vh;
     width: 98%;
