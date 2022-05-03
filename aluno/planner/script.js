@@ -39,12 +39,16 @@ var childKebab2 = document.querySelector('.child-kebab2'),
     childCross2 = document.querySelector('.child-cross2'),
     childDropdown2 = document.querySelector('.child-dropdown2');
 
-    childKebab2.addEventListener('click', function() {
+    function open() {
     childMiddle2.classList.toggle('active');
     childCross2.classList.toggle('active');
     childDropdown2.classList.toggle('active');
-})
+}
 
 function xx(){
+    document.querySelector(".child-dropdown").style.display = "flex";
+}
+
+function dxx(){
     document.querySelector(".child-nav2").style.display = "flex";
 }
