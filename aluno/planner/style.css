@@ -436,13 +436,15 @@ ol, ul {
   height: 15rem;
   padding: 50%;
   justify-content: space-between;
-  border-radius: 20px;
+  border-radius: -20px;
   background-color: #f4f4f4;
+  left: 200px;
   top: -50px;
   transition: all 0.25s ease-out;
   transform: scale(0);
   transform-origin: 100% 0;
   font-weight: 100;
+  z-index: 9999;
 }
 
 .child-dropdown2 ul{
