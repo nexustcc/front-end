@@ -46,5 +46,9 @@ var childKebab2 = document.querySelector('.child-kebab2'),
 })
 
 function xx(){
+    document.querySelector(".child-dropdown2").style.display = "flex";
+}
+
+function dxx(){
     document.querySelector(".child-nav2").style.display = "flex";
 }
