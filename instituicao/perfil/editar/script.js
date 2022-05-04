@@ -56,6 +56,11 @@ async function editarInstituicao() {
     ).then(() => (window.location.href = "../../index.html"));
 }
 
+const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "../../../home/login/";
+};
+
 const checkLogin = () => {
     if (localStorage.user != undefined) {
         localStorageUser = JSON.parse(localStorage.user)

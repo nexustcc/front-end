@@ -811,8 +811,117 @@ ul {
     flex-direction: row-reverse;
 }
 
+@media (max-width: 1558px) {
+
+    .container-geral {
+        margin-left: 8vw;
+    }
+}
+
+@media (max-width: 1288px) {
+
+    .container-geral {
+        margin-left: 10vw;
+    }
+}
+
+@media (max-width: 1098px) {
+
+    .container-geral {
+        margin-left: 11vw;
+        margin-top: 1%;
+    }
+
+    .container-geral img {
+
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .nome {
+        font-size: 24px;
+    }
+
+    .turma {
+        font-size: 15px;
+    }
+
+    .button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+    }
+
+    .terceiro_botao, .primeiro_botao {
+        width: 90%;
+    }
+}
+
+@media (max-width: 838px) {
+
+    .container-geral {
+        margin-left: 13vw;
+    }
+}
+
+
 @media (max-width: 700px) {
-    .modal {
+
+    .container-geral {
+        margin-left: 20vw;
+    }
+
+    .book {
+        display: none;
+    }
+
+    .cursos_existentes input {
+        font-size: 14px;
+    }
+
+    .nome {
+        font-size: 20px;
+    }
+
+    .turma {
+        font-size: 14px;
+    }
+
+    .button {
+        width: 50%;
+    }
+
+    .primeiro_botao, .terceiro_botao {
+        font-size: 12px;
+        width: 100%;
+        height: 50px;
+    }
+
+}
+
+@media (max-width: 378px) {
+
+    .cursos_existentes input {
+
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .icon i {
+        right: 12%;
+        top: 5%;
+    }
+
+    .container-geral ul {
+        overflow-x: hidden;
+    }
+
+}
+
+    /* .modal {
         width: 100%;
         height: 50vh;
         padding: 2%;
@@ -971,4 +1080,4 @@ ul {
         padding: 2%;
         overflow-y: auto;
     }
-}
+} */

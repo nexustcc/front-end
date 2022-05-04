@@ -33,22 +33,3 @@ var kebab2 = document.querySelector('.kebab2'),
     cross2.classList.toggle('active');
     dropdown2.classList.toggle('active');
 })
-
-var childKebab2 = document.querySelector('.child-kebab2'),
-    childMiddle2 = document.querySelector('.child-middle2'),
-    childCross2 = document.querySelector('.child-cross2'),
-    childDropdown2 = document.querySelector('.child-dropdown2');
-
-    function open() {
-    childMiddle2.classList.toggle('active');
-    childCross2.classList.toggle('active');
-    childDropdown2.classList.toggle('active');
-}
-
-function xx(){
-    document.querySelector(".child-dropdown").style.display = "flex";
-}
-
-function dxx(){
-    document.querySelector(".child-nav2").style.display = "flex";
-}

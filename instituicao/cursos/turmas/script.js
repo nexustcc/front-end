@@ -214,21 +214,63 @@ function showModalMembros() {
     document.querySelector(".modal-add-membros-turma-criada").style.display = "none";
 }
 
-function showModalEditar(idTurma) {
-    document.querySelector(".bg").style.display = "flex";
-    document.querySelector(".modal-turma").style.display = "none";
-    document.querySelector(".modal-editar").style.display = "flex";
-
-    console.log(idTurma)
-}
 
 function resetForm() {
     document.querySelector(".form-modal-turma").reset();
 }
 
+const formatDate = (date) => {
+    let day = date.split(["/"])[0]
+    let month = date.split(["/"])[1]
+    let year = date.split(["/"])[2]
+
+    return `${year}-${month}-${day}`
+}
+
+async function showModalEditar(idTurma) {
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-turma").style.display = "none";
+    document.querySelector(".modal-editar").style.display = "flex";
+
+    const url = `http://localhost:3000/turma/listarTurma/${idTurma}`
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    let turma = await dados.json();
+    
+    document.getElementById('editar-nome-turma').value = turma.turma[0].nome
+    document.getElementById('editar-nome-curso').value = turma.turma[0].nomeCurso
+    document.getElementById('editar-data-inicio').value = turma.turma[0].dataInicio
+    document.getElementById('editar-data-conclusao').value = turma.turma[0].dataConclusao
+    document.getElementById('editar-numero-alunos-turma').value = turma.turma[0].numeroDeAlunos
+
+    document.getElementById('button-editar-turma').addEventListener('click', () => {
+        event.preventDefault();
+
+        const turma = {
+            nome: document.getElementById('editar-nome-turma').value,
+            dataInicio: formatDate(document.getElementById('editar-data-inicio').value),
+            dataConclusao: formatDate(document.getElementById('editar-data-conclusao').value),
+        };
+
+        const config = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(turma),
+        };
+
+        console.log(config)
+
+        fetch(`http://localhost:3000/turma/editarTurma/${idTurma}`, config)
+            .then((res) => res.json())
+            .then(window.location.href = `./index.html?idCurso=${idCurso}`);  
+    })
+}
 
 
-async function showModalTurma(idTurma, nomeCurso) {
+async function showModalTurma(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "flex";
     document.querySelector(".modal-editar").style.display = "none";
@@ -240,11 +282,15 @@ async function showModalTurma(idTurma, nomeCurso) {
     const dados = await fetch(url);
     let turma = await dados.json();
     
-    document.getElementById('input-nome-turma').value = turma[0].nome
-    document.getElementById('input-nome-curso').value = nomeCurso
-    document.getElementById('input-data-inicio').value = turma[0].dataInicio
-    document.getElementById('input-data-conclusao').value = turma[0].dataConclusao
-    document.getElementById('input-data-numero-alunos').value = turma[0].numeroDeAlunos
+    document.getElementById('listagem-nome-turma').value = turma.turma[0].nome
+    document.getElementById('listagem-nome-curso').value = turma.turma[0].nomeCurso
+    document.getElementById('listagem-data-inicio').value = turma.turma[0].dataInicio
+    document.getElementById('listagem-data-conclusao').value = turma.turma[0].dataConclusao
+    document.getElementById('listagem-numero-alunos-turma').value = turma.turma[0].numeroDeAlunos
+
+    document.getElementById('button-editar-turma-modal').addEventListener('click', () => {
+        showModalEditar(turma.turma[0].idTurma)
+    })
 }
 
 
@@ -306,7 +352,7 @@ async function getArrayTurmas(){
 
 const logout = () => {
     localStorage.removeItem('user')
-    window.location.href = '../home'
+    window.location.href = '../../../home/login/'
 }
 
 const checkLogin = () => {

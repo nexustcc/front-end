@@ -231,3 +231,17 @@ ul::-webkit-scrollbar-thumb {
         margin-left: 20vw;
     }
 }
+
+@media (max-width: 378px) {
+
+    .cursos_existentes input {
+
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .icon i {
+        right: 12%;
+        top: 5%;
+    }
+}

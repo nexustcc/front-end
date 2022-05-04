@@ -68,7 +68,7 @@ async function excluirConta() {
 
 const logout = () => {
     localStorage.removeItem("user");
-    window.location.href = "../home/login";
+    window.location.href = "../home/login/";
 };
 
 const checkLogin = () => {
