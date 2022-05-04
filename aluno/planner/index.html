@@ -130,25 +130,8 @@
                                 </div>
 
                                 <ul class="dropdown2" id="menu2">
-                                    <li><img src="./img/alterar-cor.svg" alt="">
-                                        <p>Definir cor padrão</p>
-                                        <ul class="child-nav2">
-                                            <div class="child-kebab2">
-                                                <ul class="child-dropdown2" id="child-menu2">
-                                                    <li><img src="./img/amarelo.svg" alt=""> Amarelo</li>
-                                                    <li><img src="./img/azul.svg" alt=""> Azul</li>
-                                                    <li><img src="./img/laranja.svg" alt=""> Laranja</li>
-                                                    <li><img src="./img/verde.svg" alt=""> Verde</li>
-                                                    <li><img src="./img/vermelho.svg" alt=""> Vermelho</li>
-                                                    <li><img src="./img/rosa.svg" alt=""> Rosa</li>
-                                                    <li><img src="./img/roxo.svg" alt=""> Roxo</li>
-                                                    <li><img src="./img/preto.svg" alt=""> Preto</li>
-                                                </ul>
-                                            </div>
-                                        </ul>
-                                        <img onmouseenter="open()" class="abrir222" src="./img/abrir.svg" alt="">
-                                    </li>
-
+                                    <li><img src="./img/alterar-cor.svg" alt=""> Mover para a direita <img class="abrir"
+                                            src="./img/abrir.svg" alt=""></li>
                                     <li><img src="./img/seta-direita.svg" alt=""> Mover para a direita</li>
                                     <li><img src="./img/seta-esquerda.svg" alt=""> Mover para a esquerda</li>
                                     <li><img src="./img/excluir.svg" alt=""> Excluir</li>
@@ -223,25 +206,6 @@
                                     </div>
                                     <p>Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
-
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -636,9 +600,65 @@
             </div>
 
             <div class="col-md-2 add-topico">
-                <button class="col-md-12 botao-add-topico">ADICIONAR TÓPICO</button>
+              
+                <div class="col-md-12 adicionar-tarefa">  
+                    <button class="col-md-12 botao-add-topico">ADICIONAR TÓPICO</button>
+                   
+                    <div class="col-md-12 modal-add-tarefa">
+                        <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                            placeholder="Insira o nome do tópico" required />
+                        
+                        <div class="col-md-12 buttons">
+                            <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                            <button class="primeiro-botao botao-confirmar">CRIAR</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+        </div>
+
+        <div class="container mt-5 modal">
+            <h1>NOME DO USUARIO</h1>
+            <form class="row g-7">
+                <div class="col-md-6 lab-inp">
+                    <label for="topico" class="form-label">Tópico</label>
+                    <input type="text" class="form-control topico" placeholder="joao" disabled />
+                </div>
+
+                <div class="col-md-6 lab-inp">
+                    <label for="status-select" class="form-label">Status</label>
+                    <select class="form-select status-select">
+                        <option selected></option>
+                        <option value="1">Não iniciada</option>
+                        <option value="2">Iniciada</option>
+                        <option value="3">Concluída</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp">
+                    <label for="Prioridade-select" class="form-label">Prioridade</label>
+                    <select class="form-select Prioridade-select">
+                        <option selected></option>
+                        <option value="1">Não iniciada</option>
+                        <option value="2">Iniciada</option>
+                        <option value="3">Concluída</option>
+                    </select>
+                </div>
+            </form>
+            <div class="buttons">
+                <div class="col-md-3">
+                    <button class="primeiro_botao" type="button">
+                        CANCELAR
+                    </button>
+                </div>
+
+                <div class="col-md-6">
+                    <button class="segundo_botao" type="button">
+                        SALVAR
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
