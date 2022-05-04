@@ -10,7 +10,7 @@ const getInfoGrupo = () => {
 
 const logout = () => {
     localStorage.removeItem('user')
-    window.location.href = '../home'
+    window.location.href = '../../../../home/login/'
 }
 
 const checkLogin = () => {

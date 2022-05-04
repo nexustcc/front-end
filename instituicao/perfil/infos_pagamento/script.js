@@ -28,6 +28,12 @@ function exibirDados(cartao) {
     document.getElementById("input_cvv").value = cartao.cvv;
 }
 
+
+const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "../../../home/login";
+};
+
 const checkLogin = () => {
     if(localStorage.user != undefined){
         localStorageUser = JSON.parse(localStorage.user)

@@ -52,7 +52,7 @@
                 <span class="tooltip">Avaliações</span>
             </li>
             <li class="profile">
-                <a href="../../../home/login/index.html">
+                <a onclick="logout()">
                     <i class="bx bx-log-out" id="log_out"></i>
                     <span class="links_name">Log Out</span>
                 </a>
@@ -302,41 +302,41 @@
     </div>
 
     <div class="container mt-5 container modal modal-turma">
-        <h1>NOME DA TURMA</h1>
+        <h1>TURMA</h1>
         <form class="row g-7">
 
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
-                <input id="input-nome-turma" type="text" class="form-control turma" disabled>
+                <input id="listagem-nome-turma" type="text" class="form-control turma" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="numero-estudantes" class="form-label">Número de estudantes</label>
-                <input id="input-numero-alunos-turma" type="email" class="form-control numero-estudantes" disabled>
+                <input id="listagem-numero-alunos-turma" type="number" class="form-control numero-estudantes" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="curso-inp" class="form-label">Curso</label>
-                <input id="input-nome-curso" type="text" class="form-control curso-inp" disabled>
+                <input id="listagem-nome-curso" type="text" class="form-control curso-inp" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input id="input-data-inicio" type="date" class="form-control data-inicio" disabled>
+                <input id="listagem-data-inicio" class="form-control data-inicio" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input id="input-data-conclusao" type="date" class="form-control data-termino" disabled>
+                <input id="listagem-data-conclusao" class="form-control data-termino" disabled>
             </div>
 
             <div class="buttons">
                 <div class="col-md-3">
-                    <button class="segundo_botao" type="button" onclick="exitModalTurma()">SAIR</button>
+                    <button id="button-close-modal" class="segundo_botao" type="button">SAIR</button>
                 </div>
 
                 <div class="col-md-3">
-                    <button class="primeiro_botao" type="button" onclick="showModalEditar()">EDITAR</button>
+                    <button id="button-editar-turma-modal" class="primeiro_botao" type="button">EDITAR</button>
                 </div>
 
                 <div class="col-md-6">
@@ -347,41 +347,41 @@
     </div>
 
     <div class="container mt-5 container modal modal-editar">
-        <h1>NOME DA TURMA</h1>
+        <h1>EDITAR TURMA</h1>
         <form class="row g-7">
 
             <div class="col-md-12 lab-inp">
                 <label for="turma" class="form-label">Turma</label>
-                <input type="text" class="form-control turma" placeholder="unicuritiba@gmail.com">
+                <input id="editar-nome-turma" type="text" class="form-control turma">
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="numero-estudantes" class="form-label">Número de estudantes</label>
-                <input type="email" class="form-control numero-estudantes" placeholder="Universidade De Curitiba ">
+                <input id="editar-numero-alunos-turma" type="email" class="form-control numero-estudantes" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="curso-inp" class="form-label">Curso</label>
-                <input type="text" class="form-control curso-inp" placeholder="42.591.538/0001-68">
+                <input id="editar-nome-curso" type="text" class="form-control curso-inp" disabled>
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-inicio" class="form-label">Data de inicio das aulas</label>
-                <input type="date" class="form-control data-inicio" placeholder="42.591.538/0001-68">
+                <input id="editar-data-inicio" type="text" class="form-control data-inicio">
             </div>
 
             <div class="col-md-6 lab-inp">
                 <label for="data-termino" class="form-label">Data de termino das aulas</label>
-                <input type="date" class="form-control data-termino" placeholder="42.591.538/0001-68">
+                <input id="editar-data-conclusao" type="text" class="form-control data-termino">
             </div>
 
             <div class="buttons">
                 <div class="col-md-3">
-                    <button class="segundo_botao" type="button" onclick="showModalTurma()">CANCELAR</button>
+                    <button class="segundo_botao" type="button" onclick="exitModalEditar()">CANCELAR</button>
                 </div>
 
                 <div class="col-md-3">
-                    <button class="terceiro_botao" onclick="showModalTurma()" type="button">SALVAR</button>
+                    <button id="button-editar-turma" class="terceiro_botao" type="button">SALVAR</button>
                 </div>
             </div>
         </form>
