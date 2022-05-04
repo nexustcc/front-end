@@ -53,44 +53,37 @@ function resetStatusEmail() {
 const editarAluno = async (senha, foto) => {
     event.preventDefault();
 
-    console.log(foto)
+    const url = `http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`
+    
+    let data = new FormData()
+    data.append('image', foto.files[0])
 
-    // var data = new FormData()
-    // data.append('senha', senha)
-    // data.append('foto', foto)
-
-    // console.log(data.foto)
-
-    const aluno = {
-        senha: senha,
-        foto: JSON.stringify(file)
-    }
-
-    console.log(aluno)
+    console.log(data)
 
     const config = {
-        method: "PUT",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(aluno)
+        body: data
     };
 
     console.log(config)
 
-    // fetch(`http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`, config).
-    // then(() => (window.location.href = "../index.html"));
+    fetch(url, config)
+    .then(() => (window.location.href = "../index.html"));
 }
 
 const exibirDados = (aluno) => {
+    const senha = document.getElementById('senha')
     document.getElementById('nome').value = aluno.usuario.nome
     document.getElementById('email').value = aluno.usuario.email
-    const senha = document.getElementById('senha').value = aluno.usuario.senha
+    senha.value = aluno.usuario.senha
     document.getElementById('confirmar_senha').value = aluno.usuario.senha
 
     document.querySelector('.botao_editar').addEventListener('click', () => {
         const foto = document.getElementById('file')
-        editarAluno(senha, foto.files[0])
+        editarAluno(senha.value, foto)
     })
 }
 
@@ -105,7 +98,7 @@ const getInfoAluno = async () => {
 
 const logout = () => {
     localStorage.removeItem('user')
-    window.location.href = '../home/login'
+    window.location.href = '../../../home/login'
 }
 
 const checkLogin = () => {

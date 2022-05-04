@@ -55,8 +55,14 @@ const exibirDadosProjeto = (projeto, andamento) => {
     document.getElementById('p_descricao_projeto').value = projeto.descricao
 
     let progess_bar = document.getElementById('progress-bar')
-    progess_bar.style.width = 100
-    progess_bar.innerHTML = andamento + '%'
+
+    if(andamento == 'Nenhuma tarefa criada'){
+        progess_bar.style.width = 0
+        document.getElementById('empty_progress_bar').style.display = 'flex'
+    } else{
+        progess_bar.style.width = 100
+        progess_bar.innerHTML = andamento + '%'
+    }
 }
 
 const exibirDadosAlunos = (alunos) => {
@@ -109,7 +115,7 @@ const getInfoProjeto = async () => {
 
 const logout = () => {
     localStorage.removeItem('user')
-    window.location.href = '../home/login'
+    window.location.href = '../../home/login'
 }
 
 const checkLogin = () => {

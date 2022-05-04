@@ -289,3 +289,7 @@ body {
 #p_tema_projeto, #p_descricao_projeto{
     width: 100%;
 }
+
+#empty_progress_bar{
+    display: none;
+}
