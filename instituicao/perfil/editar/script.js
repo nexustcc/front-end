@@ -1,4 +1,4 @@
-"use-strict";
+"use strict";
 
 let localStorageUser = [];
 
@@ -57,32 +57,31 @@ async function editarInstituicao() {
 }
 
 const checkLogin = () => {
-    if(localStorage.user != undefined){
+    if (localStorage.user != undefined) {
         localStorageUser = JSON.parse(localStorage.user)
-        if(localStorageUser.tipo == 'instituição'){    
+        if (localStorageUser.tipo == 'instituição') {
             getInfoInstituicao()
             document.getElementById('nomeInstituicao').innerHTML = localStorageUser.nome
-        } 
-        else{
+        } else {
             switch (localStorageUser.tipo) {
                 case 'professor':
                     window.location.href = '../professor/perfil/index.html'
-                  break;
-      
+                    break;
+
                 case 'aluno':
                     window.location.href = '../aluno/perfil/index.html'
-                  break;
-      
+                    break;
+
                 case 'avaliador':
                     window.location.href = '../home/index.html'
                     alert('O acesso dos Avaliadores a plataforma é feito pelo APP')
-                  break;
-      
+                    break;
+
                 default:
                     window.location.href = '../home/index.html'
-              }
+            }
         }
-    } else{
+    } else {
         window.location.href = '../home/login/index.html'
     }
 }

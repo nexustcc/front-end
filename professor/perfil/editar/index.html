@@ -32,19 +32,19 @@
     <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon" />
+    <script src="script.js" defer></script>
     <title>Editar Perfil</title>
 </head>
 
 <body>
-
     <div class="sideMenu">
         <div class="sidebar">
             <div class="logo-details">
                 <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
                 <i class="bx bx-menu" id="btn"></i>
             </div>
-    
+
             <li>
                 <a href="../../cursos/index.html">
                     <i class="bx bx-group"></i>
@@ -74,19 +74,19 @@
                 <span class="tooltip">Usuários</span>
             </li>
             <li class="profile">
-                <a href="../../../home/login/index.html">
+                <a onclick="logout()">
                     <i class="bx bx-log-out" id="log_out"></i>
                     <span class="links_name">Log Out</span>
                 </a>
                 <span class="tooltip">Log Out</span>
             </li>
         </div>
-      </div>
+    </div>
 
-      <header>
+    <header>
         <div class="primeira_parte">
             <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
-            <h1 class="nomeProfessor">NOME DO PROFESSOR</h1>
+            <h1 class="nomeProfessor" id="nomeProfessor">NOME DO PROFESSOR</h1>
         </div>
 
         <a href="../index.html">
@@ -96,7 +96,7 @@
 
     <div class="container mt-5 container" id="space">
         <h1>EDITAR PERFIL</h1>
-        <form class="row g-3">
+        <form onsubmit="editarProfessor()" class="row g-3">
             <div class="profile-pic-div">
                 <div class="img_professor">
                     <div class="profile_image" id="fotoPerfilProfessor"></div>
