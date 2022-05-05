@@ -58,7 +58,7 @@ const checkLogin = () => {
             }
         }
     } else {
-        window.location.href = "../home/login/index.html";
+        window.location.href = "../../home/login/index.html";
     }
 };
 
