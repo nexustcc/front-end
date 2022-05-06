@@ -11,6 +11,16 @@ tiposUsuario.forEach((tipoUsuario) => {
     });
 });
 
+function updateList() {
+    var input = document.getElementById("file");
+    var output = document.getElementById("fileList");
+
+    output.innerHTML = "<ul>";
+    for (var i = 0; i < input.files.length; ++i) {
+        output.innerHTML += "<li>" + input.files.item(i).name + "</li>";
+    }
+    output.innerHTML += "</ul>";
+}
 
 var kebab = document.querySelector('.kebab'),
     middle = document.querySelector('.middle'),
@@ -33,3 +43,13 @@ var kebab2 = document.querySelector('.kebab2'),
     cross2.classList.toggle('active');
     dropdown2.classList.toggle('active');
 })
+
+function showModal() {
+    document.querySelector(".modal").style.display = "flex";
+    document.querySelector(".bg").style.display = "flex";
+}
+
+function exitModal() {
+    document.querySelector(".modal").style.display = "none";
+    document.querySelector(".bg").style.display = "none";
+}

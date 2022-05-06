@@ -428,6 +428,8 @@ ol, ul {
   cursor: pointer;
 }
 
+
+
 .child-nav2 > li:hover {
   background: #ebebeb;
 }
@@ -566,6 +568,148 @@ body {
     transform: all 0.2s ease;
     cursor: pointer;
     text-decoration: none;
+}
+
+.modal {
+  margin-top: auto;
+  width: 100%;
+  height: 50vh;
+  background-color: rgb(255, 255, 255);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  padding: 2%;
+  border-radius: 20px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.modal .lab-inp {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.modal .buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.primeiro_botao {
+  margin-top: 2vh;
+  width: 98%;
+  color: white;
+  background-color: #044177;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  padding: 15px;
+}
+
+.segundo_botao {
+  margin-top: 2vh;
+  width: 98%;
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  padding: 15px;
+  background-color: #c2c2c2;
+  margin-right: 5%;
+}
+
+
+.modal h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #05204a;
+}
+
+.lab-inp select {
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  border-bottom: 1px solid #05204a;
+  padding: 15px;
+}
+
+.lab-inp input {
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  border-bottom: 1px solid #05204a;
+  padding: 15px;
+}
+
+.lab-inp label {
+  font-weight: 400;
+}
+
+.linha{
+  margin: 2% 0;
+}
+
+.modal h1{
+  text-align: center;
+}
+
+.modal h2{
+  text-align: center;
+}
+
+.bg {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.658);
+}
+
+.inputfile {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.inputfile+label {
+  font-size: 15px;
+  width: 30%;
+  background-color: rgba(240, 248, 255, 0);
+  color: rgb(255, 255, 255);
+  background-color: #044177;
+  border-radius: 10px;
+  font-weight: 300;
+  border: none;
+  padding: 10px;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+  background-color: #e3e3e3;
+  color: black;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+  background-color: #e3e3e3;
+  color: black;
+}
+
+.inputfile+label {
+  cursor: pointer;
+  /* "hand" cursor */
 }
 
 
@@ -835,4 +979,46 @@ body {
     margin-right: 5%;
 }
 
+.card_arquivo{
+  display: flex;
+  overflow-y: auto;
+  overflow-x: auto;
+  height: fit-content;
+  background-color: #E3E3E3;
+padding: 1%;
+ border-radius: 10px;
+}
 
+.card_word{
+  background-color: #044177;
+  margin: 0.5%;
+  border-radius: 10px;
+ padding: 2% 2% 2% 0;
+}
+
+.container_word{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+.card_word img{
+  margin-right: 5%;
+}
+
+.text_card h1{
+  font-size: 20px;
+  color: white;
+}
+
+.text_card p{
+  font-size: 15px;
+  color: white;
+}
+
+.exit{
+  position: absolute;
+  width: 15px;
+  top: 74%;
+  left: 25%;
+}
