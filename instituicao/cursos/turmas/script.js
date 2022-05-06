@@ -207,11 +207,94 @@ function exitModalEditar() {
     document.querySelector(".modal-editar").style.display = "none";
 }
 
-function showModalMembros() {
+
+
+const exibirDadosProfessores = (professores) => {
+    let professor_container = document.getElementById('professor-container')
+
+    if(professores.length == 0){
+        const professor_view = document.createElement("li");
+        professor_view.classList = "list-group-item li";
+        professor_view.innerHTML += ` <li class="list-group-item li"> <p>Nenhum Professor Cadastrado</p> </li> `;
+        professor_container.appendChild(professor_view);
+    }
+
+    for (let p = 0; p < professores.length; p++) {
+        if(professores[p].foto == null){
+            professores[p].foto = 'uploads/fotopadrao.svg'
+        }
+
+        const professor_view = document.createElement("li");
+        professor_view.classList = "list-group-item li";
+    
+        professor_view.innerHTML += `
+            <li class="list-group-item li">
+                <div class="membro">
+                    <img class="iconify" src="http://localhost:3000/${professores[p].foto}" style="color: #05204a;" width="100" height="100">
+                    <div class="nome"> <p>${professores[p].nome}</p> </div>
+                </div>
+            </li>
+        `;
+    
+        professor_container.appendChild(professor_view);
+    
+        const linha = document.createElement('img')
+        linha.src = './img/linha.svg'
+            
+        professor_container.appendChild(linha)
+    }
+}
+
+const exibirDadosAlunos = (alunos) => {
+    let alunos_container = document.getElementById('alunos-container')
+
+    if(alunos.length == 0){
+        const aluno_view = document.createElement("li");
+        aluno_view.classList = "list-group-item li";
+        aluno_view.innerHTML += ` <li class="list-group-item li"> <p>Nenhum Professor Cadastrado</p> </li> `;
+        alunos_container.appendChild(aluno_view);
+    }
+
+    for (let a = 0; a < alunos.length; a++) {
+        if(alunos[a].foto == null){ alunos[a].foto = 'uploads/fotopadrao.svg' }
+        if(alunos[a].nomeProjeto == null){ alunos[a].nomeProjeto = '' }
+
+        const aluno_view = document.createElement("li");
+        aluno_view.classList = "list-group-item li";
+
+        aluno_view.innerHTML += `
+            <li class="list-group-item li">
+                <div class="membro">
+                    <div class="nome"> <p>${alunos[a].nome}</p> </div>
+                    <img class="iconify" src="http://localhost:3000/${alunos[a].foto}" style="color: #05204a;" width="100" height="100">
+                    <p class="grupo">Grupo: ${alunos[a].nomeProjeto}</p>
+                </div>
+            </li>
+        `
+
+        alunos_container.appendChild(aluno_view);
+    
+        const linha = document.createElement('img')
+        linha.src = './img/linha.svg'
+            
+        alunos_container.appendChild(linha)
+    }
+
+}
+
+async function showModalMembros(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-membros").style.display = "flex";
     document.querySelector(".modal-add-membros-turma-criada").style.display = "none";
+
+    const url = `http://localhost:3000/turma/membros/listarMembros/${idTurma}`
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    let membros = await dados.json();
+
+    exibirDadosProfessores(membros.professores)
+    exibirDadosAlunos(membros.alunos)
 }
 
 
@@ -232,17 +315,20 @@ async function showModalEditar(idTurma) {
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
 
-    const url = `http://localhost:3000/turma/listarTurma/${idTurma}`
-
-    fetch(url).then((response) => response.json);
-    const dados = await fetch(url);
-    let turma = await dados.json();
+    if(idTurma != undefined){
+        const url = `http://localhost:3000/turma/listarTurma/${idTurma}`
     
-    document.getElementById('editar-nome-turma').value = turma.turma[0].nome
-    document.getElementById('editar-nome-curso').value = turma.turma[0].nomeCurso
-    document.getElementById('editar-data-inicio').value = turma.turma[0].dataInicio
-    document.getElementById('editar-data-conclusao').value = turma.turma[0].dataConclusao
-    document.getElementById('editar-numero-alunos-turma').value = turma.turma[0].numeroDeAlunos
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        let turma = await dados.json();
+        document.getElementById('editar-nome-turma').value = turma.turma[0].nome
+        document.getElementById('editar-nome-curso').value = turma.turma[0].nomeCurso
+        document.getElementById('editar-data-inicio').value = turma.turma[0].dataInicio
+        document.getElementById('editar-data-conclusao').value = turma.turma[0].dataConclusao
+        document.getElementById('editar-numero-alunos-turma').value = turma.turma[0].numeroDeAlunos
+    }
+
+    
 
     document.getElementById('button-editar-turma').addEventListener('click', () => {
         event.preventDefault();
@@ -276,21 +362,28 @@ async function showModalTurma(idTurma) {
     document.querySelector(".modal-editar").style.display = "none";
     document.querySelector(".modal-membros").style.display = "none";
 
-    const url = `http://localhost:3000/turma/listarTurma/${idTurma}`
-
-    fetch(url).then((response) => response.json);
-    const dados = await fetch(url);
-    let turma = await dados.json();
+    if(idTurma != undefined){
+        const url = `http://localhost:3000/turma/listarTurma/${idTurma}`
     
-    document.getElementById('listagem-nome-turma').value = turma.turma[0].nome
-    document.getElementById('listagem-nome-curso').value = turma.turma[0].nomeCurso
-    document.getElementById('listagem-data-inicio').value = turma.turma[0].dataInicio
-    document.getElementById('listagem-data-conclusao').value = turma.turma[0].dataConclusao
-    document.getElementById('listagem-numero-alunos-turma').value = turma.turma[0].numeroDeAlunos
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        let turma = await dados.json();
 
-    document.getElementById('button-editar-turma-modal').addEventListener('click', () => {
-        showModalEditar(turma.turma[0].idTurma)
-    })
+        document.getElementById('listagem-nome-turma').value = turma.turma[0].nome
+        document.getElementById('listagem-nome-curso').value = turma.turma[0].nomeCurso
+        document.getElementById('listagem-data-inicio').value = turma.turma[0].dataInicio
+        document.getElementById('listagem-data-conclusao').value = turma.turma[0].dataConclusao
+        document.getElementById('listagem-numero-alunos-turma').value = turma.turma[0].numeroDeAlunos
+    
+        document.getElementById('button-editar-turma-modal').addEventListener('click', () => {
+            showModalEditar(turma.turma[0].idTurma)
+        })
+
+        document.getElementById('button-membros-turma').addEventListener('click', () => {
+            showModalMembros(turma.turma[0].idTurma)
+        })
+    }
+    
 }
 
 

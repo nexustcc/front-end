@@ -348,6 +348,7 @@ ul {
     flex-direction: column;
     align-items: center;
     margin: 1%;
+    width: 100%;
 }
 
 .novo_curso h1 {
@@ -709,6 +710,12 @@ ul {
     flex-direction: row-reverse;
 }
 
+.alunos img, svg,
+.professores img, svg {
+    vertical-align: middle;
+    border-radius: 100px;
+}
+
 @media (max-width: 700px) {
     .modal {
         width: 100%;
@@ -884,6 +891,7 @@ ul {
 
     .iconify {
         height: 50px;
+        border-radius: 100px;
     }
 
     .ul-aluno {
