@@ -11,6 +11,31 @@ tiposUsuario.forEach((tipoUsuario) => {
     });
 });
 
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+
+function tarefasGerais(){
+        document.querySelector(".container-topicos").style.display = "none";
+        document.querySelector(".container-topicos2").style.display = "flex";
+  
+}
+
+function minhasTarefas(){
+    document.querySelector(".container-topicos").style.display = "flex";
+    document.querySelector(".container-topicos2").style.display = "none";
+
+}
+
 function updateList() {
     var input = document.getElementById("file");
     var output = document.getElementById("fileList");

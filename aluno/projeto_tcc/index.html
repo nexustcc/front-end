@@ -28,63 +28,63 @@
             <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
             <h1 id="nomeAluno">NOME DO GRUPO</h1>
         </div>
-    
+
         <a href="../perfil/index.html">
             <img id="fotoPerfilAluno" src="../componentes/header/img/foto_padrao.svg" alt="foto" />
         </a>
     </header>
-    
+
     <div class="sidebar">
-      <div class="logo-details">
-          <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
-          <i class="bx bx-menu" id="btn"></i>
-      </div>
-    
-      <li>
-          <a href="./index.html">
-              <i class='bx bx-info-circle'></i>
-              <span class="links_name">Informações do projeto</span>
-          </a>
-          <span class="tooltip">Projeto</span>
-      </li>
-      <li>
-          <a href="../planner/index.html">
-              <i class='bx bx-task' ></i>
-              <span class="links_name">Tarefas</span>
-          </a>
-          <span class="tooltip">Tarefas</span>
-      </li>
-      <li>
-    
-          <li>
-              <a href="#">
-                  <i class="bx bxs-graduation"></i>
-                  <span class="links_name">Atividades</span>
-              </a>
-              <span class="tooltip">Atividades</span>
-          </li>
-          <li>
-    
-          <a href="#">
-              <i class="bx bx-folder-open"></i>
-              <span class="links_name">Arquivos e links</span>
-          </a>
-          <span class="tooltip">Arquivos</span>
-      </li>
-      <li>
-          <a href="#">
-              <i class="bx bx-edit"></i>
-              <span class="links_name">Relatório da banca</span>
-          </a>
-          <span class="tooltip">Avaliações</span>
-      </li>
-      <li class="profile">
-          <a onclick="logout()">
-              <i class="bx bx-log-out" id="log_out"></i>
-              <span class="links_name">Log Out</span>
-          </a>
-          <span class="tooltip">Log Out</span>
-      </li>
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+
+        <li>
+            <a href="./index.html">
+                <i class='bx bx-info-circle'></i>
+                <span class="links_name">Informações do projeto</span>
+            </a>
+            <span class="tooltip">Projeto</span>
+        </li>
+        <li>
+            <a href="../planner/index.html">
+                <i class='bx bx-task'></i>
+                <span class="links_name">Tarefas</span>
+            </a>
+            <span class="tooltip">Tarefas</span>
+        </li>
+        <li>
+
+        <li>
+            <a href="#">
+                <i class="bx bxs-graduation"></i>
+                <span class="links_name">Atividades</span>
+            </a>
+            <span class="tooltip">Atividades</span>
+        </li>
+        <li>
+
+            <a href="#">
+                <i class="bx bx-folder-open"></i>
+                <span class="links_name">Arquivos e links</span>
+            </a>
+            <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-edit"></i>
+                <span class="links_name">Relatório da banca</span>
+            </a>
+            <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+            <a onclick="logout()">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
     </div>
 
     <div class="grupo">
@@ -103,13 +103,15 @@
         <div class="cont-integrantes">
             <h1>Integrantes do grupo:</h1>
             <ul id="ul_integrantes" class="list-group ul-integrantes">
-                <li class="list-group-item li-integrantes"> </ul>
+                <li class="list-group-item li-integrantes">
+            </ul>
         </div>
 
         <div class="cont-orientadores">
             <h1>Orientadores do grupo:</h1>
             <ul id="ul_professores" class=" list-group ul-orientadores">
-                <li class="list-group-item li-orientadores"> </ul>
+                <li class="list-group-item li-orientadores">
+            </ul>
         </div>
 
         <div class="barra_progresso">
@@ -140,12 +142,12 @@
     <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
-      
+
         closeBtn.addEventListener("click", () => {
             sidebar.classList.toggle("open");
             menuBtnChange();
         });
-      
+
         function menuBtnChange() {
             if (sidebar.classList.contains("open")) {
                 closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
@@ -153,7 +155,7 @@
                 closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
             }
         }
-      </script>
+    </script>
 
 </body>
 
