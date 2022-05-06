@@ -332,7 +332,7 @@
 
             <div class="buttons">
                 <div class="col-md-3">
-                    <button id="button-close-modal" class="segundo_botao" type="button">SAIR</button>
+                    <button id="button-close-modal" class="segundo_botao" type="button" onclick="exitModalTurma()">SAIR</button>
                 </div>
 
                 <div class="col-md-3">
@@ -340,7 +340,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <button class="terceiro_botao" onclick="showModalMembros()" type="button">MEMBROS DA TURMA</button>
+                    <button id="button-membros-turma" class="terceiro_botao" type="button">MEMBROS DA TURMA</button>
                 </div>
             </div>
         </form>
@@ -391,19 +391,16 @@
         <h1>MEMBROS DA TURMA</h1>
 
         <div class="membro-container">
+
             <div class="professores">
                 <h1>PROFESSORES</h1>
-                <ul class="list-group ul-professor">
-                    <li class="list-group-item li">
+                <ul id="professor-container" class="list-group ul-professor">
+                    <!-- <li class="list-group-item li">
                         <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
-                            <div class="nome">
-                                <p>NOME</p>
-
-                            </div>
+                            <div class="nome"> <p>NOME</p> </div>
                         </div>
-                        
                     </li>
 
                     <img src="./img/linha.svg" alt="">
@@ -432,13 +429,15 @@
                             </div>
                         </div>
                         
-                    </li>
+                    </li> -->
                 </ul>
             </div>
+
+
             <div class="alunos">
                 <h1>ALUNOS</h1>
-                <ul class="list-group ul-aluno">
-                    <li class="list-group-item li">
+                <ul id="alunos-container" class="list-group ul-aluno">
+                    <!-- <li class="list-group-item li">
                         <div class="membro">
                             <div class="nome">
                                 <p>NOME</p>
@@ -479,20 +478,16 @@
                             <p class="grupo">GRUPO</p>
                         </div>
                         
-                    </li>
-
+                    </li> -->
                 </ul>
             </div>
+
         </div>
+
         </ul>
         <div class="buttons-modal">
-            <div class="col-md-3">
-                <button class="segundo_botao" type="button" onclick="showModalTurma()">VOLTAR</button>
-            </div>
-            <div class="col-md-3">
-                <button class="terceiro_botao" type="button" onclick="showModalAddMembrosTurmaCriada()">ADICIONAR
-                    MEMBROS</button>
-            </div>
+            <div class="col-md-3"> <button class="segundo_botao" type="button" onclick="showModalTurma()">VOLTAR</button> </div>
+            <!-- <div class="col-md-3"> <button class="terceiro_botao" type="button" onclick="showModalAddMembrosTurmaCriada()">ADICIONAR MEMBROS</button> </div> -->
         </div>
     </div>
 
