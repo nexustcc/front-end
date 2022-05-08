@@ -30,6 +30,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    width: 50%;
 }
 
 .curso .curso {
@@ -93,7 +94,7 @@ ul::-webkit-scrollbar-thumb {
     padding: 0 5%;
 }
 
-#btnEntrarCurso {
+.btnEntrarCurso {
     text-decoration: none;
     list-style: none;
 }
@@ -189,7 +190,6 @@ ul::-webkit-scrollbar-thumb {
     }
 
     .container-geral ul {
-
         height: auto;
     }
 
@@ -211,7 +211,7 @@ ul::-webkit-scrollbar-thumb {
         padding: 4% 5%;
     }
 
-    #btnEntrarCurso {
+    .btnEntrarCurso {
         width: 110px;
         height: 45px;
         font-size: 10px;
@@ -233,9 +233,7 @@ ul::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 378px) {
-
     .cursos_existentes input {
-
         width: 80%;
         font-size: 12px;
     }

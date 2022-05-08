@@ -87,110 +87,16 @@
         <a href="../../perfil/index.html">
             <img class="iconePerfilProfessor" src="../../componentes/header/img/perfil_professor.svg" alt="icone">
         </a>
-    </header>x
+    </header>
 
     <div class="container-geral">
         <div class="container">
             <div class="col-md-6 for-cnp cursos_existentes icon">
-                <input type="text" placeholder="Insira a turma procurada:" class="form-control cursos_ex"
-                    id="inputBuscarTurmas">
+                <input type="text" placeholder="Insira a turma procurada:" class="form-control cursos_ex" id="inputBuscarTurmas">
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
-            <ul class="list-group ul-turma-existen">
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
-                            TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
-                            TCC</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
-                            TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
-                            TCC</button>
-                    </div>
-                </li>
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
-                            TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
-                            TCC</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
-                            TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
-                            TCC</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
-                            TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
-                            TCC</button>
-                    </div>
-                </li>
-
-                <img src="./img/linha.svg" alt="">
-
-                <li class="list-group-item li">
-                    <div class="turma">
-                        <p class="turma">Turma:</p>
-                        <img class="book" src="./img/icone_turma.svg" alt="book">
-                        <p class="nome" id="nomeTurmaPrincipal">NOME</p>
-                    </div>
-                    <div class="button">
-                        <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
-                            TURMA</button>
-                        <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
-                            TCC</button>
-                    </div>
-                </li>
-
+            <ul class="list-group" id="ul_container">
 
             </ul>
         </div>
@@ -225,7 +131,7 @@
 
             <div class="buttons">
                 <div class="col-md-3">
-                    <button class="segundo_botao" id="sairModalTurma" type="button" onclick="exitModalTurma()">SAIR</button>
+                    <button class="segundo_botao" type="button" onclick="exitModalTurma()">SAIR</button>
                 </div>
 
                 <div class="col-md-3">
