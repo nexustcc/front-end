@@ -92,7 +92,8 @@
     <div class="container-geral">
         <div class="container">
             <div class="col-md-6 for-cnp cursos_existentes icon">
-                <input type="text" placeholder="Insira a turma procurada:" class="form-control cursos_ex" id="inputBuscarTurmas">
+                <input type="text" placeholder="Insira a turma procurada:" class="form-control cursos_ex"
+                    id="inputBuscarTurmas">
                 <i class="fa fa-search" style="font-size:24px"></i>
             </div>
 
@@ -148,8 +149,8 @@
         <div class="membro-container">
             <div class="professores">
                 <h1>PROFESSORES</h1>
-                <ul class="list-group ul-professor">
-                    <li class="list-group-item li">
+                <ul id="professor-container" class="list-group ul-professor">
+                    <!-- <li class="list-group-item li">
                         <div class="membro">
                             <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a;"
                                 data-width="100" data-height="100"></span>
@@ -182,7 +183,7 @@
                                 <p id="nomeProfessorModal">NOME</p>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="alunos">
@@ -263,9 +264,10 @@
     <div class="container mt-5 container modal modal-grupos" id="modal-grupos">
         <h1>GRUPOS DA TURMA</h1>
         <ul class="list-group ul-grupo">
-            <li class="list-group-item li">
+            <p id="p_nenhuma_turma"></p>
+            <li id="li_grupos" class="list-group-item li">
 
-                <div class="grupo">
+                <!-- <div class="grupo">
                     <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
                             class='bx bx-trash'></i></button>
                     <a href="grupo/index.html">
@@ -319,132 +321,11 @@
                         </span>
                         <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
                     </a>
-                </div>
+                </div> -->
 
             </li>
 
             <img src="./img/linha.svg" alt="">
-
-            <li class="list-group-item li">
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-            </li>
-
-            <img src="./img/linha.svg" alt="">
-            <li class="list-group-item li">
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-                <div class="grupo">
-                    <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo()"><i
-                            class='bx bx-trash'></i></button>
-                    <a href="grupo/index.html">
-                        <span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"
-                            data-width="130" data-height="130"></span>
-                        <span>
-                            <p class="numero">Grupo </p>
-                            <p id="numeroGrupoModalGrupos"></p>
-                        </span>
-                        <p class="tema" id="temaProjetoModalGrupos">TEMA</p>
-                    </a>
-                </div>
-
-            </li>
 
         </ul>
 
@@ -454,7 +335,7 @@
             </div>
 
             <div class="col-md-3">
-                <button class="terceiro_botao" type="button" onclick="showModalCriarGrupo()">NOVO GRUPO</button>
+                <button id="buttonCriarNovoGrupo" class="terceiro_botao" type="button" onclick="showModalCriarGrupo()">NOVO GRUPO</button>
             </div>
         </div>
 
@@ -472,19 +353,13 @@
 
             <div class="col-md-6 lab-inp">
                 <label for="numeracao-novo-grupo" class="form-label">Número do grupo:</label>
-                <input type="text" class="form-control numeracao-novo-grupo" id="inputNumeracaoNovoGrupoModal" placeholder="3" onkeypress="isInputNumber(event)" maxlength="255" required>
+                <input type="text" class="form-control numeracao-novo-grupo" id="inputNumeracaoNovoGrupoModal"
+                    placeholder="3" onkeypress="isInputNumber(event)" maxlength="255" required>
             </div>
 
             <div class="col-md-12 lab-inp" id="professoresNovoGrupo">
                 <label for="tipo-select" class="form-label">Professores que farão parte:</label>
                 <select class="mul-select" multiple="true" id="selectProfessoresNovoGrupo" required>
-                    <option value="Cambodia">Cambodia</option>
-                    <option value="Khmer">Khmer</option>
-                    <option value="Thiland">Thiland</option>
-                    <option value="Koren">Koren</option>
-                    <option value="China">China</option>
-                    <option value="English">English</option>
-                    <option value="USA">USA</option>
                 </select>
             </div>
 
@@ -494,8 +369,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="terceiro_botao" type="submit"
-                        id="membrosTurmaModal">CRIAR</button>
+                    <button class="terceiro_botao" type="submit" id="membrosTurmaModal">CRIAR</button>
                 </div>
             </div>
         </form>
@@ -517,7 +391,8 @@
                 <button class="segundo_botao" onclick="exitModalExcluirGrupo()" type="button">CANCELAR</button>
             </div>
             <div class="col-md-6">
-                <button class="segundo_botao" id="btnConfirmarExclusao" onclick="exitModalExcluirGrupo()" type="submit">CONFIRMAR</button>
+                <button class="segundo_botao" id="btnConfirmarExclusao" onclick="exitModalExcluirGrupo()"
+                    type="submit">CONFIRMAR</button>
             </div>
         </div>
     </div>

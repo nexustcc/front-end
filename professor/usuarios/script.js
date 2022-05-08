@@ -381,8 +381,6 @@ async function cadastrarAvaliador(nome, email, idGrupos) {
 
     const urlCadastrarAvaliador = `http://localhost:3000/avaliador/cadastrarAvaliador/${idInstituicao.idInstituicao}`;
 
-    // fetch(urlCadastrarAvaliador, config).then((res) => res.json());
-
     fetch(urlCadastrarAvaliador, config)
         .then(async (response) => {
             response.json();
@@ -450,7 +448,7 @@ const checkLogin = () => {
             }
         }
     } else {
-        window.location.href = "../home/login/index.html";
+        window.location.href = "../../home/login/index.html";
     }
 };
 
