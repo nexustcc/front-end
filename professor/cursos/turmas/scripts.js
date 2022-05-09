@@ -1,7 +1,7 @@
 /* 
 TODO: Preciso finalizar a listagem de Membros da Turma (Só dei Início a listagem dos professores) e a listagem de grupos (tentei fazer,
 TODO: mas retorne que não há grupos na turma, sendo que há). No geral, o Mateus fez isso, mas não consegui reutilizar seus códigos.
-TODO: Também preciso fazer o cadastro de Grupos
+TODO: Também preciso fazer o cadastro de Grupos, listagem e exclusão
 */
 
 "use strict";
@@ -40,7 +40,7 @@ function exitModal() {
 
 ///////////////////////////////////////////////////////////
 // Preciso Finalizar
-const exibirDadosGrupos = (grupos) => {
+const exibirGrupos = (grupos) => {
     const container = document.getElementById("li_grupos");
 
     while (container.firstChild) {
@@ -77,7 +77,7 @@ const exibirDadosGrupos = (grupos) => {
 
 ///////////////////////////////////////////////////////////
 // Preciso Finalizar
-const showModalGrupos = async (idTurma) => {
+async function showModalGrupos(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-grupos").style.display = "flex";
 
@@ -86,10 +86,11 @@ const showModalGrupos = async (idTurma) => {
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     let grupos = await dados.json();
-    exibirDadosGrupos(grupos.grupos);
+    exibirGrupos(grupos.grupos);
 
     console.log(grupos.grupos);
-};
+    console.log("Oi");
+}
 ///////////////////////////////////////////////////////////
 
 function exitModalGrupos() {
@@ -194,15 +195,36 @@ const exibirDados = (turmas) => {
                 <p class="nome" id="nomeTurmaPrincipal">${turmas[i].nome}</p>
             </div>
             <div class="button">
-                <button onclick="showModalTurma(), exibirDadosInfoTurma(${turmas[i].idTurma})" class="terceiro_botao" id="modalSobreATurma">SOBRE A
+                <button onclick="showModalTurma(${turmas[i].idTurma}), exibirDadosInfoTurma(${turmas[i].idTurma})" class="terceiro_botao" id="modalSobreATurma">SOBRE A
                     TURMA</button>
-                <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
+                <button onclick="showModalGrupos(${turmas[i].idTurma}), exibirDadosGrupo(${turmas[i].idTurma})" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
                     TCC</button>
             </div>
         `;
         container.appendChild(turma);
     }
 };
+
+async function exibirDadosGrupo(idTurma) {
+    console.log({idTurma});
+    const url = `http://localhost:3000/turma/listarTurma/${idTurma}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    let turma = await dados.json();
+
+    const buttonCriarNovoGrupo = document.getElementById("buttonCriarNovoGrupo")
+    var buttonCriarNovoGrupoClone = buttonCriarNovoGrupo.cloneNode(true);
+
+    buttonCriarNovoGrupo.addEventListener("click", () => {
+        buttonCriarNovoGrupo.parentNode.replaceChild(buttonCriarNovoGrupoClone, buttonCriarNovoGrupo);
+        console.log(turma.turma[0]);
+
+        
+    });
+
+
+}
 
 async function exibirDadosInfoTurma(idTurma) {
     const url = `http://localhost:3000/turma/listarTurma/${idTurma}`;
@@ -269,9 +291,9 @@ const exibirDadosPesquisa = (turmas) => {
                 <p class="nome" id="nomeTurmaPrincipal">${turmas.nome}</p>
             </div>
             <div class="button">
-                <button onclick="showModalTurma()" class="terceiro_botao" id="modalSobreATurma">SOBRE A
+                <button onclick="showModalTurma(${turmas[i].idTurma}), exibirDadosInfoTurma(${turmas[i].idTurma})" class="terceiro_botao" id="modalSobreATurma">SOBRE A
                     TURMA</button>
-                <button onclick="showModalGrupos()" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
+                <button onclick="showModalGrupos(${turmas[i].idTurma}), exibirDadosGrupo(${turmas[i].idTurma})" class="primeiro_botao" id="modalGruposTccTurma">GRUPOS DE
                     TCC</button>
             </div>
         </li>`;
