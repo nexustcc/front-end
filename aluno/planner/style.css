@@ -22,6 +22,8 @@
   -webkit-filter: blur(0.1px);
   filter: blur(0.1px);
 }
+
+/* CIRCULO APARECE */
 .middle.active {
   transform: scale(4.5);
   transition: all 0.25s cubic-bezier(0.32, 2.04, 0.85, 0.54);
@@ -40,10 +42,13 @@
   font-size: 22px;
   user-select: none;
 }
+
+/* X APARECE */
 .cross.active {
   transform: translate(-50%, -50%) scale(1);
   transition: all 0.15s cubic-bezier(0.32, 2.04, 0.85, 0.54);
 }
+
 h1, a, li {
   font-family: Roboto, sans-serif;
 }
@@ -122,10 +127,12 @@ margin-left: 15%;
 .dropdown:hover ul {
   transform: scale(1);
 }
+
 .dropdown.active {
   transform: scale(1);
   transition: all 0.25s cubic-bezier(0.5, 1.8, 0.9, 0.8);
 }
+
 .follow {
   overflow: hidden;
   width: 42px;
@@ -159,10 +166,21 @@ margin-left: 15%;
   }
 }
 
-.dropdown.active {
-transform: scale(1);
-transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .kebab2 {
   cursor: pointer;
@@ -319,6 +337,17 @@ margin-left: 20%;
 transform: scale(1);
 transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .child-kebab2 {
   cursor: pointer;
@@ -479,7 +508,6 @@ ol, ul {
 transform: scale(1);
 transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
-
 
 
 

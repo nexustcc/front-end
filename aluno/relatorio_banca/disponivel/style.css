@@ -1,0 +1,49 @@
+.tipo_plano ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.tipo_plano ul li {
+    list-style: none;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #c2c2c2;
+    color: #c2c2c2;
+    font-weight: bold;
+    transform: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tipo_plano ul li:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.tipo_plano ul li:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.tipo_plano ul li:hover,
+.tipo_plano ul li.ativo {
+    background-color: #044177;
+    color: #fff;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #7B1FA2;
+  }
+  
+  .custom-control-input:checked~.custom-control-label.red::before {
+    background-color: #044177;
+  }
+  
+  .custom-control-input:checked~.custom-control-label.green::before {
+    background-color: #044177;
+  }
