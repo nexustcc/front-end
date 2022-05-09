@@ -50,10 +50,19 @@ var kebab2 = document.querySelector(".kebab2"),
     cross2 = document.querySelector(".cross2"),
     dropdown2 = document.querySelector(".dropdown2");
 
+// let liAlterarCorTarefa = document.querySelector('#alterarCorTarefa');
+// let menuDropdownAlterarCor = document.querySelector('#child-menu');
+
+// liAlterarCorTarefa.addEventListener('click', function(){
+
+//     menuDropdownAlterarCor.style.display = 'flex';
+// })
+
 kebab2.addEventListener("click", function () {
     middle2.classList.toggle("active");
     cross2.classList.toggle("active");
     dropdown2.classList.toggle("active");
+
 });
 
 function showModal() {

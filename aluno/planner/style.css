@@ -87,6 +87,7 @@ a, li {
 
 .dropdown ul{
   padding: 20px;
+  display: none;
 }
 
 .dropdown img{
@@ -158,27 +159,10 @@ margin-left: 15%;
   }
 }
 
-
 .dropdown.active {
 transform: scale(1);
 transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .kebab2 {
   cursor: pointer;
@@ -335,28 +319,6 @@ margin-left: 20%;
 transform: scale(1);
 transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .child-kebab2 {
   cursor: pointer;
