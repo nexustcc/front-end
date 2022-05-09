@@ -2,19 +2,25 @@
 
 let localStorageUser = [];
 
-let idCurso;
+let idGrupo;
 
 let urlSplit = window.location.href.split(["?"])
 
 if(urlSplit[1] == '' || urlSplit[1] == undefined){
     window.location.href = '../index.html'
 } else{
-    idCurso = urlSplit[1].split(["="])[1]
+    idGrupo = urlSplit[1].split(["="])[1]
 }
 
 
-const getInfoGrupo = () => {
-    
+const getInfoGrupo = async () => {
+    const url = `http://localhost:3000/grupo/listarGrupo/${idGrupo}`
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    let grupo = await dados.json();
+
+    console.log(grupo)
 }
 
 

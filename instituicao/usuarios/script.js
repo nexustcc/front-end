@@ -1,136 +1,364 @@
-"use strict";
+let localStorageUser;
 
-let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
-
-tiposUsuario.forEach((tipoUsuario) => {
-    tipoUsuario.addEventListener("click", () => {
-        tiposUsuario.forEach((tipoUsuario) => {
-            tipoUsuario.classList.remove("ativo");
-        });
-        tipoUsuario.classList.add("ativo");
-    });
-});
-
-function resetForm() {
-    document.getElementById("modal-form").reset();
-}
-
-function showModal() {
-    document.querySelector(".modal-cadastro").style.display = "flex";
-    document.querySelector(".bg").style.display = "flex";
-}
-
-function exitModal() {
-    document.querySelector(".modal-cadastro").style.display = "none";
-    document.querySelector(".bg").style.display = "none";
-}
-
-function showModalListagem() {
+const showModalListagem = async (id, tipo) => {
     document.querySelector(".modal-editar").style.display = "none";
     document.querySelector(".modal-listagem").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
-}
 
+    let input_nome = document.getElementById('view_user_nome')
+    let input_email = document.getElementById('view_user_email')
+    let input_senha = document.getElementById('view_user_senha')
+    let input_tipo = document.getElementById('view_user_tipo')
+    let input_curso = document.getElementById('view_user_curso')
+    let input_turma = document.getElementById('view_user_turma')
+    let input_grupo = document.getElementById('view_user_grupo') 
 
-function exitModalListagem() {
-    document.querySelector(".modal-listagem").style.display = "none";
-    document.querySelector(".bg").style.display = "none";
-}
+    if(tipo == 'PROFESSOR'){
+        const url = `http://localhost:3000/instituicao/membros/listarProfessores/${id}`
 
-function changeModalEditar() {
-    document.querySelector(".modal-listagem").style.display = "none";
-    document.querySelector(".modal-editar").style.display = "flex";
-    document.querySelector(".bg").style.display = "flex";
-}
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        const professor = await dados.json();
 
-function exitChangeModalEditar() {
-    document.querySelector(".bg").style.display = "none";
-    document.querySelector(".modal-editar").style.display = "none";
-}
+        input_nome.placeholder = ''
+        input_email.placeholder = ''
+        input_senha.placeholder = ''
+        input_tipo.placeholder = ''
+        input_curso.placeholder = ''
+        input_turma.placeholder = ''
+        input_grupo.placeholder = ''
+        
+        input_nome.placeholder = professor.professor.nome
+        input_email.placeholder = professor.professor.email
+        input_senha.placeholder = professor.professor.senha
+        input_tipo.placeholder = tipo
 
-function changeModalExcluir() {
-    document.querySelector(".modal-listagem").style.display = "none";
-    document.querySelector(".bg").style.display = "flex";
-    document.querySelector(".modal-excluir").style.display = "flex";
-}
+        for (let c = 0; c < professor.cursos.length; c++) {
+            if(professor.cursos.length == 0 || professor.cursos.length == null){
+                input_curso.placeholder = 'Professor sem cursos'
+            }
 
-function exitchangeModalExcluir() {
-    document.querySelector(".modal-listagem").style.display = "none";
-    document.querySelector(".bg").style.display = "none";
-    document.querySelector(".modal-excluir").style.display = "none";
-}
+            input_curso.placeholder += professor.cursos[c].nome + " | "
+        }
 
-function showModalTrocarTurma() {
-    document.querySelector(".bg").style.display = "flex";
-    document.querySelector(".modal-trocar-turma").style.display = "flex";
-    document.querySelector(".modal-membros").style.display = "none";
-}
+        for (let t = 0; t < professor.turmas.length; t++) {
+            if(professor.turmas.length == 0 || professor.turmas.length == null){
+                input_turma.placeholder = 'Professor sem turmas'
+            }
 
-function exitModalTrocarTurma() {
-    document.querySelector(".bg").style.display = "none";
-    document.querySelector(".modal-trocar-turma").style.display = "none";
-    document.querySelector(".modal-membros").style.display = "flex";
-}
+            input_turma.placeholder += professor.turmas[t].nome + " | "
+        }
 
-function deletarCampo() {
-    if (document.getElementById("tipo-select-edit").value == "3") {
-        document.querySelector("#turma").style.display = "none";
-        document.querySelector("#grupo").style.display = "flex";
-        document.querySelector("#turma-aluno").style.display = "none";
-        document.querySelector("#curso-aluno").style.display = "none";
-        document.querySelector("#curso").style.display = "flex";
-    } else if (document.getElementById("tipo-select-edit").value == "2") {
-        document.querySelector("#turma-aluno").style.display = "flex";
-        document.querySelector("#curso-aluno").style.display = "flex";
-        document.querySelector("#turma").style.display = "none";
-        document.querySelector("#curso").style.display = "none";
-        document.querySelector("#grupo").style.display = "none";
-    } else {
-        document.querySelector("#turma").style.display = "flex";
-        document.querySelector("#grupo").style.display = "none";
-        document.querySelector("#turma-aluno").style.display = "none";
-        document.querySelector("#curso-aluno").style.display = "none";
-        document.querySelector("#curso").style.display = "flex";
+        for (let g = 0; g < professor.grupos.length; g++) {
+            if(professor.grupos.length == 0 || professor.grupos.length == null){
+                input_grupos.placeholder = 'Professor sem grupos'
+            }
+
+            input_grupo.placeholder += professor.grupos[g].nomeProjeto + " | "
+        }
     }
 }
 
-function deletarCampoCadastro() {
-    if (document.getElementById("tipo-select-criar").value == "3") {
-        document.querySelector("#turma-aluno-cadastro").style.display = "none";
-        document.querySelector("#curso-aluno-cadastro").style.display = "none";
-        document.querySelector("#grupo-aluno-cadastro").style.display = "none";
-        document.querySelector("#turma-cadastro").style.display = "none";
-        document.querySelector("#grupo-cadastro").style.display = "flex";
-        document.querySelector("#curso-cadastro").style.display = "flex";
-    } else if (document.getElementById("tipo-select-criar").value == "2") {
-        document.querySelector("#turma-aluno-cadastro").style.display = "flex";
-        document.querySelector("#curso-aluno-cadastro").style.display = "flex";        
-        document.querySelector("#grupo-aluno-cadastro").style.display = "flex";
-        document.querySelector("#turma-cadastro").style.display = "none";
-        document.querySelector("#curso-cadastro").style.display = "none";
-        document.querySelector("#grupo-cadastro").style.display = "none";
-    } else if (document.getElementById("tipo-select-criar").value == "1") {
-        document.querySelector("#turma-cadastro").style.display = "flex";
-        document.querySelector("#grupo-cadastro").style.display = "none";
-        document.querySelector("#turma-aluno-cadastro").style.display = "none";
-        document.querySelector("#curso-aluno-cadastro").style.display = "none";
-        document.querySelector("#grupo-aluno-cadastro").style.display = "none";
-        document.querySelector("#curso-cadastro").style.display = "flex";
+
+const exibirDadosGeral = (membros) => {
+    console.log(membros)
+
+    const membros_container = document.getElementById('ul_membros')
+
+    if(membros.length == 0){
+        const no_members_view = document.createElement("li");
+        no_members_view.classList = "list-group-item li";
+
+        no_members_view.innerHTML += `
+            <li class="list-group-item li" onclick="showModalListagem(${membros.professores[m].idProfessor})">
+                <p>Nenhum usuário cadastrado</p>
+            </li>
+        `;
+
+        membros_container.appendChild(no_members_view);
     } else {
-        document.querySelector("#turma").style.display = "flex";
-        document.querySelector("#grupo").style.display = "flex";
+        membros_container.innerHTML = ''
+
+
+        for (let m = 0; m < membros.professores.length; m++) {
+            if (membros.professores[m].foto == null || membros.professores[m].foto == undefined) {
+                membros.professores[m].foto = "uploads/fotopadrao.svg";
+            }
+    
+            const professor_view = document.createElement("li");
+            professor_view.classList = "list-group-item li";
+    
+            professor_view.innerHTML += `
+                <li class="list-group-item li" onclick="showModalListagem(${membros.professores[m].idProfessor}, 'PROFESSOR')">
+                    <div class="usuario">
+                        <img class="iconify img" src="http://localhost:3000/${membros.professores[m].foto}" style="color: #05204a" width="100" height="100">
+                        <p class="nome">${membros.professores[m].nome}</p>
+                    </div>
+                    <h2>PROFESSOR</h2>
+                </li>
+            `;
+    
+            membros_container.appendChild(professor_view);
+    
+            const linha = document.createElement("img");
+            linha.src = "./img/Line.svg";
+    
+            membros_container.appendChild(linha);
+        }
+    
+        for (let m = 0; m < membros.alunos.length; m++) {
+            if (membros.alunos[m].foto == null || membros.alunos[m].foto == undefined) {
+                membros.alunos[m].foto = "uploads/fotopadrao.svg";
+            }
+    
+            const professor_view = document.createElement("li");
+            professor_view.classList = "list-group-item li";
+    
+            professor_view.innerHTML += `
+                <li class="list-group-item li" onclick="showModalListagem(${membros.alunos[m].idProfessor} , 'ALUNO')">
+                    <div class="usuario">
+                        <img class="iconify img" src="http://localhost:3000/${membros.alunos[m].foto}" style="color: #05204a" width="100" height="100">
+                        <p class="nome">${membros.alunos[m].nome}</p>
+                    </div>
+                    <h2>ALUNO</h2>
+                </li>
+            `;
+    
+            membros_container.appendChild(professor_view);
+    
+            const linha = document.createElement("img");
+            linha.src = "./img/Line.svg";
+    
+            membros_container.appendChild(linha);
+        }
+    
+        for (let m = 0; m < membros.avaliadores.length; m++) {
+            if (membros.avaliadores[m].foto == null || membros.avaliadores[m].foto == undefined) {
+                membros.avaliadores[m].foto = "uploads/fotopadrao.svg";
+            }
+    
+            const professor_view = document.createElement("li");
+            professor_view.classList = "list-group-item li";
+    
+            professor_view.innerHTML += `
+                <li class="list-group-item li" onclick="showModalListagem(${membros.avaliadores[m].idProfessor}, 'AVALIADOR')">
+                    <div class="usuario">
+                        <img class="iconify img" src="http://localhost:3000/${membros.avaliadores[m].foto}" style="color: #05204a" width="100" height="100">
+                        <p class="nome">${membros.avaliadores[m].nome}</p>
+                    </div>
+                    <h2>AVALIADOR</h2>
+                </li>
+            `;
+    
+            membros_container.appendChild(professor_view);
+    
+            const linha = document.createElement("img");
+            linha.src = "./img/Line.svg";
+    
+            membros_container.appendChild(linha);
+        }
     }
 }
 
-function disableSelected() {
-    if (document.getElementById("tipo-select-criar").value == "selected") {
-        document.getElementById("input-curso").disabled = true;
-        document.getElementById("input-turma").disabled = true;
+const exibirDadosProfessores = (professores) => {
+    const membros_container = document.getElementById('ul_membros')
+
+    if(professores.length == 0){
+        const no_members_view = document.createElement("li");
+        no_members_view.classList = "list-group-item li";
+
+        no_members_view.innerHTML += `
+            <li class="list-group-item li")">
+                <p>Nenhum Professor cadastrado</p>
+            </li>
+        `;
+
+        membros_container.appendChild(no_members_view);
     } else {
-        document.getElementById("input-curso").disabled = false;
-        document.getElementById("input-turma").disabled = false;
+        membros_container.innerHTML = ''
+
+        for (let m = 0; m < professores.length; m++) {
+            if (professores[m].foto == null || professores[m].foto == undefined) {
+                professores[m].foto = "uploads/fotopadrao.svg";
+            }
+    
+            const professor_view = document.createElement("li");
+            professor_view.classList = "list-group-item li";
+    
+            professor_view.innerHTML += `
+                <li class="list-group-item li" onclick="showModalListagem(${professores[m].idProfessor}, 'PROFESSOR')">
+                    <div class="usuario">
+                        <img class="iconify img" src="http://localhost:3000/${professores[m].foto}" style="color: #05204a" width="100" height="100">
+                        <p class="nome">${professores[m].nome}</p>
+                    </div>
+                    <h2>PROFESSOR</h2>
+                </li>
+            `;
+    
+            membros_container.appendChild(professor_view);
+    
+            const linha = document.createElement("img");
+            linha.src = "./img/Line.svg";
+    
+            membros_container.appendChild(linha);
+        }
+    }
+
+}
+
+const exibirDadosAlunos = (alunos) => {
+    const membros_container = document.getElementById('ul_membros')
+
+    if(alunos.length == 0){
+        const no_members_view = document.createElement("li");
+        no_members_view.classList = "list-group-item li";
+
+        no_members_view.innerHTML += `
+            <li class="list-group-item li")">
+                <p>Nenhum Professor cadastrado</p>
+            </li>
+        `;
+
+        membros_container.appendChild(no_members_view);
+    } else {
+        membros_container.innerHTML = ''
+
+        for (let m = 0; m < alunos.length; m++) {
+            if (alunos[m].foto == null || alunos[m].foto == undefined) {
+                alunos[m].foto = "uploads/fotopadrao.svg";
+            }
+    
+            const aluno_view = document.createElement("li");
+            aluno_view.classList = "list-group-item li";
+    
+            aluno_view.innerHTML += `
+                <li class="list-group-item li" onclick="showModalListagem(${alunos[m].idProfessor}, 'ALUNO')">
+                    <div class="usuario">
+                        <img class="iconify img" src="http://localhost:3000/${alunos[m].foto}" style="color: #05204a" width="100" height="100">
+                        <p class="nome">${alunos[m].nome}</p>
+                    </div>
+                    <h2>ALUNO</h2>
+                </li>
+            `;
+    
+            membros_container.appendChild(aluno_view);
+    
+            const linha = document.createElement("img");
+            linha.src = "./img/Line.svg";
+    
+            membros_container.appendChild(linha);
+        }
     }
 }
 
-const form = document.getElementById('modal-form');
-const salvar = document.getElementById('button_salvar')
+const exibirDadosAvaliadores = (avaliadores) => {
+    const membros_container = document.getElementById('ul_membros')
+
+    if(avaliadores.length == 0){
+        const no_members_view = document.createElement("li");
+        no_members_view.classList = "list-group-item li";
+
+        no_members_view.innerHTML += `
+            <li class="list-group-item li")">
+                <p>Nenhum Professor cadastrado</p>
+            </li>
+        `;
+
+        membros_container.appendChild(no_members_view);
+    } else {
+        membros_container.innerHTML = ''
+
+        for (let m = 0; m < avaliadores.length; m++) {
+            if (avaliadores[m].foto == null || avaliadores[m].foto == undefined) {
+                avaliadores[m].foto = "uploads/fotopadrao.svg";
+            }
+    
+            const avaliador_view = document.createElement("li");
+            avaliador_view.classList = "list-group-item li";
+    
+            avaliador_view.innerHTML += `
+                <li class="list-group-item li" onclick="showModalListagem(${avaliadores[m].idProfessor}, 'AVALIADOR')">
+                    <div class="usuario">
+                        <img class="iconify img" src="http://localhost:3000/${avaliadores[m].foto}" style="color: #05204a" width="100" height="100">
+                        <p class="nome">${avaliadores[m].nome}</p>
+                    </div>
+                    <h2>AVALIADOR</h2>
+                </li>
+            `;
+    
+            membros_container.appendChild(avaliador_view);
+    
+            const linha = document.createElement("img");
+            linha.src = "./img/Line.svg";
+    
+            membros_container.appendChild(linha);
+        }
+    }
+}
+
+const getMembrosInstituicao = async () => {
+    const url = `http://localhost:3000/instituicao/membros/listarMembros/${localStorageUser.idTipo}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    const membros = await dados.json();
+
+    exibirDadosGeral(membros)
+
+    tiposUsuario.forEach((tipoUsuario) => {
+        tipoUsuario.addEventListener("click", () => {
+            tiposUsuario.forEach((tipoUsuario) => {
+                tipoUsuario.classList.remove("ativo");
+            });
+            tipoUsuario.classList.add("ativo");
+            
+            if (tipoUsuario.id == 'li_todos') {
+                exibirDadosGeral(membros)
+            } else if(tipoUsuario.id == 'li_professores'){
+                exibirDadosProfessores(membros.professores)
+            } else if(tipoUsuario.id == 'li_alunos'){
+                exibirDadosAlunos(membros.alunos)
+            } else {
+                exibirDadosAvaliadores(membros.avaliadores)
+            }
+        });
+    });
+}
+
+const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "../home/login/";
+};
+
+const checkLogin = () => {
+    if (localStorage.user != undefined) {
+        localStorageUser = JSON.parse(localStorage.user);
+        if (localStorageUser.tipo == "instituição") {
+            getMembrosInstituicao();
+            document.getElementById("nomeInstituicao").innerHTML =
+                localStorageUser.nome;
+        } else {
+            switch (localStorageUser.tipo) {
+                case "professor":
+                    window.location.href = "../professor/perfil/index.html";
+                    break;
+
+                case "aluno":
+                    window.location.href = "../aluno/perfil/index.html";
+                    break;
+
+                case "avaliador":
+                    window.location.href = "../home/index.html";
+                    alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
+                    break;
+
+                default:
+                    window.location.href = "../home/index.html";
+            }
+        }
+    } else {
+        window.location.href = "../home/login/index.html";
+    }
+};
+
+window.onload = checkLogin();

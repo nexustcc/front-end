@@ -656,6 +656,13 @@ ul {
 .mt-5 {
     margin-top: 0rem !important;
 }
+
+.list-group-item{
+    width: 100%;
+}
+.usuario{
+    width: 100%;
+}
 @media (max-width: 1500px) {
     .space {
         display: flex;

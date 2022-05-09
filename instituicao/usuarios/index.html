@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
     <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
 
+    <script src="./modal.js" defer></script>
+    <script src="./script.js" defer></script>
+
     <title>Usuários existentes</title>
 </head>
 <div class="bg"></div>
@@ -97,17 +100,17 @@
             <h1>USUÁRIOS EXISTENTES</h1>
 
             <div class="tipo_usuario">
-                <ul>
-                    <li data-tabs="todos" class="ativo">TODOS</li>
-                    <li data-tabs="anual">PROFESSOR</li>
-                    <li data-tabs="mensal">ALUNO</li>
-                    <li data-tabs="anual">AVALIADOR</li>
+                <ul id="ul_tipo_usuario">
+                    <li id="li_todos" data-tabs="todos" class="ativo">TODOS</li>
+                    <li id="li_professores" data-tabs="professor">PROFESSOR</li>
+                    <li id="li_alunos" data-tabs="aluno">ALUNO</li>
+                    <li id="li_avaliadores" data-tabs="avaliador">AVALIADOR</li>
                 </ul>
             </div>
 
             <div class="space">
-                <ul class="list-group ul">
-                    <li class="list-group-item li" onclick="showModalListagem()">
+                <ul id="ul_membros" class="list-group ul">
+                    <!-- <li class="list-group-item li" onclick="showModalListagem()">
                         <div class="usuario">
                             <span class="iconify img" data-icon="carbon:user-avatar-filled-alt" style="color: #05204a"
                                 data-width="100" data-height="100"></span>
@@ -175,7 +178,7 @@
                         </div>
 
                         <h2>PROFESSOR</h2>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="buttonAddUsuario">
@@ -186,37 +189,43 @@
 
 
         <div class="container mt-5 container modal modal-listagem">
-            <h1>NOME DO USUARIO</h1>
+            <h1>USUÁRIO</h1>
             <form class="row g-7">
                 <div class="col-md-6 lab-inp">
                     <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
-                    <input type="text" class="form-control nome_do_usuario" placeholder="joao" disabled />
+                    <input id="view_user_nome" type="text" class="form-control nome_do_usuario" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
                     <label for="email_usuario" class="form-label">Email do usuário</label>
-                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" disabled />
+                    <input id="view_user_email" type="email" class="form-control email_usuario" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
                     <label for="senha" class="form-label">Senha</label>
-                    <input type="password" class="form-control senha" placeholder="4259" disabled />
+                    <input id="view_user_senha" type="password" class="form-control senha" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
                     <label for="tipo-select" class="form-label">Tipo</label>
-                    <input type="text" class="form-control tipo" placeholder="Aluno" disabled />
+                    <input id="view_user_tipo" type="text" class="form-control tipo" disabled />
                 </div>
 
-                <div class="col-md-6 lab-inp">
+                <div class="col-md-12 lab-inp">
                     <label for="turma-select" class="form-label">Curso</label>
-                    <input type="text" class="form-control curso" placeholder="Adiministração" disabled />
+                    <input id="view_user_curso" type="text" class="form-control curso" disabled />
                 </div>
 
-                <div class="col-md-6 lab-inp">
+                <div class="col-md-12 lab-inp">
                     <label for="turma-select" class="form-label">Turma</label>
-                    <input type="text" class="form-control turma" placeholder="Administração" disabled />
+                    <input id="view_user_turma" type="text" class="form-control turma" disabled />
                 </div>
+
+                <div class="col-md-12 lab-inp">
+                    <label for="turma-select" class="form-label">Grupo</label>
+                    <input id="view_user_grupo" type="text" class="form-control turma" disabled />
+                </div>
+
             </form>
             <div class="buttons">
                 <div class="col-md-3">
@@ -310,7 +319,7 @@
 
                 <div class="col-md-6 lab-inp" id="curso-aluno">
                     <label for="tipo-select" class="form-label">Curso</label>
-                    <select class="form-select tipo-select" id="tipo-select">
+                    <select class="form-select tipo-select" class="tipo-select">
                         <option selected></option>
                         <option value="1">Professor</option>
                         <option value="2">Aluno</option>
@@ -320,7 +329,7 @@
 
                 <div class="col-md-6 lab-inp" id="turma-aluno">
                     <label for="tipo-select" class="form-label">Turma</label>
-                    <select class="form-select tipo-select" id="tipo-select">
+                    <select class="form-select tipo-select" class="tipo-select">
                         <option selected></option>
                         <option value="1">Professor</option>
                         <option value="2">Aluno</option>

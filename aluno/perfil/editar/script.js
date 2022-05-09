@@ -53,25 +53,15 @@ function resetStatusEmail() {
 const editarAluno = async (senha, foto) => {
     event.preventDefault();
 
-    const url = `http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`
-    
-    let data = new FormData()
-    data.append('image', foto.files[0])
+    let formData = new FormData();
+    formData.append('foto', foto.files[0], foto.files[0].name)
+    formData.append('senha', senha)
 
-    console.log(data)
-
-    const config = {
-        method: "POST",
+    axios.put(`http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`, formData, {
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
         },
-        body: data
-    };
-
-    console.log(config)
-
-    fetch(url, config)
-    .then(() => (window.location.href = "../index.html"));
+    }).then((response) => console.log(response)).then(() => (window.location.href = "../index.html"));
 }
 
 const exibirDados = (aluno) => {

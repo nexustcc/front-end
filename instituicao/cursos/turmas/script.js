@@ -14,6 +14,8 @@ if (urlSplit[1] == "" || urlSplit[1] == undefined) {
 
 let nomeCurso;
 
+let a = 0
+
 document
     .getElementById("button_modal_cadastrar_turma")
     .addEventListener("click", async () => {
@@ -118,11 +120,11 @@ const exibirDadosGrupos = (grupos) => {
         }
 
         grupo.innerHTML += `
-        <div class="grupo">
-        <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
-        <p class="numero">Grupo ${grupos[g].numeracao}</p>
-        <p class="tema">${grupos[g].nomeProjeto}</p>
-        </div>
+            <div class="grupo">
+                <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
+                <p class="numero">Grupo ${grupos[g].numeracao}</p>
+                <p class="tema">${grupos[g].nomeProjeto}</p>
+            </div>
         `;
 
         container.appendChild(grupo);
@@ -214,6 +216,8 @@ function exitModalEditar() {
 }
 
 const exibirDadosProfessores = (professores) => {
+    a = 1
+
     let professor_container = document.getElementById("professor-container");
 
     if (professores.length == 0) {
@@ -250,6 +254,8 @@ const exibirDadosProfessores = (professores) => {
 };
 
 const exibirDadosAlunos = (alunos) => {
+    a = 1
+    
     let alunos_container = document.getElementById("alunos-container");
 
     if (alunos.length == 0) {
@@ -293,16 +299,17 @@ async function showModalMembros(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-membros").style.display = "flex";
-    document.querySelector(".modal-add-membros-turma-criada").style.display =
-        "none";
+    document.querySelector(".modal-add-membros-turma-criada").style.display = "none";
 
     const url = `http://localhost:3000/turma/membros/listarMembros/${idTurma}`;
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     let membros = await dados.json();
 
-    exibirDadosProfessores(membros.professores);
-    exibirDadosAlunos(membros.alunos);
+    if(a == 0){
+        exibirDadosProfessores(membros.professores);
+        exibirDadosAlunos(membros.alunos);
+    }
 }
 
 function resetForm() {
@@ -371,6 +378,7 @@ async function showModalEditar(idTurma) {
 }
 
 async function showModalTurma(idTurma) {
+    console.log(idTurma)
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "flex";
     document.querySelector(".modal-editar").style.display = "none";
@@ -383,27 +391,21 @@ async function showModalTurma(idTurma) {
         const dados = await fetch(url);
         let turma = await dados.json();
 
+        console.log('numero alunos: ' + turma.turma[0].numeroDeAlunos)
+
         document.getElementById("listagem-nome-turma").value = turma.turma[0].nome;
-        document.getElementById("listagem-nome-curso").value =
-            turma.turma[0].nomeCurso;
-        document.getElementById("listagem-data-inicio").value =
-            turma.turma[0].dataInicio;
-        document.getElementById("listagem-data-conclusao").value =
-            turma.turma[0].dataConclusao;
-        document.getElementById("listagem-numero-alunos-turma").value =
-            turma.turma[0].numeroDeAlunos;
+        document.getElementById("listagem-nome-curso").value = turma.turma[0].nomeCurso;
+        document.getElementById("listagem-data-inicio").value = turma.turma[0].dataInicio;
+        document.getElementById("listagem-data-conclusao").value = turma.turma[0].dataConclusao;
+        document.getElementById("listagem-numero-alunos-turma").value = turma.turma[0].numeroDeAlunos;
 
-        document
-            .getElementById("button-editar-turma-modal")
-            .addEventListener("click", () => {
-                showModalEditar(turma.turma[0].idTurma);
-            });
+        document.getElementById("button-editar-turma-modal").addEventListener("click", () => {
+            showModalEditar(turma.turma[0].idTurma);
+        });
 
-        document
-            .getElementById("button-membros-turma")
-            .addEventListener("click", () => {
-                showModalMembros(turma.turma[0].idTurma);
-            });
+        document.getElementById("button-membros-turma").addEventListener("click", () => {
+            showModalMembros(turma.turma[0].idTurma);
+        });
     }
 }
 
