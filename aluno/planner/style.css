@@ -262,6 +262,7 @@ a, li {
   transform: scale(0);
   transform-origin: 100% 0;
   font-weight: 100;
+  z-index: 99999;
 }
 
 .dropdown2 ul{
@@ -582,7 +583,7 @@ body {
 .modal {
   margin-top: auto;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   background-color: rgb(255, 255, 255);
   display: none;
   flex-direction: column;
@@ -598,6 +599,9 @@ body {
   transform: translate(-50%, -50%);
 }
 
+#modal-tarefa-geral{
+  height: 80vh;
+}
 
 .modal .lab-inp {
   margin-top: 1%;
@@ -817,7 +821,7 @@ body {
     border-radius: 30px;
     font-weight: 300;
     padding: 15px;
-    overflow: hidden;
+    z-index: 0;
 }
 
 .nome-tarefa{
@@ -1105,7 +1109,7 @@ padding: 1%;
 }
 
 .img-container::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
   /* width of the entire scrollbar */
 }
 
@@ -1130,3 +1134,44 @@ padding: 1%;
 }
 
 
+.delete-user{
+  position: relative;
+  top: -30%;
+  width: 20px;
+  left: -20px;
+}
+
+.modal-tarefa-geral .img-container{
+  margin-top: 2%;
+}
+
+.button-add-user{
+  border: none;
+  background-color: #03a8f400;
+}
+
+.containerImg{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.containerImg .img-container{
+  width: 90%;
+}
+
+
+.containerImg .img-container::-webkit-scrollbar {
+  height: 5px;
+  
+  /* width of the entire scrollbar */
+}
+
+.containerImg .img-container::-webkit-scrollbar-thumb {
+  background-color: #C2C2C2;
+  /* color of the scroll thumb */
+  border-radius: 10px;
+  /* roundness of the scroll thumb */
+  border: none;
+  /* creates padding around scroll thumb */
+}

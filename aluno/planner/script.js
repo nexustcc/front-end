@@ -34,17 +34,6 @@ function minhasTarefas() {
     document.querySelector(".container-topicos2").style.display = "none";
 }
 
-function updateList() {
-    var input = document.getElementById("file");
-    var output = document.getElementById("fileList");
-
-    output.innerHTML = "<ul>";
-    for (var i = 0; i < input.files.length; ++i) {
-        output.innerHTML += "<li>" + input.files.item(i).name + "</li>";
-    }
-    output.innerHTML += "</ul>";
-}
-
 var kebab = document.querySelector(".kebab"),
     middle = document.querySelector(".middle"),
     cross = document.querySelector(".cross"),
@@ -74,5 +63,15 @@ function showModal() {
 
 function exitModal() {
     document.querySelector(".modal").style.display = "none";
+    document.querySelector(".bg").style.display = "none";
+}
+
+function showModalTarefaGeral() {
+    document.querySelector(".modal-tarefa-geral").style.display = "flex";
+    document.querySelector(".bg").style.display = "flex";
+}
+
+function exitModalTarefaGeral() {
+    document.querySelector(".modal-tarefa-geral").style.display = "none";
     document.querySelector(".bg").style.display = "none";
 }
