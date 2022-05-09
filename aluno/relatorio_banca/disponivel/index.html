@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <title>Relatório da banca</title>
 </head>
@@ -19,18 +20,31 @@
     <div class="container">
         <div class="tipo_plano">
             <ul>
-                <li data-tabs="mensal" class="ativo">MENSAL</li>
-                <li data-tabs="anual">ANUAL</li>
+                <li data-tabs="mensal" class="ativo">AVALIADOR 1</li>
+                <li data-tabs="mensal">AVALIADOR 2</li>
+                <li data-tabs="anual">AVALIADOR 3</li>
             </ul>
         </div>
         <form action="/action_page.php">
+            <div class="criterios">
+                <h1>CRITÉRIOS</h1>
+            </div>
+            <div class="ruim">
+                <h1>RUIM</h1>
+            </div>
+            <div class="regular">
+                <h1>REGULAR</h1>
+            </div>
+            <div class="otimo">
+                <h1>ÓTIMO</h1>
+            </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" id="rd_1" name="rd" class="custom-control-input" value="Yes">
-                <label class="custom-control-label green" for="rd_1">Yes</label>
+                <label class="custom-control-label green" for="rd_1"></label>
               </div>
               <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" id="rd_2" name="rd" class="custom-control-input" value="No">
-                <label class="custom-control-label red" for="rd_2">No</label>
+                <label class="custom-control-label red" for="rd_2"></label>
               </div>
         </form>
       </div>
