@@ -5,6 +5,9 @@ const iconEditar = document.getElementById('editarPastaArquivo');
 const iconExcluir = document.getElementById('excluirPastaArquivo');
 const iconFecharOpcoes = document.getElementById('fecharMenuOpcoes');
 
+const modalExcluirPastaArquivo = document.getElementById('modal-excluir-arquivo');
+const background = document.querySelector('.bg');
+
 imgAcoes.addEventListener('click', function(){
 
     imgAcoes.style.display = 'none';
@@ -20,3 +23,14 @@ iconFecharOpcoes.addEventListener('click', function(){
     iconExcluir.style.display = 'none';
     iconFecharOpcoes.style.display = 'none';
 })
+
+iconExcluir.addEventListener('click', function(){
+
+    background.style.display = 'flex';
+    modalExcluirPastaArquivo.style.display = 'flex';
+})
+
+const exitModalExcluirPastaArquivo = () =>{
+    background.style.display = 'none';
+    modalExcluirPastaArquivo.style.display = 'none';
+}
