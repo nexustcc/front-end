@@ -97,7 +97,7 @@ const checkLogin = () => {
         } else {
             switch (localStorageUser.tipo) {
                 case "instituição":
-                    window.location.href = "../instituicao/";
+                    window.location.href = "../../instituicao/";
                     break;
 
                 case "aluno":
