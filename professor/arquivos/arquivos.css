@@ -101,6 +101,31 @@ main h4 {
     cursor: pointer;
 }
 
+.container_images_acoes {
+    display: flex;
+    /* width: 100%; */
+    padding: 10px;
+    gap: 10px;
+    
+}
+
+.container_images_acoes i {
+    border-radius: 10px;
+}
+
+.container_images_acoes i:hover {
+    background-color: #A1A1A1;
+}
+
+#fecharMenuOpcoes {
+    width: 20px;
+    height: 20px;
+    background-color: #808080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .pasta-arquivo i {
     display: none;
     cursor: pointer;
