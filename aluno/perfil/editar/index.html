@@ -17,6 +17,8 @@
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../../componentes/header/styles_header.css">
   <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
+  <script src="fotoPerfil.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
   <script src="script.js" defer></script>
   <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
   <title>Editar perfil</title>
@@ -33,7 +35,7 @@
     </div>
 
     <a href="../index.html">
-        <img id="fotoPerfilAluno" src="../../componentes/header/img/foto_padrao.svg" alt="foto" />
+        <img id="iconePerfilAluno" src="../../componentes/header/img/foto_padrao.svg" alt="foto" />
     </a>
 </header>
 
@@ -93,15 +95,12 @@
   <div class="container">
     <div class="profile-pic-div">
 
-      <div class="img_professor">
-        <div class="profile_image" id="fotoPerfilProfessor"></div>
+      <div class="img_aluno">
+        <div class="profile_image" id="fotoPerfilAluno"></div>
       </div>
-
-      
-
     </div>
 
-    <form id="formEditarAluno" class="row g-3 formPerfil">
+    <form onsubmit="editarAluno()" id="formEditarAluno" class="row g-3 formPerfil">
       
       <div class="upload_foto">
         <input type="file" id="file" class="input_foto" accept="image/*">

@@ -177,7 +177,7 @@ body {
    flex-direction: column;
 }
 
-.container .profile-pic-div .img_professor {
+.container .profile-pic-div .img_aluno {
    display: flex;
    justify-content: center;
 }
@@ -189,7 +189,7 @@ body {
    margin-bottom: 10px;
 }
 
-#fotoPerfilProfessor {
+#fotoPerfilAluno {
    background-position: center;
    background-size: cover;
 }

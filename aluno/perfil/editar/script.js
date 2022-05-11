@@ -4,27 +4,6 @@ let localStorageUser = [];
 
 let uploadedImage = "";
 
-Array.prototype.forEach.call(
-    document.querySelectorAll(".btn_upload_foto"),
-    function (button) {
-        const hiddenInput = button.parentElement.querySelector(".input_foto");
-        let imgProfessor = document.querySelector("#fotoPerfilProfessor");
-
-        button.addEventListener("click", function () {
-            hiddenInput.click();
-        });
-
-        hiddenInput.addEventListener("change", function () {
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                uploadedImage = reader.result;
-                imgProfessor.style.backgroundImage = `url(${uploadedImage})`;
-            });
-            reader.readAsDataURL(this.files[0]);
-        });
-    }
-);
-
 function infoStatusNome() {
     document.querySelector(".info_preenchido_nome").style.display = "flex";
     document.querySelector(".info_vazado_nome").style.display = "none";
@@ -49,22 +28,40 @@ function resetStatusEmail() {
     document.querySelector(".alert_text_email").style.display = "none";
 }
 
-
-const editarAluno = async (senha, foto) => {
+async function editarAluno() {
     event.preventDefault();
 
-    let formData = new FormData();
-    formData.append('foto', foto.files[0], foto.files[0].name)
-    formData.append('senha', senha)
+    const fotoAluno = document.getElementById("file");
+    const formData = new FormData();
 
-    axios.put(`http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`, formData, {
-        headers: {
-            "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
-        },
-    }).then((response) => console.log(response)).then(() => (window.location.href = "../index.html"));
+    formData.append("nome", document.getElementById("nome").value);
+    formData.append("email", document.getElementById("email").value);
+    formData.append("senha", document.getElementById("senha").value);
+
+    if (fotoAluno.files[0] != undefined) {
+        formData.append("foto", fotoAluno.files[0]);
+    }
+
+    axios
+        .put(`http://localhost:3000/aluno/editarAluno/${localStorageUser.idTipo}`, formData, {
+            headers: {
+                "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
+            },
+        })
+    .then((response) => console.log(response)).then(() => (window.location.href = "../index.html"));;
 }
 
 const exibirDados = (aluno) => {
+
+    const divImgAluno = document.getElementById("fotoPerfilAluno");
+
+    if (aluno.foto == null || aluno.foto == "uploads/fotopadrao.svg") {
+        divImgAluno.style.backgroundImage =
+            "url(http://localhost:3000/uploads/fotopadrao.svg)";
+    } else {
+        divImgAluno.style.backgroundImage = `url(http://localhost:3000/${aluno.foto})`;
+    }
+
     const senha = document.getElementById('senha')
     document.getElementById('nome').value = aluno.usuario.nome
     document.getElementById('email').value = aluno.usuario.email
@@ -92,32 +89,31 @@ const logout = () => {
 }
 
 const checkLogin = () => {
-    if(localStorage.user != undefined){
+    if (localStorage.user != undefined) {
         localStorageUser = JSON.parse(localStorage.user)
-        if(localStorageUser.tipo == 'aluno'){    
+        if (localStorageUser.tipo == 'aluno') {
             getInfoAluno()
             document.getElementById('nomeAluno').innerHTML = localStorageUser.nome
-        } 
-        else{
+        } else {
             switch (localStorageUser.tipo) {
                 case 'professor':
                     window.location.href = '../professor/perfil/index.html'
-                  break;
-      
+                    break;
+
                 case 'instituição':
                     window.location.href = '../../instituicao/index.html'
-                  break;
-      
+                    break;
+
                 case 'avaliador':
                     window.location.href = '../home/index.html'
                     alert('O acesso dos Avaliadores a plataforma é feito pelo APP')
-                  break;
-      
+                    break;
+
                 default:
                     window.location.href = '../home/index.html'
-              }
+            }
         }
-    } else{
+    } else {
         window.location.href = '../home/login/index.html'
     }
 }

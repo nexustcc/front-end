@@ -9,7 +9,10 @@ async function editarProfessor() {
     const formData = new FormData();
 
     formData.append("nome", document.getElementById("nome_professor").value);
-    formData.append("email", document.getElementById("input_email_professor").value);
+    formData.append(
+        "email",
+        document.getElementById("input_email_professor").value
+    );
     formData.append("senha", document.getElementById("senha_professor").value);
 
     if (fotoProfessor.files[0] != undefined) {
@@ -17,12 +20,16 @@ async function editarProfessor() {
     }
 
     axios
-    .put(`http://localhost:3000/professor/editarProfessor/${localStorageUser.idTipo}`, formData, {
-        headers: {
-            "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
-        },
-    })
-    .then((response) => console.log(response)).then(() => (window.location.href = "../index.html"));;
+        .put(
+            `http://localhost:3000/professor/editarProfessor/${localStorageUser.idTipo}`,
+            formData, {
+                headers: {
+                    "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
+                },
+            }
+        )
+        .then((response) => console.log(response))
+        .then(() => (window.location.href = "../index.html"));
 
     // const professor = {
     //     nome: document.getElementById("nome_professor").value,
