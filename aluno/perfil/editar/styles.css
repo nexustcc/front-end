@@ -25,10 +25,6 @@ body {
    object-position: center center;
 }
 
-.formPerfil {
-   margin-top: 5%;
-}
-
 .alert-vazado {
    display: flex;
    flex-direction: row;
