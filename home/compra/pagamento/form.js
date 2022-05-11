@@ -189,6 +189,6 @@ const cadastrarInstituicao = (
     fetch("http://localhost:3000/instituicao/cadastrarInstituicao", config)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
+            window.location.href = "../../login/index.html"
         });
 };
