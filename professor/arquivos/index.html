@@ -21,6 +21,8 @@
 </head>
 <body>
     
+    <div class="bg"></div>
+
     <header>
         <div class="primeira_parte">
             <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
@@ -112,10 +114,11 @@
                     <img src="img/icone_pasta.svg" alt="pasta">
                     <p id="nomeArquivoPasta">Exemplo</p>
                 </div>
-                <div class="images_acoes">
+                <div class="container_images_acoes">
                     <img class="imgAcoes" src="./img/icone_acoes_arquivo.svg" alt="ações">
                     <i id="editarPastaArquivo" class='bx bxs-edit-alt'></i>
                     <i id="excluirPastaArquivo" class='bx bxs-trash-alt' ></i>
+                    <i id="fecharMenuOpcoes" class='bx bx-x'></i>
                 </div>
             </li>
 
@@ -124,10 +127,11 @@
                     <img src="img/icone_pasta.svg" alt="pasta">
                     <p id="nomeArquivoPasta">Exemplo</p>
                 </div>
-                <div class="images_acoes">
+                <div class="container_images_acoes">
                     <img class="imgAcoes" src="./img/icone_acoes_arquivo.svg" alt="ações">
                     <i id="editarPastaArquivo" class='bx bxs-edit-alt'></i>
                     <i id="excluirPastaArquivo" class='bx bxs-trash-alt' ></i>
+                    <i id="fecharMenuOpcoes" class='bx bx-x'></i>
                 </div>
             </li>
 
@@ -136,10 +140,11 @@
                     <img src="img/icone_pasta.svg" alt="pasta">
                     <p id="nomeArquivoPasta">Exemplo</p>
                 </div>
-                <div class="images_acoes">
+                <div class="container_images_acoes">
                     <img class="imgAcoes" src="./img/icone_acoes_arquivo.svg" alt="ações">
                     <i id="editarPastaArquivo" class='bx bxs-edit-alt'></i>
                     <i id="excluirPastaArquivo" class='bx bxs-trash-alt' ></i>
+                    <i id="fecharMenuOpcoes" class='bx bx-x'></i>
                 </div>
             </li>
 
@@ -148,14 +153,43 @@
                     <img src="img/icone_pasta.svg" alt="pasta">
                     <p id="nomeArquivoPasta">Exemplo</p>
                 </div>
-                <div class="images_acoes">
+                <div class="container_images_acoes">
                     <img class="imgAcoes" src="./img/icone_acoes_arquivo.svg" alt="ações">
                     <i id="editarPastaArquivo" class='bx bxs-edit-alt'></i>
                     <i id="excluirPastaArquivo" class='bx bxs-trash-alt' ></i>
+                    <i id="fecharMenuOpcoes" class='bx bx-x'></i>
                 </div>
             </li>
 
         </ul>
+
+        <div class="container modal modal-editar-arquivo" id="modal-editar-arquivo">
+            <h1>Renomear</h1>
+    
+            <div class="col-md-12 buttons">
+                <div class="col-md-6">
+                    <button class="segundo_botao" onclick="exitModalEditarPastaArquivo()" type="button">CANCELAR</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="segundo_botao" id="btnSalvarAlteracoes" onclick="exitModalEditarPastaArquivo()"
+                        type="submit">SALVAR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container modal modal-excluir-arquivo" id="modal-excluir-arquivo">
+            <h1>Deseja excluir essa pasta?</h1>
+    
+            <div class="col-md-12 buttons">
+                <div class="col-md-6">
+                    <button class="segundo_botao" onclick="exitModalExcluirPastaArquivo()" type="button">CANCELAR</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="segundo_botao" id="btnConfirmarExclusao" onclick="exitModalExcluirPastaArquivo()"
+                        type="submit">EXCLUIR</button>
+                </div>
+            </div>
+        </div>
 
     </main>
 
