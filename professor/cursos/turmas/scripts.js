@@ -64,7 +64,7 @@ const exibirGrupos = (grupos) => {
 
         grupo.innerHTML += `
         <div class="grupo">
-        <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
+        <a href="./grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
         <p class="numero">Grupo ${grupos[g].numeracao}</p>
         <p class="tema">${grupos[g].nomeProjeto}</p>
         </div>
@@ -139,6 +139,7 @@ async function showModalMembros(idTurma) {
     let membros = await dados.json();
 
     exibirDadosProfessores(membros.professores);
+    exibirDadosAlunos(membros.alunos);
 
     console.log(idTurma);
 }
@@ -277,6 +278,42 @@ const exibirDadosProfessores = (professores) => {
         linha.src = "./img/linha.svg";
 
         professor_container.appendChild(linha);
+    }
+};
+
+const exibirDadosAlunos = (alunos) => {
+    let aluno_container = document.getElementById("aluno-container");
+
+    if (alunos.length == 0) {
+        const aluno_view = document.createElement("li");
+        aluno_view.classList = "list-group-item li";
+        aluno_view.innerHTML += ` <li class="list-group-item li"> <p>Nenhum Aluno Cadastrado</p> </li> `;
+        aluno_container.appendChild(aluno_view);
+    }
+
+    for (let p = 0; p < alunos.length; p++) {
+        if (alunos[p].foto == null) {
+            alunos[p].foto = "uploads/fotopadrao.svg";
+        }
+
+        const aluno_view = document.createElement("li");
+        aluno_view.classList = "list-group-item li";
+
+        aluno_view.innerHTML += `
+            <li class="list-group-item li">
+                <div class="membro">
+                    <img class="iconify" src="http://localhost:3000/${alunos[p].foto}" style="color: #05204a;" width="100" height="100">
+                    <div class="nome"> <p>${alunos[p].nome}</p> </div>
+                </div>
+            </li>
+        `;
+
+        aluno_container.appendChild(aluno_view);
+
+        const linha = document.createElement("img");
+        linha.src = "./img/linha.svg";
+
+        aluno_container.appendChild(linha);
     }
 };
 

@@ -121,7 +121,7 @@ const exibirDadosGrupos = (grupos) => {
 
         grupo.innerHTML += `
             <div class="grupo">
-                <a href="./vizualizacao_grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
+                <a href="./grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
                 <p class="numero">Grupo ${grupos[g].numeracao}</p>
                 <p class="tema">${grupos[g].nomeProjeto}</p>
             </div>
