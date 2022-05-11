@@ -39,7 +39,7 @@ function exitModal() {
 }
 
 ///////////////////////////////////////////////////////////
-// Preciso Finalizar
+//Preciso Finalizar
 const exibirGrupos = (grupos) => {
     const container = document.getElementById("li_grupos");
 
@@ -64,6 +64,7 @@ const exibirGrupos = (grupos) => {
 
         grupo.innerHTML += `
         <div class="grupo">
+        <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo(${grupos[g].idGrupo})"><i class='bx bx-trash'></i></button>
         <a href="./grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
         <p class="numero">Grupo ${grupos[g].numeracao}</p>
         <p class="tema">${grupos[g].nomeProjeto}</p>
@@ -161,9 +162,18 @@ const exitModalCriarGrupo = () => {
     document.querySelector(".modal-grupos").style.display = "flex";
 };
 
-function showModalExcluirGrupo() {
+async function showModalExcluirGrupo(idGrupo) {
     document.querySelector(".modal-grupos").style.display = "none";
     document.querySelector(".modal-excluir-grupo").style.display = "flex";
+
+    const buttonConfirmarExclusao = document.getElementById("btnConfirmarExclusao")
+    var buttonConfirmarExclusaoClone = buttonConfirmarExclusao.cloneNode(true);
+
+    buttonConfirmarExclusao.addEventListener("click", () => {
+        buttonConfirmarExclusao.parentNode.replaceChild(buttonConfirmarExclusaoClone, buttonConfirmarExclusao);
+        console.log(idGrupo);
+    });
+
 }
 
 function exitModalExcluirGrupo() {
@@ -207,7 +217,9 @@ const exibirDados = (turmas) => {
 };
 
 async function exibirDadosGrupo(idTurma) {
-    console.log({idTurma});
+    console.log({
+        idTurma
+    });
     const url = `http://localhost:3000/turma/listarTurma/${idTurma}`;
 
     fetch(url).then((response) => response.json);
@@ -220,11 +232,7 @@ async function exibirDadosGrupo(idTurma) {
     buttonCriarNovoGrupo.addEventListener("click", () => {
         buttonCriarNovoGrupo.parentNode.replaceChild(buttonCriarNovoGrupoClone, buttonCriarNovoGrupo);
         console.log(turma.turma[0]);
-
-        
     });
-
-
 }
 
 async function exibirDadosInfoTurma(idTurma) {
