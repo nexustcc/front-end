@@ -1,7 +1,8 @@
 /* 
-TODO: Preciso finalizar a listagem de Membros da Turma (Só dei Início a listagem dos professores) e a listagem de grupos (tentei fazer,
-TODO: mas retorne que não há grupos na turma, sendo que há). No geral, o Mateus fez isso, mas não consegui reutilizar seus códigos.
-TODO: Também preciso fazer o cadastro de Grupos, listagem e exclusão
+TODO: Preciso finalizar a listagem de Membros da Turma (Está funcionando, mas está repetindo e aparece "Não há professores cadastrados" mesmo quando ha.) 
+TODO: e o delete de grupos.
+TODO: O Mateus conseguiu listar os membros, mas eu não consegui reutilizar seu código.
+TODO: Também preciso fazer o cadastro de Grupos
 */
 
 "use strict";
@@ -171,7 +172,10 @@ async function showModalExcluirGrupo(idGrupo) {
 
     buttonConfirmarExclusao.addEventListener("click", () => {
         buttonConfirmarExclusao.parentNode.replaceChild(buttonConfirmarExclusaoClone, buttonConfirmarExclusao);
-        console.log(idGrupo);
+        fetch(`http://localhost:3000/grupo/deletarGrupo/${idGrupo}`, {
+            method: "DELETE",
+        })
+        .then((res) => res.json())
     });
 
 }
