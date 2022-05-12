@@ -1,8 +1,7 @@
 /* 
 TODO: Preciso finalizar a listagem de Membros da Turma (Está funcionando, mas está repetindo e aparece "Não há professores cadastrados" mesmo quando ha.) 
-TODO: e o delete de grupos.
 TODO: O Mateus conseguiu listar os membros, mas eu não consegui reutilizar seu código.
-TODO: Também preciso fazer o cadastro de Grupos
+TODO: Também preciso fazer o cadastro de Grupos (O back está feito, mas a integração está com erros)
 */
 
 "use strict";
@@ -167,17 +166,20 @@ async function showModalExcluirGrupo(idGrupo) {
     document.querySelector(".modal-grupos").style.display = "none";
     document.querySelector(".modal-excluir-grupo").style.display = "flex";
 
-    const buttonConfirmarExclusao = document.getElementById("btnConfirmarExclusao")
+    const buttonConfirmarExclusao = document.getElementById(
+        "btnConfirmarExclusao"
+    );
     var buttonConfirmarExclusaoClone = buttonConfirmarExclusao.cloneNode(true);
 
     buttonConfirmarExclusao.addEventListener("click", () => {
-        buttonConfirmarExclusao.parentNode.replaceChild(buttonConfirmarExclusaoClone, buttonConfirmarExclusao);
+        buttonConfirmarExclusao.parentNode.replaceChild(
+            buttonConfirmarExclusaoClone,
+            buttonConfirmarExclusao
+        );
         fetch(`http://localhost:3000/grupo/deletarGrupo/${idGrupo}`, {
             method: "DELETE",
-        })
-        .then((res) => res.json())
+        }).then((res) => res.json());
     });
-
 }
 
 function exitModalExcluirGrupo() {
@@ -220,9 +222,13 @@ const exibirDados = (turmas) => {
     }
 };
 
+let professores = [];
+let gruposProfessor = [];
+let dropdownGruposProfessor = document.getElementById("selectProfessoresNovoGrupo");
+
 async function exibirDadosGrupo(idTurma) {
     console.log({
-        idTurma
+        idTurma,
     });
     const url = `http://localhost:3000/turma/listarTurma/${idTurma}`;
 
@@ -230,13 +236,48 @@ async function exibirDadosGrupo(idTurma) {
     const dados = await fetch(url);
     let turma = await dados.json();
 
-    const buttonCriarNovoGrupo = document.getElementById("buttonCriarNovoGrupo")
+    const buttonCriarNovoGrupo = document.getElementById("buttonCriarNovoGrupo");
     var buttonCriarNovoGrupoClone = buttonCriarNovoGrupo.cloneNode(true);
 
+    const urlProfessor = `http://localhost:3000/professor/listarProfessorTurma/${turma.turma[0].idTurma}`;
+
+    fetch(urlProfessor).then((response) => response.json);
+    const dadosProfessor = await fetch(urlProfessor);
+    professores = await dadosProfessor.json();
+
     buttonCriarNovoGrupo.addEventListener("click", () => {
-        buttonCriarNovoGrupo.parentNode.replaceChild(buttonCriarNovoGrupoClone, buttonCriarNovoGrupo);
-        console.log(turma.turma[0]);
+        buttonCriarNovoGrupo.parentNode.replaceChild(
+            buttonCriarNovoGrupoClone,
+            buttonCriarNovoGrupo
+        );
+
+        dropdownGruposProfessor.length = 0;
+        dropdownGruposProfessor.selectedIndex = 0;
+
+        let option;
+        for (let i = 0; i < professores.professores.length; i++) {
+            option = document.createElement("option");
+            option.text = professores.professores[i].nome;
+            option.value = professores.professores[i].idProfessor;
+            dropdownGruposProfessor.add(option);
+        }
+        
     });
+
+    const buttonCadastrarGrupo = document.getElementById("membrosTurmaModalCriar");
+    // var buttonCadastrarGrupoClone = buttonCadastrarGrupo.cloneNode(true);
+
+    // buttonCriarNovoGrupo.addEventListener("click", () => {
+    //     buttonCriarNovoGrupo.parentNode.replaceChild(
+    //         buttonCriarNovoGrupoClone,
+    //         buttonCriarNovoGrupo
+    //     );
+
+    //     cadastrarGrupo(turma.turma[0].idTurma);
+        
+    // });
+
+    //buttonCadastrarGrupo.addEventListener("click", cadastrarGrupo(turma.turma[0].idTurma))
 }
 
 async function exibirDadosInfoTurma(idTurma) {
@@ -386,28 +427,40 @@ let dropdownProfessoresGrupo = document.getElementById(
 
 async function getArrayProfessoresGrupo(idTurma) {
     const urlIdInstituicao = `http://localhost:3000/membros/listarMembros/${idTurma}`;
+}
 
-    // fetch(urlIdInstituicao).then((response) => response.json);
-    // const dadosInstituicao = await fetch(urlIdInstituicao);
-    // let idInstituicao = await dadosInstituicao.json();
+async function cadastrarGrupo(idTurma) {
+    event.preventDefault();
 
-    // const url = `http://localhost:3000/turma/listarTurmas/${idInstituicao.idInstituicao}`;
+    var select = document.getElementById("selectProfessoresNovoGrupo");
+    var selectedProfessores = [...select.selectedOptions].map(
+        (option) => option.value
+    );
+    console.log(selectedProfessores);
 
-    // fetch(url).then((response) => response.json);
-    // const dados = await fetch(url);
-    // turmas = await dados.json();
+    const cadastrarGrupo = {
+        nome: document.getElementById("inputNomeNovoGrupoModal").value.toString(),
+        numeracao: document
+            .getElementById("inputNumeracaoNovoGrupoModal")
+            .value.toString(),
+        idProfessores: selectedProfessores,
+    };
 
-    // dropdownTurmasAvaliador.length = 0;
+    const config = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cadastrarGrupo),
+    };
 
-    // dropdownTurmasAvaliador.selectedIndex = 0;
+    const urlCadastrarGrupo = `http://localhost:3000/grupo/cadastrarGrupo/${idTurma}`;
 
-    // let option;
-    // for (let i = 0; i < turmas.turma.length; i++) {
-    //     option = document.createElement("option");
-    //     option.text = turmas.turma[i].nome;
-    //     option.value = turmas.turma[i].idTurma;
-    //     dropdownTurmasAvaliador.add(option);
-    // }
+    fetch(urlCadastrarGrupo, config)
+        .then(async (response) => {
+            response.json();
+        })
+        //.then(() => (window.location.href = "index.html"));
 }
 
 const logout = () => {
