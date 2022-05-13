@@ -39,6 +39,10 @@ function minhasTarefas() {
     document.querySelector(".container-topicos2").style.display = "none";
 }
 
+/* INÍCIO DAS FUNÇÕES DE EXIBIÇÃO DA DIV DE NOVA TAREFA */
+
+/* INSTANCIAR AS DIVS E BOTOES */
+
 function caixa1Flex(){
     document.querySelector("#div1").style.display = "flex";
 }
@@ -54,6 +58,8 @@ function showCaixa1Flex(){
 function showCaixa2Flex(){
     document.querySelector("#div2").style.display = "none";
 }
+
+/* FIM DAS FUNÇÕES DE EXIBIÇÃO DA DIV DE NOVA TAREFA */
 
 var kebab = document.querySelector(".kebab"),
     middle = document.querySelector(".middle"),
