@@ -55,20 +55,22 @@
                 <div class="container_pagamento">
                     <img src="img/logo_basico.svg" alt="logo" />
                     <p>Nexus TCC</p>
-                    <select name="tipos_plano" id="tipos_plano">
-                        <option value="Mensal">Mensal</option>
-                        <option value="Anual">Anual</option>
+                    <select name="tipos_plano" id="tipos_plano" onchange="alterarPrecoPlano()">
+                        <option id="option-plano-mensal" value="1">Mensal</option>
+                        <option id="option-plano-anual" value="2">Anual</option>
                     </select>
                 </div>
                 <div class="preco_pedido">
-                    <p>R$ 12,00</p>
-                    <img src="img/cancelar.svg" alt="cancelar" />
+                    <p id="preco-plano">R$ 120,00</p>
+                    <a href="../index.html">
+                        <img src="img/cancelar.svg" alt="cancelar" />
+                    </a>
                 </div>
             </div>
             <div class="segunda_linha">
                 <div class="infos">
                     <p>Total</p>
-                    <p>R$ 12,00</p>
+                    <p id="preco-total-plano">R$ 120,00</p>
                 </div>
             </div>
         </div>

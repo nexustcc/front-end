@@ -146,6 +146,10 @@ ul li {
     list-style: none;
 }
 
+.anual {
+    display: none;
+}
+
 .form_plano input[type="button"] {
     width: 500px;
     height: 50px;
