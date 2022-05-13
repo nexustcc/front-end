@@ -1,6 +1,11 @@
 "use strict";
 
+let localStorageUser = [];
+
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
+
+let divNovaTarefa = document.querySelector('.adicionar-tarefa');
+let btnAdicionarTarefa = document.querySelector('.botao-adicionar');
 
 tiposUsuario.forEach((tipoUsuario) => {
     tipoUsuario.addEventListener("click", () => {
@@ -32,6 +37,22 @@ function tarefasGerais() {
 function minhasTarefas() {
     document.querySelector(".container-topicos").style.display = "flex";
     document.querySelector(".container-topicos2").style.display = "none";
+}
+
+function caixa1Flex(){
+    document.querySelector("#div1").style.display = "flex";
+}
+
+function caixa2Flex(){
+    document.querySelector("#div2").style.display = "flex";
+}
+
+function showCaixa1Flex(){
+    document.querySelector("#div1").style.display = "none";
+}
+
+function showCaixa2Flex(){
+    document.querySelector("#div2").style.display = "none";
 }
 
 var kebab = document.querySelector(".kebab"),
@@ -84,3 +105,40 @@ function exitModalTarefaGeral() {
     document.querySelector(".modal-tarefa-geral").style.display = "none";
     document.querySelector(".bg").style.display = "none";
 }
+
+// const logout = () => {
+//     localStorage.removeItem("user");
+//     window.location.href = "../../home/login/";
+// };
+
+// const checkLogin = () => {
+//     if (localStorage.user != undefined) {
+//         localStorageUser = JSON.parse(localStorage.user);
+//         if (localStorageUser.tipo == "aluno") {
+//             getInfoAluno();
+//             document.getElementById("nomeAluno").innerHTML = localStorageUser.nome;
+//         } else {
+//             switch (localStorageUser.tipo) {
+//                 case "professor":
+//                     window.location.href = "../../professor/perfil/index.html";
+//                     break;
+
+//                 case "instituição":
+//                     window.location.href = "../../instituicao/index.html";
+//                     break;
+
+//                 case "avaliador":
+//                     window.location.href = "../../home/index.html";
+//                     alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
+//                     break;
+
+//                 default:
+//                     window.location.href = "../home/index.html";
+//             }
+//         }
+//     } else {
+//         window.location.href = "../../home/index.html";
+//     }
+// };
+
+// window.onload = checkLogin();

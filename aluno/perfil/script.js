@@ -31,7 +31,7 @@ const getInfoAluno = async () => {
 
 const logout = () => {
     localStorage.removeItem("user");
-    window.location.href = "../../home/login";
+    window.location.href = "../../home/login/";
 };
 
 const checkLogin = () => {
@@ -43,7 +43,7 @@ const checkLogin = () => {
         } else {
             switch (localStorageUser.tipo) {
                 case "professor":
-                    window.location.href = "../professor/perfil/index.html";
+                    window.location.href = "../../professor/perfil/index.html";
                     break;
 
                 case "instituição":
@@ -51,7 +51,7 @@ const checkLogin = () => {
                     break;
 
                 case "avaliador":
-                    window.location.href = "../home/index.html";
+                    window.location.href = "../../home/index.html";
                     alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
                     break;
 
@@ -60,7 +60,7 @@ const checkLogin = () => {
             }
         }
     } else {
-        window.location.href = "../home/login/index.html";
+        window.location.href = "../../home/index.html";
     }
 };
 

@@ -166,22 +166,6 @@ margin-left: 15%;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .kebab2 {
   cursor: pointer;
   position: relative;
@@ -337,17 +321,6 @@ margin-left: 20%;
 transform: scale(1);
 transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .child-kebab2 {
   cursor: pointer;
@@ -509,14 +482,6 @@ transform: scale(1);
 transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
 
-
-
-
-
-
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -568,6 +533,14 @@ body {
     transform: all 0.2s ease;
     cursor: pointer;
     text-decoration: none;
+}
+
+#div1{
+  display: none;
+}
+
+#div2{
+  display: none;
 }
 
 .modal {
@@ -795,8 +768,6 @@ body {
 .add-topico{
     margin-top: 5rem;
 }
-
-
 
 .listagem-topicos{
     display: flex;
