@@ -216,7 +216,7 @@ function exitModalEditar() {
 }
 
 const exibirDadosProfessores = (professores) => {
-    a = 1
+    limiter = 1
 
     let professor_container = document.getElementById("professor-container");
 
@@ -254,7 +254,7 @@ const exibirDadosProfessores = (professores) => {
 };
 
 const exibirDadosAlunos = (alunos) => {
-    a = 1
+    limiter = 1
     
     let alunos_container = document.getElementById("alunos-container");
 
@@ -306,7 +306,7 @@ async function showModalMembros(idTurma) {
     const dados = await fetch(url);
     let membros = await dados.json();
 
-    if(a == 0){
+    if(limiter == 0){
         exibirDadosProfessores(membros.professores);
         exibirDadosAlunos(membros.alunos);
     }
@@ -473,20 +473,20 @@ const checkLogin = () => {
         } else {
             switch (localStorageUser.tipo) {
                 case "professor":
-                    window.location.href = "../professor/perfil/index.html";
+                    window.location.href = "../../../professor/perfil/";
                     break;
 
                 case "aluno":
-                    window.location.href = "../aluno/perfil/index.html";
+                    window.location.href = "../../../aluno/perfil/";
                     break;
 
                 case "avaliador":
-                    window.location.href = "../home/index.html";
+                    window.location.href = "../../../home/";
                     alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
                     break;
 
                 default:
-                    window.location.href = "../home/index.html";
+                    window.location.href = "../../../home/";
             }
         }
     } else {

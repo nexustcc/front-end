@@ -521,7 +521,7 @@ const getMembrosInstituicao = async () => {
 
 const logout = () => {
     localStorage.removeItem("user");
-    window.location.href = "../home/login/";
+    window.location.href = "../../home/login/";
 };
 
 const checkLogin = () => {
@@ -534,20 +534,20 @@ const checkLogin = () => {
         } else {
             switch (localStorageUser.tipo) {
                 case "professor":
-                    window.location.href = "../professor/perfil/index.html";
+                    window.location.href = "../../professor/perfil/";
                     break;
 
                 case "aluno":
-                    window.location.href = "../aluno/perfil/index.html";
+                    window.location.href = "../../aluno/perfil/";
                     break;
 
                 case "avaliador":
-                    window.location.href = "../home/index.html";
+                    window.location.href = "../../home/";
                     alert("O acesso dos Avaliadores a plataforma é feito pelo APP");
                     break;
 
                 default:
-                    window.location.href = "../home/index.html";
+                    window.location.href = "../../home/";
             }
         }
     } else {

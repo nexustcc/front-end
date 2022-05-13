@@ -4,6 +4,9 @@ let localStorageUser = [];
 
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
+let divNovaTarefa = document.querySelector('.adicionar-tarefa');
+let btnAdicionarTarefa = document.querySelector('.botao-adicionar');
+
 tiposUsuario.forEach((tipoUsuario) => {
     tipoUsuario.addEventListener("click", () => {
         tiposUsuario.forEach((tipoUsuario) => {
@@ -35,6 +38,28 @@ function minhasTarefas() {
     document.querySelector(".container-topicos").style.display = "flex";
     document.querySelector(".container-topicos2").style.display = "none";
 }
+
+/* INÍCIO DAS FUNÇÕES DE EXIBIÇÃO DA DIV DE NOVA TAREFA */
+
+/* INSTANCIAR AS DIVS E BOTOES */
+
+function caixa1Flex(){
+    document.querySelector("#div1").style.display = "flex";
+}
+
+function caixa2Flex(){
+    document.querySelector("#div2").style.display = "flex";
+}
+
+function showCaixa1Flex(){
+    document.querySelector("#div1").style.display = "none";
+}
+
+function showCaixa2Flex(){
+    document.querySelector("#div2").style.display = "none";
+}
+
+/* FIM DAS FUNÇÕES DE EXIBIÇÃO DA DIV DE NOVA TAREFA */
 
 var kebab = document.querySelector(".kebab"),
     middle = document.querySelector(".middle"),

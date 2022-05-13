@@ -20,6 +20,22 @@ const inputCvvCartao = document.getElementById("inputCvvCartao");
 const textCartaoNumero = document.getElementById("cartao_numero");
 const textCartaoNome = document.getElementById("cartao_nome");
 
+let selectTipoPlano = document.getElementById('tipos_plano');
+let txtPrecoPlano = document.getElementById('preco-plano');
+let txtPrecoTotalPlano = document.getElementById('preco-total-plano');
+
+const alterarPrecoPlano = () => {
+    if (selectTipoPlano.value == "1") {
+
+        txtPrecoPlano.textContent = 'R$ 120,00';
+        txtPrecoTotalPlano.textContent = 'R$ 120,00';
+    } else if (selectTipoPlano.value == "2") {
+
+        txtPrecoPlano.textContent = 'R$ 600,00';
+        txtPrecoTotalPlano.textContent = 'R$ 600,00';
+    }
+}
+
 $(document).ready(function () {
     $(inputCnpjInstituicao).mask("99.999.999/0001-99");
     $(inputTelefoneInstituicao).mask("(99) 9999-9999");
