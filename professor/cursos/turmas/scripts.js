@@ -260,12 +260,14 @@ async function exibirDadosGrupo(idTurma) {
             option.text = professores.professores[i].nome;
             option.value = professores.professores[i].idProfessor;
             dropdownGruposProfessor.add(option);
+
+            console.log("IdProfessor: " + professores.professores[i].idProfessor)
         }
         
     });
 
     const buttonCadastrarGrupo = document.getElementById("membrosTurmaModalCriar");
-    // var buttonCadastrarGrupoClone = buttonCadastrarGrupo.cloneNode(true);
+    var buttonCadastrarGrupoClone = buttonCadastrarGrupo.cloneNode(true);
 
     // buttonCriarNovoGrupo.addEventListener("click", () => {
     //     buttonCriarNovoGrupo.parentNode.replaceChild(
@@ -278,6 +280,21 @@ async function exibirDadosGrupo(idTurma) {
     // });
 
     //buttonCadastrarGrupo.addEventListener("click", cadastrarGrupo(turma.turma[0].idTurma))
+
+    //buttonCadastrarGrupo.addEventListener("click", console.log("A"))
+
+
+    buttonCadastrarGrupo.addEventListener("click", () => {
+        buttonCadastrarGrupo.parentNode.replaceChild(
+            buttonCadastrarGrupoClone,
+            buttonCadastrarGrupo
+        );
+
+        console.log("A" + idCurso);
+
+        cadastrarGrupo(turma.turma[0].idTurma);
+        
+    });
 }
 
 async function exibirDadosInfoTurma(idTurma) {
@@ -408,8 +425,9 @@ searchBar.addEventListener("keyup", (e) => {
 // Preciso Finalizar
 async function getArrayTurmas() {
     if (idCurso == "" || idCurso == undefined) {
-        window.location.href = "../../index.html";
-    } else {
+        window.location.href = `./index.html?idCurso=${idCurso}`;
+    } 
+    else {
         const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
 
         fetch(url).then((response) => response.json);
@@ -439,12 +457,14 @@ async function cadastrarGrupo(idTurma) {
     console.log(selectedProfessores);
 
     const cadastrarGrupo = {
-        nome: document.getElementById("inputNomeNovoGrupoModal").value.toString(),
+        nomeGrupo: document.getElementById("inputNomeNovoGrupoModal").value.toString(),
         numeracao: document
             .getElementById("inputNumeracaoNovoGrupoModal")
             .value.toString(),
-        idProfessores: selectedProfessores,
+        idProfessores: selectedProfessores
     };
+
+    console.log(selectedProfessores);
 
     const config = {
         method: "POST",
@@ -454,13 +474,15 @@ async function cadastrarGrupo(idTurma) {
         body: JSON.stringify(cadastrarGrupo),
     };
 
+    console.log("Config: " + config.body);
+
     const urlCadastrarGrupo = `http://localhost:3000/grupo/cadastrarGrupo/${idTurma}`;
 
     fetch(urlCadastrarGrupo, config)
-        .then(async (response) => {
-            response.json();
+        .then((response) => {
+            console.log(response.json());
         })
-        //.then(() => (window.location.href = "index.html"));
+        .then(() => (window.location.href = `./index.html?idCurso=${idCurso}`));
 }
 
 const logout = () => {
