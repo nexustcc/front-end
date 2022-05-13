@@ -1,7 +1,5 @@
 /* 
-TODO: Preciso finalizar a listagem de Membros da Turma (Está funcionando, mas está repetindo e aparece "Não há professores cadastrados" mesmo quando ha.) 
 TODO: O Mateus conseguiu listar os membros, mas eu não consegui reutilizar seu código.
-TODO: Também preciso fazer o cadastro de Grupos (O back está feito, mas a integração está com erros)
 */
 
 "use strict";
@@ -18,8 +16,6 @@ if (urlSplit[1] == "" || urlSplit[1] == undefined) {
     console.log(urlSplit);
 } else {
     idCurso = urlSplit[1].split(["="])[1];
-
-    console.log(idCurso);
 }
 
 let nomeCurso;
@@ -38,8 +34,6 @@ function exitModal() {
     document.querySelector(".modal-add-membros").style.display = "none";
 }
 
-///////////////////////////////////////////////////////////
-//Preciso Finalizar
 const exibirGrupos = (grupos) => {
     const container = document.getElementById("li_grupos");
 
@@ -74,10 +68,7 @@ const exibirGrupos = (grupos) => {
         container.appendChild(grupo);
     }
 };
-///////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////
-// Preciso Finalizar
 async function showModalGrupos(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-grupos").style.display = "flex";
@@ -92,15 +83,12 @@ async function showModalGrupos(idTurma) {
     console.log(grupos.grupos);
     console.log("Oi");
 }
-///////////////////////////////////////////////////////////
 
 function exitModalGrupos() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-grupos").style.display = "none";
 }
 
-////////////////////////////////////////////////////////////////////////
-// Preciso Finalizar
 async function showModalTurma(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "flex";
@@ -120,31 +108,31 @@ async function showModalTurma(idTurma) {
             });
     }
 }
-////////////////////////////////////////////////////////////////////////
 
 function exitModalTurma() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-turma").style.display = "none";
 }
 
-////////////////////////////////////////////////////////////////////////
-// Preciso Finalizar
+let limiter = 0;
+
 async function showModalMembros(idTurma) {
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-turma").style.display = "none";
     document.querySelector(".modal-membros").style.display = "flex";
 
     const url = `http://localhost:3000/turma/membros/listarMembros/${idTurma}`;
-    fetch(url).then((response) => response.json);
-    const dados = await fetch(url);
+    //fetch(url).then((response) => response.json);
+    let dados = await fetch(url);
     let membros = await dados.json();
 
-    exibirDadosProfessores(membros.professores);
-    exibirDadosAlunos(membros.alunos);
-
-    console.log(idTurma);
+    
+    
+    if (limiter == 0) {
+        exibirDadosProfessores(membros.professores);
+        exibirDadosAlunos(membros.alunos);
+    }
 }
-////////////////////////////////////////////////////////////////////////
 
 function resetForm() {
     document.getElementById("modal").reset();
@@ -263,7 +251,7 @@ async function exibirDadosGrupo(idTurma) {
 
             console.log("IdProfessor: " + professores.professores[i].idProfessor)
         }
-        
+
     });
 
     const buttonCadastrarGrupo = document.getElementById("membrosTurmaModalCriar");
@@ -276,7 +264,7 @@ async function exibirDadosGrupo(idTurma) {
     //     );
 
     //     cadastrarGrupo(turma.turma[0].idTurma);
-        
+
     // });
 
     //buttonCadastrarGrupo.addEventListener("click", cadastrarGrupo(turma.turma[0].idTurma))
@@ -293,7 +281,7 @@ async function exibirDadosGrupo(idTurma) {
         console.log("A" + idCurso);
 
         cadastrarGrupo(turma.turma[0].idTurma);
-        
+
     });
 }
 
@@ -316,9 +304,12 @@ async function exibirDadosInfoTurma(idTurma) {
 }
 
 const exibirDadosProfessores = (professores) => {
+    limiter = 1;
+    console.log("Quantidade de Professores: " + professores.length);
     let professor_container = document.getElementById("professor-container");
 
     if (professores.length == 0) {
+        console.log("Nenhum Professor Cadastrado")
         const professor_view = document.createElement("li");
         professor_view.classList = "list-group-item li";
         professor_view.innerHTML += ` <li class="list-group-item li"> <p>Nenhum Professor Cadastrado</p> </li> `;
@@ -352,6 +343,7 @@ const exibirDadosProfessores = (professores) => {
 };
 
 const exibirDadosAlunos = (alunos) => {
+    limiter = 1;
     let aluno_container = document.getElementById("aluno-container");
 
     if (alunos.length == 0) {
@@ -426,8 +418,7 @@ searchBar.addEventListener("keyup", (e) => {
 async function getArrayTurmas() {
     if (idCurso == "" || idCurso == undefined) {
         window.location.href = `./index.html?idCurso=${idCurso}`;
-    } 
-    else {
+    } else {
         const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
 
         fetch(url).then((response) => response.json);
@@ -442,10 +433,6 @@ let professoresGrupo = [];
 let dropdownProfessoresGrupo = document.getElementById(
     "selectProfessoresNovoGrupo"
 );
-
-async function getArrayProfessoresGrupo(idTurma) {
-    const urlIdInstituicao = `http://localhost:3000/membros/listarMembros/${idTurma}`;
-}
 
 async function cadastrarGrupo(idTurma) {
     event.preventDefault();
