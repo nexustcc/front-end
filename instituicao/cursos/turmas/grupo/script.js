@@ -39,21 +39,21 @@ const checkLogin = () => {
         else{
             switch (localStorageUser.tipo) {
                 case 'professor':
-                    window.location.href = '../../../../professor/perfil/'
+                    window.location.href = '../professor/perfil/index.html'
                   break;
       
                 case 'aluno':
-                    window.location.href = '../../../../aluno/perfil/'
+                    window.location.href = '../aluno/perfil/index.html'
                   break;
       
                 case 'avaliador':
-                    window.location.href = '../../../../home/'
+                    window.location.href = '../home/index.html'
                     alert('O acesso dos Avaliadores a plataforma é feito pelo APP')
                   break;
       
                 default:
-                    window.location.href = '../../../../home/'
-            }
+                    window.location.href = '../home/index.html'
+              }
         }
     } else{
         window.location.href = '../home/login/index.html'
