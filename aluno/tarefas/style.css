@@ -535,11 +535,7 @@ body {
     text-decoration: none;
 }
 
-#div1{
-  display: none;
-}
-
-#div2{
+.col-md-12 .modal-add-tarefa {
   display: none;
 }
 
