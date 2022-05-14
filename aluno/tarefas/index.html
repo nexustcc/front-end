@@ -20,6 +20,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../componentes/header/styles_header.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
     <title>Tarefas</title>
 
@@ -105,7 +106,7 @@
             <h1 id="nomeGrupoAluno">NOME DO GRUPO</h1>
         </div>
 
-        <a href="#">
+        <a href="../perfil/">
             <img id="fotoPerfilAluno" src="../componentes/header/img/foto_padrao.svg" alt="foto" />
         </a>
     </header>
@@ -145,7 +146,7 @@
 
 
                     <div class="col-md-12 adicionar-tarefa">
-                        <button onclick="showDivNovaTarefa()" class="col-md-12 botao-adicionar" id="btn1"><img src="./img/mais.svg" alt="">
+                        <button class="col-md-12 botao-adicionar" id="btn1"><img src="./img/mais.svg" alt="">
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa" id="div1">
@@ -154,8 +155,8 @@
                             <input type="date" class="col-md-10 inserir-data-conclusao"
                                 placeholder="Insira uma data de conclusão" required />
                             <div class="col-md-12 buttons">
-                                <button onclick="hideDivNovaTarefa()" class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button onclick="hideDivNovaTarefa()" class="primeiro-botao botao-confirmar">CRIAR</button>
+                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
                             </div>
                         </div>
                     </div>
@@ -373,7 +374,7 @@
 
 
                     <div class="col-md-12 adicionar-tarefa">
-                        <button onclick="showDivNovaTarefa()" class="col-md-12 botao-adicionar" id="btn2"><img src="./img/mais.svg" alt="">
+                        <button class="col-md-12 botao-adicionar" id="btn2"><img src="./img/mais.svg" alt="">
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa" id="div2">
@@ -382,8 +383,8 @@
                             <input type="date" class="col-md-10 inserir-data-conclusao"
                                 placeholder="Insira uma data de conclusão" required />
                             <div class="col-md-12 buttons">
-                                <button onclick="hideDivNovaTarefa()" class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button onclick="hideDivNovaTarefa()" class="primeiro-botao botao-confirmar">CRIAR</button>
+                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
                             </div>
                         </div>
                     </div>

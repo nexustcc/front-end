@@ -4,8 +4,31 @@ let localStorageUser = [];
 
 let tiposUsuario = document.querySelectorAll(".tipo_usuario ul li");
 
-let divNovaTarefa = document.querySelector('.adicionar-tarefa');
-let btnAdicionarTarefa = document.querySelector('.botao-adicionar');
+let divNovaTarefa = document.getElementsByClassName('modal-add-tarefa');
+let btnAdicionarTarefa = document.getElementsByClassName('botao-adicionar');
+let btnCancelarNovaTarefa = document.getElementsByClassName('botao-cancelar');
+
+for (var x = 0; x < btnAdicionarTarefa.length; x++){
+
+     btnAdicionarTarefa[x].addEventListener('click', function(){
+
+    for (var i = 0 ; i < divNovaTarefa.length; i++) {
+        divNovaTarefa[i].style.display = 'flex';
+        }
+    });
+
+};
+
+for (var y = 0; y < btnCancelarNovaTarefa.length; y++){
+
+    btnCancelarNovaTarefa[y].addEventListener('click', function(){
+
+   for (var t = 0 ; t < divNovaTarefa.length; t++) {
+       divNovaTarefa[t].style.display = 'none';
+       }
+   });
+
+};
 
 tiposUsuario.forEach((tipoUsuario) => {
     tipoUsuario.addEventListener("click", () => {
@@ -38,28 +61,6 @@ function minhasTarefas() {
     document.querySelector(".container-topicos").style.display = "flex";
     document.querySelector(".container-topicos2").style.display = "none";
 }
-
-/* INÍCIO DAS FUNÇÕES DE EXIBIÇÃO DA DIV DE NOVA TAREFA */
-
-/* INSTANCIAR AS DIVS E BOTOES */
-
-function caixa1Flex(){
-    document.querySelector("#div1").style.display = "flex";
-}
-
-function caixa2Flex(){
-    document.querySelector("#div2").style.display = "flex";
-}
-
-function showCaixa1Flex(){
-    document.querySelector("#div1").style.display = "none";
-}
-
-function showCaixa2Flex(){
-    document.querySelector("#div2").style.display = "none";
-}
-
-/* FIM DAS FUNÇÕES DE EXIBIÇÃO DA DIV DE NOVA TAREFA */
 
 var kebab = document.querySelector(".kebab"),
     middle = document.querySelector(".middle"),
