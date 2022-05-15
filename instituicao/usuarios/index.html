@@ -253,10 +253,7 @@
                 <div class="col-md-6 lab-inp">
                     <label for="tipo-select" class="form-label">Tipo</label>
                     <select class="form-select tipo-select" id="tipo-select-edit" onChange="deletarCampo()">
-                        <option selected>SELECIONE O TIPO DE USUÁRIO</option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
+                        <option selected>Professor</option>
                     </select>
                 </div>
 
@@ -283,39 +280,6 @@
                         <option value="China">China</option>
                         <option value="English">English</option>
                         <option value="USA">USA</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 lab-inp" id="grupo">
-                    <label for="tipo-select" class="form-label">Grupo</label>
-                    <select class="mul-select" multiple="true">
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Thiland">Thiland</option>
-                        <option value="Koren">Koren</option>
-                        <option value="China">China</option>
-                        <option value="English">English</option>
-                        <option value="USA">USA</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 lab-inp" id="curso-aluno">
-                    <label for="tipo-select" class="form-label">Curso</label>
-                    <select class="form-select tipo-select" class="tipo-select">
-                        <option selected></option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 lab-inp" id="turma-aluno">
-                    <label for="tipo-select" class="form-label">Turma</label>
-                    <select class="form-select tipo-select" class="tipo-select">
-                        <option selected></option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
                     </select>
                 </div>
 
@@ -383,16 +347,13 @@
                     <label for="tipo-select" class="form-label">Tipo</label>
                     <select class="form-select tipo-select" on="" id="tipo-select-criar"
                         onChange="deletarCampoCadastro(); disableSelected()">
-                        <option value="selected" disabled="disabled" selected>SELECIONE O TIPO DE USUÁRIO</option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
+                        <option value="selected" disabled="disabled" selected>Professor</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="curso-cadastro">
                     <label for="tipo-select" class="form-label">Curso</label>
-                    <select disabled class="form-select mul-select" id="input-curso" multiple="true">
+                    <select class="form-select mul-select" id="input-curso" multiple="true">
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -405,7 +366,7 @@
 
                 <div class="col-md-6 lab-inp" id="turma-cadastro">
                     <label for="tipo-select" class="form-label">Turma</label>
-                    <select disabled class="form-select mul-select" id="input-turma" multiple="true">
+                    <select class="form-select mul-select" id="input-turma" multiple="true">
                         <option value="Cambodia">Cambodia</option>
                         <option value="Khmer">Khmer</option>
                         <option value="Thiland">Thiland</option>
@@ -413,50 +374,6 @@
                         <option value="China">China</option>
                         <option value="English">English</option>
                         <option value="USA">USA</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 lab-inp" id="grupo-cadastro">
-                    <label for="tipo-select" class="form-label">Grupo</label>
-                    <select class="mul-select" multiple="true">
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Thiland">Thiland</option>
-                        <option value="Koren">Koren</option>
-                        <option value="China">China</option>
-                        <option value="English">English</option>
-                        <option value="USA">USA</option>
-                    </select>
-                </div>
-
-
-                <div class="col-md-4 lab-inp" id="curso-aluno-cadastro">
-                    <label for="tipo-select" class="form-label">Curso</label>
-                    <select class="form-select tipo-select" id="curso-select-cadastro">
-                        <option selected></option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
-                    </select>
-                </div>
-
-                <div class="col-md-4 lab-inp" id="turma-aluno-cadastro">
-                    <label for="tipo-select" class="form-label">Turma</label>
-                    <select class="form-select tipo-select" id="turma-select-cadastro">
-                        <option selected></option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
-                    </select>
-                </div>
-
-                <div class="col-md-4 lab-inp" id="grupo-aluno-cadastro">
-                    <label for="tipo-select" class="form-label">Grupo</label>
-                    <select class="form-select tipo-select" id="grupo-select-cadastro">
-                        <option selected></option>
-                        <option value="1">Professor</option>
-                        <option value="2">Aluno</option>
-                        <option value="3">Avaliador</option>
                     </select>
                 </div>
 
