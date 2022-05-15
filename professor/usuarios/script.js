@@ -348,7 +348,7 @@ document.getElementById("turmaNovoUsuarioModal").onchange = async function () {
     }
 };
 
-async function cadastrarAvaliador(nome, email, idGrupos) {
+async function cadastrarAvaliador() {
     event.preventDefault();
 
     var select = document.getElementById("grupoNovoUsuarioModal");

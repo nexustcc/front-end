@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
-    <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css" />
+    <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon" />
 
     <script src="./modal.js" defer></script>
     <script src="./script.js" defer></script>
@@ -182,11 +182,11 @@
                 </ul>
             </div>
             <div class="buttonAddUsuario">
-                <button onclick="showModal()" type="button" class="addUsuario button5">
-                    <i class="fa fa-plus" style="font-size: 36px"></i></button>
+                <button onclick="showModal(), getArrayCursosProfessor()" type="button" class="addUsuario button5">
+                    <i class="fa fa-plus" style="font-size: 36px"></i>
+                </button>
             </div>
         </div>
-
 
         <div id="container_usuario" class="container mt-5 container modal modal-listagem">
             <h1>USUÁRIO</h1>
@@ -225,7 +225,6 @@
                     <label for="turma-select" class="form-label">Grupo</label>
                     <input id="view_user_grupo" type="text" class="form-control turma" disabled />
                 </div>
-
             </form>
         </div>
 
@@ -324,7 +323,68 @@
         </div>
 
         <div class="container mt-5 container modal modal-cadastro" id="modal">
-            <h1>CADASTRAR NOVO USUÁRIO</h1>
+            <h1>NOVO USUÁRIO</h1>
+            <form class="row g-7">
+                <div class="col-md-6 lab-inp icon-edit">
+                    <label for="nome_do_usuario" class="form-label">Nome:</label>
+                    <input type="text" class="form-control nome_do_usuario" id="inputNomeNovoUsuarioModal"
+                        maxlength="255" />
+                </div>
+
+                <div class="col-md-6 lab-inp icon-edit">
+                    <label for="email_usuario" class="form-label">Email:</label>
+                    <input type="email" class="form-control email_usuario" id="inputEmailNovoUsuarioModal"
+                        maxlength="255" />
+                </div>
+
+                <div class="col-md-6 lab-inp icon-edit">
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="text" class="form-control senha" id="inputSenhaNovoUsuarioModal"
+                        placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" disabled maxlength="255" />
+                </div>
+
+                <div class="col-md-6 lab-inp">
+                    <label for="tipo-select" class="form-label">Tipo:</label>
+                    <select class="form-select tipo-select" id="tipo-select-criar">
+                        <option disabled="disabled" selected>
+                            SELECIONE O TIPO DO USUÁRIO
+                        </option>
+                        <option value="1">Professor</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="cursoNovoUsuario">
+                    <label for="tipo-select" class="form-label">Curso:</label>
+                    <select class="form-select mul-select" multiple="true" id="cursoNovoUsuarioModal"></select>
+                </div>
+
+                <div class="col-md-6 lab-inp" id="turmaNovoUsuario">
+                    <label for="tipo-select" class="form-label">Turma:</label>
+                    <select class="mul-select" multiple="true" id="turmaNovoUsuarioModal"></select>
+                </div>
+
+                <script>
+                    $(document).ready(function () {
+                        $(".mul-select").select2({});
+                    });
+                </script>
+
+                <div class="buttons">
+                    <div class="col-md-3">
+                        <button class="primeiro_botao" type="button" onclick="exitModal()">
+                            CANCELAR
+                        </button>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button class="segundo_botao" type="submit" id="salvarAvaliador" onclick="cadastrarProfessor()">
+                            SALVAR
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- <h1>CADASTRAR NOVO USUÁRIO</h1>
             <form class="row g-7" id="modal-form">
 
                 <div class="col-md-6 lab-inp">
@@ -347,33 +407,20 @@
                     <label for="tipo-select" class="form-label">Tipo</label>
                     <select class="form-select tipo-select" on="" id="tipo-select-criar"
                         onChange="deletarCampoCadastro(); disableSelected()">
-                        <option value="selected" disabled="disabled" selected>Professor</option>
+                        <option value="1" disabled="disabled" selected>Professor</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="curso-cadastro">
                     <label for="tipo-select" class="form-label">Curso</label>
                     <select class="form-select mul-select" id="input-curso" multiple="true">
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Thiland">Thiland</option>
-                        <option value="Koren">Koren</option>
-                        <option value="China">China</option>
-                        <option value="English">English</option>
-                        <option value="USA">USA</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 lab-inp" id="turma-cadastro">
                     <label for="tipo-select" class="form-label">Turma</label>
                     <select class="form-select mul-select" id="input-turma" multiple="true">
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Thiland">Thiland</option>
-                        <option value="Koren">Koren</option>
-                        <option value="China">China</option>
-                        <option value="English">English</option>
-                        <option value="USA">USA</option>
+
                     </select>
                 </div>
 
@@ -393,14 +440,13 @@
 
                     <div class="col-md-3">
                         <button class="segundo_botao" id="button_salvar" type="button"
-                            onclick="resetForm()">SALVAR</button>
+                            onclick="resetForm(), cadastrarProfessor()">SALVAR</button>
                     </div>
                     <div class="col-md-6 msg-div">
                         <p class="msg">**USUÁRIO CADASTRADO COM SUCESSO</p>
                     </div>
                 </div>
-            </form>
-
+            </form> -->
         </div>
     </div>
 </body>
