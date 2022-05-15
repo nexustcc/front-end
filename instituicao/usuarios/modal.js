@@ -58,7 +58,7 @@ function exitModalListagem() {
 //         input_curso.placeholder = ''
 //         input_turma.placeholder = ''
 //         input_grupo.placeholder = ''
-        
+
 //         input_nome.placeholder = professor.professor.nome
 //         input_email.placeholder = professor.professor.email
 //         input_senha.placeholder = professor.professor.senha
@@ -102,7 +102,7 @@ function exitModalListagem() {
 //         input_curso.placeholder = ''
 //         input_turma.placeholder = ''
 //         input_grupo.placeholder = ''
-        
+
 //         input_nome.placeholder = aluno.aluno.nome
 //         input_email.placeholder = aluno.aluno.email
 //         input_senha.placeholder = aluno.aluno.senha
@@ -125,14 +125,14 @@ function exitModalListagem() {
 //         input_curso.placeholder = ''
 //         input_turma.placeholder = ''
 //         input_grupo.placeholder = ''
-        
+
 //         input_nome.placeholder = avaliador.avaliador.nome
 //         input_email.placeholder = avaliador.avaliador.email
 //         input_senha.placeholder = avaliador.avaliador.senha
 //         input_tipo.placeholder = tipo
 //         input_curso.placeholder = avaliador.curso.nome
 //         input_turma.placeholder = avaliador.turma.nome
-        
+
 //         for (let g = 0; g < avaliador.grupos.length; g++) {
 //             if(avaliador.grupos.length == 0 || avaliador.grupos.length == null){
 //                 input_grupo.placeholder = 'Avalidor sem grupos'
@@ -170,66 +170,6 @@ function exitModalTrocarTurma() {
     document.querySelector(".bg").style.display = "none";
     document.querySelector(".modal-trocar-turma").style.display = "none";
     document.querySelector(".modal-membros").style.display = "flex";
-}
-
-function deletarCampo() {
-    if (document.getElementById("tipo-select-edit").value == "3") {
-        document.querySelector("#turma").style.display = "none";
-        document.querySelector("#grupo").style.display = "flex";
-        document.querySelector("#turma-aluno").style.display = "none";
-        document.querySelector("#curso-aluno").style.display = "none";
-        document.querySelector("#curso").style.display = "flex";
-    } else if (document.getElementById("tipo-select-edit").value == "2") {
-        document.querySelector("#turma-aluno").style.display = "flex";
-        document.querySelector("#curso-aluno").style.display = "flex";
-        document.querySelector("#turma").style.display = "none";
-        document.querySelector("#curso").style.display = "none";
-        document.querySelector("#grupo").style.display = "none";
-    } else {
-        document.querySelector("#turma").style.display = "flex";
-        document.querySelector("#grupo").style.display = "none";
-        document.querySelector("#turma-aluno").style.display = "none";
-        document.querySelector("#curso-aluno").style.display = "none";
-        document.querySelector("#curso").style.display = "flex";
-    }
-}
-
-function deletarCampoCadastro() {
-    if (document.getElementById("tipo-select-criar").value == "3") {
-        document.querySelector("#turma-aluno-cadastro").style.display = "none";
-        document.querySelector("#curso-aluno-cadastro").style.display = "none";
-        document.querySelector("#grupo-aluno-cadastro").style.display = "none";
-        document.querySelector("#turma-cadastro").style.display = "none";
-        document.querySelector("#grupo-cadastro").style.display = "flex";
-        document.querySelector("#curso-cadastro").style.display = "flex";
-    } else if (document.getElementById("tipo-select-criar").value == "2") {
-        document.querySelector("#turma-aluno-cadastro").style.display = "flex";
-        document.querySelector("#curso-aluno-cadastro").style.display = "flex";        
-        document.querySelector("#grupo-aluno-cadastro").style.display = "flex";
-        document.querySelector("#turma-cadastro").style.display = "none";
-        document.querySelector("#curso-cadastro").style.display = "none";
-        document.querySelector("#grupo-cadastro").style.display = "none";
-    } else if (document.getElementById("tipo-select-criar").value == "1") {
-        document.querySelector("#turma-cadastro").style.display = "flex";
-        document.querySelector("#grupo-cadastro").style.display = "none";
-        document.querySelector("#turma-aluno-cadastro").style.display = "none";
-        document.querySelector("#curso-aluno-cadastro").style.display = "none";
-        document.querySelector("#grupo-aluno-cadastro").style.display = "none";
-        document.querySelector("#curso-cadastro").style.display = "flex";
-    } else {
-        document.querySelector("#turma").style.display = "flex";
-        document.querySelector("#grupo").style.display = "flex";
-    }
-}
-
-function disableSelected() {
-    if (document.getElementById("tipo-select-criar").value == "selected") {
-        document.getElementById("input-curso").disabled = true;
-        document.getElementById("input-turma").disabled = true;
-    } else {
-        document.getElementById("input-curso").disabled = false;
-        document.getElementById("input-turma").disabled = false;
-    }
 }
 
 const form = document.getElementById('modal-form');
