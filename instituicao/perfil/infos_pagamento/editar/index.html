@@ -24,116 +24,115 @@
   <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.maskedinput/1.3.1/jquery.maskedinput.js"></script>
 
   <link rel="stylesheet" href="../../../componentes/header/styles_header.css" />
-  <link rel="stylesheet" href="../../../componentes/side_menu/styles_side_menu.css">
+  <link rel="stylesheet" href="../../../componentes/side_menu/styles_side_menu.css" />
   <script src="./script.js" defer></script>
 
-  <link rel="stylesheet" href="../../../componentes/side_menu/styles_side_menu.css">
+  <link rel="stylesheet" href="../../../componentes/side_menu/styles_side_menu.css" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="shortcut icon" href="../../../../home/images-global/logo-azul.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="../../../../home/images-global/logo-azul.svg" type="image/x-icon" />
 
   <title>Editar pagamento</title>
 </head>
 
 <body>
-
   <header>
     <div class="primeira_parte">
-        <img src="../../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
-        <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+      <img src="../../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+      <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
     </div>
 
     <a href="../../../index.html">
-        <img src="../../../componentes/header/img/perfil_instituicao.svg" alt="perfil" />
+      <img src="../../../componentes/header/img/perfil_instituicao.svg" alt="perfil" />
     </a>
-</header>
-
-<div class="sidebar">
-  <div class="logo-details">
-      <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
-      <i class="bx bx-menu" id="btn"></i>
-  </div>
-      <li>
-          <a href="../index.html">
-              <i class="bx bx-group"></i>
-              <span class="links_name">Cursos existentes</span>
-          </a>
-          <span class="tooltip">Cursos</span>
-      </li>
-      <li>
-          <a href="../../usuarios/index.html">
-              <i class="bx bx-user"></i>
-              <span class="links_name">Usuários cadastrados</span>
-          </a>
-          <span class="tooltip">Usuários</span>
-      </li>
-      <li>
-          <a href="#">
-              <i class="bx bx-edit"></i>
-              <span class="links_name">Formulário da banca</span>
-          </a>
-          <span class="tooltip">Avaliações</span>
-      </li>
-      <li class="profile">
-          <a onclick="logout()">
-              <i class="bx bx-log-out" id="log_out"></i>
-              <span class="links_name">Log Out</span>
-          </a>
-          <span class="tooltip">Log Out</span>
-      </li>
-</div>
+  </header>
 
   <div class="sidebar">
     <div class="logo-details">
-        <img class="icon" src="../../../../home/images-global/logo-branca.svg" alt="logo" />
-        <i class="bx bx-menu" id="btn"></i>
+      <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+      <i class="bx bx-menu" id="btn"></i>
     </div>
-        <li>
-            <a href="../../../cursos/index.html">
-                <i class="bx bx-group"></i>
-                <span class="links_name">Cursos existentes</span>
-            </a>
-            <span class="tooltip">Cursos</span>
-        </li>
-        <li>
-            <a href="../../../usuarios/index.html">
-                <i class="bx bx-user"></i>
-                <span class="links_name">Usuários cadastrados</span>
-            </a>
-            <span class="tooltip">Usuários</span>
-        </li>
-        <li>
-            <a href="#">
-                <i class="bx bx-edit"></i>
-                <span class="links_name">Formulário da banca</span>
-            </a>
-            <span class="tooltip">Avaliações</span>
-        </li>
-        <li class="profile">
-            <a href="../../../../home/login/index.html">
-                <i class="bx bx-log-out" id="log_out"></i>
-                <span class="links_name">Log Out</span>
-            </a>
-            <span class="tooltip">Log Out</span>
-        </li>
-</div>
+    <li>
+      <a href="../index.html">
+        <i class="bx bx-group"></i>
+        <span class="links_name">Cursos existentes</span>
+      </a>
+      <span class="tooltip">Cursos</span>
+    </li>
+    <li>
+      <a href="../../usuarios/index.html">
+        <i class="bx bx-user"></i>
+        <span class="links_name">Usuários cadastrados</span>
+      </a>
+      <span class="tooltip">Usuários</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="bx bx-edit"></i>
+        <span class="links_name">Formulário da banca</span>
+      </a>
+      <span class="tooltip">Avaliações</span>
+    </li>
+    <li class="profile">
+      <a onclick="logout()">
+        <i class="bx bx-log-out" id="log_out"></i>
+        <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+    </li>
+  </div>
 
-<script>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img class="icon" src="../../../../home/images-global/logo-branca.svg" alt="logo" />
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <li>
+      <a href="../../../cursos/index.html">
+        <i class="bx bx-group"></i>
+        <span class="links_name">Cursos existentes</span>
+      </a>
+      <span class="tooltip">Cursos</span>
+    </li>
+    <li>
+      <a href="../../../usuarios/index.html">
+        <i class="bx bx-user"></i>
+        <span class="links_name">Usuários cadastrados</span>
+      </a>
+      <span class="tooltip">Usuários</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="bx bx-edit"></i>
+        <span class="links_name">Formulário da banca</span>
+      </a>
+      <span class="tooltip">Avaliações</span>
+    </li>
+    <li class="profile">
+      <a href="../../../../home/login/index.html">
+        <i class="bx bx-log-out" id="log_out"></i>
+        <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+    </li>
+  </div>
+
+  <script>
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");
 
     closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();
+      sidebar.classList.toggle("open");
+      menuBtnChange();
     });
 
     function menuBtnChange() {
-        if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-        }
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
     }
-</script>
+  </script>
 
   <div class="container mt-5 container">
     <h1>EDITAR INFORMAÇÕES DE PAGAMENTO</h1>

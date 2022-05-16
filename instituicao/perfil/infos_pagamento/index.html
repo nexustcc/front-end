@@ -13,81 +13,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Righteous&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
-  <link rel="stylesheet" href="../../componentes/header/styles_header.css">
-  <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
-  <script defer src="./script.js"></script>
+  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css" />
+  <link rel="stylesheet" href="../../componentes/header/styles_header.css" />
+  <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon" />
+  <script defer src="script.js"></script>
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
-  <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
+  <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css" />
+  <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon" />
   <title>Perfil - Informações de pagamento</title>
 </head>
 
 <body>
-  
   <header>
     <div class="primeira_parte">
-        <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
-        <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
+      <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+      <h1 id="nomeInstituicao">NOME DA INSTITUIÇÃO</h1>
     </div>
 
     <a href="../../index.html">
-        <img src="../../componentes/header/img/perfil_instituicao.svg" alt="perfil" />
+      <img src="../../componentes/header/img/perfil_instituicao.svg" alt="perfil" />
     </a>
-</header>
+  </header>
 
   <div class="sidebar">
     <div class="logo-details">
-        <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
-        <i class="bx bx-menu" id="btn"></i>
+      <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+      <i class="bx bx-menu" id="btn"></i>
     </div>
-        <li>
-            <a href="../../cursos/index.html">
-                <i class="bx bx-group"></i>
-                <span class="links_name">Cursos existentes</span>
-            </a>
-            <span class="tooltip">Cursos</span>
-        </li>
-        <li>
-            <a href="../../usuarios/index.html">
-                <i class="bx bx-user"></i>
-                <span class="links_name">Usuários cadastrados</span>
-            </a>
-            <span class="tooltip">Usuários</span>
-        </li>
-        <li>
-            <a href="#">
-                <i class="bx bx-edit"></i>
-                <span class="links_name">Formulário da banca</span>
-            </a>
-            <span class="tooltip">Avaliações</span>
-        </li>
-        <li class="profile">
-            <a onclick="logout()">
-                <i class="bx bx-log-out" id="log_out"></i>
-                <span class="links_name">Log Out</span>
-            </a>
-            <span class="tooltip">Log Out</span>
-        </li>
-</div>
+    <li>
+      <a href="../../cursos/index.html">
+        <i class="bx bx-group"></i>
+        <span class="links_name">Cursos existentes</span>
+      </a>
+      <span class="tooltip">Cursos</span>
+    </li>
+    <li>
+      <a href="../../usuarios/index.html">
+        <i class="bx bx-user"></i>
+        <span class="links_name">Usuários cadastrados</span>
+      </a>
+      <span class="tooltip">Usuários</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="bx bx-edit"></i>
+        <span class="links_name">Formulário da banca</span>
+      </a>
+      <span class="tooltip">Avaliações</span>
+    </li>
+    <li class="profile">
+      <a onclick="logout()">
+        <i class="bx bx-log-out" id="log_out"></i>
+        <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+    </li>
+  </div>
 
-<script>
+  <script>
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");
 
     closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();
+      sidebar.classList.toggle("open");
+      menuBtnChange();
     });
 
     function menuBtnChange() {
-        if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-        }
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
     }
-</script>
+  </script>
 
   <div class="container mt-5 container">
     <h1>INFORMAÇÕES DE PAGAMENTO</h1>
@@ -114,11 +113,9 @@
 
       <div class="buttons">
         <div class="col-md-3 primeiro_botao">
-        
-            <a href="../../../instituicao/index.html">
-              <button id="segundo_botao" type="submit">CANCELAR </button>
-            </a>
-         
+          <a id="botao_voltar">
+            <button id="segundo_botao">VOLTAR</button>
+          </a>
         </div>
         <div class="col-md-3 primeiro_botao">
           <a href="./editar/index.html">
