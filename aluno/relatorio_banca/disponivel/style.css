@@ -27,20 +27,20 @@
     border-radius: 30px 30px 30px 30px;
 }
 
-.criteriosText{
-    width: 25%;
+.criterioText{
+    width: 40%;
 }
 
 .ruim{
-    width: 25%;
+    width: 20%;
 }
 
 .regular{
-    width: 25%;
+    width: 20%;
 }
 
 .otimo{
-    width: 25%;
+    width: 20%;
 }
 
 .criterios h1{
@@ -60,7 +60,7 @@ p{
     flex-direction: row;
     background-color: #044177;
     border-radius: 29px 29px 0px 0px;
-    padding: 2%;
+    padding: 2% 0 2% 0;
     text-align: center;
 }
 
@@ -82,24 +82,31 @@ p{
     border-bottom: 1px solid #044177;
 }
 
+.clareza form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
 .clareza p{
     width: 40%;
     justify-content: space-between;
+    padding: 1%;
+    
 }
 
 .clareza label{
     width: 20%;
     border-radius: 0%;
     display: flex;
-    border: 1px solid #044177;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border: none;
 }
 
-
 .objetividade{
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
@@ -108,20 +115,329 @@ p{
     border-bottom: 1px solid #044177;
 }
 
+.objetividade form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 .objetividade p{
     width: 40%;
     justify-content: space-between;
+    padding: 1%;
+    
 }
 
 .objetividade label{
     width: 20%;
     border-radius: 0%;
     display: flex;
-    border: 1px solid #044177;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border: none;
 }
+
+
+.fluencia{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.fluencia form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.fluencia p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.fluencia label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.dominio{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.dominio form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.dominio p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.dominio label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.capacidadeComunicar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.capacidadeComunicar form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.capacidadeComunicar p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.capacidadeComunicar label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.argumentacao{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.argumentacao form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.argumentacao p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.argumentacao label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.organizacao{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.organizacao form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.organizacao p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.organizacao label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.recursosUtilizados{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.recursosUtilizados form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.recursosUtilizados p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.recursosUtilizados label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.posturaIntegrantes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.posturaIntegrantes form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.posturaIntegrantes p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.posturaIntegrantes label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.usoDoTempo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+    border-bottom: 1px solid #044177;
+}
+
+.usoDoTempo form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.usoDoTempo p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.usoDoTempo label{
+    width: 20%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.obsExtras{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center center;
+   
+}
+
+.obsExtras form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.obsExtras p{
+    width: 40%;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+
+.obsExtras input{
+    width: 90%;
+    margin-right: 5%;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+
 
 
 .form-control + .form-control {
