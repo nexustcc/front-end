@@ -1,284 +1,375 @@
 let localStorageUser;
 
+
 const changeModalEditar = async (id, tipo) => {
     document.querySelector(".modal-listagem").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 
-    if (tipo == "PROFESSOR") {
-        console.log(id, tipo);
+    let input_nome = document.getElementById('edit_user_nome')
+    let input_email = document.getElementById('edit_user_email')
+    let input_senha = document.getElementById('edit_user_senha')
+    let input_tipo = document.getElementById('edit_user_tipo')
+    let input_curso = document.getElementById('edit_user_curso')
+    let input_turma = document.getElementById('edit_user_turma')
+    let input_grupo = document.getElementById('edit_user_grupo')
+
+    console.log(input_nome)
+
+    if(tipo == 'PROFESSOR'){
+        const url = `http://localhost:3000/membros/listarProfessor/${id}`
+
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        const professor = await dados.json();
+
+        input_nome.value = ''
+        input_email.value = ''
+        input_senha.value = ''
+        input_tipo.placeholder = ''
+        input_curso.value = ''
+        input_turma.value = ''
+        input_grupo.value = ''
+        
+        input_nome.value = professor.professor.nome
+        input_email.value = professor.professor.email
+        input_senha.value = professor.professor.senha
+        input_tipo.placeholder = 'PROFESSOR'
+
+        // for (let c = 0; c < professor.cursos.length; c++) {
+        //     if(professor.cursos.length == 0 || professor.cursos.length == null){
+        //         input_curso.value = 'Professor sem cursos'
+        //     }
+
+        //     input_curso.value += professor.cursos[c].nome + " | "
+        // }
+
+        // for (let t = 0; t < professor.turmas.length; t++) {
+        //     if(professor.turmas.length == 0 || professor.turmas.length == null){
+        //         input_turma.value = 'Professor sem turmas'
+        //     }
+
+        //     input_turma.value += professor.turmas[t].nome + " | "
+        // }
+
+        // for (let g = 0; g < professor.grupos.length; g++) {
+        //     if(professor.grupos.length == 0 || professor.grupos.length == null){
+        //         input_grupo.value = 'Professor sem grupos'
+        //     }
+
+        //     input_grupo.value += professor.grupos[g].nomeProjeto + " | "
+        // }
+
+    } else if (tipo == 'ALUNO'){
+        const url = `http://localhost:3000/membros/listarAluno/${id}`
+
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        const aluno = await dados.json();
+
+        console.log(aluno)
+
+        input_nome.value = ''
+        input_email.value = ''
+        input_senha.value = ''
+        input_tipo.placeholder = ''
+        input_curso.value = ''
+        input_turma.value = ''
+        input_grupo.value = ''
+        
+        input_nome.value = aluno.aluno.nome
+        input_email.value = aluno.aluno.email
+        input_senha.value = aluno.aluno.senha
+        input_tipo.placeholder = 'ALUNO'
+        input_curso.value = aluno.curso.nome
+        input_turma.value = aluno.turma.nome
+        input_grupo.value = aluno.grupo.nomeProjeto
+
+    } else{
+        const url = `http://localhost:3000/membros/listarAvaliador/${id}`
+
+        fetch(url).then((response) => response.json);
+        const dados = await fetch(url);
+        const avaliador = await dados.json();
+
+        input_nome.value = ''
+        input_email.value = ''
+        input_senha.value = ''
+        input_tipo.placeholder = ''
+        input_curso.value = ''
+        input_turma.value = ''
+        input_grupo.value = ''
+        
+        input_nome.value = avaliador.avaliador.nome
+        input_email.value = avaliador.avaliador.email
+        input_senha.value = avaliador.avaliador.senha
+        input_tipo.placeholder = 'AVALIADOR'
+        input_curso.value = avaliador.curso.nome
+        input_turma.value = avaliador.turma.nome
+        
+        for (let g = 0; g < avaliador.grupos.length; g++) {
+            if(avaliador.grupos.length == 0 || avaliador.grupos.length == null){
+                input_grupo.placeholder = 'Avalidor sem grupos'
+            }
+
+            input_grupo.placeholder += avaliador.grupos[g] + " | "
+        }
     }
 
-    // let input_nome = document.getElementById('view_user_nome')
-    // let input_email = document.getElementById('view_user_email')
-    // let input_senha = document.getElementById('view_user_senha')
-    // let input_tipo = document.getElementById('view_user_tipo')
-    // let input_curso = document.getElementById('view_user_curso')
-    // let input_turma = document.getElementById('view_user_turma')
-    // let input_grupo = document.getElementById('view_user_grupo')
+    document.getElementById('btn-cancelar-editar').addEventListener('click', () => {
+        document.querySelector(".bg").style.display = "none";
+        document.querySelector(".modal-editar").style.display = "none";
+        showModalListagem(id, tipo)
+    })
+}
 
-    // if(tipo == 'PROFESSOR'){
-    //     const url = `http://localhost:3000/instituicao/membros/listarProfessor/${id}`
+const changeModalExcluir = async (id, tipo) => {
+    document.querySelector(".modal-listagem").style.display = "none";
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-excluir").style.display = "flex";
+    
+    document.getElementById('btn-editar-usuario').addEventListener('click', () => {
+        
+        if(tipo == 'PROFESSOR'){
+            const url = `http://localhost:3000/professor/deletarProfessor/${id}` 
 
-    //     fetch(url).then((response) => response.json);
-    //     const dados = await fetch(url);
-    //     const professor = await dados.json();
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+            };
+              
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => alert(result))
+                .then(() => window.location.href = './index.html')
 
-    //     input_nome.placeholder = ''
-    //     input_email.placeholder = ''
-    //     input_senha.placeholder = ''
-    //     input_tipo.placeholder = ''
-    //     input_curso.placeholder = ''
-    //     input_turma.placeholder = ''
-    //     input_grupo.placeholder = ''
+        } else if(tipo == 'ALUNO'){
+            const url = `http://localhost:3000/aluno/deletarAluno/${id}`
 
-    //     input_nome.placeholder = professor.professor.nome
-    //     input_email.placeholder = professor.professor.email
-    //     input_senha.placeholder = professor.professor.senha
-    //     input_tipo.placeholder = tipo
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+            };
+              
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => alert(result))
+                .then(() => window.location.href = './index.html')
 
-    //     for (let c = 0; c < professor.cursos.length; c++) {
-    //         if(professor.cursos.length == 0 || professor.cursos.length == null){
-    //             input_curso.placeholder = 'Professor sem cursos'
-    //         }
+        } else{
+            const url = `http://localhost:3000/avaliador/deletarAvaliador/${id}`
 
-    //         input_curso.placeholder += professor.cursos[c].nome + " | "
-    //     }
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+            };
+              
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => alert(result))
+                .then(() => window.location.href = './index.html')
+        }
+    })
+}
 
-    //     for (let t = 0; t < professor.turmas.length; t++) {
-    //         if(professor.turmas.length == 0 || professor.turmas.length == null){
-    //             input_turma.placeholder = 'Professor sem turmas'
-    //         }
-
-    //         input_turma.placeholder += professor.turmas[t].nome + " | "
-    //     }
-
-    //     for (let g = 0; g < professor.grupos.length; g++) {
-    //         if(professor.grupos.length == 0 || professor.grupos.length == null){
-    //             input_grupo.placeholder = 'Professor sem grupos'
-    //         }
-
-    //         input_grupo.placeholder += professor.grupos[g].nomeProjeto + " | "
-    //     }
-
-    // } else if (tipo == 'ALUNO'){
-    //     const url = `http://localhost:3000/instituicao/membros/listarAluno/${id}`
-
-    //     fetch(url).then((response) => response.json);
-    //     const dados = await fetch(url);
-    //     const aluno = await dados.json();
-
-    //     input_nome.placeholder = ''
-    //     input_email.placeholder = ''
-    //     input_senha.placeholder = ''
-    //     input_tipo.placeholder = ''
-    //     input_curso.placeholder = ''
-    //     input_turma.placeholder = ''
-    //     input_grupo.placeholder = ''
-
-    //     input_nome.placeholder = aluno.aluno.nome
-    //     input_email.placeholder = aluno.aluno.email
-    //     input_senha.placeholder = aluno.aluno.senha
-    //     input_tipo.placeholder = tipo
-    //     input_curso.placeholder = aluno.curso.nome
-    //     input_turma.placeholder = aluno.turma.nome
-    //     input_grupo.placeholder = aluno.grupo.nomeProjeto
-
-    // } else{
-    //     const url = `http://localhost:3000/instituicao/membros/listarAvaliador/${id}`
-
-    //     fetch(url).then((response) => response.json);
-    //     const dados = await fetch(url);
-    //     const avaliador = await dados.json();
-
-    //     input_nome.placeholder = ''
-    //     input_email.placeholder = ''
-    //     input_senha.placeholder = ''
-    //     input_tipo.placeholder = ''
-    //     input_curso.placeholder = ''
-    //     input_turma.placeholder = ''
-    //     input_grupo.placeholder = ''
-
-    //     input_nome.placeholder = avaliador.avaliador.nome
-    //     input_email.placeholder = avaliador.avaliador.email
-    //     input_senha.placeholder = avaliador.avaliador.senha
-    //     input_tipo.placeholder = tipo
-    //     input_curso.placeholder = avaliador.curso.nome
-    //     input_turma.placeholder = avaliador.turma.nome
-
-    //     for (let g = 0; g < avaliador.grupos.length; g++) {
-    //         if(avaliador.grupos.length == 0 || avaliador.grupos.length == null){
-    //             input_grupo.placeholder = 'Avalidor sem grupos'
-    //         }
-
-    //         input_grupo.placeholder += avaliador.grupos[g] + " | "
-    //     }
-    // }
-};
 
 const showModalListagem = async (id, tipo) => {
     document.querySelector(".modal-editar").style.display = "none";
     document.querySelector(".modal-listagem").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
 
-    const container_usuario = document.getElementById("container_usuario");
-    const button_div = document.createElement("div");
+    let input_nome = document.getElementById('view_user_nome')
+    let input_email = document.getElementById('view_user_email')
+    let input_senha = document.getElementById('view_user_senha')
+    let input_tipo = document.getElementById('view_user_tipo')
+    let input_curso = document.getElementById('view_user_curso')
+    let input_turma = document.getElementById('view_user_turma')
+    let input_grupo = document.getElementById('view_user_grupo') 
 
-    button_div.classList = "buttons";
-
-    button_div.innerHTML += `
-        <div class="col-md-3">
-            <button class="primeiro_botao" type="button" onclick="exitModalListagem()"> CANCELAR </button>
-        </div>
-
-        <div class="col-md-3">
-            <button id class="terceiro_botao" type="button" onclick="changeModalExcluir(${
-              (id, tipo)
-            })"> EXCLUIR </button>
-        </div>
-
-        <div class="col-md-6">
-            <button class="segundo_botao" type="button" onclick="changeModalEditar(${
-              (id, tipo)
-            })"> EDITAR </button>
-        </div>
-    `;
-
-    container_usuario.appendChild(button_div);
-
-    let input_nome = document.getElementById("view_user_nome");
-    let input_email = document.getElementById("view_user_email");
-    let input_senha = document.getElementById("view_user_senha");
-    let input_tipo = document.getElementById("view_user_tipo");
-    let input_curso = document.getElementById("view_user_curso");
-    let input_turma = document.getElementById("view_user_turma");
-    let input_grupo = document.getElementById("view_user_grupo");
-
-    if (tipo == "PROFESSOR") {
-        const url = `http://localhost:3000/instituicao/membros/listarProfessor/${id}`;
+    if(tipo == 'PROFESSOR'){
+        const url = `http://localhost:3000/membros/listarProfessor/${id}`
 
         fetch(url).then((response) => response.json);
         const dados = await fetch(url);
         const professor = await dados.json();
 
-        input_nome.placeholder = "";
-        input_email.placeholder = "";
-        input_senha.placeholder = "";
-        input_tipo.placeholder = "";
-        input_curso.placeholder = "";
-        input_turma.placeholder = "";
-        input_grupo.placeholder = "";
+        input_nome.placeholder = ''
+        input_email.placeholder = ''
+        input_senha.placeholder = ''
+        input_tipo.placeholder = ''
+        input_curso.placeholder = ''
+        input_turma.placeholder = ''
+        input_grupo.placeholder = ''
+        
+        input_nome.placeholder = professor.professor.nome
+        input_email.placeholder = professor.professor.email
+        input_senha.placeholder = professor.professor.senha
+        input_tipo.placeholder = tipo
 
-        input_nome.placeholder = professor.professor.nome;
-        input_email.placeholder = professor.professor.email;
-        input_senha.placeholder = professor.professor.senha;
-        input_tipo.placeholder = tipo;
-
-        for (let c = 0; c < professor.cursos.length; c++) {
-            if (professor.cursos.length == 0 || professor.cursos.length == null) {
-                input_curso.placeholder = "Professor sem cursos";
+        if(professor.cursos.length == 0 || professor.cursos.length == null){
+            input_curso.placeholder = '* sem cursos'
+        } else{
+            for (let c = 0; c < professor.cursos.length; c++) {
+                input_curso.placeholder += professor.cursos[c].nome + " | "
             }
-
-            input_curso.placeholder += professor.cursos[c].nome + " | ";
         }
 
-        for (let t = 0; t < professor.turmas.length; t++) {
-            if (professor.turmas.length == 0 || professor.turmas.length == null) {
-                input_turma.placeholder = "Professor sem turmas";
+        if(professor.turmas.length == 0 || professor.turmas.length == null){
+            input_turma.placeholder = '* sem turmas'
+        } else{
+            for (let t = 0; t < professor.turmas.length; t++) {
+                input_turma.placeholder += professor.turmas[t].nome + " | "
             }
-
-            input_turma.placeholder += professor.turmas[t].nome + " | ";
         }
 
-        for (let g = 0; g < professor.grupos.length; g++) {
-            if (professor.grupos.length == 0 || professor.grupos.length == null) {
-                input_grupo.placeholder = "Professor sem grupos";
+        if(professor.grupos.length == 0 || professor.grupos.length == null){
+            input_grupo.placeholder = '* sem grupos'
+        } else{
+            for (let g = 0; g < professor.grupos.length; g++) {
+                input_grupo.placeholder += professor.grupos[g].nomeProjeto + " | "
             }
-
-            input_grupo.placeholder += professor.grupos[g].nomeProjeto + " | ";
         }
-    } else if (tipo == "ALUNO") {
-        const url = `http://localhost:3000/instituicao/membros/listarAluno/${id}`;
+
+        const button_div = document.getElementById('div-btn-user-options');
+        
+        button_div.innerHTML = ''
+
+        button_div.innerHTML = `
+            <div class="col-md-3">
+                <button class="primeiro_botao" type="button" onclick="exitModalListagem()"> CANCELAR </button>
+            </div>
+
+            <div class="col-md-3">
+                <button id class="terceiro_botao" type="button" onclick="changeModalExcluir(${id}, 'PROFESSOR')"> EXCLUIR </button>
+            </div>
+
+            <div class="col-md-6">
+                <button class="segundo_botao" type="button" onclick="changeModalEditar(${id}, 'PROFESSOR')"> EDITAR </button>
+            </div>
+        `;
+
+    } else if (tipo == 'ALUNO'){
+        const url = `http://localhost:3000/membros/listarAluno/${id}`
 
         fetch(url).then((response) => response.json);
         const dados = await fetch(url);
         const aluno = await dados.json();
 
-        input_nome.placeholder = "";
-        input_email.placeholder = "";
-        input_senha.placeholder = "";
-        input_tipo.placeholder = "";
-        input_curso.placeholder = "";
-        input_turma.placeholder = "";
-        input_grupo.placeholder = "";
+        input_nome.placeholder = ''
+        input_email.placeholder = ''
+        input_senha.placeholder = ''
+        input_tipo.placeholder = ''
+        input_curso.placeholder = ''
+        input_turma.placeholder = ''
+        input_grupo.placeholder = ''
+        
+        input_nome.placeholder = aluno.aluno.nome
+        input_email.placeholder = aluno.aluno.email
+        input_senha.placeholder = aluno.aluno.senha
+        input_tipo.placeholder = tipo
+        input_curso.placeholder = aluno.curso.nome
+        input_turma.placeholder = aluno.turma.nome
+        input_grupo.placeholder = aluno.grupo.nomeProjeto
 
-        input_nome.placeholder = aluno.aluno.nome;
-        input_email.placeholder = aluno.aluno.email;
-        input_senha.placeholder = aluno.aluno.senha;
-        input_tipo.placeholder = tipo;
-        input_curso.placeholder = aluno.curso.nome;
-        input_turma.placeholder = aluno.turma.nome;
-        input_grupo.placeholder = aluno.grupo.nomeProjeto;
-    } else {
-        const url = `http://localhost:3000/instituicao/membros/listarAvaliador/${id}`;
+        const button_div = document.getElementById('div-btn-user-options');
+        
+        button_div.innerHTML = ''
+        
+        button_div.innerHTML += `
+            <div class="col-md-3">
+                <button class="primeiro_botao" type="button" onclick="exitModalListagem()"> CANCELAR </button>
+            </div>
+
+            <div class="col-md-3">
+                <button id class="terceiro_botao" type="button" onclick="changeModalExcluir(${id}, 'ALUNO')"> EXCLUIR </button>
+            </div>
+
+            <div class="col-md-6">
+                <button class="segundo_botao" type="button" onclick="changeModalEditar(${id}, 'ALUNO')"> EDITAR </button>
+            </div>
+        `;
+        
+        container_usuario.appendChild(button_div);
+
+    } else{
+        const url = `http://localhost:3000/membros/listarAvaliador/${id}`
 
         fetch(url).then((response) => response.json);
         const dados = await fetch(url);
         const avaliador = await dados.json();
 
-        input_nome.placeholder = "";
-        input_email.placeholder = "";
-        input_senha.placeholder = "";
-        input_tipo.placeholder = "";
-        input_curso.placeholder = "";
-        input_turma.placeholder = "";
-        input_grupo.placeholder = "";
-
-        input_nome.placeholder = avaliador.avaliador.nome;
-        input_email.placeholder = avaliador.avaliador.email;
-        input_senha.placeholder = avaliador.avaliador.senha;
-        input_tipo.placeholder = tipo;
-        input_curso.placeholder = avaliador.curso.nome;
-        input_turma.placeholder = avaliador.turma.nome;
-
-        for (let g = 0; g < avaliador.grupos.length; g++) {
-            if (avaliador.grupos.length == 0 || avaliador.grupos.length == null) {
-                input_grupo.placeholder = "Avalidor sem grupos";
+        input_nome.placeholder = ''
+        input_email.placeholder = ''
+        input_senha.placeholder = ''
+        input_tipo.placeholder = ''
+        input_curso.placeholder = ''
+        input_turma.placeholder = ''
+        input_grupo.placeholder = ''
+        
+        input_nome.placeholder = avaliador.avaliador.nome
+        input_email.placeholder = avaliador.avaliador.email
+        input_senha.placeholder = avaliador.avaliador.senha
+        input_tipo.placeholder = tipo
+        input_curso.placeholder = avaliador.curso.nome
+        input_turma.placeholder = avaliador.turma.nome
+        
+        if(avaliador.grupos.length == 0 || avaliador.grupos.length == null){
+            input_grupo.placeholder = '* sem grupos'
+        } else{
+            for (let g = 0; g < avaliador.grupos.length; g++) {
+                input_grupo.placeholder += avaliador.grupos[g] + " | "
             }
-
-            input_grupo.placeholder += avaliador.grupos[g] + " | ";
         }
+
+        const button_div = document.getElementById('div-btn-user-options');
+        
+        button_div.innerHTML = ''
+        
+        button_div.innerHTML += `
+            <div class="col-md-3">
+                <button class="primeiro_botao" type="button" onclick="exitModalListagem()"> CANCELAR </button>
+            </div>
+
+            <div class="col-md-3">
+                <button id class="terceiro_botao" type="button" onclick="changeModalExcluir(${id}, 'AVALIADOR')"> EXCLUIR </button>
+            </div>
+
+            <div class="col-md-6">
+                <button class="segundo_botao" type="button" onclick="changeModalEditar(${id}, 'AVALIADOR')"> EDITAR </button>
+            </div>
+        `;
+        
+        container_usuario.appendChild(button_div);
     }
-};
+}
+
 
 const exibirDadosGeral = (membros) => {
-    const membros_container = document.getElementById("ul_membros");
+    const membros_container = document.getElementById('ul_membros')
 
-    if (membros.length == 0) {
+    if(membros.length == 0){
         const no_members_view = document.createElement("li");
         no_members_view.classList = "list-group-item li";
 
         no_members_view.innerHTML += `
-            <li class="list-group-item li" onclick="showModalListagem(${membros.professores[m].idProfessor})">
+            <li class="list-group-item li"">
                 <p>Nenhum usuário cadastrado</p>
             </li>
         `;
 
         membros_container.appendChild(no_members_view);
     } else {
-        membros_container.innerHTML = "";
+        membros_container.innerHTML = ''
+
 
         for (let m = 0; m < membros.professores.length; m++) {
-            if (
-                membros.professores[m].foto == null ||
-                membros.professores[m].foto == undefined
-            ) {
+            if (membros.professores[m].foto == null || membros.professores[m].foto == undefined) {
                 membros.professores[m].foto = "uploads/fotopadrao.svg";
             }
-
+    
             const professor_view = document.createElement("li");
             professor_view.classList = "list-group-item li";
-
+    
             professor_view.innerHTML += `
                 <li class="list-group-item li" onclick="showModalListagem(${membros.professores[m].idProfessor}, 'PROFESSOR')">
                     <div class="usuario">
@@ -288,26 +379,23 @@ const exibirDadosGeral = (membros) => {
                     <h2>PROFESSOR</h2>
                 </li>
             `;
-
+    
             membros_container.appendChild(professor_view);
-
+    
             const linha = document.createElement("img");
             linha.src = "./img/Line.svg";
-
+    
             membros_container.appendChild(linha);
         }
-
+    
         for (let m = 0; m < membros.alunos.length; m++) {
-            if (
-                membros.alunos[m].foto == null ||
-                membros.alunos[m].foto == undefined
-            ) {
+            if (membros.alunos[m].foto == null || membros.alunos[m].foto == undefined) {
                 membros.alunos[m].foto = "uploads/fotopadrao.svg";
             }
-
+    
             const professor_view = document.createElement("li");
             professor_view.classList = "list-group-item li";
-
+    
             professor_view.innerHTML += `
                 <li class="list-group-item li" onclick="showModalListagem(${membros.alunos[m].idAluno} , 'ALUNO')">
                     <div class="usuario">
@@ -317,26 +405,23 @@ const exibirDadosGeral = (membros) => {
                     <h2>ALUNO</h2>
                 </li>
             `;
-
+    
             membros_container.appendChild(professor_view);
-
+    
             const linha = document.createElement("img");
             linha.src = "./img/Line.svg";
-
+    
             membros_container.appendChild(linha);
         }
-
+    
         for (let m = 0; m < membros.avaliadores.length; m++) {
-            if (
-                membros.avaliadores[m].foto == null ||
-                membros.avaliadores[m].foto == undefined
-            ) {
+            if (membros.avaliadores[m].foto == null || membros.avaliadores[m].foto == undefined) {
                 membros.avaliadores[m].foto = "uploads/fotopadrao.svg";
             }
-
+    
             const professor_view = document.createElement("li");
             professor_view.classList = "list-group-item li";
-
+    
             professor_view.innerHTML += `
                 <li class="list-group-item li" onclick="showModalListagem(${membros.avaliadores[m].idAvaliador}, 'AVALIADOR')">
                     <div class="usuario">
@@ -346,42 +431,45 @@ const exibirDadosGeral = (membros) => {
                     <h2>AVALIADOR</h2>
                 </li>
             `;
-
+    
             membros_container.appendChild(professor_view);
-
+    
             const linha = document.createElement("img");
             linha.src = "./img/Line.svg";
-
+    
             membros_container.appendChild(linha);
         }
     }
-};
+}
 
 const exibirDadosProfessores = (professores) => {
-    const membros_container = document.getElementById("ul_membros");
+    const membros_container = document.getElementById('ul_membros')
 
-    if (professores.length == 0) {
+    membros_container.innerHTML = ''
+
+    if(professores.length == 0){
         const no_members_view = document.createElement("li");
-        no_members_view.classList = "list-group-item li";
+        no_members_view.display = 'flex'
+        no_members_view.style.alignItems = 'center'
+        no_members_view.style.justifyContent = 'center'
+        no_members_view.style.width = '100%'
 
         no_members_view.innerHTML += `
-            <li class="list-group-item li")">
-                <p>Nenhum Professor cadastrado</p>
+            <li>
+                <p style='margin-top: 1rem'>Nenhum Professor cadastrado</p>
             </li>
         `;
 
         membros_container.appendChild(no_members_view);
     } else {
-        membros_container.innerHTML = "";
-
         for (let m = 0; m < professores.length; m++) {
             if (professores[m].foto == null || professores[m].foto == undefined) {
                 professores[m].foto = "uploads/fotopadrao.svg";
             }
-
+    
             const professor_view = document.createElement("li");
             professor_view.classList = "list-group-item li";
-
+    
             professor_view.innerHTML += `
                 <li class="list-group-item li" onclick="showModalListagem(${professores[m].idProfessor}, 'PROFESSOR')">
                     <div class="usuario">
@@ -391,42 +479,46 @@ const exibirDadosProfessores = (professores) => {
                     <h2>PROFESSOR</h2>
                 </li>
             `;
-
+    
             membros_container.appendChild(professor_view);
-
+    
             const linha = document.createElement("img");
             linha.src = "./img/Line.svg";
-
+    
             membros_container.appendChild(linha);
         }
     }
-};
+
+}
 
 const exibirDadosAlunos = (alunos) => {
-    const membros_container = document.getElementById("ul_membros");
+    const membros_container = document.getElementById('ul_membros')
 
-    if (alunos.length == 0) {
+    membros_container.innerHTML = ''
+
+    if(alunos.length == 0){
         const no_members_view = document.createElement("li");
-        no_members_view.classList = "list-group-item li";
+        no_members_view.display = 'flex'
+        no_members_view.style.alignItems = 'center'
+        no_members_view.style.justifyContent = 'center'
+        no_members_view.style.width = '100%'
 
         no_members_view.innerHTML += `
-            <li class="list-group-item li")">
-                <p>Nenhum Professor cadastrado</p>
+            <li>
+                <p style='margin-top: 1rem'>Nenhum Aluno cadastrado</p>
             </li>
         `;
 
         membros_container.appendChild(no_members_view);
     } else {
-        membros_container.innerHTML = "";
-
         for (let m = 0; m < alunos.length; m++) {
             if (alunos[m].foto == null || alunos[m].foto == undefined) {
                 alunos[m].foto = "uploads/fotopadrao.svg";
             }
-
+    
             const aluno_view = document.createElement("li");
             aluno_view.classList = "list-group-item li";
-
+    
             aluno_view.innerHTML += `
                 <li class="list-group-item li" onclick="showModalListagem(${alunos[m].idAluno}, 'ALUNO')">
                     <div class="usuario">
@@ -436,42 +528,45 @@ const exibirDadosAlunos = (alunos) => {
                     <h2>ALUNO</h2>
                 </li>
             `;
-
+    
             membros_container.appendChild(aluno_view);
-
+    
             const linha = document.createElement("img");
             linha.src = "./img/Line.svg";
-
+    
             membros_container.appendChild(linha);
         }
     }
-};
+}
 
 const exibirDadosAvaliadores = (avaliadores) => {
-    const membros_container = document.getElementById("ul_membros");
+    const membros_container = document.getElementById('ul_membros')
 
-    if (avaliadores.length == 0) {
+    membros_container.innerHTML = ''
+
+    if(avaliadores.length == 0){
         const no_members_view = document.createElement("li");
-        no_members_view.classList = "list-group-item li";
+        no_members_view.display = 'flex'
+        no_members_view.style.alignItems = 'center'
+        no_members_view.style.justifyContent = 'center'
+        no_members_view.style.width = '100%'
 
         no_members_view.innerHTML += `
-            <li class="list-group-item li")">
-                <p>Nenhum Professor cadastrado</p>
+            <li>
+                <p style='margin-top: 1rem'>Nenhum Avaliador cadastrado</p>
             </li>
         `;
 
         membros_container.appendChild(no_members_view);
     } else {
-        membros_container.innerHTML = "";
-
         for (let m = 0; m < avaliadores.length; m++) {
             if (avaliadores[m].foto == null || avaliadores[m].foto == undefined) {
                 avaliadores[m].foto = "uploads/fotopadrao.svg";
             }
-
+    
             const avaliador_view = document.createElement("li");
             avaliador_view.classList = "list-group-item li";
-
+    
             avaliador_view.innerHTML += `
                 <li class="list-group-item li" onclick="showModalListagem(${avaliadores[m].idAvaliador}, 'AVALIADOR')">
                     <div class="usuario">
@@ -481,25 +576,25 @@ const exibirDadosAvaliadores = (avaliadores) => {
                     <h2>AVALIADOR</h2>
                 </li>
             `;
-
+    
             membros_container.appendChild(avaliador_view);
-
+    
             const linha = document.createElement("img");
             linha.src = "./img/Line.svg";
-
+    
             membros_container.appendChild(linha);
         }
     }
-};
+}
 
 const getMembrosInstituicao = async () => {
-    const url = `http://localhost:3000/instituicao/membros/listarMembros/${localStorageUser.idTipo}`;
+    const url = `http://localhost:3000/instituicao/listarMembros/${localStorageUser.idTipo}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     const membros = await dados.json();
 
-    exibirDadosGeral(membros);
+    exibirDadosGeral(membros)
 
     tiposUsuario.forEach((tipoUsuario) => {
         tipoUsuario.addEventListener("click", () => {
@@ -507,19 +602,21 @@ const getMembrosInstituicao = async () => {
                 tipoUsuario.classList.remove("ativo");
             });
             tipoUsuario.classList.add("ativo");
-
-            if (tipoUsuario.id == "li_todos") {
-                exibirDadosGeral(membros);
-            } else if (tipoUsuario.id == "li_professores") {
-                exibirDadosProfessores(membros.professores);
-            } else if (tipoUsuario.id == "li_alunos") {
-                exibirDadosAlunos(membros.alunos);
+            
+            if (tipoUsuario.id == 'li_todos') {
+                exibirDadosGeral(membros)
+            } else if(tipoUsuario.id == 'li_professores'){
+                exibirDadosProfessores(membros.professores)
+            } else if(tipoUsuario.id == 'li_alunos'){
+                exibirDadosAlunos(membros.alunos)
             } else {
-                exibirDadosAvaliadores(membros.avaliadores);
+                exibirDadosAvaliadores(membros.avaliadores)
             }
         });
     });
-};
+}
+
+
 
 let cursosProfessor = [];
 let dropdownCursosProfessor = document.getElementById("cursoNovoUsuarioModal");
