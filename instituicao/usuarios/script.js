@@ -653,48 +653,48 @@ let dropdownTurmasProfessor = document.getElementById("turmaNovoUsuarioModal");
 let turmas;
 
 document.getElementById("cursoNovoUsuarioModal").onchange = async function () {
-    // dropdownTurmasProfessor.length = 0;
-    // var selected = [];
-    // for (var option of document.getElementById("cursoNovoUsuarioModal").options) {
-    //     if (option.selected) {
-    //         selected.push(option.value);
-    //     }
-    // }
+    dropdownTurmasProfessor.length = 0;
+    var selected = [];
+    for (var option of document.getElementById("cursoNovoUsuarioModal").options) {
+        if (option.selected) {
+            selected.push(option.value);
+        }
+    }
 
-    // if (
-    //     dropdownCursosProfessor.options[dropdownCursosProfessor.selectedIndex]
-    //     .value != ""
-    // ) {
-    //     turmasProfessor = [];
+    if (
+        dropdownCursosProfessor.options[dropdownCursosProfessor.selectedIndex]
+        .value != ""
+    ) {
+        turmasProfessor = [];
 
-    //     for (var i = 0; i < selected.length; i++) {
-    //         let idCurso = selected[i];
+        for (var i = 0; i < selected.length; i++) {
+            let idCurso = selected[i];
 
-    //         const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
+            const url = `http://localhost:3000/turma/listarTurmasCurso/${idCurso}`;
 
-    //         fetch(url).then((response) => response.json);
-    //         const dados = await fetch(url);
-    //         turmasProfessor.push(await dados.json());
+            fetch(url).then((response) => response.json);
+            const dados = await fetch(url);
+            turmasProfessor.push(await dados.json());
 
-    //         turmas = turmasProfessor.map(({
-    //             turma
-    //         }) => turma);
+            turmas = turmasProfessor.map(({
+                turma
+            }) => turma);
 
-    //         console.log(turmas[0][0]);
-    //     }
+            console.log(turmas[0][0]);
+        }
 
-    //     let option;
-    //     for (let i = 0; i < turmas.length; i++) {
-    //         for (var t = 0; t < turmas[i].length; t++) {
-    //             option = document.createElement("option");
-    //             option.text = turmas[i][t].nome;
-    //             option.value = turmas[i][t].idTurma;
-    //             dropdownTurmasProfessor.add(option);
+        let option;
+        for (let i = 0; i < turmas.length; i++) {
+            for (var t = 0; t < turmas[i].length; t++) {
+                option = document.createElement("option");
+                option.text = turmas[i][t].nome;
+                option.value = turmas[i][t].idTurma;
+                dropdownTurmasProfessor.add(option);
 
-    //             console.log(option.value);
-    //         }
-    //     }
-    // }
+                console.log(option.value);
+            }
+        }
+    }
 };
 
 async function cadastrarProfessor() {
