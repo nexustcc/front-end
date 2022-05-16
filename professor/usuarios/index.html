@@ -180,84 +180,67 @@
 
         <button onclick="showModalCriarUsuario(), alterarInputTipoUsuario(), getArrayCursosAluno(), getArrayTurmasAvaliador()" class="button5"> <i class="fa fa-plus" style="font-size:36px"></i></button>
 
-        <div class="container mt-5 container modal" id="modalInfoUsuario">
-            <h1 id="txtNomeUsuarioModal">NOME DO USUÁRIO</h1>
+        <div id="container_usuario" class="container mt-5 container modal modal-listagem">
+            <h1>USUÁRIO</h1>
             <form class="row g-7">
                 <div class="col-md-6 lab-inp">
-                    <label for="nome_do_usuario" class="form-label">Nome:</label>
-                    <input type="text" class="form-control nome_do_usuario" placeholder="João" id="inputNomeUsuarioModal" disabled />
+                    <label for="nome_do_usuario" class="form-label">Nome do usuário</label>
+                    <input id="view_user_nome" type="text" class="form-control nome_do_usuario" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="email_usuario" class="form-label">Email:</label>
-                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" id="inputEmailUsuarioModal" disabled />
+                    <label for="email_usuario" class="form-label">Email do usuário</label>
+                    <input id="view_user_email" type="email" class="form-control email_usuario" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control senha" placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" id="inputSenhaUsuarioModal" disabled />
+                    <label for="senha" class="form-label">Senha</label>
+                    <input id="view_user_senha" type="password" class="form-control senha" disabled />
                 </div>
 
                 <div class="col-md-6 lab-inp">
-                    <label for="tipo-select" class="form-label">Tipo:</label>
-                    <input type="text" class="form-control tipo" placeholder="Aluno" id="inputTipoUsuarioModal" disabled />
-                </div>
-
-                <div class="col-md-6 lab-inp">
-                    <label for="turma-select" class="form-label">Curso:</label>
-                    <input type="text" class="form-control curso" placeholder="Administração" id="inputCursoUsuarioModal" disabled />
-                </div>
-
-                <div class="col-md-6 lab-inp">
-                    <label for="turma-select" class="form-label">Turma:</label>
-                    <input type="text" class="form-control turma" placeholder="ADMT1" id="inputTurmaUsuarioModal" disabled />
+                    <label for="tipo-select" class="form-label">Tipo</label>
+                    <input id="view_user_tipo" type="text" class="form-control tipo" disabled />
                 </div>
 
                 <div class="col-md-12 lab-inp">
-                    <label for="turma-select" class="form-label">Grupo:</label>
-                    <input type="text" class="form-control grupo" placeholder="Nexus TCC" id="inputNomeGrupoUsuarioModal" disabled />
+                    <label for="turma-select" class="form-label">Curso</label>
+                    <input id="view_user_curso" type="text" class="form-control curso" disabled />
                 </div>
 
+                <div class="col-md-12 lab-inp">
+                    <label for="turma-select" class="form-label">Turma</label>
+                    <input id="view_user_turma" type="text" class="form-control turma" disabled />
+                </div>
+
+                <div class="col-md-12 lab-inp">
+                    <label for="turma-select" class="form-label">Grupo</label>
+                    <input id="view_user_grupo" type="text" class="form-control turma" disabled />
+                </div>
             </form>
-            <div class="buttons">
-                <div class="col-md-3">
-                    <button class="primeiro_botao" type="button" onclick="exitModal()">
-                        CANCELAR
-                    </button>
-                </div>
 
-                <div class="col-md-3">
-                    <button class="terceiro_botao" type="button" onclick="showModalExcluirUsuario()">
-                        EXCLUIR
-                    </button>
-                </div>
-
-                <div class="col-md-6">
-                    <button class="segundo_botao" type="button" onclick="changeModalEditar()">
-                        EDITAR
-                    </button>
-                </div>
-            </div>
+            <div class="buttons" id="div-btn-user-options"></div>
         </div>
+
 
         <div class="container mt-5 container modal modal-editar" id="modal-editar">
             <h1>EDITAR USUÁRIO</h1>
             <form class="row g-7">
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="nome_do_usuario" class="form-label">Nome:</label>
-                    <input type="text" class="form-control nome_do_usuario" placeholder="João" id="inputNomeUsuarioModalEditar" ge maxlength="255">
+                    <input type="text" class="form-control nome_do_usuario" id="inputNomeUsuarioModalEditar" ge maxlength="255">
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="email_usuario" class="form-label">Email:</label>
-                    <input type="email" class="form-control email_usuario" placeholder="joao@gmail.com" id="inputEmailUsuarioModalEditar"  maxlength="255"/>
+                    <input type="email" class="form-control email_usuario" id="inputEmailUsuarioModalEditar"  maxlength="255"/>
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
                 <div class="col-md-6 lab-inp icon-edit">
                     <label for="senha" class="form-label">Senha:</label>
-                    <input type="text" class="form-control senha" placeholder="A SENHA SERÁ ENVIADA NO EMAIL DO USUÁRIO" id="inputSenhaUsuarioModalEditar"  maxlength="255"/>
+                    <input type="text" class="form-control senha" id="inputSenhaUsuarioModalEditar"  maxlength="255"/>
                     <i class="fa fa-edit" style="font-size: 24px"></i>
                 </div>
 
@@ -370,16 +353,19 @@
             </form>
         </div>
 
-        <div class="container modal modal-excluir-usuario" id="modal-excluir-usuario">
-            <h1>DESEJA EXCLUIR ESSE USUÁRIO?</h1>
+        <div class="col-md-12 container mt-5 container modal modal-excluir" id="modal-excluir">
+            <h1>DESEJA EXCLUIR ESSE USUARIO?</h1>
             <h2>Lembre-se que essa é uma ação irreversível!</h2>
-    
-            <div class="col-md-12 buttons">
+
+            <div class="buttons">
                 <div class="col-md-6">
-                    <button class="segundo_botao" onclick="exitModalExcluirUsuario()" type="button" id="btnCancelarExclusao">CANCELAR</button>
+                    <button class="primeiro_botao" type="button" onclick="exitchangeModalExcluir()">
+                        CANCELAR
+                    </button>
                 </div>
+
                 <div class="col-md-6">
-                    <button class="segundo_botao" id="btnConfirmarExclusao" onclick="exitModalsUsuario()" type="submit">CONFIRMAR</button>
+                    <button id="btn-editar-usuario" class="terceiro_botao" type="button">CONFIRMAR</button>
                 </div>
             </div>
         </div>
