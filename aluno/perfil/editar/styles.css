@@ -105,9 +105,25 @@ body {
    font-size: 10px;
 }
 
-#show_password, #show_password1 {
+.input_senha img {
+   position: absolute;
+   top: -75%;
+   right: 5px;
+}
+
+#show_password {
+   position: absolute;
+   bottom: 34.75%;
+   right: 3.5%;
    cursor: pointer;
- }
+}
+
+#show_confirm_password {
+   position: absolute;
+   bottom: 24.4%;
+   right: 3.5%;
+   cursor: pointer;
+}
 
 .botao_editar {
    margin-top: 2vh;
