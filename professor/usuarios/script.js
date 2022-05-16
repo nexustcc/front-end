@@ -35,11 +35,6 @@ function exitChangeModalEditar() {
     document.querySelector(".modal-editar").style.display = "none";
 }
 
-function changeModalExcluir() {
-    document.querySelector(".modal").style.display = "none";
-    document.querySelector(".bg").style.display = "flex";
-    document.querySelector(".modal-excluir").style.display = "flex";
-}
 
 function exitchangeModalExcluir() {
     document.querySelector(".modal").style.display = "none";
@@ -501,41 +496,41 @@ async function cadastrarAluno(nome, email, turma, grupo) {
 //     })
 // }
 
-// const changeModalExcluir = async (id, tipo) => {
-//     document.querySelector(".modal-listagem").style.display = "none";
-//     document.querySelector(".bg").style.display = "flex";
-//     document.querySelector(".modal-excluir").style.display = "flex";
+const changeModalExcluir = async (id, tipo) => {
+    document.querySelector(".modal-listagem").style.display = "none";
+    document.querySelector(".bg").style.display = "flex";
+    document.querySelector(".modal-excluir").style.display = "flex";
     
-//     document.getElementById('btn-editar-usuario').addEventListener('click', () => {
+    document.getElementById('btn-editar-usuario').addEventListener('click', () => {
         
-//         if(tipo == 'ALUNO'){
-//             const url = `http://localhost:3000/aluno/deletarAluno/${id}`
+        if(tipo == 'ALUNO'){
+            const url = `http://localhost:3000/aluno/deletarAluno/${id}`
 
-//             var requestOptions = {
-//                 method: 'DELETE',
-//                 redirect: 'follow'
-//             };
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+            };
               
-//             fetch(url, requestOptions)
-//                 .then(response => response.text())
-//                 .then(result => alert(result))
-//                 .then(() => window.location.href = './index.html')
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => alert(result))
+                .then(() => window.location.href = './index.html')
 
-//         } else{
-//             const url = `http://localhost:3000/avaliador/deletarAvaliador/${id}`
+        } else{
+            const url = `http://localhost:3000/avaliador/deletarAvaliador/${id}`
 
-//             var requestOptions = {
-//                 method: 'DELETE',
-//                 redirect: 'follow'
-//             };
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+            };
               
-//             fetch(url, requestOptions)
-//                 .then(response => response.text())
-//                 .then(result => alert(result))
-//                 .then(() => window.location.href = './index.html')
-//         }
-//     })
-// }
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => alert(result))
+                .then(() => window.location.href = './index.html')
+        }
+    })
+}
 
 
 const showModalListagem = async (id, tipo) => {
