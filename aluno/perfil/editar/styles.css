@@ -155,7 +155,33 @@ body {
    flex-direction: row-reverse;
 }
 
+@media (max-width: 1578px) {
+
+   #show_password, #show_confirm_password {
+
+      right: 5%;
+   }
+}
+
+@media (max-width: 1118px) {
+
+   #show_password, #show_confirm_password {
+
+      right: 6.5%;
+   }
+}
+
 @media (max-width: 830px) {
+
+   #show_password {
+
+      bottom: 32.5%;
+   }
+
+   #show_confirm_password {
+      bottom: 22.5%;
+   }
+
    .container {
       width: 70%;
    }
