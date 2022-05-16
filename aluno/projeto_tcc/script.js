@@ -122,7 +122,7 @@ const checkLogin = () => {
     if (localStorage.user != undefined) {
         localStorageUser = JSON.parse(localStorage.user);
         if (localStorageUser.tipo == "aluno") {
-            getInfoAluno();
+            getInfoProjeto();
             document.getElementById("nomeAluno").innerHTML = localStorageUser.nome;
         } else {
             switch (localStorageUser.tipo) {
