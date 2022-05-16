@@ -14,7 +14,7 @@ if (urlSplit[1] == "" || urlSplit[1] == undefined) {
 
 let nomeCurso;
 
-let a = 0
+let limiter = 0
 
 document
     .getElementById("button_modal_cadastrar_turma")
