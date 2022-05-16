@@ -4,6 +4,22 @@ let localStorageUser = [];
 
 let uploadedImage = "";
 
+const imgShowPassword = document.getElementById('show_password');
+const imgShowConfirmPassword = document.getElementById('show_confirm_password');
+const inputSenha = document.getElementById('senha');
+const inputConfirmarSenha = document.getElementById('confirmar_senha');
+
+const alternarVisibilidadeSenha = (input, img) => {
+
+    if (input.type === "password") {
+        input.type = "text";
+        img.src = "img/eye-off.svg";
+    } else if (input.type === "text") {
+        input.type = "password";
+        img.src = "img/eye.svg";
+      }
+}
+
 function infoStatusNome() {
     document.querySelector(".info_preenchido_nome").style.display = "flex";
     document.querySelector(".info_vazado_nome").style.display = "none";
