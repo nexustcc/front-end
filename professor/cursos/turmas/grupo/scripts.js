@@ -20,7 +20,7 @@ if (urlSplit[1] == "" || urlSplit[1] == undefined) {
 const showModalEditarAluno = () =>{
     document.querySelector(".modal-editar-aluno").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
-    document.querySelector(".modal-editar-aluno").style.height = "60vh";
+    document.querySelector(".modal-editar-aluno").style.height = "30vh";
 }
 
 const exitModalEditarAluno = () =>{
