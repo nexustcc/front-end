@@ -123,20 +123,24 @@
             </div>
         </div>
 
-        <!-- <div class="anexos">
+        <div class="col-md-10 something">
             <div class="documentacao">
-                <label class="label-title">Documentação do projeto:</label>
-                <a href=""><button type="button" class="primeiro_botao">VISUALIZAR ARQUIVO</button></a>
-                <input type="file" name="file" id="file" class="inputfile" multiple onchange="updateList()"></input>
-                <label class="arquivo_anexado" for="file" id="btnOutroArquivo">ANEXAR OUTRO ARQUIVO</label>
+                <label>Documentação do projeto:</label>
             </div>
 
-            <div class="col-md-4 anexado">
-                <label id="fileList" class="terceiro_botao"></label>
-            </div>
-        </div> -->
+            <div class="col-md-12 acoes-form-grupo">
+                    <button type="button" class="col-md-12 primeiro_botao" id="btnVerDocumentacao">VISUALIZAR ARQUIVO</button>
+                
 
-        <button type="submit" onclick="editarGrupo()">SALVAR</button>
+                <div class="col-md-12 botoes">
+                    <button class="col-md-12 segundo_botao" type="button" id="btnVoltar">CANCELAR</button>
+
+                    <button class="col-md-12 primeiro_botao" type="submit" id="btnSalvarAlteracoes" onclick="editarGrupo()">SALVAR
+                        ALTERAÇÕES</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <script>
