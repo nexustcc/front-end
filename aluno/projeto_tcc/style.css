@@ -41,6 +41,15 @@ body {
     margin-bottom: 2%;
 }
 
+.grupo input {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #ced4da;
+}
+
 .terceiro_botao {
     font-size: 15px;
     width: 50%;
@@ -171,6 +180,7 @@ body {
     color: black;
 }
 
+
 .inputfile:focus+label,
 .inputfile+label:hover {
     background-color: #e3e3e3;
@@ -181,6 +191,7 @@ body {
     cursor: pointer;
     /* "hand" cursor */
 }
+
 
 .barra_progresso {
     margin-top: 2%;
@@ -254,6 +265,31 @@ body {
     margin-bottom: 2%;
 }
 
+.acoes-form-grupo{
+    display: flex;
+    width: 100%;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.segundo_botao {
+    font-size: 15px;
+    width: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    color: black;
+    background-color: #e3e3e3;
+    margin-left: 1%;
+    border-radius: 10px;
+    font-weight: 300;
+    border: none;
+    padding: 10px;
+    margin-bottom: 2%;
+}
+
+
 .primeiro_botao_anexo {
     font-size: 15px;
     width: 20%;
@@ -273,17 +309,6 @@ body {
     width: 100%;
 }
 
-
-.segundo_botao {
-    width: 100%;
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
-    background-color: #044177;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-}
 
 
 #p_tema_projeto, #p_descricao_projeto{
