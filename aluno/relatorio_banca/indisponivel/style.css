@@ -67,3 +67,37 @@ h2{
     border: none;
     /* creates padding around scroll thumb */
 }
+
+
+@media (max-width: 1200px) {
+    body{
+        height: 100vh;
+        padding: 2%;
+        
+    }
+
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 25px;
+    }
+
+    .usuarioEspecifico img{
+        width: 90px;
+    }
+
+    .avaliadores{
+        width: 100vw;
+    }
+
+    .imgs{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 2%; 
+        width: 90%;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+ }

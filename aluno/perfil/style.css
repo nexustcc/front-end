@@ -65,9 +65,10 @@ input {
    flex-direction: row-reverse;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 500px) {
    .container {
-      width: 70%;
+      width: 10% !important;
+      margin-left: 70% !important;
    }
 
    #imgPerfil {
@@ -77,11 +78,30 @@ input {
       width: 150px;
    }
 
-   .formPerfil {
-      margin-top: 5%;
+   .lab-inp input{
+      width: 70% !important;
    }
 
    .botao_editar {
       width: 100%;
+   } 
+   .buttons {
+      width: 70%;
+   }
+}
+
+@media (max-width: 1200px) {
+
+   .lab-inp input{
+      width: 100%;
+   }
+  
+
+   .container {
+      margin-left: 40%;
+   }
+
+   .formPerfil{
+      width: 50vh;
    }
 }

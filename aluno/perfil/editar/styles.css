@@ -334,3 +334,44 @@ body {
    padding: 9px 4px;
    border-radius: 4px 0 0 4px;
 }
+
+@media (max-width: 500px) {
+   .container {
+      width: 10% !important;
+      margin-left: 70% !important;
+   }
+
+   #imgPerfil {
+      object-fit: cover;
+      object-position: center center;
+      height: 150px;
+      width: 150px;
+   }
+
+   .lab-inp input{
+      width: 70% !important;
+   }
+
+   .botao_editar {
+      width: 100%;
+   } 
+   .buttons {
+      width: 70%;
+   }
+}
+
+@media (max-width: 1200px) {
+
+   .lab-inp input{
+      width: 100%;
+   }
+  
+
+   .container {
+      margin-left: 40%;
+   }
+
+   .formPerfil{
+      width: 50vh;
+   }
+}
