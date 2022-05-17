@@ -380,9 +380,12 @@ ul {
 }
 
 .container-geral img {
-    width: 100%;
     margin-bottom: 1%;
     margin-top: 2%;
+}
+
+.container-geral .iconify {
+    border-radius: 50%;
 }
 
 .container-geral h1 {
@@ -665,8 +668,13 @@ ul {
     width: 100%;
 }
 .usuario{
-    width: 100%;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 @media (max-width: 1500px) {
     .space {
         display: flex;
