@@ -146,6 +146,13 @@ main .tema input {
     /* creates padding around scroll thumb */
 }
 
+.data-hora {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .modal {
     display: none;
     top: 0;
@@ -348,16 +355,16 @@ main .tema input {
 }
 
 .data-apresentacao {
-    margin-top: 50px;
+    width: 48%;
 }
 
 .hora-apresentacao {
-    margin-top: 30px;
+    width: 48%;
 }
 
 .barra_progresso {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .barra_progresso label {
