@@ -79,8 +79,8 @@ const formValidation = () => {
   login(inputEmail.value, inputSenha.value)
 }
 
-document.addEventListener('keypress', function(e){
-  if(e.which == 13){
+document.addEventListener('keypress', function(key){
+  if(key.which == 13){
      formValidation();
   }
 }, false);
