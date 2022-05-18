@@ -78,3 +78,9 @@ async function login (email, senha) {
 const formValidation = () => {
   login(inputEmail.value, inputSenha.value)
 }
+
+document.addEventListener('keypress', function(e){
+  if(e.which == 13){
+     formValidation();
+  }
+}, false);
