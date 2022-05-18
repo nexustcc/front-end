@@ -15,11 +15,12 @@
     <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
-
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../componentes/header/styles_header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
     <title>Tarefas</title>
@@ -110,6 +111,51 @@
             <img id="fotoPerfilAluno" src="../componentes/header/img/foto_padrao.svg" alt="foto" />
         </a>
     </header>
+
+    <div class="sidebar">
+        <div class="logo-details">
+          <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+          <i class="bx bx-menu" id="btn"></i>
+        </div>
+    
+        <li>
+          <a href="../projeto_tcc/index.html">
+            <i class='bx bx-info-circle'></i>
+            <span class="links_name">Informações do projeto</span>
+          </a>
+          <span class="tooltip">Projeto</span>
+        </li>
+        <li>
+          <a href="./index.html">
+            <i class='bx bx-task'></i>
+            <span class="links_name">Tarefas</span>
+          </a>
+          <span class="tooltip">Tarefas</span>
+        </li>
+        <li>
+    
+          <a href="#">
+            <i class="bx bx-folder-open"></i>
+            <span class="links_name">Arquivos e links</span>
+          </a>
+          <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+          <a href="../relatorio_banca/disponivel/">
+            <i class="bx bx-edit"></i>
+            <span class="links_name">Relatório da banca</span>
+          </a>
+          <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+          <a onclick="logout()">
+            <i class="bx bx-log-out" id="log_out"></i>
+            <span class="links_name">Log Out</span>
+          </a>
+          <span class="tooltip">Log Out</span>
+        </li>
+      </div>
+
     <div class="container-geral">
 
         <div class="tipo_usuario">
