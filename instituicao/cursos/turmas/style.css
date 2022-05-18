@@ -315,7 +315,7 @@ ul {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 2.5% 5%;
 }
 
 #modal-membros .li {
