@@ -14,10 +14,73 @@
     <script src="script.js" defer></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../componentes/header/styles_header.css">
+    <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <title>Relatório da banca</title>
 </head>
 
 <body>
+
+    <header>
+        <div class="primeira_parte">
+            <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+            <h1 id="nomeAluno"></h1>
+        </div>
+    
+        <a href="../../perfil/">
+            <img id="iconePerfilAluno" src="../../componentes/header/img/foto_padrao.svg" alt="foto" />
+        </a>
+    </header>
+    
+    <div class="sidebar">
+      <div class="logo-details">
+          <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+          <i class="bx bx-menu" id="btn"></i>
+      </div>
+    
+      <li>
+          <a href="../../projeto_tcc/index.html">
+              <i class='bx bx-info-circle'></i>
+              <span class="links_name">Informações do projeto</span>
+          </a>
+          <span class="tooltip">Projeto</span>
+      </li>
+      <li>
+          <a href="../../tarefas/">
+              <i class='bx bx-task' ></i>
+              <span class="links_name">Tarefas</span>
+          </a>
+          <span class="tooltip">Tarefas</span>
+      </li>
+      <li>
+    
+          <a href="#">
+              <i class="bx bx-folder-open"></i>
+              <span class="links_name">Arquivos e links</span>
+          </a>
+          <span class="tooltip">Arquivos</span>
+      </li>
+      <li>
+          <a href="./index.html">
+              <i class="bx bx-edit"></i>
+              <span class="links_name">Relatório da banca</span>
+          </a>
+          <span class="tooltip">Avaliações</span>
+      </li>
+      <li class="profile">
+          <a onclick="logout()">
+              <i class="bx bx-log-out" id="log_out"></i>
+              <span class="links_name">Log Out</span>
+          </a>
+          <span class="tooltip">Log Out</span>
+      </li>
+    </div>
+
     <div class="container">
         
         <div class="coninerCentralizado">
