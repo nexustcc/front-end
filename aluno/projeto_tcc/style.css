@@ -275,6 +275,11 @@ body {
     flex-direction: row-reverse;
 }
 
+.botoes a {
+
+    text-decoration: none;
+}
+
 .segundo_botao {
     font-size: 15px;
     width: 20%;

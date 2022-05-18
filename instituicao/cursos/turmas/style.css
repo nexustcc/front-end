@@ -61,6 +61,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 ul::-webkit-scrollbar {
@@ -206,6 +207,7 @@ ul::-webkit-scrollbar-thumb {
 
 .container-geral img {
     width: 100%;
+    margin-left: 2%;
     margin-bottom: 1%;
     margin-top: 2%;
 }
