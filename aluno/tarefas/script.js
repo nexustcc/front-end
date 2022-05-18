@@ -62,18 +62,18 @@ function minhasTarefas() {
     document.querySelector(".container-topicos2").style.display = "none";
 }
 
-var kebab = document.querySelector(".kebab"),
+var pontos = document.querySelector(".pontos"),
     middle = document.querySelector(".middle"),
     cross = document.querySelector(".cross"),
     dropdown = document.querySelector(".dropdown");
 
-kebab.addEventListener("click", function () {
+    pontos.addEventListener("click", function () {
     middle.classList.toggle("active");
     cross.classList.toggle("active");
     dropdown.classList.toggle("active");
 });
 
-var kebab2 = document.querySelector(".kebab2"),
+var pontos2 = document.querySelector(".pontos2"),
     middle2 = document.querySelector(".middle2"),
     cross2 = document.querySelector(".cross2"),
     dropdown2 = document.querySelector(".dropdown2");
@@ -86,7 +86,7 @@ var kebab2 = document.querySelector(".kebab2"),
 //     menuDropdownAlterarCor.style.display = 'flex';
 // })
 
-kebab2.addEventListener("click", function () {
+pontos2.addEventListener("click", function () {
     middle2.classList.toggle("active");
     cross2.classList.toggle("active");
     dropdown2.classList.toggle("active");
