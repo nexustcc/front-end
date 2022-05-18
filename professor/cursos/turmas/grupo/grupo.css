@@ -322,6 +322,10 @@ main .tema input {
     border-radius: 4px 0 0 4px;
 }
 
+.iconify {
+    border-radius: 100px;
+}
+
 .tipo-select {
     background-color: #e3e3e3;
     border-radius: 10px;
