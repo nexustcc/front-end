@@ -70,7 +70,7 @@ const exibirDadosAlunos = (alunos) => {
 
     for (var i = 0; i < alunos.length; i++) {
         const li_professor = document.createElement("li");
-        li_professor.classList = "list-group-item li-integrantes";
+        li_professor.classList = "list-group-item li-integrantes"
 
         li_professor.innerHTML += `
             <div class="integrantes">

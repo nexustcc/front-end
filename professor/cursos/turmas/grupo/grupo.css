@@ -9,52 +9,27 @@
     flex-direction: column;
     justify-content: space-between;
     height: 90vh;
-    max-width: 80vw;
+    max-width: 85vw;
+    list-style: none;
+    margin-left: 145px;
+    color: #272727;
 }
 
 body {
     height: 100vh;
     width: 100vw;
     font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #272727;
-}
-
-main h1 {
+.grupo h1 { 
     margin-left: 2%;
     font-size: 18px;
     font-weight: 300;
 }
 
-.modal h1 {
-    font-size: 50px;
-    font-weight: 700;
-    color: #05204a;
-}
-
-main p {
+.grupo p {
     font-size: 20px;
     font-weight: 500;
-}
-
-main input {
-    background-color: #e3e3e3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204a;
-    padding: 15px;
-    width: 100%;
-    border: 1px solid #ced4da;
-}
-
-main .tema input {
-    width: 50%;
 }
 
 .tema {
@@ -64,6 +39,15 @@ main .tema input {
 
 .descricao {
     margin-bottom: 2%;
+}
+
+.grupo input {
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border-bottom: 1px solid #05204a;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #ced4da;
 }
 
 .ul-integrantes {
@@ -84,13 +68,21 @@ main .tema input {
 
 .cont-integrantes {
     width: fit-content;
-    max-width: 100%;
+    max-width: 100vw;
     height: fit-content;
     border: 2px solid;
     border-color: #05204a;
     border-radius: 10px;
     padding: 1%;
     margin-bottom: 2%;
+}
+
+.cont-orientadores h1, .cont-integrantes h1 {
+    margin-bottom: 20px;
+}
+
+.btnEditarAlunoGrupo, .btnExcluirProfessor {
+    display: none;
 }
 
 .ul-integrantes::-webkit-scrollbar {
@@ -146,229 +138,75 @@ main .tema input {
     /* creates padding around scroll thumb */
 }
 
-.data-hora {
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.modal {
-    display: none;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65vh;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    flex-direction: column;
-    font-family: "Poppins", sans-serif;
-    padding: 2%;
-    border-radius: 20px;
-    width: 100vw;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    overflow: hidden;
-    justify-content: space-between;
-}
-
-.bg {
-    position: fixed;
-    z-index: 100;
-    display: none;
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.658);
-    width: 100vw;
-    height: 100vh;
-}
-
-#modal-criar-aluno-grupo form, #modal-editar-aluno form, #modal-add-professor-grupo form {
-    width: 100%;
-}
-
-#modal-excluir-usuario-grupo {
-    width: 60%;
-    height: 30vh;
-    align-items: center;
-    font-weight: 100;
-    background-color: rgb(255, 255, 255);
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: "Poppins", sans-serif;
-    padding: 2%;
-    border-radius: 20px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-}
-
-#btnExcluirAluno {
-    background-color: #a71e34;
-}
-
-#modal-excluir-usuario-grupo h1 {
-    text-align: center;
-}
-
-#modal-excluir-usuario-grupo .segundo_botao {
-    margin-top: 2vh;
-    width: 98%;
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
-    background-color: #044177;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-}
-
-#modal-excluir-usuario-grupo .buttons {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-#btnConfirmarExclusao {
-    margin-top: 2vh;
-    width: 98%;
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-    background-color: #a71e34;
-}
-
-#btnCancelarExclusao {
-    margin-top: 2vh;
-    width: 98%;
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
-    background-color: #c2c2c2;
-}
-
-.btnExcluirProfessor , .btnEditarAlunoGrupo {
-    border: none;
-    background: none;
-    align-self: flex-end;
-    font-size: x-large;
-    margin-right: 5px;
-}
-
-.button5 {
-    color: white;
-    border: none;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #044177;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50%;
-}
-
-.lab-inp {
-    margin-top: 1%;
-    margin-bottom: 1%;
-    flex-direction: column;
-}
-
-.lab-inp input {
-    background-color: #e3e3e3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204a;
-    padding: 15px;
-}
-
-.icon.inputIconBg i {
-    background-color: #aaa;
-    padding: 9px 4px;
-    border-radius: 4px 0 0 4px;
-}
-
-.icon-edit {
-    position: relative;
-}
-
-.icon-edit i {
-    position: absolute;
-    right: 1vw;
-    top: 45%;
-    padding: 9px 8px;
-    color: #808080;
-    transition: 0.3s;
-}
-
-.icon-edit.inputIconBg i {
-    background-color: rgb(255, 0, 0);
-    padding: 9px 4px;
-    border-radius: 4px 0 0 4px;
+.ul-orientadores li {
+    margin-right: 30px;
 }
 
 .iconify {
     border-radius: 100px;
+    object-fit: cover;
+    object-position: center center;
 }
 
-.tipo-select {
-    background-color: #e3e3e3;
-    border-radius: 10px;
-    border-bottom: 1px solid #05204a;
-    padding: 15px;
+.inputfile {
+    display: none;
 }
 
-#addProfessorGrupo {
+.data-hora {
     display: flex;
-    flex-direction: column;
+    gap: 2%;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.data-apresentacao, .hora-apresentacao {
+    width: 49%;
 }
 
-.selected::-webkit-scrollbar {
-    width: 12px;
-    /* width of the entire scrollbar */
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
 }
 
-.selected::-webkit-scrollbar-thumb {
-    background-color: #05204a;
-    /* color of the scroll thumb */
+.inputfile+label {
+    font-size: 15px;
+    width: 30%;
+    background-color: rgba(240, 248, 255, 0);
+    color: rgb(255, 255, 255);
+    background-color: #044177;
     border-radius: 10px;
-    /* roundness of the scroll thumb */
+    font-weight: 300;
     border: none;
-    /* creates padding around scroll thumb */
+    padding: 10px;
+    margin-bottom: 5%;
+    text-align: center;
 }
 
-.data-apresentacao {
-    width: 48%;
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: #e3e3e3;
+    color: black;
 }
 
-.hora-apresentacao {
-    width: 48%;
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: #e3e3e3;
+    color: black;
+}
+
+.inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
 }
 
 .barra_progresso {
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.primeiro_botao:hover, #btnOutroArquivo:hover {
+    background-color: #e3e3e3;
+    color: black;
 }
 
 .barra_progresso label {
@@ -382,6 +220,7 @@ main .tema input {
     border-radius: 100px;
     font-size: 20px;
     font-weight: 300;
+    padding: 0 10px;
 }
 
 .progress {
@@ -392,90 +231,84 @@ main .tema input {
 .documentacao_div {
     display: flex;
     width: 100%;
-    justify-content: space-between;
 }
 
 .documentacao {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
 }
 
 .documentacao label {
-    margin-left: 2%;
+    margin-bottom: 1%;
+}
+
+.documentacao label {
     font-size: 18px;
     font-weight: 300;
+    width: 100%;
+}
+
+.documentacao .arquivo_anexado {
+    font-size: 15px;
+    font-weight: 300;
+    width: 20%;
+}
+
+.documentacao .label-title {
+    margin-left: 2%;
 }
 
 .primeiro_botao {
-    margin-top: 2vh;
-    width: 30%;
-    color: white;
     font-size: 15px;
+    width: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 10px;
     font-weight: 300;
-    border-radius: 15px;
     border: none;
     padding: 10px;
-    background-color: #c2c2c2;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
-.quinto_botao {
-    margin-top: 2vh;
-    width: 98%;
-    color: white;
-    font-weight: 700;
-    border-radius: 30px;
-    border: none;
-    padding: 15px;
-    background-color: #c2c2c2;
-    margin-right: 5%;
-}
-
-.acoes-form-grupo  {
+.acoes-form-grupo{
     display: flex;
-    width: 50%;
+    align-items: center;
     justify-content: flex-end;
-    gap: 20px;
-    margin-top: 0.75%;
+    width: 100%;
 }
 
-#btnSalvarAlteracoes {
-    background-color: #0664B7;
-    width: 10vw;
-    height: 40%;
-    align-items: center;
+.botoes{
     display: flex;
-    justify-content: center;
-    transition: 0.3s;
+    flex-direction: row-reverse;
 }
 
-#btnVerDocumentacao {
-    background-color: #044177;
-    transition: 0.3s;
-}
-
-#btnVoltar {
-    background-color: #c2c2c2;
-    width: 10vw;
-    height: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-}
-
-#btnVerDocumentacao:hover, #btnSalvarAlteracoes:hover {
-    color: #000;
+.segundo_botao {
+    font-size: 15px;
+    width: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    color: black;
     background-color: #e3e3e3;
+    margin-left: 1%;
+    border-radius: 10px;
+    font-weight: 300;
+    border: none;
+    padding: 10px;
+    margin-bottom: 2%;
 }
 
-#btnVoltar:hover {
-    color: #000;
-}
-
-.acoes-form-grupo a {
-    text-decoration: none;
+.primeiro_botao_anexo {
+    font-size: 15px;
+    width: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    background-color: #044177;
+    border-radius: 10px;
+    font-weight: 300;
+    border: none;
+    padding: 10px;
+    margin-bottom: 2%;
 }
 
 .editar_div {
@@ -484,19 +317,10 @@ main .tema input {
     width: 100%;
 }
 
-.segundo_botao {
-    margin-top: 2vh;
-    width: 98%;
-    color: white;
-    background-color: #044177;
-    border-radius: 30px;
-    font-weight: 700;
-    border: none;
-    padding: 15px;
+#p_tema_projeto, #p_descricao_projeto{
+    width: 100%;
 }
 
-.buttons {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
+#empty_progress_bar{
+    display: none;
 }

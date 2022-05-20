@@ -90,8 +90,12 @@ const exibirGrupo = (infoGrupo, andamento) => {
     inputTema.value = infoGrupo.temaProjeto
     inputDataApresentacao.value = converterDataBanco(infoGrupo.dataApresentacao)
     inputHoraApresentacaoProjetoGrupo.value = infoGrupo.horaApresentacao
+
     barraProgressoProjeto.innerHTML = andamento + '%';
-    barraProgressoProjeto.style.width = andamento + '%';
+
+    if(andamento > 3) {
+        barraProgressoProjeto.style.width = andamento + '%';
+    }    
 
 }
 
@@ -101,6 +105,7 @@ const exibirAlunos = (alunos) => {
     for (let a = 0; a < alunos.length; a++) {
         
         let aluno = document.createElement('li');
+        aluno.classList = 'list-group-item li-integrantes';
 
         aluno.innerHTML += `
             <button class="btnEditarAlunoGrupo" onclick="showModalEditarAluno(${alunos[a].idAluno})"><i class='bx bx-edit'></i></button>
@@ -115,6 +120,25 @@ const exibirAlunos = (alunos) => {
 }
 
 const exibirProfessores = (professores) => {
+    const containerProfessores = document.getElementById('listProfessoresGrupo');
+
+    for (let i = 0; i < professores.length; i++) {
+
+        let professor = document.createElement('li');
+        professor.classList = 'list-group-item li-orientadores';
+
+        professor.innerHTML += `
+        <button class="btnExcluirProfessor" onclick="showModalExcluirUsuarioGrupo(${professores[i].idProfessor})"><i class='bx bx-x'></i></button>
+        <div class="orientadores">
+            <img src="http://localhost:3000/${professores[i].foto}" class="iconify icon" style="color: #05204a" width="80" height="80">
+        </div>
+        <p id="nomeProfessorGrupo">${professores[i].nome}</p>
+        `
+
+        containerProfessores.appendChild(professor);
+        
+    }
+
 
 }
 
