@@ -340,6 +340,8 @@ ul {
 
 .container-geral .iconify {
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .container-geral h1 {

@@ -332,6 +332,12 @@ ul {
     margin-top: 5%;
 }
 
+.iconify {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 .turma {
     display: flex;
     flex-direction: column;

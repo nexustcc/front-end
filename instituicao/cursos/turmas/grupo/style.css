@@ -123,6 +123,12 @@ body {
     /* creates padding around scroll thumb */
 }
 
+.iconify {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 .barra_progresso {
     margin-top: 5%;
     margin-bottom: 5%;
