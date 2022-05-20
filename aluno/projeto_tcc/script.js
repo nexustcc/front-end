@@ -41,7 +41,6 @@ const editarGrupo = () => {
         });
 }
 
-
 const exibirDadosProjeto = (projeto, andamento) => {
     if(projeto.temaProjeto == '' || projeto.temaProjeto == undefined || projeto.temaProjeto == null) {
         document.getElementById('p_tema_projeto').placeholder = 'Insira o tema do seu Projeto' 

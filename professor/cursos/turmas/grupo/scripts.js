@@ -80,12 +80,27 @@ const converterDataBanco = (data) => {
 }
 
 const exibirGrupo = (infoGrupo, andamento) => {
+    
+    
+
+    let titlePaginaGrupo = document.getElementById('nomeGrupo');
     let inputTema = document.getElementById('inputTemaProjetoGrupo');
     let inputDescricaoProjeto = document.getElementById('textDescricaoProjetoGrupo');
     let inputDataApresentacao = document.getElementById('inputDataApresentacaoProjetoGrupo');
     let inputHoraApresentacaoProjetoGrupo = document.getElementById('inputHoraApresentacaoProjetoGrupo');
     let barraProgressoProjeto = document.getElementById('barraProgressoProjeto');
 
+    if(infoGrupo.temaProjeto == '' || infoGrupo.temaProjeto == undefined || infoGrupo.temaProjeto == null) {
+
+        inputTema.placeholder = 'Insira o tema do seu Projeto';
+    }
+
+    if(infoGrupo.descricaoProjeto == '' || infoGrupo.descricaoProjeto == undefined || infoGrupo.descricaoProjeto == null) {
+
+        inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto'; 
+    }
+
+    titlePaginaGrupo.innerHTML = infoGrupo.nomeProjeto;
     inputDescricaoProjeto.value = infoGrupo.descricao
     inputTema.value = infoGrupo.temaProjeto
     inputDataApresentacao.value = converterDataBanco(infoGrupo.dataApresentacao)
@@ -139,10 +154,7 @@ const exibirProfessores = (professores) => {
         
     }
 
-
 }
-
-
 
 const getInfoGrupo = async () => {
     const url = `http://localhost:3000/grupo/informacoesGrupo/${idGrupo}`;
@@ -155,7 +167,6 @@ const getInfoGrupo = async () => {
     exibirAlunos(grupo.alunos)
     exibirProfessores(grupo.professores)
 }
-
 
 const logout = () => {
     localStorage.removeItem("user");
