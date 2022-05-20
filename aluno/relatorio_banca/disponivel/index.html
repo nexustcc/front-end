@@ -2,21 +2,21 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon" />
 
-    <link rel="stylesheet" href="../../componentes/header/styles_header.css">
-    <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css">
+    <link rel="stylesheet" href="../../componentes/header/styles_header.css" />
+    <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
@@ -25,265 +25,258 @@
 </head>
 
 <body>
-
     <header>
         <div class="primeira_parte">
             <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
             <h1 id="nomeAluno"></h1>
         </div>
-    
+
         <a href="../../perfil/">
             <img id="iconePerfilAluno" src="../../componentes/header/img/foto_padrao.svg" alt="foto" />
         </a>
     </header>
-    
+
     <div class="sidebar">
-      <div class="logo-details">
-          <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
-          <i class="bx bx-menu" id="btn"></i>
-      </div>
-    
-      <li>
-          <a href="../../projeto_tcc/index.html">
-              <i class='bx bx-info-circle'></i>
-              <span class="links_name">Informações do projeto</span>
-          </a>
-          <span class="tooltip">Projeto</span>
-      </li>
-      <li>
-          <a href="../../tarefas/">
-              <i class='bx bx-task' ></i>
-              <span class="links_name">Tarefas</span>
-          </a>
-          <span class="tooltip">Tarefas</span>
-      </li>
-      <li>
-    
-          <a href="#">
-              <i class="bx bx-folder-open"></i>
-              <span class="links_name">Arquivos e links</span>
-          </a>
-          <span class="tooltip">Arquivos</span>
-      </li>
-      <li>
-          <a href="./index.html">
-              <i class="bx bx-edit"></i>
-              <span class="links_name">Relatório da banca</span>
-          </a>
-          <span class="tooltip">Avaliações</span>
-      </li>
-      <li class="profile">
-          <a onclick="logout()">
-              <i class="bx bx-log-out" id="log_out"></i>
-              <span class="links_name">Log Out</span>
-          </a>
-          <span class="tooltip">Log Out</span>
-      </li>
+        <div class="logo-details">
+            <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+
+        <li>
+            <a href="../../projeto_tcc/index.html">
+                <i class="bx bx-info-circle"></i>
+                <span class="links_name">Informações do projeto</span>
+            </a>
+            <span class="tooltip">Projeto</span>
+        </li>
+        <li>
+            <a href="../../tarefas/">
+                <i class="bx bx-task"></i>
+                <span class="links_name">Tarefas</span>
+            </a>
+            <span class="tooltip">Tarefas</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-folder-open"></i>
+                <span class="links_name">Arquivos e links</span>
+            </a>
+            <span class="tooltip">Arquivos</span>
+        </li>
+        <li>
+            <a href="./index.html">
+                <i class="bx bx-edit"></i>
+                <span class="links_name">Relatório da banca</span>
+            </a>
+            <span class="tooltip">Avaliações</span>
+        </li>
+        <li class="profile">
+            <a onclick="logout()">
+                <i class="bx bx-log-out" id="log_out"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
     </div>
 
     <div class="container">
-        
         <div class="coninerCentralizado">
-             <div class="tipo_plano">
-            <ul>
-                <li data-tabs="mensal" class="ativo">AVALIADOR 1</li>
-                <li data-tabs="mensal">AVALIADOR 2</li>
-                <li data-tabs="anual">AVALIADOR 3</li>
-            </ul>
-        </div>
-        <form class="form">
-            <div class="criterios">
-                <h1 class="criterioText">CRITÉRIOS</h1>
-                <h1 class="ruim">RUIM</h1>
-                <h1 class="regular">REGULAR</h1>
-                <h1 class="otimo">ÓTIMO</h1>
+            <div class="tipo_plano">
+                <ul>
+                    <li data-tabs="mensal" class="ativo">AVALIADOR 1</li>
+                    <li data-tabs="mensal">AVALIADOR 2</li>
+                    <li data-tabs="anual">AVALIADOR 3</li>
+                </ul>
             </div>
-            <div class="criteriosText">
+            <form class="form">
+                <div class="criterios">
+                    <h1 class="criterioText">CRITÉRIOS</h1>
+                    <h1 class="ruim">RUIM</h1>
+                    <h1 class="regular">REGULAR</h1>
+                    <h1 class="otimo">ÓTIMO</h1>
+                </div>
+                <div class="criteriosText">
+                    <div class="clareza">
+                        <form class="formCampos" action="">
+                            <p>CLAREZA</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
 
-                <div class="clareza">
-                    <form class="formCampos" action="">
-                        <p>CLAREZA</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
 
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
 
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
+                    <div class="objetividade">
+                        <form class="formCampos" action="">
+                            <p>OBJETIVIDADE</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
 
-                
-                <div class="objetividade">
-                    <form class="formCampos" action="">
-                        <p>OBJETIVIDADE</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
 
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
 
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
+                    <div class="fluencia">
+                        <form class="formCampos" action="">
+                            <p>FLUÊNCIA</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
 
-                <div class="fluencia">
-                    <form class="formCampos" action="">
-                        <p>FLUÊNCIA</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
 
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
 
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
+                    <div class="dominio">
+                        <form class="formCampos" action="">
+                            <p>DOMINIO DO CONTEÚDO</p>
 
-                <div class="dominio">
-                    <form class="formCampos" action="">
-                        <p>DOMINIO DO CONTEÚDO</p>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="capacidadeComunicar">
+                        <form class="formCampos" action="">
+                            <p>CAPACIDADE DE SE COMUNICAR</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="argumentacao">
+                        <form class="formCampos" action="">
+                            <p>ARGUMENTAÇÃO</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="organizacao">
+                        <form class="formCampos" action="">
+                            <p>ORGANIZAÇÃO DA APRESENTAÇÃO</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="recursosUtilizados">
+                        <form class="formCampos" action="">
+                            <p>OS RECURSOS FORAM UTILIZADOS DE MANEIRA CORRETA?</p>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="posturaIntegrantes">
+                        <form action="" class="formCampos">
+                            <p>A POSTURA DOS INTEGRANTES FOI ADEQUADA?</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="usoDoTempo">
+                        <form class="formCampos" action="">
+                            <p>O USO DO TEMPO FOI ADEQUADO?</p>
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+
+                            <label class="form-control">
+                                <input type="radio" name="radio" />
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="obsExtras">
+                        <form action="">
+                            <p>OBSERVAÇÕES EXTRAS</p>
+                            <input type="text" name="" id="" />
+                        </form>
+                    </div>
                 </div>
-    
-                <div class="capacidadeComunicar">
-                    <form class="formCampos" action="">
-                        <p>CAPACIDADE DE SE COMUNICAR</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
-                
-                <div class="argumentacao">
-                    <form class="formCampos" action="">
-                        <p>ARGUMENTAÇÃO</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
-    
-                <div class="organizacao">
-                    <form class="formCampos" action="">
-                        <p>ORGANIZAÇÃO DA APRESENTAÇÃO</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
-    
-                <div class="recursosUtilizados">
-                    <form class="formCampos" action="">
-    
-                        <p>OS RECURSOS FORAM UTILIZADOS DE MANEIRA CORRETA?</p>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
-    
-                <div class="posturaIntegrantes">
-                    <form action="" class="formCampos"> <p>A POSTURA DOS INTEGRANTES FOI ADEQUADA?
-                        </p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
-    
-                <div class="usoDoTempo">
-                    <form class="formCampos" action="">
-                        <p>O USU DO TEMPO FOI ADEQUADO?</p>
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-    
-                        <label class="form-control">
-                            <input type="radio" name="radio" />
-                        </label>
-                    </form>
-                </div>
-    
-                <div class="obsExtras">
-                    <form action="">
-                        <p>OBSERVAÇÕES EXTRAS</p>
-                       <input type="text" name="" id="">
-                    </form>
-                </div>
-            </div>
-        </form>
+            </form>
         </div>
-       
     </div>
 
     <script>
@@ -303,7 +296,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
