@@ -6,10 +6,10 @@ let idGrupo;
 
 let urlSplit = window.location.href.split(["?"])
 
-if(urlSplit[1] == '' || urlSplit[1] == undefined){
-    window.location.href = '../index.html'
-} else{
-    idGrupo = urlSplit[1].split(["="])[1]
+if (urlSplit[1] == "" || urlSplit[1] == undefined) {
+    window.location.href = "../index.html";
+} else {
+    idGrupo = urlSplit[1].split(["="])[1];
 }
 
 
