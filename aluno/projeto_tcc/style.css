@@ -214,6 +214,7 @@ body {
     border-radius: 100px;
     font-size: 20px;
     font-weight: 300;
+    padding: 0 10px;
 }
 
 .progress {
@@ -267,6 +268,8 @@ body {
 
 .acoes-form-grupo{
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
 }
 
@@ -288,21 +291,6 @@ body {
     padding: 10px;
     margin-bottom: 2%;
 }
-
-/* #linkBtnVoltar {
-    font-size: 15px;
-    width: 20%;
-    background-color: rgba(240, 248, 255, 0);
-    color: black;
-    background-color: #e3e3e3;
-    margin-left: 1%;
-    border-radius: 10px;
-    font-weight: 300;
-    border: none;
-    padding: 10px;
-    margin-bottom: 2%;
-} */
-
 
 .primeiro_botao_anexo {
     font-size: 15px;
