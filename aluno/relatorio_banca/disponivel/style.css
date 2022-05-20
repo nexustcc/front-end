@@ -1,12 +1,11 @@
-.tipo_plano ul {
+.tipo_avaliador ul {
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin-bottom: 2%;
-  
 }
 
-.tipo_plano ul li {    
+.tipo_avaliador ul li {
     text-align: center;
     list-style: none;
     width: 200px;
@@ -20,24 +19,23 @@
     text-decoration: none;
 }
 
-.tipo_plano ul li:first-child {
+.tipo_avaliador ul li:first-child {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 }
 
-.tipo_plano ul li:last-child {
+.tipo_avaliador ul li:last-child {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 
-.tipo_plano ul li:hover,
-.tipo_plano ul li.ativo {
+.tipo_avaliador ul li:hover,
+.tipo_avaliador ul li.ativo {
     background-color: #044177;
-    color: #fff
+    color: #fff;
 }
 
-
-.form{
+.form {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -45,69 +43,65 @@
     border-radius: 30px;
     border-radius: 30px 30px 30px 30px;
     align-items: center;
-    justify-content: center center;   
+    justify-content: center center;
 }
 
-
-
-.coninerCentralizado{
+.coninerCentralizado {
     width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    transform: translate(-50%, -50%);
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
-    height: 85vh; 
- 
+    height: 85vh;
 }
 
-.criterioText{
+.criterioText {
     width: 40%;
-    
 }
 
-.ruim{
+.ruim {
     width: 20%;
 }
 
-.regular{
+.regular {
     width: 20%;
 }
 
-.formCampos{
+.formCampos {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
-.otimo{
+.otimo {
     width: 20%;
 }
 
-.criterios h1{
+.criterios h1 {
     font-size: 25px;
     color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
 }
 
-p{
+p {
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #393939;
 }
 
-.criterios{
+.criterios {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -118,7 +112,7 @@ p{
     text-align: center;
 }
 
-.criteriosText{
+.criteriosText {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -126,7 +120,7 @@ p{
     text-align: center;
 }
 
-.clareza{
+.clareza {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -136,19 +130,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.clareza form{
+.clareza form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.clareza p{
+.clareza p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
 }
 
-.clareza label{
+.clareza label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -158,7 +152,7 @@ p{
     border: none;
 }
 
-.objetividade{
+.objetividade {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -168,20 +162,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.objetividade form{
+.objetividade form {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-.objetividade p{
+.objetividade p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.objetividade label{
+.objetividade label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -191,8 +184,7 @@ p{
     border: none;
 }
 
-
-.fluencia{
+.fluencia {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -202,20 +194,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.fluencia form{
+.fluencia form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.fluencia p{
+.fluencia p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.fluencia label{
+.fluencia label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -225,7 +216,7 @@ p{
     border: none;
 }
 
-.dominio{
+.dominio {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -235,20 +226,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.dominio form{
+.dominio form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.dominio p{
+.dominio p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.dominio label{
+.dominio label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -258,7 +248,7 @@ p{
     border: none;
 }
 
-.capacidadeComunicar{
+.capacidadeComunicar {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -268,20 +258,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.capacidadeComunicar form{
+.capacidadeComunicar form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.capacidadeComunicar p{
+.capacidadeComunicar p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.capacidadeComunicar label{
+.capacidadeComunicar label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -291,7 +280,7 @@ p{
     border: none;
 }
 
-.argumentacao{
+.argumentacao {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -301,20 +290,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.argumentacao form{
+.argumentacao form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.argumentacao p{
+.argumentacao p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.argumentacao label{
+.argumentacao label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -324,7 +312,7 @@ p{
     border: none;
 }
 
-.organizacao{
+.organizacao {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -334,20 +322,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.organizacao form{
+.organizacao form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.organizacao p{
+.organizacao p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.organizacao label{
+.organizacao label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -357,7 +344,7 @@ p{
     border: none;
 }
 
-.recursosUtilizados{
+.recursosUtilizados {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -367,20 +354,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.recursosUtilizados form{
+.recursosUtilizados form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.recursosUtilizados p{
+.recursosUtilizados p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.recursosUtilizados label{
+.recursosUtilizados label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -390,7 +376,7 @@ p{
     border: none;
 }
 
-.posturaIntegrantes{
+.posturaIntegrantes {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -400,20 +386,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.posturaIntegrantes form{
+.posturaIntegrantes form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.posturaIntegrantes p{
+.posturaIntegrantes p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.posturaIntegrantes label{
+.posturaIntegrantes label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -423,7 +408,7 @@ p{
     border: none;
 }
 
-.usoDoTempo{
+.usoDoTempo {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -433,20 +418,19 @@ p{
     border-bottom: 1px solid #044177;
 }
 
-.usoDoTempo form{
+.usoDoTempo form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.usoDoTempo p{
+.usoDoTempo p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.usoDoTempo label{
+.usoDoTempo label {
     width: 20%;
     border-radius: 0%;
     display: flex;
@@ -456,30 +440,28 @@ p{
     border: none;
 }
 
-.obsExtras{
+.obsExtras {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     justify-content: center center;
-   
 }
 
-.obsExtras form{
+.obsExtras form {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.obsExtras p{
+.obsExtras p {
     width: 40%;
     justify-content: space-between;
     padding: 1%;
-    
 }
 
-.obsExtras input{
+.obsExtras input {
     width: 60%;
     margin-right: 5%;
     border-radius: 0%;
@@ -490,117 +472,108 @@ p{
     border: none;
 }
 
-
-
-
-.form-control + .form-control {
+.form-control+.form-control {
     margin-top: 0 !important;
     align-items: center;
-    
 }
 
-
-
-
-
 :root {
---form-control-color: #044177;
+    --form-control-color: #044177;
 }
 
 *,
 *:before,
 *:after {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-margin: 0;
+    margin: 0;
 }
 
 .form-control {
-font-family: system-ui, sans-serif;
-font-size: 2rem;
-font-weight: bold;
-line-height: 1.1;
-display: grid;
-grid-template-columns: 1em auto;
-gap: 0.5em;
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
 }
 
-.form-control + .form-control {
-margin-top: 1em;
+.form-control+.form-control {
+    margin-top: 1em;
 }
 
 .form-control:focus-within {
-color: var(--form-control-color);
+    color: var(--form-control-color);
 }
 
-input[type=radio] {
-/* Add if not using autoprefixer */
--webkit-appearance: none;
-/* Remove most all native input styles */
--moz-appearance: none;
-        appearance: none;
-/* For iOS < 15 */
-background-color: var(--form-background);
-/* Not removed via appearance */
-margin: 0;
-font: inherit;
-color: currentColor;
-width: 1.8em;
-height: 1.8em;
-border: 0.15em solid currentColor;
-border-radius: 50%;
-transform: translateY(-0.075em);
-display: grid;
-place-content: center;
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    -moz-appearance: none;
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.8em;
+    height: 1.8em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
 }
 
-input[type=radio]::before {
-content: "";
-width: 0.65em;
-height: 0.65em;
-border-radius: 50%;
-transform: scale(0);
-transition: 120ms transform ease-in-out;
-box-shadow: inset 1em 1em var(--form-control-color);
-/* Windows High Contrast Mode */
-background-color: CanvasText;
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
 }
 
-input[type=radio]:checked::before {
-transform: scale(1);
+input[type="radio"]:checked::before {
+    transform: scale(1);
 }
 
-input[type=radio]:focus {
-outline: max(2px, 0.15em) solid currentColor;
-outline-offset: max(2px, 0.15em);
+input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
 }
-
 
 @media (max-width: 1200px) {
-    body{
+    body {
         width: 100vw;
         height: 100vh;
         padding: 2%;
-        
     }
 
-    p{
-       font-size: 15px; 
+    p {
+        font-size: 15px;
     }
 
     .container {
-     width: 100vw;
-     
-       height: 100%;
-       margin-bottom: 2%;
-    }
+        width: 100vw;
 
-    .form{
+        height: 100%;
         margin-bottom: 2%;
     }
-    .coninerCentralizado{
+
+    .form {
+        margin-bottom: 2%;
+    }
+
+    .coninerCentralizado {
         position: absolute;
         top: 0%;
         align-items: center;
@@ -609,16 +582,17 @@ outline-offset: max(2px, 0.15em);
         top: 0%;
         left: 0%;
         margin-right: 0%;
-        transform: translate(0%, 0%)  
+        transform: translate(0%, 0%);
     }
 
-    .tipo_plano ul li { 
-    width: 100% !important;
-    margin: 0 !important;
-     margin-bottom: 5%;
-     font-size: 10px;
+    .tipo_avaliador ul li {
+        width: 100% !important;
+        margin: 0 !important;
+        margin-bottom: 5%;
+        font-size: 10px;
     }
-    .criterios h1{
+
+    .criterios h1 {
         font-size: 15px;
     }
- }
+}
