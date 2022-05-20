@@ -143,6 +143,12 @@ body {
     /* creates padding around scroll thumb */
 }
 
+.iconify {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 .documentacao {
     margin-top: 2rem;
     display: flex;
