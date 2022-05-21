@@ -124,6 +124,10 @@ ul::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 
+.form-criar-grupo {
+    width: 100%;
+}
+
 #modal-excluir-grupo {
     width: 60%;
     height: 30vh;

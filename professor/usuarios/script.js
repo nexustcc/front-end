@@ -575,7 +575,7 @@ const showModalListagem = async (id, tipo) => {
         
         button_div.innerHTML += `
             <div class="col-md-3">
-                <button class="primeiro_botao" type="button" onclick="exitModalListagem()"> CANCELAR </button>
+                <button class="primeiro_botao" type="button" onclick="exitModal()"> CANCELAR </button>
             </div>
 
             <div class="col-md-3">
@@ -625,7 +625,7 @@ const showModalListagem = async (id, tipo) => {
         
         button_div.innerHTML += `
             <div class="col-md-3">
-                <button class="primeiro_botao" type="button" onclick="exitModalListagem()"> CANCELAR </button>
+                <button class="primeiro_botao" type="button" onclick="exitModal()"> CANCELAR </button>
             </div>
 
             <div class="col-md-3">
