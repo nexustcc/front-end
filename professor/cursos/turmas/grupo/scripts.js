@@ -90,15 +90,15 @@ const exibirGrupo = (infoGrupo, andamento) => {
     let inputHoraApresentacaoProjetoGrupo = document.getElementById('inputHoraApresentacaoProjetoGrupo');
     let barraProgressoProjeto = document.getElementById('barraProgressoProjeto');
 
-    if(infoGrupo.temaProjeto == '' || infoGrupo.temaProjeto == undefined || infoGrupo.temaProjeto == null) {
+    // if(infoGrupo.temaProjeto == '' || infoGrupo.temaProjeto == undefined || infoGrupo.temaProjeto == null) {
 
-        inputTema.placeholder = 'Insira o tema do seu Projeto';
-    }
+    //     inputTema.placeholder = 'Insira o tema do seu Projeto';
+    // }
 
-    if(infoGrupo.descricaoProjeto == '' || infoGrupo.descricaoProjeto == undefined || infoGrupo.descricaoProjeto == null) {
+    // if(infoGrupo.descricaoProjeto == '' || infoGrupo.descricaoProjeto == undefined || infoGrupo.descricaoProjeto == null) {
 
-        inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto'; 
-    }
+    //     inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto'; 
+    // }
 
     titlePaginaGrupo.innerHTML = infoGrupo.nomeProjeto;
     inputDescricaoProjeto.value = infoGrupo.descricao
