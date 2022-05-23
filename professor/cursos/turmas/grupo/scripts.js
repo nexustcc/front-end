@@ -1,7 +1,6 @@
-"use strict"
+"use strict";
 
 let localStorageUser = [];
-
 
 let idGrupo;
 let urlSplit = window.location.href.split(["?"]);
@@ -11,84 +10,74 @@ if (urlSplit[1] == "" || urlSplit[1] == undefined) {
     idGrupo = urlSplit[1].split(["="])[1];
 }
 
-
-
-
-
-
-
-const showModalEditarAluno = () =>{
+const showModalEditarAluno = () => {
     document.querySelector(".modal-editar-aluno").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-editar-aluno").style.height = "30vh";
-}
+};
 
-const exitModalEditarAluno = () =>{
+const exitModalEditarAluno = () => {
     document.querySelector(".modal-editar-aluno").style.display = "none";
     document.querySelector(".bg").style.display = "none";
-}
+};
 
-const showModalCriarAlunoGrupo = () =>{
+const showModalCriarAlunoGrupo = () => {
     document.querySelector(".modal-criar-aluno-grupo").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-criar-aluno-grupo").style.height = "60vh";
-}
+};
 
-const exitModalCriarAlunoGrupo = () =>{
+const exitModalCriarAlunoGrupo = () => {
     document.querySelector(".modal-criar-aluno-grupo").style.display = "none";
     document.querySelector(".bg").style.display = "none";
-}
+};
 
-const showModalAddProfessorGrupo = () =>{
+const showModalAddProfessorGrupo = () => {
     document.querySelector(".modal-add-professor-grupo").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
     document.querySelector(".modal-add-professor-grupo").style.height = "40vh";
-}
+};
 
-const exitModalAddProfessorGrupo = () =>{
+const exitModalAddProfessorGrupo = () => {
     document.querySelector(".modal-add-professor-grupo").style.display = "none";
     document.querySelector(".bg").style.display = "none";
-}
+};
 
-const showModalExcluirUsuarioGrupo = () =>{
+const showModalExcluirUsuarioGrupo = () => {
     document.querySelector(".modal-editar-aluno").style.display = "none";
     document.querySelector(".modal-excluir-usuario-grupo").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
-}
+};
 
-const exitModalExcluirUsuarioGrupo = () =>{
+const exitModalExcluirUsuarioGrupo = () => {
     document.querySelector(".modal-excluir-usuario-grupo").style.display = "none";
     document.querySelector(".bg").style.display = "none";
-}
-
-
-
-
-
-
-
+};
 
 const converterDataBanco = (data) => {
-
-    if(data != null) {
+    if (data != null) {
         let dataSlipt = data.split(["T"]);
         let dataArray = dataSlipt[0];
         let dataArraySplit = dataArray.split(["-"]);
-        let dataFinal = dataArraySplit[0] + "-" + dataArraySplit[1] + "-" + dataArraySplit[2];
+        let dataFinal =
+            dataArraySplit[0] + "-" + dataArraySplit[1] + "-" + dataArraySplit[2];
         return dataFinal;
     }
-}
+};
 
 const exibirGrupo = (infoGrupo, andamento) => {
-    
-    
-
-    let titlePaginaGrupo = document.getElementById('nomeGrupo');
-    let inputTema = document.getElementById('inputTemaProjetoGrupo');
-    let inputDescricaoProjeto = document.getElementById('textDescricaoProjetoGrupo');
-    let inputDataApresentacao = document.getElementById('inputDataApresentacaoProjetoGrupo');
-    let inputHoraApresentacaoProjetoGrupo = document.getElementById('inputHoraApresentacaoProjetoGrupo');
-    let barraProgressoProjeto = document.getElementById('barraProgressoProjeto');
+    let titlePaginaGrupo = document.getElementById("nomeGrupo");
+    let inputTema = document.getElementById("inputTemaProjetoGrupo");
+    let inputDescricaoProjeto = document.getElementById(
+        "textDescricaoProjetoGrupo"
+    );
+    let inputDataApresentacao = document.getElementById(
+        "inputDataApresentacaoProjetoGrupo"
+    );
+    let inputHoraApresentacaoProjetoGrupo = document.getElementById(
+        "inputHoraApresentacaoProjetoGrupo"
+    );
+    let barraProgressoProjeto = document.getElementById("barraProgressoProjeto");
 
     // if(infoGrupo.temaProjeto == '' || infoGrupo.temaProjeto == undefined || infoGrupo.temaProjeto == null) {
 
@@ -97,30 +86,28 @@ const exibirGrupo = (infoGrupo, andamento) => {
 
     // if(infoGrupo.descricaoProjeto == '' || infoGrupo.descricaoProjeto == undefined || infoGrupo.descricaoProjeto == null) {
 
-    //     inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto'; 
+    //     inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto';
     // }
 
     titlePaginaGrupo.innerHTML = infoGrupo.nomeProjeto;
-    inputDescricaoProjeto.value = infoGrupo.descricao
-    inputTema.value = infoGrupo.temaProjeto
-    inputDataApresentacao.value = converterDataBanco(infoGrupo.dataApresentacao)
-    inputHoraApresentacaoProjetoGrupo.value = infoGrupo.horaApresentacao
+    inputDescricaoProjeto.value = infoGrupo.descricao;
+    inputTema.value = infoGrupo.temaProjeto;
+    inputDataApresentacao.value = converterDataBanco(infoGrupo.dataApresentacao);
+    inputHoraApresentacaoProjetoGrupo.value = infoGrupo.horaApresentacao;
 
-    barraProgressoProjeto.innerHTML = andamento + '%';
+    barraProgressoProjeto.innerHTML = andamento + "%";
 
-    if(andamento > 3) {
-        barraProgressoProjeto.style.width = andamento + '%';
-    }    
-
-}
+    if (andamento > 3) {
+        barraProgressoProjeto.style.width = andamento + "%";
+    }
+};
 
 const exibirAlunos = (alunos) => {
-    const container = document.getElementById('listIntegrantesGrupo')
+    const container = document.getElementById("listIntegrantesGrupo");
 
     for (let a = 0; a < alunos.length; a++) {
-        
-        let aluno = document.createElement('li');
-        aluno.classList = 'list-group-item li-integrantes';
+        let aluno = document.createElement("li");
+        aluno.classList = "list-group-item li-integrantes";
 
         aluno.innerHTML += `
             <button class="btnEditarAlunoGrupo" onclick="showModalEditarAluno(${alunos[a].idAluno})"><i class='bx bx-edit'></i></button>
@@ -128,19 +115,18 @@ const exibirAlunos = (alunos) => {
                 <img src="http://localhost:3000/${alunos[a].foto}" class="iconify icon" style="color: #05204a" width="80" height="80">
             </div>
             <p id="nomeAlunoGrupo">${alunos[a].nome}</p>
-        `
+        `;
 
-        container.appendChild(aluno)
+        container.appendChild(aluno);
     }
-}
+};
 
 const exibirProfessores = (professores) => {
-    const containerProfessores = document.getElementById('listProfessoresGrupo');
+    const containerProfessores = document.getElementById("listProfessoresGrupo");
 
     for (let i = 0; i < professores.length; i++) {
-
-        let professor = document.createElement('li');
-        professor.classList = 'list-group-item li-orientadores';
+        let professor = document.createElement("li");
+        professor.classList = "list-group-item li-orientadores";
 
         professor.innerHTML += `
         <button class="btnExcluirProfessor" onclick="showModalExcluirUsuarioGrupo(${professores[i].idProfessor})"><i class='bx bx-x'></i></button>
@@ -148,13 +134,11 @@ const exibirProfessores = (professores) => {
             <img src="http://localhost:3000/${professores[i].foto}" class="iconify icon" style="color: #05204a" width="80" height="80">
         </div>
         <p id="nomeProfessorGrupo">${professores[i].nome}</p>
-        `
+        `;
 
         containerProfessores.appendChild(professor);
-        
     }
-
-}
+};
 
 const getInfoGrupo = async () => {
     const url = `http://localhost:3000/grupo/informacoesGrupo/${idGrupo}`;
@@ -162,11 +146,11 @@ const getInfoGrupo = async () => {
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
     let grupo = await dados.json();
-    
+
     exibirGrupo(grupo.grupo[0], grupo.andamento);
-    exibirAlunos(grupo.alunos)
-    exibirProfessores(grupo.professores)
-}
+    exibirAlunos(grupo.alunos);
+    exibirProfessores(grupo.professores);
+};
 
 const logout = () => {
     localStorage.removeItem("user");
@@ -178,7 +162,8 @@ const checkLogin = () => {
         localStorageUser = JSON.parse(localStorage.user);
         if (localStorageUser.tipo == "professor") {
             getInfoGrupo();
-            document.getElementById("nomeProfessor").innerHTML = localStorageUser.nome;
+            document.getElementById("nomeProfessor").innerHTML =
+                localStorageUser.nome;
         } else {
             switch (localStorageUser.tipo) {
                 case "instituição":

@@ -82,10 +82,8 @@
     <div class="container">
         <div class="coninerCentralizado">
             <div class="tipo_avaliador">
-                <ul>
-                    <li data-tabs="mensal" class="ativo">AVALIADOR 1</li>
-                    <li data-tabs="mensal">AVALIADOR 2</li>
-                    <li data-tabs="anual">AVALIADOR 3</li>
+                <ul id="listAvaliador">
+
                 </ul>
             </div>
             <form class="form">
@@ -98,180 +96,184 @@
                 <div class="criteriosText">
                     <div class="clareza">
                         <form class="formCampos" action="">
-                            <p>CLAREZA</p>
+                        </form>
+                    </div>
+                    <div class="clareza">
+                        <form class="formCampos" action="">
+                            <p id="clareza">CLAREZA</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="objetividade">
                         <form class="formCampos" action="">
-                            <p>OBJETIVIDADE</p>
+                            <p id="objetividade">OBJETIVIDADE</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="fluencia">
                         <form class="formCampos" action="">
-                            <p>FLUÊNCIA</p>
+                            <p id="fluenciaExposicaoIdeias">FLUÊNCIA NA EXPOSIÇÃO DE IDEIAS</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="dominio">
                         <form class="formCampos" action="">
-                            <p>DOMÍNIO DO CONTEÚDO</p>
+                            <p id="dominioConteudo">DOMÍNIO DO CONTEÚDO</p>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="capacidadeComunicar">
                         <form class="formCampos" action="">
-                            <p>CAPACIDADE DE COMUNICAÇÃO</p>
+                            <p id="capacidadeComunicacao">CAPACIDADE DE COMUNICAÇÃO</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="argumentacao">
                         <form class="formCampos" action="">
-                            <p>ARGUMENTAÇÃO</p>
+                            <p id="argumentacao">ARGUMENTAÇÃO</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="organizacao">
                         <form class="formCampos" action="">
-                            <p>ORGANIZAÇÃO DA APRESENTAÇÃO</p>
+                            <p id="organizacao">ORGANIZAÇÃO DA APRESENTAÇÃO</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="recursosUtilizados">
                         <form class="formCampos" action="">
-                            <p>APROVEITAMENTO DOS RECURSOS</p>
+                            <p id="aproveitamentoRecursos">APROVEITAMENTO DOS RECURSOS</p>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="posturaIntegrantes">
                         <form action="" class="formCampos">
-                            <p>POSTURA DOS INTEGRANTES</p>
+                            <p id="posturaIntegrantes">POSTURA DOS INTEGRANTES</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="usoDoTempo">
                         <form class="formCampos" action="">
-                            <p>USO DO TEMPO</p>
+                            <p id="usoTempo">USO DO TEMPO</p>
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="RUIM"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="REGULAR"/>
                             </label>
 
                             <label class="form-control">
-                                <input type="radio" disabled name="radio" />
+                                <input type="radio" disabled name="radio" id="ÓTIMO"/>
                             </label>
                         </form>
                     </div>
 
                     <div class="obsExtras">
                         <form action="">
-                            <p>OBSERVAÇÕES EXTRAS</p>
-                            <input type="text" name="" id="" />
+                            <p>OBSERVAÇÕES</p>
+                            <input type="text" name="observacoes" id="observacoes" />
                         </form>
                     </div>
                 </div>
