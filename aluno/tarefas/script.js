@@ -62,7 +62,18 @@ function minhasTarefas() {
     document.querySelector(".container-topicos2").style.display = "none";
 }
 
-var pontos = document.querySelector(".pontos"),
+
+
+
+
+
+
+
+
+
+
+
+var pontos = document.querySelector(".tresPontos"),
     middle = document.querySelector(".middle"),
     cross = document.querySelector(".cross"),
     dropdown = document.querySelector(".dropdown");
@@ -78,20 +89,38 @@ var pontos2 = document.querySelector(".pontos2"),
     cross2 = document.querySelector(".cross2"),
     dropdown2 = document.querySelector(".dropdown2");
 
-// let liAlterarCorTarefa = document.querySelector('#alterarCorTarefa');
-// let menuDropdownAlterarCor = document.querySelector('#child-menu');
-
-// liAlterarCorTarefa.addEventListener('click', function(){
-
-//     menuDropdownAlterarCor.style.display = 'flex';
-// })
-
 pontos2.addEventListener("click", function () {
     middle2.classList.toggle("active");
     cross2.classList.toggle("active");
     dropdown2.classList.toggle("active");
 
 });
+
+var altCor = document.querySelector(".liAltCor"),
+    cmiddle = document.querySelector(".child-middle"),
+    ccross = document.querySelector(".child-cross"),
+    cdropdown = document.querySelector(".child-dropdown");
+
+    
+function enterLast() {
+    document.querySelector(".lastNav").style.display = "flex";
+};
+
+function leaveLast() {
+    document.querySelector(".lastNav").style.display = "none";
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 function showModal() {
     document.querySelector(".modal").style.display = "flex";

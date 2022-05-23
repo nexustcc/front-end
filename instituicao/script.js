@@ -2,6 +2,10 @@
 
 let localStorageUser = [];
 
+function resetForm() {
+    document.getElementById("modal").reset();
+}
+
 function showModal() {
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";

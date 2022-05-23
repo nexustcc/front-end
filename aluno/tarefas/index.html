@@ -22,12 +22,75 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
     <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
     <title>Tarefas</title>
 
 </head>
 
 <div class="bg"></div>
+
+<div class="sidebar">
+    <div class="logo-details">
+        <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+
+    <li>
+        <a href="#">
+            <i class='bx bx-info-circle'></i>
+            <span class="links_name">Informações do projeto</span>
+        </a>
+        <span class="tooltip">Projeto</span>
+    </li>
+    <li>
+        <a href="#">
+            <i class='bx bx-task' ></i>
+            <span class="links_name">Tarefas</span>
+        </a>
+        <span class="tooltip">Tarefas</span>
+    </li>
+    <li>
+
+        <a href="#">
+            <i class="bx bx-folder-open"></i>
+            <span class="links_name">Arquivos e links</span>
+        </a>
+        <span class="tooltip">Arquivos</span>
+    </li>
+    <li>
+        <a href="#">
+            <i class="bx bx-edit"></i>
+            <span class="links_name">Relatório da banca</span>
+        </a>
+        <span class="tooltip">Avaliações</span>
+    </li>
+    <li class="profile">
+        <a href="../../../home/login/index.html">
+            <i class="bx bx-log-out" id="log_out"></i>
+            <span class="links_name">Log Out</span>
+        </a>
+        <span class="tooltip">Log Out</span>
+    </li>
+</div>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+    });
+
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    }
+</script>
 
 <body>
 
@@ -180,8 +243,23 @@
                                 </div>
 
                                 <ul class="dropdown2" id="menu2">
-                                    <li><img src="./img/alterar-cor.svg" alt=""> Mover para a direita <img class="abrir"
-                                            src="./img/abrir.svg" alt=""></li>
+                                    <li class="liAddTarefa" onclick="enterLast()"><img class="setaMenu" src="./img/alterar-cor.svg" alt=""> Definir cor padrão<img class="abrir"
+                                            src="./img/abrir.svg" alt="">
+                                            <ul class="lastNav">
+                                                <div class="lastKebab">
+                                                    <ul onmouseleave="leaveLast()" class="lastDropdown" id="lastMenu">
+                                                        <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
+                                                        <li><img src="./img/azul.svg" alt="">Azul</li>
+                                                        <li><img src="./img/verde.svg" alt="">Verde</li>
+                                                        <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
+                                                        <li><img src="./img/laranja.svg" alt="">Laranja</li>
+                                                        <li><img src="./img/roxo.svg" alt="">Roxo</li>
+                                                        <li><img src="./img/rosa.svg" alt="">Rosa</li>
+                                                        <li><img src="./img/preto.svg" alt="">Preto</li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                        </li>
                                     <li><img src="./img/seta-direita.svg" alt=""> Mover para a direita</li>
                                     <li><img src="./img/seta-esquerda.svg" alt=""> Mover para a esquerda</li>
                                     <li><img src="./img/excluir.svg" alt=""> Excluir</li>
@@ -215,11 +293,11 @@
                                         <div class="progress-bar" role="progressbar" style="width: 25%"
                                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
+                                    <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
                                 <ul class="nav">
                                     <div class="kebab">
-                                        <div class="pontos">
+                                        <div class="tresPontos">
                                             <figure></figure>
                                             <figure class="middle"></figure>
                                             <p class="cross">x</p>
@@ -227,29 +305,23 @@
                                         </div>
 
                                         <ul class="dropdown" id="menu">
-                                            <li class="testeteste"><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt="">
-                                                    <ul class="child-nav">
-                                                        <div class="child-kebab">
-                                                            <!-- <div class="child-pontos">
-                                                                <figure></figure>
-                                                                <figure class="child-middle"></figure>
-                                                                <p class="child-cross">x</p>
-                                                                <figure></figure>
-                                                            </div> -->
-                    
-                                                            <ul class="child-dropdown" id="child-menu">
-                                                                <li id="alterarCorTarefa"><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                                        src="./img/abrir.svg" alt="">
-                    
-                                                                </li>
-                                                                <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                                                <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                                        src="./img/abrir.svg" alt=""></li>
-                                                                <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                                            </ul>
-                                                        </div>
-                                                    </ul>
+                                            <li class="liAltCor" onmouseenter="enter()" onmouseleave=""><img
+                                                    src="./img/alterar-cor.svg" alt=""> Alterar cor
+                                                <img class="abrir" src="./img/abrir.svg" alt="">
+                                                <ul class="childNav">
+                                                    <div class="childKebab">
+                                                        <ul class="childDropdown" id="childMenu">
+                                                            <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
+                                                            <li><img src="./img/azul.svg" alt="">Azul</li>
+                                                            <li><img src="./img/verde.svg" alt="">Verde</li>
+                                                            <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
+                                                            <li><img src="./img/laranja.svg" alt="">Laranja</li>
+                                                            <li><img src="./img/roxo.svg" alt="">Roxo</li>
+                                                            <li><img src="./img/rosa.svg" alt="">Rosa</li>
+                                                            <li><img src="./img/preto.svg" alt="">Preto</li>
+                                                        </ul>
+                                                    </div>
+                                                </ul>
                                             </li>
                                             <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
                                             <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
@@ -278,25 +350,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -314,60 +368,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
-                            </div>
-
-                            <div class="data-tarefa">
-                                <img src="./img/calendario.svg" alt="">
-                                <p>XX/XX/XX</p>
-                            </div>
-                        </div>
-                        <div class="col-md-12 card-tarefa">
-                            <div class="tarefa">
-                                <div class="nome-tarefa">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p onclick="showModal()">Nome da tarefa</p>
-                                </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
-
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -385,25 +386,43 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
+                            </div>
+
+                            <div class="data-tarefa">
+                                <img src="./img/calendario.svg" alt="">
+                                <p>XX/XX/XX</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 card-tarefa">
+                            <div class="tarefa">
+                                <div class="nome-tarefa">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                </ul>
+                                    <p onclick="showModal()">Nome da tarefa</p>
+                                </div>
+
+                            </div>
+
+                            <div class="data-tarefa">
+                                <img src="./img/calendario.svg" alt="">
+                                <p>XX/XX/XX</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 card-tarefa">
+                            <div class="tarefa">
+                                <div class="nome-tarefa">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p onclick="showModal()">Nome da tarefa</p>
+                                </div>
+
                             </div>
 
                             <div class="data-tarefa">
@@ -449,25 +468,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -510,25 +511,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -545,25 +528,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -606,25 +571,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -641,25 +588,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -676,25 +605,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -714,25 +625,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -776,25 +669,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -837,25 +712,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -872,25 +729,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -907,25 +746,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -945,25 +766,7 @@
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1124,24 +927,7 @@
                 <div class="col-md-3 topico">
                     <div class="col-md-11 titulo">
                         <h1>NOME DO TÓPICO</h1>
-                        <ul class="nav2">
-                            <div class="kebab2">
-                                <div class="pontos2">
-                                    <figure></figure>
-                                    <figure class="middle2"></figure>
-                                    <p class="cross2">x</p>
-                                    <figure></figure>
-                                </div>
-
-                                <ul class="dropdown2" id="menu2">
-                                    <li><img src="./img/alterar-cor.svg" alt=""> Mover para a direita <img class="abrir"
-                                            src="./img/abrir.svg" alt=""></li>
-                                    <li><img src="./img/seta-direita.svg" alt=""> Mover para a direita</li>
-                                    <li><img src="./img/seta-esquerda.svg" alt=""> Mover para a esquerda</li>
-                                    <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                </ul>
-                            </div>
-                        </ul>
+                        
                     </div>
 
 
@@ -1238,25 +1024,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1277,25 +1045,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1313,25 +1063,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1348,25 +1080,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1384,25 +1098,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1515,25 +1211,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1643,25 +1321,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1678,25 +1338,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1806,25 +1448,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1841,25 +1465,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1876,25 +1482,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -1914,25 +1502,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">
@@ -2043,25 +1613,7 @@
                                     </div>
                                     <p onclick="showModalTarefaGeral()">Nome da tarefa</p>
                                 </div>
-                                <ul class="nav">
-                                    <div class="kebab">
-                                        <div class="pontos">
-                                            <figure></figure>
-                                            <figure class="middle"></figure>
-                                            <p class="cross">x</p>
-                                            <figure></figure>
-                                        </div>
 
-                                        <ul class="dropdown" id="menu">
-                                            <li><img src="./img/alterar-cor.svg" alt=""> Alterar cor <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""> </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
-                                            <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
-                                                    src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
-                                        </ul>
-                                    </div>
-                                </ul>
                             </div>
 
                             <div class="data-tarefa">

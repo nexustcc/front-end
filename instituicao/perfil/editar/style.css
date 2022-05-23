@@ -39,6 +39,16 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.container h1 {
+    font-size: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #05204a;
+    font-weight: 700;
+}
+
+
 .container ::placeholder {
     font-family: "Hind", sans-serif;
 }
