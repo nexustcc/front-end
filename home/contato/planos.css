@@ -8,9 +8,10 @@ body {
 }
 
 main {
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     list-style: none;
     text-decoration: none;
@@ -29,9 +30,9 @@ main h1{
 
 main h2{
     color: #000025;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    font-size: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
 }
 
@@ -49,7 +50,7 @@ main h2{
     display: flex;
     flex-direction: row;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .loc img{
@@ -63,8 +64,8 @@ main h2{
 .tel{
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .tel Img{
@@ -73,11 +74,12 @@ main h2{
 
 .tel p{
     font-family: "Poppins", sans-serif;
+    white-space: nowrap;
 }
 .email{
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-bottom: 5%;
 }
 
@@ -94,12 +96,33 @@ main h2{
     align-items: center;
 }
 
+.email img{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
 
+button{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #0987f7;
+    background: #0987f7;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.esquerda{
+    width: 50%;
+}
 .direita{
     color: #151515;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 40%;
 }
 
 .redes-sociais{
@@ -139,7 +162,9 @@ main h2{
     right: 0;
 }
 
-
+.locImg{
+    width: 100%;
+}
 
 
 
@@ -185,11 +210,11 @@ input[type="text"] {
       font-weight: bold;
   }
   input[type="text"]:valid {
-      border-color: #C2C2C2;
+      border-color: #00bafa;
       color: #808080;
   }
   input[type="text"]:valid + label[placeholder]:before {
-      color: #808080;
+      color: #0091da;
   }
   input[type="text"]:invalid + label[placeholder][alt]:before {
     content: attr(alt);
