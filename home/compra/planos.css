@@ -6,6 +6,7 @@ main {
 body {
     overflow-x: hidden;
     height: 100vh;
+    
 }
 
 main {
@@ -16,18 +17,24 @@ main {
     text-decoration: none;
     padding: 0px 0 15vh;
     gap: 40px;
+    height: 100vh;
+    
 }
 
 main h4 {
     color: #0987f7;
     font-size: 21px;
     margin-top: 5vh;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
 }
 
 main h1 {
     font-size: 54px;
     max-width: 704px;
     text-align: center;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
 }
 
 .tipo_plano ul {
@@ -115,6 +122,15 @@ main h1 {
 
 .infos_plano {
     color: #1c2348;
+    
+}
+
+.infos_plano ul li p{
+    font-family: "Poppins", sans-serif;
+}
+
+.preco_plano p{
+    font-family: "Poppins", sans-serif;
 }
 
 .infos_plano ul {

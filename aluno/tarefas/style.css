@@ -982,7 +982,7 @@ body {
 }
 
 .subtopico{
-  overflow-y: auto;
+  /* overflow-y: auto; */
   height: 90%;
 }
 
