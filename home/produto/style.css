@@ -5,20 +5,57 @@ body{
 header{
     background-color: black;
 }
+ @keyframes div1 {
+    0% {
+       transform: translateX(-100px);
+    }
+ 
+    100% {
+       transform: translateX(0);
+    }
+ }
+ 
+ @keyframes div2 {
+    0% {
+       transform: translateX(100px);
+    }
+ 
+    100% {
+       transform: translateX(0);
+    }
+ }
 
-main{
-    padding: 0 3% 3% 3%;
-    
-}
+ @keyframes mvv { 
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+      }
+      20% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+ }
 
 .div1{
+    animation: div1 3s;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     color: #272727;
+    padding: 1% 3% 1% 3%;
+}
+
+
+.div1maior{
     background-color: #ECF0F5;
-    
 }
 
 .div1 h1{
@@ -26,11 +63,11 @@ main{
     font-weight: 700;
 }
 .div1 img{
-    width: 40rem;
+    width: 35rem;
  }
 
 .textDiv1{
-    width: 50%;
+    width: 70%;
 }
 .div1 h2{
     font-size: 50px;
@@ -38,15 +75,17 @@ main{
 }
 
 .div2{
+    animation: div2 3s;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     color: #272727;
+    padding: 1% 3% 1% 3%;
 }
 
 .div2 img{
-   width: 30rem;
+   width: 35rem;
 }
 
 .div2 h1{
@@ -55,7 +94,12 @@ main{
 }
 
 .textDiv2{
-    width: 50%;
+    width: 70%;
+}
+
+.div2 h2{
+    font-size: 25px;
+    font-weight: 100;
 }
 
 .footer{
@@ -65,7 +109,7 @@ main{
     color: white;
     text-align: center;
     justify-content: space-between;
-    padding: 3%;
+    padding: 1% 3% 1% 3%;
 }
 
 .footer img{
@@ -74,16 +118,26 @@ main{
 }
 
 .footer h1{
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 500;
 }
+
+.footer p{
+    font-size: 20px;
+    font-weight: 100;
+}
+
 .missao{
+    animation: mvv 2s;
     width: 30%;
 }
 
 .visao{
+    animation: mvv 2.5s;
     width: 30%;
 }
 
 .valores{
+    animation: mvv 3s;
     width: 30%;
 }
