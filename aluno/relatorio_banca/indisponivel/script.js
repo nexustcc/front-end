@@ -7,12 +7,23 @@ const logout = () => {
     window.location.href = "../../../../home/login";
 };
 
+let grupo = [];
+async function getArrayGrupo() {
+    const url = `http://localhost:3000/aluno/grupoAluno/${localStorageUser.idTipo}`;
+
+    fetch(url).then((response) => response.json);
+    const dados = await fetch(url);
+    grupo = await dados.json();
+
+    document.getElementById("nomeGrupoAluno").innerHTML =
+        grupo.grupo[0].nomeGrupo;
+}
+
 const checkLogin = () => {
     if (localStorage.user != undefined) {
         localStorageUser = JSON.parse(localStorage.user);
         if (localStorageUser.tipo == "aluno") {
-            document.getElementById("nomeGrupoAluno").innerHTML = localStorageUser.idGrupo;
-            console.log(JSON.stringify(localStorageUser))
+            getArrayGrupo(), console.log(JSON.stringify(localStorageUser));
         } else {
             switch (localStorageUser.tipo) {
                 case "professor":
