@@ -8,6 +8,33 @@ let divNovaTarefa = document.getElementsByClassName('modal-add-tarefa');
 let btnAdicionarTarefa = document.getElementsByClassName('botao-adicionar');
 let btnCancelarNovaTarefa = document.getElementsByClassName('botao-cancelar');
 
+let divNovoTopico = document.querySelector('.modal-add-topico');
+let btnAdicionarNovoTopico = document.querySelector('.botao-add-topico');
+let btnCancelarNovoTopico = document.querySelector('.botao-cancelar-topico');
+
+
+for (var a = 0; a < btnAdicionarNovoTopico.length; a++){
+
+    btnAdicionarNovoTopico[a].addEventListener('click', function(){
+
+   for (var b = 0 ; b < divNovoTopico.length; b++) {
+       divNovoTopico[b].style.display = 'flex';
+       }
+   });
+
+};
+
+for (var c = 0; c < btnCancelarNovoTopico.length; c++){
+
+    btnCancelarNovoTopico[c].addEventListener('click', function(){
+
+   for (var d = 0 ; d < divNovoTopico.length; d++) {
+       divNovoTopico[d].style.display = 'none';
+       }
+   });
+
+};
+
 for (var x = 0; x < btnAdicionarTarefa.length; x++){
 
      btnAdicionarTarefa[x].addEventListener('click', function(){

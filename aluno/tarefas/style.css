@@ -1034,6 +1034,26 @@ body {
     margin-top: 1rem;
 }
 
+.modal-add-topico{
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  background-color:#F4F4F4;
+  border-radius: 20px;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.modal-add-topico input {
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 1px solid #05204a;
+  padding: 10px;
+  margin-top: 1rem;
+}
+
+
 .nome-tarefa p{
     margin-top: 1rem;
     margin-left: 1rem;
@@ -1112,6 +1132,30 @@ body {
     font-weight: 700;
     border: none;
     padding: 15px;
+}
+
+.modal-add-topico .primeiro-botao{
+  border-radius: 0 0 20px 0px;
+  width: 50%;
+  background-color: rgba(240, 248, 255, 0);
+  color: white;
+  background-color: #044177;
+  font-weight: 700;
+  border: none;
+  padding: 15px;
+  margin-top: 2vh;
+}
+
+.modal-add-topico .segundo-botao{
+  border-radius: 0 0 0 20px;
+  margin-top: 2vh;
+  width: 50%;
+  background-color: rgba(240, 248, 255, 0);
+  color: white;
+  background-color: #e3e3e3;
+  font-weight: 700;
+  border: none;
+  padding: 15px;
 }
 
 .modal-editar-tarefa{
