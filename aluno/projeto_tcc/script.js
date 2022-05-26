@@ -2,16 +2,28 @@
 
 let localStorageUser = [];
 
-let idGrupo;
 
-let urlSplit = window.location.href.split(["?"]);
+const editarGrupo = () => {
+    
+    event.preventDefault();
 
-if (urlSplit[1] == "" || urlSplit[1] == undefined) {
-    window.location.href = "../perfil/";
-} else {
-    idGrupo = urlSplit[1].split(["="])[1];
+    const grupo = {
+        temaProjeto: document.getElementById('inputTemaProjetoGrupo').value,
+        descricao: document.getElementById('textDescricaoProjetoGrupo').value
+    };
+
+    const config = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(grupo),
+    };
+
+    const url = `http://localhost:3000/grupo/editarGrupoAluno/${localStorageUser.idTipo}`
+
+    fetch(url, config).then(() => (window.location.href = "./index.html"));
 }
-
 
 
 const converterDataBanco = (data) => {
@@ -87,7 +99,7 @@ const exibirProfessores = (professores) => {
 }
 
 const getInfoGrupo = async () => {
-    const url = `http://localhost:3000/grupo/informacoesGrupo/${idGrupo}`;
+    const url = `http://localhost:3000/aluno/informacoesGrupo/${localStorageUser.idTipo}`;
 
     fetch(url).then((response) => response.json);
     const dados = await fetch(url);
@@ -109,7 +121,7 @@ const checkLogin = () => {
     if (localStorage.user != undefined) {
         localStorageUser = JSON.parse(localStorage.user);
         if (localStorageUser.tipo == "aluno") {
-            getInfoProjeto();
+            getInfoGrupo();
             document.getElementById("nomeAluno").innerHTML = localStorageUser.nome;
         } else {
             switch (localStorageUser.tipo) {

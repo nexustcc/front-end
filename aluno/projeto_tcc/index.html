@@ -109,12 +109,12 @@
 
             <div class="data-apresentacao">
                 <h1>Data da apresentação:</h1>
-                <input type="date" id="inputDataApresentacaoProjetoGrupo">
+                <input type="date" id="inputDataApresentacaoProjetoGrupo" disabled>
             </div>
 
             <div class="hora-apresentacao">
                 <h1>Hora da apresentação:</h1>
-                <input type="time" id="inputHoraApresentacaoProjetoGrupo">
+                <input type="time" id="inputHoraApresentacaoProjetoGrupo" disabled>
             </div>
 
         </div>
@@ -129,7 +129,7 @@
         </div>
 
         <div class="acoes-form-grupo">
-            <button class="primeiro_botao" type="submit" id="btnSalvarAlteracoes">SALVAR ALTERAÇÕES</button>
+            <button class="primeiro_botao" type="submit" id="btnSalvarAlteracoes" onclick="editarGrupo()">SALVAR ALTERAÇÕES</button>
         </div>
 
     </div>
