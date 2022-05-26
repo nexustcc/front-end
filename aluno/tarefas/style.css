@@ -249,7 +249,6 @@ ol ol, ol ul, ul ol, ul ul {
   display: flex;
   flex-direction: column;
   width: 19rem;
-  height: 15rem;
   padding: 50%;
   justify-content: space-between;
   border-radius: 20px;
@@ -1363,6 +1362,7 @@ padding: 1%;
   top: -30%;
   width: 20px;
   left: -20px;
+  cursor: pointer;
 }
 
 .modal-tarefa-geral .img-container{
@@ -1398,4 +1398,36 @@ padding: 1%;
   /* roundness of the scroll thumb */
   border: none;
   /* creates padding around scroll thumb */
+}
+
+.amarelo {
+  color: #F8C71A;
+}
+
+.azul {
+  color: #06376A
+}
+
+.verde {
+  color: #3D963B;
+}
+
+.vermelho {
+  color: #DD1313;
+}
+
+.laranja {
+  color: #F98418;
+}
+
+.roxo {
+  color: #9C4EDA;
+}
+
+.rosa {
+  color: #EA5EED;
+}
+
+.preto {
+  color: #000000;
 }

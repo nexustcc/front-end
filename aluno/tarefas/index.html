@@ -260,8 +260,6 @@
                                                 </div>
                                             </ul>
                                         </li>
-                                    <li><img src="./img/seta-direita.svg" alt=""> Mover para a direita</li>
-                                    <li><img src="./img/seta-esquerda.svg" alt=""> Mover para a esquerda</li>
                                     <li><img src="./img/excluir.svg" alt=""> Excluir</li>
                                 </ul>
                             </div>
@@ -796,7 +794,7 @@
         </div>
 
         <div class="container mt-5 modal">
-            <h1>NOME DO USUÁRIO</h1>
+            <h1 id="nomeTarefa">TAREFA</h1>
             <form class="row g-7">
                 <div class="col-md-4 lab-inp">
                     <label for="topico-select" class="form-label">Tópico</label>
@@ -1231,6 +1229,7 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
+
                             <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
                                 placeholder="Insira o nome da tarefa" required />
 
@@ -1307,6 +1306,7 @@
                                 <button class="primeiro-botao botao-confirmar">CRIAR</button>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="subtopico">
@@ -1802,7 +1802,7 @@
 
         </div>
         <div class="container mt-5 modal modal-tarefa-geral" id="modal-tarefa-geral">
-            <h1>NOME DO USUÁRIO</h1>
+            <h1 id="nomeTarefa">TAREFA</h1>
             <form class="row g-7">
                 <div class="col-md-4 lab-inp">
                     <label for="topico-select" class="form-label">Tópico</label>
