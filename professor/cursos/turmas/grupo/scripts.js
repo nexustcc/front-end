@@ -54,6 +54,10 @@ const exitModalExcluirUsuarioGrupo = () => {
     document.querySelector(".bg").style.display = "none";
 };
 
+
+
+
+
 const converterDataBanco = (data) => {
     if (data != null) {
         let dataSlipt = data.split(["T"]);
@@ -65,31 +69,19 @@ const converterDataBanco = (data) => {
     }
 };
 
+
 const exibirGrupo = (infoGrupo, andamento) => {
     let titlePaginaGrupo = document.getElementById("nomeGrupo");
     let inputTema = document.getElementById("inputTemaProjetoGrupo");
-    let inputDescricaoProjeto = document.getElementById(
-        "textDescricaoProjetoGrupo"
-    );
-    let inputDataApresentacao = document.getElementById(
-        "inputDataApresentacaoProjetoGrupo"
-    );
-    let inputHoraApresentacaoProjetoGrupo = document.getElementById(
-        "inputHoraApresentacaoProjetoGrupo"
-    );
+    let inputDescricaoProjeto = document.getElementById("textDescricaoProjetoGrupo");
+    let inputDataApresentacao = document.getElementById("inputDataApresentacaoProjetoGrupo");
+    let inputHoraApresentacaoProjetoGrupo = document.getElementById("inputHoraApresentacaoProjetoGrupo");
     let barraProgressoProjeto = document.getElementById("barraProgressoProjeto");
 
-    // if(infoGrupo.temaProjeto == '' || infoGrupo.temaProjeto == undefined || infoGrupo.temaProjeto == null) {
+    if(infoGrupo.temaProjeto == '' || infoGrupo.temaProjeto == undefined || infoGrupo.temaProjeto == null) inputTema.placeholder = 'Insira o tema do seu Projeto';
+    if(infoGrupo.descricaoProjeto == '' || infoGrupo.descricaoProjeto == undefined || infoGrupo.descricaoProjeto == null) inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto';
 
-    //     inputTema.placeholder = 'Insira o tema do seu Projeto';
-    // }
-
-    // if(infoGrupo.descricaoProjeto == '' || infoGrupo.descricaoProjeto == undefined || infoGrupo.descricaoProjeto == null) {
-
-    //     inputDescricaoProjeto.placeholder = 'Insira uma breve descrição ao seu projeto';
-    // }
-
-    titlePaginaGrupo.innerHTML = infoGrupo.nomeProjeto;
+    titlePaginaGrupo.innerHTML = `Grupo: ${infoGrupo.nomeProjeto.toUpperCase()}`;
     inputDescricaoProjeto.value = infoGrupo.descricao;
     inputTema.value = infoGrupo.temaProjeto;
     inputDataApresentacao.value = converterDataBanco(infoGrupo.dataApresentacao);
@@ -97,10 +89,39 @@ const exibirGrupo = (infoGrupo, andamento) => {
 
     barraProgressoProjeto.innerHTML = andamento + "%";
 
-    if (andamento > 3) {
-        barraProgressoProjeto.style.width = andamento + "%";
+    if (andamento == 100){
+        barraProgressoProjeto.style.width = andamento + '%';
+        barraProgressoProjeto.style.backgroundColor = '#248052';
+    } else if (andamento > 3) {
+        barraProgressoProjeto.style.width = andamento + '%';
     }
 };
+
+const editarGrupo = () => {
+    event.preventDefault();
+
+    const grupo = {
+        temaProjeto: document.getElementById('inputTemaProjetoGrupo').value,
+        descricao: document.getElementById('textDescricaoProjetoGrupo').value,
+        dataApresentacao: document.getElementById('inputDataApresentacaoProjetoGrupo').value,
+        horaApresentacao: document.getElementById('inputHoraApresentacaoProjetoGrupo').value
+    };
+
+    const config = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(grupo),
+    };
+
+    console.log(config)
+
+    const url = `http://localhost:3000/grupo/editarGrupoProfessor/${localStorageUser.idTipo}`
+
+    fetch(url, config).then(() => (document.location.reload(true)));
+}
+
 
 const exibirAlunos = (alunos) => {
     const container = document.getElementById("listIntegrantesGrupo");
@@ -139,6 +160,7 @@ const exibirProfessores = (professores) => {
         containerProfessores.appendChild(professor);
     }
 };
+
 
 const getInfoGrupo = async () => {
     const url = `http://localhost:3000/grupo/informacoesGrupo/${idGrupo}`;

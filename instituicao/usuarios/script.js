@@ -1,6 +1,13 @@
 let localStorageUser;
 
 const changeModalEditar = async (id, tipo) => {
+
+    let urlCursosInstituição = `http://localhost:3000/instituicao/listarCursos/${localStorageUser.idTipo}`
+    const dados = await fetch(urlCursosInstituição);
+    let cursosInstituição = await dados.json();
+
+    console.log(tipo)
+
     document.querySelector(".modal-listagem").style.display = "none";
     document.querySelector(".modal-editar").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
@@ -13,35 +20,34 @@ const changeModalEditar = async (id, tipo) => {
     let input_turma = document.getElementById('edit_user_turma')
     let input_grupo = document.getElementById('edit_user_grupo')
 
-    console.log(input_nome)
+    input_nome.value = ''
+    input_email.value = ''
+    input_senha.value = ''
+    input_tipo.placeholder = ''
+    input_curso.value = ''
+    input_turma.value = ''
+    input_grupo.value = ''
 
     if(tipo == 'PROFESSOR'){
-        const url = `http://localhost:3000/membros/listarProfessor/${id}`
 
-        fetch(url).then((response) => response.json);
-        const dados = await fetch(url);
-        const professor = await dados.json();
 
-        input_nome.value = ''
-        input_email.value = ''
-        input_senha.value = ''
-        input_tipo.placeholder = ''
-        input_curso.value = ''
-        input_turma.value = ''
-        input_grupo.value = ''
         
         input_nome.value = professor.professor.nome
         input_email.value = professor.professor.email
         input_senha.value = professor.professor.senha
         input_tipo.placeholder = 'PROFESSOR'
 
-        // for (let c = 0; c < professor.cursos.length; c++) {
-        //     if(professor.cursos.length == 0 || professor.cursos.length == null){
-        //         input_curso.value = 'Professor sem cursos'
-        //     }
+        console.log(professor.cursos)
+        console.log(professor.turmas)
+        console.log(professor.grupos)
 
-        //     input_curso.value += professor.cursos[c].nome + " | "
-        // }
+        const selectCurso = document.getElementById('edit_user_curso')
+        for (let c = 0; c < professor.cursos.length; c++) {
+            var option = document.createElement('option');
+            option.value = professor.curso[c].nome;
+            option.innerHTML = i;
+            selectCurso.appendChild(option);
+        }
 
         // for (let t = 0; t < professor.turmas.length; t++) {
         //     if(professor.turmas.length == 0 || professor.turmas.length == null){
@@ -59,61 +65,62 @@ const changeModalEditar = async (id, tipo) => {
         //     input_grupo.value += professor.grupos[g].nomeProjeto + " | "
         // }
 
-    } else if (tipo == 'ALUNO'){
-        const url = `http://localhost:3000/membros/listarAluno/${id}`
+    } 
+    // else if (tipo == 'ALUNO'){
+    //     const url = `http://localhost:3000/membros/listarAluno/${id}`
 
-        fetch(url).then((response) => response.json);
-        const dados = await fetch(url);
-        const aluno = await dados.json();
+    //     fetch(url).then((response) => response.json);
+    //     const dados = await fetch(url);
+    //     const aluno = await dados.json();
 
-        console.log(aluno)
+    //     console.log(aluno)
 
-        input_nome.value = ''
-        input_email.value = ''
-        input_senha.value = ''
-        input_tipo.placeholder = ''
-        input_curso.value = ''
-        input_turma.value = ''
-        input_grupo.value = ''
+    //     input_nome.value = ''
+    //     input_email.value = ''
+    //     input_senha.value = ''
+    //     input_tipo.placeholder = ''
+    //     input_curso.value = ''
+    //     input_turma.value = ''
+    //     input_grupo.value = ''
         
-        input_nome.value = aluno.aluno.nome
-        input_email.value = aluno.aluno.email
-        input_senha.value = aluno.aluno.senha
-        input_tipo.placeholder = 'ALUNO'
-        input_curso.value = aluno.curso.nome
-        input_turma.value = aluno.turma.nome
-        input_grupo.value = aluno.grupo.nomeProjeto
+    //     input_nome.value = aluno.aluno.nome
+    //     input_email.value = aluno.aluno.email
+    //     input_senha.value = aluno.aluno.senha
+    //     input_tipo.placeholder = 'ALUNO'
+    //     input_curso.value = aluno.curso.nome
+    //     input_turma.value = aluno.turma.nome
+    //     input_grupo.value = aluno.grupo.nomeProjeto
 
-    } else{
-        const url = `http://localhost:3000/membros/listarAvaliador/${id}`
+    // } else{
+    //     const url = `http://localhost:3000/membros/listarAvaliador/${id}`
 
-        fetch(url).then((response) => response.json);
-        const dados = await fetch(url);
-        const avaliador = await dados.json();
+    //     fetch(url).then((response) => response.json);
+    //     const dados = await fetch(url);
+    //     const avaliador = await dados.json();
 
-        input_nome.value = ''
-        input_email.value = ''
-        input_senha.value = ''
-        input_tipo.placeholder = ''
-        input_curso.value = ''
-        input_turma.value = ''
-        input_grupo.value = ''
+    //     input_nome.value = ''
+    //     input_email.value = ''
+    //     input_senha.value = ''
+    //     input_tipo.placeholder = ''
+    //     input_curso.value = ''
+    //     input_turma.value = ''
+    //     input_grupo.value = ''
         
-        input_nome.value = avaliador.avaliador.nome
-        input_email.value = avaliador.avaliador.email
-        input_senha.value = avaliador.avaliador.senha
-        input_tipo.placeholder = 'AVALIADOR'
-        input_curso.value = avaliador.curso.nome
-        input_turma.value = avaliador.turma.nome
+    //     input_nome.value = avaliador.avaliador.nome
+    //     input_email.value = avaliador.avaliador.email
+    //     input_senha.value = avaliador.avaliador.senha
+    //     input_tipo.placeholder = 'AVALIADOR'
+    //     input_curso.value = avaliador.curso.nome
+    //     input_turma.value = avaliador.turma.nome
         
-        for (let g = 0; g < avaliador.grupos.length; g++) {
-            if(avaliador.grupos.length == 0 || avaliador.grupos.length == null){
-                input_grupo.placeholder = 'Avalidor sem grupos'
-            }
+    //     for (let g = 0; g < avaliador.grupos.length; g++) {
+    //         if(avaliador.grupos.length == 0 || avaliador.grupos.length == null){
+    //             input_grupo.placeholder = 'Avalidor sem grupos'
+    //         }
 
-            input_grupo.placeholder += avaliador.grupos[g] + " | "
-        }
-    }
+    //         input_grupo.placeholder += avaliador.grupos[g] + " | "
+    //     }
+    // }
 
     document.getElementById('btn-cancelar-editar').addEventListener('click', () => {
         document.querySelector(".bg").style.display = "none";
@@ -194,6 +201,7 @@ const showModalListagem = async (id, tipo) => {
 
         input_nome.placeholder = ''
         input_email.placeholder = ''
+        input_senha.value = ''
         input_senha.placeholder = ''
         input_tipo.placeholder = ''
         input_curso.placeholder = ''
@@ -202,7 +210,7 @@ const showModalListagem = async (id, tipo) => {
         
         input_nome.placeholder = professor.professor.nome
         input_email.placeholder = professor.professor.email
-        input_senha.placeholder = professor.professor.senha
+        input_senha.value = professor.professor.senha
         input_tipo.placeholder = tipo
 
         if(professor.cursos.length == 0 || professor.cursos.length == null){

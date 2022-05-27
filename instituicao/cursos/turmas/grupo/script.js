@@ -32,7 +32,7 @@ const exibirGrupo = (infoGrupo, andamento) => {
     let inputHoraApresentacaoProjeto = document.getElementById('inputHoraApresentacaoProjeto');
     let barraProgressoProjeto = document.getElementById('barraProgressoProjeto');
 
-    titlePaginaGrupo.innerHTML = infoGrupo.nomeProjeto;
+    titlePaginaGrupo.innerHTML = `Grupo: ${infoGrupo.nomeProjeto.toUpperCase()}`;
     pDescricaoProjeto.innerHTML = infoGrupo.descricao
     pTemaProjeto.innerHTML = infoGrupo.temaProjeto
     inputDataApresentacao.value = converterDataBanco(infoGrupo.dataApresentacao)
@@ -40,10 +40,12 @@ const exibirGrupo = (infoGrupo, andamento) => {
 
     barraProgressoProjeto.innerHTML = andamento + '%';
 
-    if(andamento > 3) {
+    if (andamento == 100){
         barraProgressoProjeto.style.width = andamento + '%';
-    }    
-
+        barraProgressoProjeto.style.backgroundColor = '#248052';
+    } else if (andamento > 3) {
+        barraProgressoProjeto.style.width = andamento + '%';
+    }   
 }
 
 const exibirAlunos = (alunos) => {

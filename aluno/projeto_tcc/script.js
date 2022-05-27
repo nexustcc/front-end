@@ -52,9 +52,12 @@ const exibirGrupo = (infoGrupo, andamento) => {
 
     barraProgressoProjeto.innerHTML = andamento + '%';
 
-    if(andamento > 3) {
+    if (andamento == 100){
         barraProgressoProjeto.style.width = andamento + '%';
-    }    
+        barraProgressoProjeto.style.backgroundColor = '#248052';
+    } else if (andamento > 3) {
+        barraProgressoProjeto.style.width = andamento + '%';
+    }
 
 }
 
