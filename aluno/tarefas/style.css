@@ -601,7 +601,7 @@ a, li {
   justify-content: space-between;
   border-radius: 20px;
   background-color: #eeeeee;
-  right: -999;
+  left: -999;
   top: -3.8rem;
   transition: all 0.25s ease-out;
   transform: scale(0);
@@ -610,8 +610,13 @@ a, li {
   z-index: 99999;
 }
 
+.liAddTarefa {
+  white-space: nowrap;
+}
+
 .lastNav{
   display: none;
+  width: 3rem !important;
 }
 
 .lastDropdown ul{
@@ -756,7 +761,7 @@ body {
 .modal {
   margin-top: auto;
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   background-color: rgb(255, 255, 255);
   display: none;
   flex-direction: column;
@@ -774,7 +779,7 @@ body {
 }
 
 #modal-tarefa-geral{
-  height: 80vh;
+  height: 60vh;
 }
 
 .modal .lab-inp {
@@ -913,7 +918,6 @@ body {
   /* "hand" cursor */
 }
 
-
 .tipo_usuario ul li:first-child {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -987,6 +991,7 @@ body {
 
 .add-topico{
     margin-top: 5rem;
+    margin-left: 1rem;
 }
 
 .listagem-topicos{
@@ -1006,6 +1011,11 @@ body {
     z-index: 0;
 }
 
+.card-tarefa .nome-tarefa p,
+.card-tarefa .nome-tarefa .progress-bar {
+  cursor: pointer;
+}
+
 .nome-tarefa{
     display: flex;
     flex-direction: row;
@@ -1021,7 +1031,6 @@ body {
     border-radius: 20px;
     align-items: center;
     margin-top: 1rem;
-
 }
 
 .modal-add-tarefa input {
@@ -1101,7 +1110,8 @@ body {
 
 .progress-bar{
     background-color: #044177;
-
+    position: relative;
+    z-index: 100;
 }
 
 .buttons{

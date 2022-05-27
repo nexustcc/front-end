@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-<link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
+    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css">
     <link rel="shortcut icon" href="../../home/images-global/logo-azul.svg" type="image/x-icon">
     <title>Tarefas</title>
 
@@ -45,7 +45,7 @@
     </li>
     <li>
         <a href="#">
-            <i class='bx bx-task' ></i>
+            <i class='bx bx-task'></i>
             <span class="links_name">Tarefas</span>
         </a>
         <span class="tooltip">Tarefas</span>
@@ -230,7 +230,7 @@
 
         <div class="col-md-12 container-topicos">
             <div class="col-md-10 listagem-topicos">
-                <div class="col-md-3 topico">
+                <div class="col-md-3 topico" id="topico1">
                     <div class="col-md-11 titulo">
                         <h1>NOME DO TÓPICO</h1>
                         <ul class="nav2">
@@ -243,24 +243,29 @@
                                 </div>
 
                                 <ul class="dropdown2" id="menu2">
-                                    <li class="liAddTarefa" onclick="enterLast()"><img class="setaMenu" src="./img/alterar-cor.svg" alt=""> Definir cor padrão<img class="abrir"
-                                            src="./img/abrir.svg" alt="">
-                                            <ul class="lastNav">
-                                                <div class="lastKebab">
-                                                    <ul onmouseleave="leaveLast()" class="lastDropdown" id="lastMenu">
-                                                        <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
-                                                        <li><img src="./img/azul.svg" alt="">Azul</li>
-                                                        <li><img src="./img/verde.svg" alt="">Verde</li>
-                                                        <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
-                                                        <li><img src="./img/laranja.svg" alt="">Laranja</li>
-                                                        <li><img src="./img/roxo.svg" alt="">Roxo</li>
-                                                        <li><img src="./img/rosa.svg" alt="">Rosa</li>
-                                                        <li><img src="./img/preto.svg" alt="">Preto</li>
-                                                    </ul>
-                                                </div>
-                                            </ul>
-                                        </li>
-                                    <li><img src="./img/excluir.svg" alt=""> Excluir</li>
+
+                                    <li onclick="enterLast()" class="liAddTarefa">
+                                        <img class="setaMenu" src="./img/alterar-cor.svg" alt="">
+                                        Definir cor padrão
+                                        <img class="abrir" src="./img/abrir.svg" alt="">
+
+                                        <ul class="lastNav">
+                                            <div class="lastKebab">
+                                                <ul class="lastDropdown" id="lastMenu">
+                                                    <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
+                                                    <li><img src="./img/azul.svg" alt="">Azul</li>
+                                                    <li><img src="./img/verde.svg" alt="">Verde</li>
+                                                    <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
+                                                    <li><img src="./img/laranja.svg" alt="">Laranja</li>
+                                                    <li><img src="./img/roxo.svg" alt="">Roxo</li>
+                                                    <li><img src="./img/rosa.svg" alt="">Rosa</li>
+                                                    <li><img src="./img/preto.svg" alt="">Preto</li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+
+                                    </li>
+                                    <li class="liExcluirTopico"><img src="./img/excluir.svg" alt=""> Excluir</li>
                                 </ul>
                             </div>
                         </ul>
@@ -268,28 +273,38 @@
 
 
                     <div class="col-md-12 adicionar-tarefa">
-                        <button class="col-md-12 botao-adicionar" id="btn1"><img src="./img/mais.svg" alt="">
+                        <button class="col-md-12 botao-adicionar" id="btn1" onclick="modalCriarTarefa(topico1)"><img
+                                src="./img/mais.svg" alt="">
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa" id="div1">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+
+                            <form class="col-md-12 modal-add-tarefa">
+
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar">CRIAR</button>
+                                </div>
+
+                            </form>
+
                         </div>
                     </div>
+
 
                     <div class="col-md-12 subtopico">
                         <div class="col-md-12 card-tarefa">
                             <div class="tarefa">
                                 <div class="nome-tarefa">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                        <div class="progress-bar" id="imgStatusTarefa1"
+                                        role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
                                     </div>
                                     <p onclick="showModal()">Nome da tarefa</p>
                                 </div>
@@ -303,8 +318,7 @@
                                         </div>
 
                                         <ul class="dropdown" id="menu">
-                                            <li class="liAltCor" onmouseenter="enter()" onmouseleave=""><img
-                                                    src="./img/alterar-cor.svg" alt=""> Alterar cor
+                                            <li class="liAltCor"><img src="./img/alterar-cor.svg" alt=""> Alterar cor
                                                 <img class="abrir" src="./img/abrir.svg" alt="">
                                                 <ul class="childNav">
                                                     <div class="childKebab">
@@ -321,10 +335,11 @@
                                                     </div>
                                                 </ul>
                                             </li>
-                                            <li><img src="./img/duplicar.svg" alt=""> Duplicar</li>
+                                            <li class="liDuplicarTarefa"><img src="./img/duplicar.svg" alt=""> Duplicar
+                                            </li>
                                             <li><img src="./img/mover-para.svg" alt=""> Mover para <img class="abrir"
                                                     src="./img/abrir.svg" alt=""></li>
-                                            <li><img src="./img/excluir.svg" alt=""> Excluir</li>
+                                            <li class="liExcluirTarefa"><img src="./img/excluir.svg" alt="">Excluir</li>
                                         </ul>
                                     </div>
                                 </ul>
@@ -430,7 +445,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 topico">
+
+
+                <div class="col-md-3 topico" id="topico2">
                     <div class="col-md-12 titulo">
                         <h1>NOME DO TÓPICO</h1>
                     </div>
@@ -441,14 +458,18 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa" id="div2">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                            <form class="col-md-12 modal-add-tarefa">
+
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -477,7 +498,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 topico">
+
+                <div class="col-md-3 topico" id="topico3">
                     <div class="col-md-12 titulo">
                         <h1>NOME DO TÓPICO</h1>
                     </div>
@@ -488,74 +510,18 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
-                        </div>
-                    </div>
+                            <form class="col-md-12 modal-add-tarefa">
 
-                    <div class="subtopico">
-                        <div class="col-md-12 card-tarefa">
-                            <div class="tarefa">
-                                <div class="nome-tarefa">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p onclick="showModal()">Nome da tarefa</p>
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar">CRIAR</button>
                                 </div>
 
-                            </div>
-
-                            <div class="data-tarefa">
-                                <img src="./img/calendario.svg" alt="">
-                                <p>XX/XX/XX</p>
-                            </div>
-                        </div>
-                        <div class="col-md-12 card-tarefa">
-                            <div class="tarefa">
-                                <div class="nome-tarefa">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p onclick="showModal()">Nome da tarefa</p>
-                                </div>
-
-                            </div>
-
-                            <div class="data-tarefa">
-                                <img src="./img/calendario.svg" alt="">
-                                <p>XX/XX/XX</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 topico">
-                    <div class="col-md-12 titulo">
-                        <h1>NOME DO TÓPICO</h1>
-                    </div>
-
-
-                    <div class="col-md-12 adicionar-tarefa">
-                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt="">
-                            Adicionar
-                            tarefa</button>
-                        <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
 
@@ -594,6 +560,70 @@
                                 <p>XX/XX/XX</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 topico">
+                    <div class="col-md-12 titulo">
+                        <h1>NOME DO TÓPICO</h1>
+                    </div>
+
+
+                    <div class="col-md-12 adicionar-tarefa">
+                        <button class="col-md-12 botao-adicionar"><img src="./img/mais.svg" alt="">
+                            Adicionar
+                            tarefa</button>
+                        <div class="col-md-12 modal-add-tarefa">
+                            <form class="col-md-12 modal-add-tarefa">
+
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar">CRIAR</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="subtopico">
+                        <div class="col-md-12 card-tarefa">
+                            <div class="tarefa">
+                                <div class="nome-tarefa">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p onclick="showModal()">Nome da tarefa</p>
+                                </div>
+
+                            </div>
+
+                            <div class="data-tarefa">
+                                <img src="./img/calendario.svg" alt="">
+                                <p>XX/XX/XX</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 card-tarefa">
+                            <div class="tarefa">
+                                <div class="nome-tarefa">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p onclick="showModal()">Nome da tarefa</p>
+                                </div>
+
+                            </div>
+
+                            <div class="data-tarefa">
+                                <img src="./img/calendario.svg" alt="">
+                                <p>XX/XX/XX</p>
+                            </div>
+                        </div>
                         <div class="col-md-12 card-tarefa">
                             <div class="tarefa">
                                 <div class="nome-tarefa">
@@ -644,14 +674,18 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                            <form class="col-md-12 modal-add-tarefa">
+
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -689,14 +723,18 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                            <form class="col-md-12 modal-add-tarefa">
+
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -773,21 +811,24 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-2 add-topico">
 
                 <div class="col-md-12 adicionar-tarefa">
                     <button class="col-md-12 botao-add-topico">ADICIONAR TÓPICO</button>
 
                     <div class="col-md-12 modal-add-topico">
-                        <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                            placeholder="Insira o nome do tópico" required />
+                        <form class="col-md-12 modal-add-topico">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome do tópico" required />
 
-                        <div class="col-md-12 buttons">
-                            <button class="segundo-botao botao-cancelar-topico">CANCELAR</button>
-                            <button class="primeiro-botao botao-confirmar-topico">CRIAR</button>
-                        </div>
+                            <div class="col-md-12 buttons">
+                                <button class="segundo-botao botao-cancelar-topico">CANCELAR</button>
+                                <button class="primeiro-botao botao-confirmar-topico">CRIAR</button>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
 
@@ -836,69 +877,6 @@
                     <input id="input-data-conclusao" type="date" class="form-control data-termino">
                 </div>
 
-                <img class="linha" src="./img/linha.svg" alt="">
-
-                <h2>ANEXOS</h2>
-
-                <div class="documentacao">
-                    <input type="file" name="file" id="file" class="inputfile" multiple onchange="updateList()"></input>
-                    <label class="arquivo_anexado" for="file" id="btnOutroArquivo">ANEXAR OUTRO ARQUIVO</label>
-                </div>
-
-                <div class="card_arquivo">
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                </div>
             </form>
             <div class="buttons">
                 <div class="col-md-3">
@@ -908,7 +886,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="primeiro_botao" type="button">
+                    <button class="primeiro_botao" type="submit">
                         SALVAR
                     </button>
                 </div>
@@ -923,7 +901,7 @@
                 <div class="col-md-3 topico">
                     <div class="col-md-11 titulo">
                         <h1>NOME DO TÓPICO</h1>
-                        
+
                     </div>
 
 
@@ -932,81 +910,84 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
+                            <form class="col-md-12 modal-add-tarefa">
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
 
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
 
-                            <div class="col-md-10 select-multiplo lab-inp">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <select>
-                                        <option>Atribuir à:</option>
-                                    </select>
-                                    <div class="overSelect"></div>
+                                <div class="col-md-10 select-multiplo lab-inp">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Atribuir a:</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="one">
+                                            <input type="checkbox" id="one" />First checkbox</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two" />Second checkbox</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three" />Third checkbox</label>
+                                    </div>
                                 </div>
-                                <div id="checkboxes">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                    <label for="two">
-                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                    <label for="three">
-                                        <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
 
-                            <div class="img-container">
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <div class="img-container">
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
                                 </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar" type="submit">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -1115,81 +1096,84 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
+                            <form class="col-md-12 modal-add-tarefa">
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
 
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
 
-                            <div class="col-md-10 select-multiplo lab-inp">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <select>
-                                        <option>Atribuir à:</option>
-                                    </select>
-                                    <div class="overSelect"></div>
+                                <div class="col-md-10 select-multiplo lab-inp">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Atribuir a:</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="one">
+                                            <input type="checkbox" id="one" />First checkbox</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two" />Second checkbox</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three" />Third checkbox</label>
+                                    </div>
                                 </div>
-                                <div id="checkboxes">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                    <label for="two">
-                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                    <label for="three">
-                                        <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
 
-                            <div class="img-container">
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <div class="img-container">
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
                                 </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar" type="submit">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -1230,81 +1214,84 @@
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
 
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
+                            <form class="col-md-12 modal-add-tarefa">
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
 
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
 
-                            <div class="col-md-10 select-multiplo lab-inp">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <select>
-                                        <option>Atribuir à:</option>
-                                    </select>
-                                    <div class="overSelect"></div>
+                                <div class="col-md-10 select-multiplo lab-inp">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Atribuir a:</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="one">
+                                            <input type="checkbox" id="one" />First checkbox</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two" />Second checkbox</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three" />Third checkbox</label>
+                                    </div>
                                 </div>
-                                <div id="checkboxes">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                    <label for="two">
-                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                    <label for="three">
-                                        <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
 
-                            <div class="img-container">
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <div class="img-container">
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
                                 </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar" type="submit">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
 
                     </div>
@@ -1358,81 +1345,84 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
+                            <form class="col-md-12 modal-add-tarefa">
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
 
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
 
-                            <div class="col-md-10 select-multiplo lab-inp">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <select>
-                                        <option>Atribuir à:</option>
-                                    </select>
-                                    <div class="overSelect"></div>
+                                <div class="col-md-10 select-multiplo lab-inp">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Atribuir a:</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="one">
+                                            <input type="checkbox" id="one" />First checkbox</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two" />Second checkbox</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three" />Third checkbox</label>
+                                    </div>
                                 </div>
-                                <div id="checkboxes">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                    <label for="two">
-                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                    <label for="three">
-                                        <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
 
-                            <div class="img-container">
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <div class="img-container">
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
                                 </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar" type="submit">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -1521,81 +1511,84 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
+                            <form class="col-md-12 modal-add-tarefa">
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
 
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
 
-                            <div class="col-md-10 select-multiplo lab-inp">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <select>
-                                        <option>Atribuir à:</option>
-                                    </select>
-                                    <div class="overSelect"></div>
+                                <div class="col-md-10 select-multiplo lab-inp">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Atribuir a:</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="one">
+                                            <input type="checkbox" id="one" />First checkbox</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two" />Second checkbox</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three" />Third checkbox</label>
+                                    </div>
                                 </div>
-                                <div id="checkboxes">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                    <label for="two">
-                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                    <label for="three">
-                                        <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
 
-                            <div class="img-container">
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <div class="img-container">
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
                                 </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar" type="submit">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -1633,81 +1626,85 @@
                             Adicionar
                             tarefa</button>
                         <div class="col-md-12 modal-add-tarefa">
-                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                                placeholder="Insira o nome da tarefa" required />
 
-                            <input type="date" class="col-md-10 inserir-data-conclusao"
-                                placeholder="Insira uma data de conclusão" required />
+                            <form class="col-md-12 modal-add-tarefa">
+                                <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                    placeholder="Insira o nome da tarefa" required />
 
-                            <div class="col-md-10 select-multiplo lab-inp">
-                                <div class="selectBox" onclick="showCheckboxes()">
-                                    <select>
-                                        <option>Atribuir a:</option>
-                                    </select>
-                                    <div class="overSelect"></div>
-                                </div>
-                                <div id="checkboxes">
-                                    <label for="one">
-                                        <input type="checkbox" id="one" />First checkbox</label>
-                                    <label for="two">
-                                        <input type="checkbox" id="two" />Second checkbox</label>
-                                    <label for="three">
-                                        <input type="checkbox" id="three" />Third checkbox</label>
-                                </div>
-                            </div>
+                                <input type="date" class="col-md-10 inserir-data-conclusao"
+                                    placeholder="Insira uma data de conclusão" required />
 
-                            <div class="img-container">
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <div class="col-md-10 select-multiplo lab-inp">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Atribuir a:</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="one">
+                                            <input type="checkbox" id="one" />First checkbox</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two" />Second checkbox</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three" />Third checkbox</label>
+                                    </div>
                                 </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                                <div class="img-do-container">
-                                    <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60" height="60"
-                                        class="rounded-circle" />
-                                    <img class="delete-user" src="./img/delete_user.svg" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 buttons">
-                                <button class="segundo-botao botao-cancelar">CANCELAR</button>
-                                <button class="primeiro-botao botao-confirmar">CRIAR</button>
-                            </div>
+                                <div class="img-container">
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                    <div class="img-do-container">
+                                        <img src="../perfil/img/pessoa-sorrindo.webp" id="imgPerfil" width="60"
+                                            height="60" class="rounded-circle" />
+                                        <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 buttons">
+                                    <button class="segundo-botao botao-cancelar">CANCELAR</button>
+                                    <button class="primeiro-botao botao-confirmar" type="submit">CRIAR</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
 
@@ -1789,13 +1786,15 @@
                     <button class="col-md-12 botao-add-topico">ADICIONAR TÓPICO</button>
 
                     <div class="col-md-12 modal-add-topico">
-                        <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
-                            placeholder="Insira o nome do tópico" required />
+                        <form class="col-md-12 modal-add-topico">
+                            <input type="text" class="col-md-10 inserir-tarefa" maxlength="255"
+                                placeholder="Insira o nome do tópico" required />
 
-                        <div class="col-md-12 buttons">
-                            <button class="segundo-botao botao-cancelar-topico">CANCELAR</button>
-                            <button class="primeiro-botao botao-confirmar-topico">CRIAR</button>
-                        </div>
+                            <div class="col-md-12 buttons">
+                                <button class="segundo-botao botao-cancelar-topico">CANCELAR</button>
+                                <button class="primeiro-botao botao-confirmar-topico">CRIAR</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -2035,70 +2034,6 @@
                             alt=""></button>
                 </div>
 
-
-                <img class="linha" src="./img/linha.svg" alt="">
-
-                <h2>ANEXOS</h2>
-
-                <div class="documentacao">
-                    <input type="file" name="file" id="file" class="inputfile" multiple onchange="updateList()"></input>
-                    <label class="arquivo_anexado" for="file" id="btnOutroArquivo">ANEXAR OUTRO ARQUIVO</label>
-                </div>
-
-                <div class="card_arquivo">
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-3 card_word">
-                        <div class="container_word">
-                            <img class="word-logo" src="./img/word.svg" alt="">
-                            <div class="text_card">
-                                <h1>NOME DO ARQUIVO</h1>
-                                <p>TAMANHO: XX MB</p>
-                            </div>
-                            <img class="exit" src="./img/exit.svg" alt="">
-                        </div>
-                    </div>
-                </div>
             </form>
             <div class="buttons">
                 <div class="col-md-3">
@@ -2108,7 +2043,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <button class="primeiro_botao" type="button">
+                    <button class="primeiro_botao" type="submit">
                         SALVAR
                     </button>
                 </div>

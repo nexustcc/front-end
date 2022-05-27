@@ -8,9 +8,30 @@ let divNovaTarefa = document.getElementsByClassName('modal-add-tarefa');
 let btnAdicionarTarefa = document.getElementsByClassName('botao-adicionar');
 let btnCancelarNovaTarefa = document.getElementsByClassName('botao-cancelar');
 
-let divNovoTopico = document.querySelector('.modal-add-topico');
-let btnAdicionarNovoTopico = document.querySelector('.botao-add-topico');
-let btnCancelarNovoTopico = document.querySelector('.botao-cancelar-topico');
+let divNovoTopico = document.getElementsByClassName('modal-add-topico');
+let btnAdicionarNovoTopico = document.getElementsByClassName('botao-add-topico');
+let btnCancelarNovoTopico = document.getElementsByClassName('botao-cancelar-topico');
+
+let liExcluirTopico = document.querySelector('.liExcluirTopico');
+let liExcluirTarefa = document.querySelector('.liExcluirTarefa');
+let liDuplicarTarefa = document.querySelector('.liDuplicarTarefa');
+
+let imgProgresso = document.getElementById('imgStatusTarefa1');
+
+liExcluirTopico.addEventListener('click', function() {
+
+    console.log('Excluir tópico');
+});
+
+liExcluirTarefa.addEventListener('click', function() {
+
+    console.log('Excluir tarefa');
+});
+
+liDuplicarTarefa.addEventListener('click', function() {
+
+    console.log('Duplicar tarefa');
+});
 
 
 for (var a = 0; a < btnAdicionarNovoTopico.length; a++){
@@ -35,27 +56,45 @@ for (var c = 0; c < btnCancelarNovoTopico.length; c++){
 
 };
 
-for (var x = 0; x < btnAdicionarTarefa.length; x++){
+const modalCriarTarefa = (idTopico) => {
+    console.log(idTopico)
+}
 
-     btnAdicionarTarefa[x].addEventListener('click', function(){
+const alterarStatus = (idDiv) => {
 
-    for (var i = 0 ; i < divNovaTarefa.length; i++) {
-        divNovaTarefa[i].style.display = 'flex';
-        }
-    });
+    let elementoFilho = idDiv.children[0];
+    
+    if(elementoFilho.style.width == '0%') {
+    
+        elementoFilho.style.width = '50%';
+    } else if (elementoFilho.style.width == '50%') {
 
-};
+        elementoFilho.style.width = '100%';
+    } 
 
-for (var y = 0; y < btnCancelarNovaTarefa.length; y++){
+}
 
-    btnCancelarNovaTarefa[y].addEventListener('click', function(){
+// for (var x = 0; x < btnAdicionarTarefa.length; x++){
 
-   for (var t = 0 ; t < divNovaTarefa.length; t++) {
-       divNovaTarefa[t].style.display = 'none';
-       }
-   });
+//      btnAdicionarTarefa[x].addEventListener('click', function(){
 
-};
+//     for (var i = 0 ; i < divNovaTarefa.length; i++) {
+//         divNovaTarefa[i].style.display = 'flex';
+//         }
+//     });
+
+// };
+
+// for (var y = 0; y < btnCancelarNovaTarefa.length; y++){
+
+//     btnCancelarNovaTarefa[y].addEventListener('click', function(){
+
+//    for (var t = 0 ; t < divNovaTarefa.length; t++) {
+//        divNovaTarefa[t].style.display = 'none';
+//        }
+//    });
+
+// };
 
 tiposUsuario.forEach((tipoUsuario) => {
     tipoUsuario.addEventListener("click", () => {
@@ -100,7 +139,7 @@ function minhasTarefas() {
 
 
 
-var pontos = document.querySelector(".tresPontos"),
+let pontos = document.querySelector(".tresPontos"),
     middle = document.querySelector(".middle"),
     cross = document.querySelector(".cross"),
     dropdown = document.querySelector(".dropdown");
@@ -111,7 +150,12 @@ var pontos = document.querySelector(".tresPontos"),
     dropdown.classList.toggle("active");
 });
 
-var pontos2 = document.querySelector(".pontos2"),
+
+
+
+
+
+let pontos2 = document.querySelector(".pontos2"),
     middle2 = document.querySelector(".middle2"),
     cross2 = document.querySelector(".cross2"),
     dropdown2 = document.querySelector(".dropdown2");
@@ -120,10 +164,9 @@ pontos2.addEventListener("click", function () {
     middle2.classList.toggle("active");
     cross2.classList.toggle("active");
     dropdown2.classList.toggle("active");
-
 });
 
-var altCor = document.querySelector(".liAltCor"),
+let altCor = document.querySelector(".liAltCor"),
     cmiddle = document.querySelector(".child-middle"),
     ccross = document.querySelector(".child-cross"),
     cdropdown = document.querySelector(".child-dropdown");
@@ -152,6 +195,7 @@ function leaveLast() {
 function showModal() {
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".bg").style.display = "flex";
+    console.log('showmodaldadiv')
 }
 
 function exitModal() {
