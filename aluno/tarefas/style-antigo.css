@@ -755,7 +755,7 @@ body {
 }
 
 .col-md-12 .modal-add-tarefa {
-  display: none;
+  display: flex;
 }
 
 .modal {
