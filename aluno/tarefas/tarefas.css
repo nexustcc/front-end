@@ -153,7 +153,9 @@ input {
   }
   
   .modal-add-topico input,
-  .modal-add-tarefa input {
+  .modal-add-tarefa input,
+  .modal-infos-tarefa input,
+  .modal-infos-tarefa select {
     background-color: #e3e3e3;
     border-radius: 10px;
     border: none;
@@ -283,3 +285,180 @@ input {
     border-radius: 10px;
     border: none;
 }
+
+.modal-infos-tarefa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+    padding: 20px;
+    width: 60%;
+}
+
+.modal-infos-tarefa input,
+.modal-infos-tarefa select {
+    width: 100%;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.modal-infos-tarefa h1 {
+    font-size: 42px;
+}
+
+.modal-infos-tarefa label {
+    margin-bottom: 5px;
+}
+
+.form-infos-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.container-inputs-modal-tarefa {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    /* background: #000; */
+}
+
+.input-modal-tarefa {
+    display: flex;
+    flex-direction: column;
+    width: 33.3%;
+}
+
+.container-inputs-data-modal {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.input-data-modal {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.buttons-modal-tarefa {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    gap: 10px;
+    width: 100%;
+}
+
+.btn-cancelar-modal-tarefa,
+.btn-salvar-modal-tarefa {
+  width: 25%;
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  padding: 15px;
+  background-color: #c2c2c2;
+}
+
+.btn-salvar-modal-tarefa {
+    background-color: #044177;
+}
+
+.modal-opcoes-topico,
+.modal-alterar-cor,
+.modal-opcoes-tarefa,
+.modal-alterar-cor-tarefa {
+    position: absolute;
+    display: none;
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    z-index: 100;
+    top: 260px;
+    left: 420px;
+}
+
+.modal-opcoes-topico ul,
+.modal-alterar-cor ul,
+.modal-opcoes-tarefa ul,
+.modal-alterar-cor-tarefa ul {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-opcoes-topico li,
+.modal-alterar-cor li,
+.modal-opcoes-tarefa li,
+.modal-alterar-cor-tarefa li {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    gap: 15px;
+}
+
+.modal-opcoes-topico li:hover,
+.modal-alterar-cor li:hover,
+.modal-opcoes-tarefa li:hover,
+.modal-alterar-cor-tarefa li:hover {
+    background-color: #e3e3e3;
+    border-radius: 20px;
+}
+
+.modal-alterar-cor,
+.modal-alterar-cor-tarefa {
+    left: 684px;
+}
+
+.modal-alterar-cor-tarefa,
+.modal-opcoes-tarefa {
+    top: 580px;
+}
+
+.modal-opcoes-tarefa img {
+    color: #044177;
+}
+
+  .amarelo {
+    color: #F8C71A;
+  }
+  
+  .azul {
+    color: #06376A
+  }
+  
+  .verde {
+    color: #3D963B;
+  }
+  
+  .vermelho {
+    color: #DD1313;
+  }
+  
+  .laranja {
+    color: #F98418;
+  }
+  
+  .roxo {
+    color: #9C4EDA;
+  }
+  
+  .rosa {
+    color: #EA5EED;
+  }
+  
+  .preto {
+    color: #000000;
+  }

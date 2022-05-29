@@ -93,7 +93,29 @@
 
                     <div class="header-topico">
                         <h2 id="nomeTopico">NOME DO TÓPICO</h2>
-                        <img src="img/icon-options.svg" alt="opções">
+                        <img onclick="showModalOpcoesTopico()" id="iconOpcoesTopico" src="img/icon-options.svg" alt="opções">
+                    </div>
+
+                    <div class="modal-opcoes-topico" id="modalOpcoes1">
+
+                        <ul>
+                            <li onclick="showModalALterarCor()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
+                            <li id="liExcluirTopico1"><img src="img/excluir.svg" alt="excluir">Excluir</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="modal-alterar-cor" id="modalAlterarCor1">
+                        <ul>
+                            <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
+                            <li><img src="./img/azul.svg" alt="">Azul</li>
+                            <li><img src="./img/verde.svg" alt="">Verde</li>
+                            <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
+                            <li><img src="./img/laranja.svg" alt="">Laranja</li>
+                            <li><img src="./img/roxo.svg" alt="">Roxo</li>
+                            <li><img src="./img/rosa.svg" alt="">Rosa</li>
+                            <li><img src="./img/preto.svg" alt="">Preto</li>
+                        </ul>
                     </div>
 
                     <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
@@ -118,7 +140,54 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                            <img  id="iconOpcoesTarefa1" src="img/icon-options.svg" alt="opções">
+
+                            
+
+                        </div>
+
+                        <div class="modal-opcoes-tarefa" id="modalOpcoesTarefa1">
+
+                            <ul>
+                                <li onclick="showModalALterarCor()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
+                                <li>Duplicar</li>
+                                <li>Mover para<img src="img/abrir.svg" alt="abrir"></li>
+                                <li id="liExcluirTopico1"><img src="img/excluir.svg" alt="excluir">Excluir</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="modal-alterar-cor-tarefa" id="modalAlterarCorTarefa">
+                            <ul>
+                                <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
+                                <li><img src="./img/azul.svg" alt="">Azul</li>
+                                <li><img src="./img/verde.svg" alt="">Verde</li>
+                                <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
+                                <li><img src="./img/laranja.svg" alt="">Laranja</li>
+                                <li><img src="./img/roxo.svg" alt="">Roxo</li>
+                                <li><img src="./img/rosa.svg" alt="">Rosa</li>
+                                <li><img src="./img/preto.svg" alt="">Preto</li>
+                            </ul>
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1"
+                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -139,7 +208,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -160,7 +229,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -181,28 +250,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -248,7 +296,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -269,7 +317,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -290,7 +338,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -311,7 +359,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -332,7 +380,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -380,7 +428,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -401,7 +449,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -422,7 +470,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -443,7 +491,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -464,135 +512,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="topico" id="topico4">
-
-                    <div class="header-topico">
-                        <h2 id="nomeTopico">NOME DO TÓPICO</h2>
-                        <img src="img/icon-options.svg" alt="opções">
-                    </div>
-
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
-
-                    <form class="modal-add-tarefa">
-                        <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
-                        <input type="date" placeholder="Insira uma data de conclusão" required />
-        
-                        <div class="buttons-tarefa">
-                            <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
-                            <button class="botao-criar-tarefa" type="submit">CRIAR</button>
-                        </div>
-                    </form>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -636,7 +556,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -657,7 +577,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -678,7 +598,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -699,7 +619,7 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -720,7 +640,135 @@
                                 aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa">Nome da tarefa</p>
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                            <img src="img/icon-options.svg" alt="opções">
+
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topico" id="topico4">
+
+                    <div class="header-topico">
+                        <h2 id="nomeTopico">NOME DO TÓPICO</h2>
+                        <img src="img/icon-options.svg" alt="opções">
+                    </div>
+
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
+                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+
+                    <form class="modal-add-tarefa">
+                        <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
+                        <input type="date" placeholder="Insira uma data de conclusão" required />
+        
+                        <div class="buttons-tarefa">
+                            <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
+                            <button class="botao-criar-tarefa" type="submit">CRIAR</button>
+                        </div>
+                    </form>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1"
+                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                            <img src="img/icon-options.svg" alt="opções">
+
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1"
+                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                            <img src="img/icon-options.svg" alt="opções">
+
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1"
+                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                            <img src="img/icon-options.svg" alt="opções">
+
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1"
+                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                            <img src="img/icon-options.svg" alt="opções">
+
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1"
+                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
                             <img src="img/icon-options.svg" alt="opções">
 
                         </div>
@@ -751,6 +799,68 @@
                         </div>
                     </form>
             </div>
+
+        </div>
+
+        <div class="modal-infos-tarefa">
+
+            <h1 id="nomeTarefa">TAREFA</h1>
+            <form class="form-infos-tarefa">
+
+                <div class="container-inputs-modal-tarefa">
+
+                    <div class="input-modal-tarefa">
+                        <label>Tópico</label>
+                        <select required>
+                            <option selected></option>
+                            <option value="1">Não iniciada</option>
+                            <option value="2">Iniciada</option>
+                            <option value="3">Concluída</option>
+                        </select>
+                    </div>
+
+                    <div class="input-modal-tarefa">
+                        <label>Status</label>
+                        <select required>
+                            <option selected></option>
+                            <option value="1">Não iniciada</option>
+                            <option value="2">Iniciada</option>
+                            <option value="3">Concluída</option>
+                        </select>
+                    </div>
+
+                    <div class="input-modal-tarefa">
+                        <label>Prioridade</label>
+                        <select required>
+                            <option selected></option>
+                            <option value="1">Baixa</option>
+                            <option value="2">Média</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="container-inputs-data-modal">
+
+                    <div class="input-data-modal">
+                        <label>Data de início das aulas</label>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="input-data-modal">
+                        <label>Data de término das aulas</label>
+                        <input type="date" required>
+                    </div>
+
+                </div>
+
+                <div class="buttons-modal-tarefa">
+                    <button class="btn-salvar-modal-tarefa" type="submit">SALVAR</button>
+                    <button class="btn-cancelar-modal-tarefa" onclick="exitModalInfosTarefa()">CANCELAR</button>
+                </div>
+
+            </form>
 
         </div>
 
