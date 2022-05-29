@@ -1,30 +1,30 @@
 "use strict";
 
-let tiposPlano = document.querySelectorAll(".header ul li");
-const planoMensal = document.getElementById('plano-mensal');
-const planoAnual = document.getElementById('plano-anual');
-const divPlanoMensal = document.querySelector('.mensal');
-const divPlanoAnual = document.querySelector('.anual');
+let tiposTarefa = document.querySelectorAll(".header ul li");
+const tarefaIndividual = document.getElementById('tarefa-individual');
+const tarefaGeral = document.getElementById('tarefa-geral');
+const divTarefaIndividual = document.querySelector('.container-geral');
+const divTarefaGeral = document.querySelector('.container-geral-tarefas-gerais');
 
-tiposPlano.forEach((tipoPlano) => {
-    tipoPlano.addEventListener("click", () => {
-        tiposPlano.forEach((tipoPlano) => {
-            tipoPlano.classList.remove("ativo");
+tiposTarefa.forEach((tipoTarefa) => {
+    tipoTarefa.addEventListener("click", () => {
+        tiposTarefa.forEach((tipoTarefa) => {
+            tipoTarefa.classList.remove("ativo");
         });
-        tipoPlano.classList.add("ativo");
+        tipoTarefa.classList.add("ativo");
     });
 });
 
-planoMensal.addEventListener('click', function(){
+tarefaIndividual.addEventListener('click', function(){
 
-    divPlanoAnual.style.display = 'none';
-    divPlanoMensal.style.display = 'flex';
+    divTarefaGeral.style.display = 'none';
+    divTarefaIndividual.style.display = 'flex';
 })
 
-planoAnual.addEventListener('click', function(){
+tarefaGeral.addEventListener('click', function(){
 
-    divPlanoMensal.style.display = 'none';
-    divPlanoAnual.style.display = 'flex';
+    divTarefaIndividual.style.display = 'none';
+    divTarefaGeral.style.display = 'flex';
     
 })
 
@@ -45,7 +45,7 @@ const alterarStatus = (div) => {}
 const showModalOpcoesTopico = () => {
 
     let iconOpcoesTopico = document.getElementById('iconOpcoesTopico');
-    let modalOpcoesTopicos = document.getElementById('modalOpcoes1');
+    let modalOpcoesTopicos = document.getElementById('modalOpcoesTopico1');
 
     if (iconOpcoesTopico.src == 'http://127.0.0.1:5500/aluno/tarefas/img/icon-options.svg') {
         iconOpcoesTopico.src = 'img/icon-x.svg';
@@ -59,18 +59,62 @@ const showModalOpcoesTopico = () => {
         modalOpcoesTopicos.style.display = 'flex';
     }
 
-    if (document.getElementById('modalAlterarCor1').style.display == 'flex') {
-        document.getElementById('modalAlterarCor1').style.display = 'none';
+    if (document.getElementById('modalAlterarCorTopico1').style.display == 'flex') {
+        document.getElementById('modalAlterarCorTopico1').style.display = 'none';
     }
 };
 
-const showModalALterarCor = () => {
-    let modalAlterarCor = document.getElementById('modalAlterarCor1');
+const showModalAlterarCorTopico = () => {
+    let modalAlterarCor = document.getElementById('modalAlterarCorTopico1');
 
     if (modalAlterarCor.style.display == 'flex') {
         modalAlterarCor.style.display = 'none';
     } else {
         modalAlterarCor.style.display = 'flex';
+    }
+}
+
+const showModalOpcoesTarefa = () => {
+
+    let iconOpcoesTarefa = document.getElementById('iconOpcoesTarefa1');
+    let modalOpcoesTarefa = document.getElementById('modalOpcoesTarefa1');
+
+    if (iconOpcoesTarefa.src == 'http://127.0.0.1:5500/aluno/tarefas/img/icon-options.svg') {
+        iconOpcoesTarefa.src = 'img/icon-x.svg';
+    } else {
+        iconOpcoesTarefa.src = 'img/icon-options.svg';
+    } 
+
+    if (modalOpcoesTarefa.style.display == 'flex') {
+        modalOpcoesTarefa.style.display = 'none';
+    } else {
+        modalOpcoesTarefa.style.display = 'flex';
+    }    
+
+    if (document.getElementById('modalAlterarCorTarefa1').style.display == 'flex') {
+        document.getElementById('modalAlterarCorTarefa1').style.display = 'none';
+    }
+}
+
+const showModalAlterarCorTarefa = () => {
+    let modalAlterarCorTarefa = document.getElementById('modalAlterarCorTarefa1');
+
+    
+    if (modalAlterarCorTarefa.style.display == 'flex') {
+        modalAlterarCorTarefa.style.display = 'none';
+    } else {
+        modalAlterarCorTarefa.style.display = 'flex';
+    }
+}
+
+const showCheckboxes = () => {
+    let checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
     }
 }
 

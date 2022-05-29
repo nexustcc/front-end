@@ -6,7 +6,7 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
@@ -37,7 +37,7 @@ button {
     font-family: "Poppins", sans-serif;
 }
 
-input {
+input, select, option {
     font-family: "Poppins", sans-serif;
 }
 
@@ -81,7 +81,8 @@ input {
     color: #fff;
 }
 
-.container-geral {
+.container-geral,
+.container-geral-tarefas-gerais {
     width: 100%;
     height: 100%;
     display: flex;
@@ -89,7 +90,12 @@ input {
     overflow-x: auto;
 }
 
-#container-tarefas {
+.container-geral-tarefas-gerais {
+    display: none;
+}
+
+#container-tarefas,
+#container-tarefas-gerais {
     display: flex;
     padding: 30px 0 30px 30px;
     gap: 50px;
@@ -98,12 +104,14 @@ input {
     overflow-x: auto;
 }
 
-#container-tarefas::-webkit-scrollbar {
+#container-tarefas::-webkit-scrollbar,
+#container-tarefas-gerais::-webkit-scrollbar {
     height: 10px;
     margin-bottom: 5px;
 }
   
-#container-tarefas::-webkit-scrollbar-thumb {
+#container-tarefas::-webkit-scrollbar-thumb,
+#container-tarefas-gerais::-webkit-scrollbar-thumb {
     background-color: #05204a;
     border-radius: 10px;
     border: none;
@@ -154,6 +162,7 @@ input {
   
   .modal-add-topico input,
   .modal-add-tarefa input,
+  .modal-add-tarefa select,
   .modal-infos-tarefa input,
   .modal-infos-tarefa select {
     background-color: #e3e3e3;
@@ -165,7 +174,8 @@ input {
     width: 85%;
   }
 
-  .modal-add-tarefa input {
+  .modal-add-tarefa input,
+  .modal-add-tarefa select {
     margin: 0.75rem 0 0.75rem 0 !important;
   }
 
@@ -375,7 +385,7 @@ input {
 }
 
 .modal-opcoes-topico,
-.modal-alterar-cor,
+.modal-alterar-cor-topico,
 .modal-opcoes-tarefa,
 .modal-alterar-cor-tarefa {
     position: absolute;
@@ -383,22 +393,35 @@ input {
     border-radius: 20px;
     background-color: #f4f4f4;
     z-index: 100;
-    top: 260px;
-    left: 420px;
+    margin-left: 290px;
+}
+
+.modal-alterar-cor-topico {
+    margin-left: 245px;
+    top: 0px;
+}
+
+.modal-opcoes-tarefa {
+    margin-left: 270px;
+}
+
+.modal-alterar-cor-tarefa {
+    margin-left: 245px;
+    top: 0;
 }
 
 .modal-opcoes-topico ul,
-.modal-alterar-cor ul,
+.modal-alterar-cor-topico ul,
 .modal-opcoes-tarefa ul,
 .modal-alterar-cor-tarefa ul {
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .modal-opcoes-topico li,
-.modal-alterar-cor li,
+.modal-alterar-cor-topico li,
 .modal-opcoes-tarefa li,
 .modal-alterar-cor-tarefa li {
     display: flex;
@@ -407,29 +430,90 @@ input {
     transition: 0.3s;
     cursor: pointer;
     gap: 15px;
+    user-select:none;
 }
 
 .modal-opcoes-topico li:hover,
-.modal-alterar-cor li:hover,
+.modal-alterar-cor-topico li:hover,
 .modal-opcoes-tarefa li:hover,
 .modal-alterar-cor-tarefa li:hover {
     background-color: #e3e3e3;
     border-radius: 20px;
 }
 
-.modal-alterar-cor,
-.modal-alterar-cor-tarefa {
-    left: 684px;
-}
-
-.modal-alterar-cor-tarefa,
-.modal-opcoes-tarefa {
-    top: 580px;
-}
-
 .modal-opcoes-tarefa img {
     color: #044177;
 }
+
+.selectBox {
+    position: relative;
+  }
+  
+  .selectBox select {
+    width: 100%;
+  }
+
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+  
+  #checkboxes label {
+    display: block;
+  }
+  
+  #checkboxes label:hover {
+    background-color: #1e90ff;
+  }
+
+  #imgPerfil {
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50px;
+  }
+  
+  .img-container{
+    display: flex;
+    width: 85%;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  
+  .img-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .img-container::-webkit-scrollbar-thumb {
+    background-color: #C2C2C2;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .img-do-container{
+    display: flex;
+  }
+
+  /* .delete-user{
+    position: relative;
+    top: -30%;
+    width: 20px;
+    left: -20px;
+    cursor: pointer;
+  } */
+
+  .button-add-user{
+    border: none;
+    background-color: #03a8f400;
+  }
 
   .amarelo {
     color: #F8C71A;
