@@ -22,7 +22,7 @@ tarefaIndividual.addEventListener('click', function(){
 })
 
 tarefaGeral.addEventListener('click', function(){
-
+    console.log('a')
     divTarefaIndividual.style.display = 'none';
     divTarefaGeral.style.display = 'flex';
     
