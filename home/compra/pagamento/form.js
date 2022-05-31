@@ -132,7 +132,6 @@ const validarVazio = (input) => {
 };
 
 const checkInputs = () => {
-    console.log("check");
     if (
         validarVazio(inputNomeInstituicao) &&
         validarVazio(inputEmailInstituicao) &&
@@ -165,6 +164,35 @@ form.addEventListener("submit", (e) => {
     checkInputs();
 });
 
+const login = async (email, senha) => {
+    const login = {
+        email: email,
+        senha: senha
+    }
+
+    const config = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(login),
+    }
+
+    await fetch('http://localhost:3000/login/', config)
+    .then((res) => res.json())
+    .then((data) => {
+        const usuario = {
+            idUsuario: data.idUsuario, 
+            idTipo: data.idTipo,
+            nome: data.nome,
+            tipo: data.tipo
+        }
+
+        localStorage.user = JSON.stringify(usuario)
+        window.location.href = '../../../instituicao/'
+    })
+}
+
 const cadastrarInstituicao = (
     nomeInstituicao,
     emailInstituicao,
@@ -190,8 +218,6 @@ const cadastrarInstituicao = (
         telefone: telefoneInstituicao,
     };
 
-    console.log(instituicao);
-
     const config = {
         method: "POST",
         headers: {
@@ -199,12 +225,8 @@ const cadastrarInstituicao = (
         },
         body: JSON.stringify(instituicao),
     };
-
-    console.log(instituicao);
-
+    
     fetch("http://localhost:3000/instituicao/cadastrarInstituicao", config)
         .then((res) => res.json())
-        .then((data) => {
-            window.location.href = "../../login/index.html"
-        });
+        .then(() => { login(emailInstituicao, senhaInstituicao) });
 };
