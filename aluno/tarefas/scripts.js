@@ -118,6 +118,15 @@ const showCheckboxes = () => {
     }
 }
 
+const showModalInfosTarefaGeral = () => {
+
+    let modalInfosTarefaGeral = document.getElementById('modalInfosTarefaGeral1');
+    let background = document.querySelector('.bg');
+
+    modalInfosTarefaGeral.style.display = 'flex';
+    background.style.display = 'flex';
+}
+
 let liExcluirTopico = document.getElementById('liExcluirTopico1');
 liExcluirTopico.addEventListener('click', () => console.log('Excluir Tópico 1'));
 

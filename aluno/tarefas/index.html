@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="tarefas.css">
     <title>Tarefas</title>
 </head>
+
 <body>
 
     <div class="bg"></div>
@@ -46,7 +48,7 @@
         <li>
             <a href="./index.html"">
                 <i class='bx bx-task' ></i>
-                <span class="links_name">Tarefas</span>
+                <span class=" links_name">Tarefas</span>
             </a>
             <span class="tooltip">Tarefas</span>
         </li>
@@ -93,13 +95,15 @@
 
                     <div class="header-topico">
                         <h2 id="nomeTopico">NOME DO TÓPICO</h2>
-                        <img onclick="showModalOpcoesTopico()" id="iconOpcoesTopico" src="img/icon-options.svg" alt="opções">
+                        <img onclick="showModalOpcoesTopico()" id="iconOpcoesTopico" src="img/icon-options.svg"
+                            alt="opções">
                     </div>
 
                     <div class="modal-opcoes-topico" id="modalOpcoesTopico1">
 
                         <ul>
-                            <li onclick="showModalAlterarCorTopico()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
+                            <li onclick="showModalAlterarCorTopico()"><img src="img/alterar-cor.svg" alt="cor">Definir
+                                cor padrão<img src="img/abrir.svg" alt="abrir"></li>
 
                             <div class="modal-alterar-cor-topico" id="modalAlterarCorTopico1">
                                 <ul>
@@ -119,13 +123,13 @@
 
                     </div>
 
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img src="./img/mais.svg"
+                            alt="">ADICIONAR TAREFA</button>
 
                     <form class="modal-add-tarefa">
                         <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
                         <input type="date" placeholder="Insira uma data de conclusão" required />
-        
+
                         <div class="buttons-tarefa">
                             <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
                             <button class="botao-criar-tarefa" type="submit">CRIAR</button>
@@ -136,22 +140,24 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
-                            <img onclick="showModalOpcoesTarefa()"  id="iconOpcoesTarefa1" src="img/icon-options.svg" alt="opções">
+                            <img onclick="showModalOpcoesTarefa()" id="iconOpcoesTarefa1" src="img/icon-options.svg"
+                                alt="opções">
 
-                            
+
 
                         </div>
 
                         <div class="modal-opcoes-tarefa" id="modalOpcoesTarefa1">
 
                             <ul>
-                                <li id="liDefinirCorOpcoesTarefa" onclick="showModalAlterarCorTarefa()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
+                                <li id="liDefinirCorOpcoesTarefa" onclick="showModalAlterarCorTarefa()"><img
+                                        src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg"
+                                        alt="abrir"></li>
 
                                 <div class="modal-alterar-cor-tarefa" id="modalAlterarCorTarefa1">
                                     <ul>
@@ -184,9 +190,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -205,9 +210,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -226,9 +230,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -247,9 +250,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -276,13 +278,13 @@
                         <img src="img/icon-options.svg" alt="opções">
                     </div>
 
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img src="./img/mais.svg"
+                            alt="">ADICIONAR TAREFA</button>
 
                     <form class="modal-add-tarefa">
                         <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
                         <input type="date" placeholder="Insira uma data de conclusão" required />
-        
+
                         <div class="buttons-tarefa">
                             <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
                             <button class="botao-criar-tarefa" type="submit">CRIAR</button>
@@ -293,9 +295,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -314,9 +315,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -335,9 +335,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -356,9 +355,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -377,9 +375,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -408,13 +405,13 @@
                         <img src="img/icon-options.svg" alt="opções">
                     </div>
 
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img src="./img/mais.svg"
+                            alt="">ADICIONAR TAREFA</button>
 
                     <form class="modal-add-tarefa">
                         <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
                         <input type="date" placeholder="Insira uma data de conclusão" required />
-        
+
                         <div class="buttons-tarefa">
                             <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
                             <button class="botao-criar-tarefa" type="submit">CRIAR</button>
@@ -425,9 +422,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -446,9 +442,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -467,9 +462,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -488,9 +482,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -509,9 +502,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -536,13 +528,13 @@
                         <img src="img/icon-options.svg" alt="opções">
                     </div>
 
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img src="./img/mais.svg"
+                            alt="">ADICIONAR TAREFA</button>
 
                     <form class="modal-add-tarefa">
                         <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
                         <input type="date" placeholder="Insira uma data de conclusão" required />
-        
+
                         <div class="buttons-tarefa">
                             <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
                             <button class="botao-criar-tarefa" type="submit">CRIAR</button>
@@ -553,9 +545,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -574,9 +565,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -595,9 +585,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -616,9 +605,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -637,9 +625,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -664,13 +651,13 @@
                         <img src="img/icon-options.svg" alt="opções">
                     </div>
 
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img src="./img/mais.svg"
+                            alt="">ADICIONAR TAREFA</button>
 
                     <form class="modal-add-tarefa">
                         <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
                         <input type="date" placeholder="Insira uma data de conclusão" required />
-        
+
                         <div class="buttons-tarefa">
                             <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
                             <button class="botao-criar-tarefa" type="submit">CRIAR</button>
@@ -681,9 +668,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -702,9 +688,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -723,9 +708,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -744,9 +728,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -765,9 +748,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -787,24 +769,24 @@
 
             </div>
 
-        
+
             <div id="container-topicos">
 
                 <button class="botao-add-topico" onclick="showModalCriarTopico()">ADICIONAR TÓPICO</button>
 
-                    <form class="modal-add-topico">
-                        <input type="text" maxlength="255" placeholder="Insira o nome do tópico" required />
+                <form class="modal-add-topico">
+                    <input type="text" maxlength="255" placeholder="Insira o nome do tópico" required />
 
-                         <div class="buttons-topico">
-                            <button class="botao-cancelar-topico" onclick="exitModalCriarTopico()">CANCELAR</button>
-                            <button class="botao-criar-topico" type="submit">CRIAR</button>
-                        </div>
-                    </form>
+                    <div class="buttons-topico">
+                        <button class="botao-cancelar-topico" onclick="exitModalCriarTopico()">CANCELAR</button>
+                        <button class="botao-criar-topico" type="submit">CRIAR</button>
+                    </div>
+                </form>
             </div>
 
         </div>
 
-        <div class="modal-infos-tarefa">
+        <div class="modal-infos-tarefa" id="modalInfosTarefa1">
 
             <h1 id="nomeTarefa">TAREFA</h1>
             <form class="form-infos-tarefa">
@@ -886,13 +868,15 @@
 
                     <div class="header-topico">
                         <h2 id="nomeTopico">NOME DO TÓPICO</h2>
-                        <img onclick="showModalOpcoesTopico()" id="iconOpcoesTopico" src="img/icon-options.svg" alt="opções">
+                        <img onclick="showModalOpcoesTopico()" id="iconOpcoesTopico" src="img/icon-options.svg"
+                            alt="opções">
                     </div>
 
                     <div class="modal-opcoes-topico" id="modalOpcoesTopico1">
 
                         <ul>
-                            <li onclick="showModalAlterarCorTopico()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
+                            <li onclick="showModalAlterarCorTopico()"><img src="img/alterar-cor.svg" alt="cor">Definir
+                                cor padrão<img src="img/abrir.svg" alt="abrir"></li>
 
                             <ul class="modal-alterar-cor-topico" id="modalAlterarCorTopico1">
                                 <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
@@ -910,71 +894,109 @@
 
                     </div>
 
-                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img
-                        src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
+                    <button class="botao-add-topico" onclick="showModalCriarTarefa()"><img src="./img/mais.svg"
+                            alt="">ADICIONAR TAREFA</button>
 
                     <form class="modal-add-tarefa">
                         <input type="text" maxlength="255" placeholder="Insira o nome da tarefa" required />
                         <input type="date" placeholder="Insira uma data de conclusão" required />
 
 
-                        <div class="div-atribuir-aluno"> <img src="img/icon-add-person.svg"> Atribuir a: <img id="imgSeta" src="img/seta.svg"></div>
+                        <div class="div-atribuir-aluno"> <img src="img/icon-add-person.svg"> Atribuir a: <img
+                                id="imgSeta" src="img/seta.svg"></div>
 
-                        <div class="div-atribuir-aluno">
-                            <li class=""> 
-                                <input type="checkbox" id="aluno1"> 
-                                <label for="aluno1"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60" class="rounded-circle" > Nome do Aluno</label> 
+                        <ul class="div-atribuir-aluno vertical-position">
+
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll">Selecionar todos</label>
                             </li>
-                        </div>
 
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno1">
+                                <label for="aluno1"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno2">
+                                <label for="aluno2"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno3">
+                                <label for="aluno3"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno4">
+                                <label for="aluno4"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno5">
+                                <label for="aluno5"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno6">
+                                <label for="aluno6"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno7">
+                                <label for="aluno7"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                        </ul>
 
                         <div class="img-container">
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                             <div class="img-do-container">
-                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60"
-                                    height="60" class="rounded-circle" />
-                                <img class="delete-user" src="./img/delete_user.svg" alt="">
+                                <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                    class="rounded-circle" />
+                                <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
                             </div>
                         </div>
-        
+
                         <div class="buttons-tarefa">
                             <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa()">CANCELAR</button>
                             <button class="botao-criar-tarefa" type="submit">CRIAR</button>
@@ -985,22 +1007,24 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
-                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
-                            <img onclick="showModalOpcoesTarefa()"  id="iconOpcoesTarefa1" src="img/icon-options.svg" alt="opções">
+                            <p id="nomeTarefa" onclick="showModalInfosTarefaGeral()">Nome da tarefa</p>
+                            <img onclick="showModalOpcoesTarefa()" id="iconOpcoesTarefa1" src="img/icon-options.svg"
+                                alt="opções">
 
-                            
+
 
                         </div>
 
                         <div class="modal-opcoes-tarefa" id="modalOpcoesTarefa1">
 
                             <ul>
-                                <li id="liDefinirCorOpcoesTarefa" onclick="showModalAlterarCorTarefa()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
+                                <li id="liDefinirCorOpcoesTarefa" onclick="showModalAlterarCorTarefa()"><img
+                                        src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg"
+                                        alt="abrir"></li>
 
                                 <div class="modal-alterar-cor-tarefa" id="modalAlterarCorTarefa1">
                                     <ul>
@@ -1033,9 +1057,28 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+                            <p id="nomeTarefa" onclick="showModalInfosTarefaGeral()">Nome da tarefa</p>
+                            <img src="img/icon-options.svg" alt="opções">
+
+                        </div>
+
+                        <div class="prioridade-tarefa">
+                            <img src="./img/calendario.svg" alt="">
+                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                        </div>
+
+                    </div>
+
+                    <div class="tarefa">
+                        <div class="header-tarefa">
+
+                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -1054,9 +1097,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -1075,30 +1117,8 @@
                         <div class="header-tarefa">
 
                             <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                            </div>
-
-                            <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
-                            <img src="img/icon-options.svg" alt="opções">
-
-                        </div>
-
-                        <div class="prioridade-tarefa">
-                            <img src="./img/calendario.svg" alt="">
-                            <p id="dataConclusaoTarefa">XX/XX/XX</p>
-                        </div>
-
-                    </div>
-
-                    <div class="tarefa">
-                        <div class="header-tarefa">
-
-                            <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                                <div class="progress-bar" id="imgStatusTarefa1"
-                                role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
@@ -1118,24 +1138,24 @@
 
             </div>
 
-        
+
             <div id="container-topicos">
 
                 <button class="botao-add-topico" onclick="showModalCriarTopico()">ADICIONAR TÓPICO</button>
 
-                    <form class="modal-add-topico">
-                        <input type="text" maxlength="255" placeholder="Insira o nome do tópico" required />
+                <form class="modal-add-topico">
+                    <input type="text" maxlength="255" placeholder="Insira o nome do tópico" required />
 
-                         <div class="buttons-topico">
-                            <button class="botao-cancelar-topico" onclick="exitModalCriarTopico()">CANCELAR</button>
-                            <button class="botao-criar-topico" type="submit">CRIAR</button>
-                        </div>
-                    </form>
+                    <div class="buttons-topico">
+                        <button class="botao-cancelar-topico" onclick="exitModalCriarTopico()">CANCELAR</button>
+                        <button class="botao-criar-topico" type="submit">CRIAR</button>
+                    </div>
+                </form>
             </div>
 
         </div>
 
-        <div class="modal-infos-tarefa">
+        <div class="modal-infos-tarefa" id="modalInfosTarefaGeral1">
 
             <h1 id="nomeTarefa">TAREFA</h1>
             <form class="form-infos-tarefa">
@@ -1188,6 +1208,145 @@
 
                 </div>
 
+                <img src="img/linha-horizontal.svg" alt="">
+
+                <div class="atribuir-alunos-modal">
+
+                    <label>Atribuir a:</label>
+
+                    <div class="img-container img-container-modal">
+
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+                        <div class="img-do-container">
+                            <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil" width="60" height="60"
+                                class="rounded-circle" />
+                            <img class="delete-user" src="./img/icon-excluir-usuario.svg" alt="excluir">
+                        </div>
+
+                        <div class="div-atribuir-aluno div-atribuir-aluno-modal"> <img
+                                src="img/icon-add-person.svg"><img id="imgSetaModal" src="img/seta.svg"></div>
+                    </div>
+
+                    <div class="modal-opcoes-topico modal-usuarios-modal">
+
+                        <ul>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno324">
+                                <label for="aluno324"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                            <li class="atribuir-usuarios">
+                                <input type="checkbox" id="aluno523">
+                                <label for="aluno523"> <img src="../perfil/img/pessoa-sorrindo.webp" class="imgPerfil"
+                                        class="rounded-circle"> Nome do Aluno</label>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <img src="img/linha-horizontal.svg" alt="">
+
                 <div class="buttons-modal-tarefa">
                     <button class="btn-salvar-modal-tarefa" type="submit">SALVAR</button>
                     <button class="btn-cancelar-modal-tarefa" onclick="exitModalInfosTarefa()">CANCELAR</button>
@@ -1220,4 +1379,5 @@
     </script>
 
 </body>
+
 </html>

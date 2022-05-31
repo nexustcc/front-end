@@ -502,9 +502,8 @@ option {
   display: flex;
   width: 85%;
   overflow-x: auto;
-  gap: 10px;
+  margin-bottom: 10px;
 }
-
 
 .img-container::-webkit-scrollbar {
   height: 6px;
@@ -520,17 +519,80 @@ option {
   display: flex;
 }
 
-/* .delete-user{
+.delete-user{
     position: relative;
-    top: -30%;
-    width: 20px;
+    width: 25px;
+    height: 25px;
     left: -20px;
     cursor: pointer;
-  } */
+    user-select: none;
+  }
 
 .button-add-user {
   border: none;
   background-color: #03a8f400;
+}
+
+.vertical-position {
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.atribuir-usuarios {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.atribuir-usuarios .imgPerfil {
+  width: 40px;
+  height: 40px;
+}
+
+.atribuir-usuarios label {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.atribuir-usuarios input {
+  width: 20px;
+  cursor: pointer;
+}
+
+.img-container-modal {
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.div-atribuir-aluno-modal {
+  position: absolute;
+  width: 50px;
+  gap: 0;
+  right: 4%;
+}
+
+#imgSetaModal {
+  margin: 0;
+}
+
+.modal-usuarios-modal {
+  position: absolute;
+  display: flex;
+  right: 0 !important;
+  z-index: 999999;
+}
+
+.modal-usuarios-modal li {
+  padding: 5px;
+  text-align: center;
+  align-items: center;
 }
 
 .amarelo {
