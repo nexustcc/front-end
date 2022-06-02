@@ -246,6 +246,26 @@ liExcluirTopico.addEventListener('click', () => console.log('Excluir Tópico 1')
 
 
 
+const converterData = (dataBanco) => {
+    const dataSplit = dataBanco.split(['T'])[0]
+    const dataFormatoEstrangeiro = dataSplit.split(['-'])
+    return dataFormatoEstrangeiro[2] + '/' + dataFormatoEstrangeiro[1] + '/' + dataFormatoEstrangeiro[0]
+}
+
+const tarefaProgessBar = (img, status) => {
+    console.log(img)
+    console.log(document.getElementById(img))
+    // if(status == 'Não Iniciada'){
+    //     document.getElementById('img').style.width = '0%'
+    // } else if(status == 'Em andamento'){
+    //     document.getElementById('img').style.width = '50%'
+    // } else {
+    //     document.getElementById('img').style.width = '100%'
+    // }
+}
+
+
+
 
 
 
@@ -307,10 +327,10 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
             tarefa.innerHTML += `
                 <div class="header-tarefa">
                     <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                        <div class="progress-bar" id="imgStatusTarefa1" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar" id="imgStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 
-                    <p id="nomeTarefa" onclick="showModalInfosTarefa()">Nome da tarefa</p>
+                    <p id="nomeTarefa" onclick="showModalInfosTarefa()">${tarefasIndividuais[t].tarefasDoTopico[i].nome}</p>
                     <img onclick="showModalOpcoesTarefa()" id="iconOpcoesTarefa1" src="img/icon-options.svg" alt="opções">
                 </div>
 
@@ -318,21 +338,6 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
                 <div class="modal-opcoes-tarefa" id="modalOpcoesTarefa1">
 
                     <ul>
-                        <li id="liDefinirCorOpcoesTarefa" onclick="showModalAlterarCorTarefa()"><img src="img/alterar-cor.svg" alt="cor">Definir cor padrão<img src="img/abrir.svg" alt="abrir"></li>
-
-                        <div class="modal-alterar-cor-tarefa" id="modalAlterarCorTarefa1">
-                            <ul>
-                                <li><img src="./img/amarelo.svg" alt="">Amarelo</li>
-                                <li><img src="./img/azul.svg" alt="">Azul</li>
-                                <li><img src="./img/verde.svg" alt="">Verde</li>
-                                <li><img src="./img/vermelho.svg" alt="">Vermelho</li>
-                                <li><img src="./img/laranja.svg" alt="">Laranja</li>
-                                <li><img src="./img/roxo.svg" alt="">Roxo</li>
-                                <li><img src="./img/rosa.svg" alt="">Rosa</li>
-                                <li><img src="./img/preto.svg" alt="">Preto</li>
-                            </ul>
-                        </div>
-
                         <li>Duplicar</li>
                         <li>Mover para<img src="img/abrir.svg" alt="abrir"></li>
                         <li id="liExcluirTopico1"><img src="img/excluir.svg" alt="excluir">Excluir</li>
@@ -342,7 +347,7 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
 
                 <div class="prioridade-tarefa">
                     <img src="./img/calendario.svg" alt="">
-                    <p id="dataConclusaoTarefa">XX/XX/XX</p>
+                    <p id="dataConclusaoTarefa">${converterData(tarefasIndividuais[t].tarefasDoTopico[i].dataConclusao)}</p>
                 </div>
             `
 

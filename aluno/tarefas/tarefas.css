@@ -249,6 +249,9 @@ option {
 .header-topico h2 {
   width: 400px;
   text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .header-topico img {
@@ -275,6 +278,9 @@ option {
 .header-tarefa p {
   margin-left: 10px;
   cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .header-tarefa img {
