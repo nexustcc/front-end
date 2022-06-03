@@ -291,13 +291,11 @@ option {
   width: 30px;
   height: 30px;
   border-radius: 100px;
-  border: solid #044177;
   transform: rotate(270deg);
   cursor: pointer;
 }
 
 .progress-bar {
-  background-color: #044177;
   position: relative;
   z-index: 100;
 }
@@ -439,12 +437,21 @@ option {
 }
 
 .modal-opcoes-tarefa {
-  margin-left: 270px;
+  margin-left: 290px;
 }
 
 .modal-alterar-cor-tarefa {
   margin-left: 245px;
   top: 0;
+}
+
+.ulMoverTarefaTopicos{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #f4f4f4;
+  margin-left: 155px;
+  width: 100%;
 }
 
 .modal-opcoes-topico ul,

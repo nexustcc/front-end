@@ -78,8 +78,6 @@ const alterarStatus = (div) => {}
 
 
 const showModalOpcoesTopico = (iconOpcoesTopico, modalOpcoesTopicos) => {
-    console.log(document.querySelector('.modal-opcoes-topico'))
-
     if (iconOpcoesTopico.src == 'http://127.0.0.1:5500/aluno/tarefas/img/icon-options.svg') {
         iconOpcoesTopico.src = 'img/icon-x.svg';
     } else {
@@ -97,6 +95,23 @@ const showModalOpcoesTopico = (iconOpcoesTopico, modalOpcoesTopicos) => {
     }
 };
 
+const showModalOpcoesTarefa = (iconOpcoesTarefa, modalOpcoesTarefa) => {
+    if (iconOpcoesTarefa.src == 'http://127.0.0.1:5500/aluno/tarefas/img/icon-options.svg') {
+        iconOpcoesTarefa.src = 'img/icon-x.svg';
+    } else {
+        iconOpcoesTarefa.src = 'img/icon-options.svg';
+    } 
+
+    if (modalOpcoesTarefa.style.display == 'flex') {
+        modalOpcoesTarefa.style.display = 'none';
+    } else {
+        modalOpcoesTarefa.style.display = 'flex';
+    }    
+
+    if (document.getElementById('modalAlterarCorTarefa1').style.display == 'flex') {
+        document.getElementById('modalAlterarCorTarefa1').style.display = 'none';
+    }
+}
 
 
 
@@ -164,15 +179,27 @@ const alterarCorTopico = (idCor, idTopico) => {
 
     fetch(url, config).then(() => location.reload());
 }
+const hexColorTopico = (idCor) => {
+    switch (idCor) {
+        case 1: return '#f8c71a'      
+        case 2: return '#06376a'
+        case 3: return '#3d963b'           
+        case 4: return '#dd1313'
+        case 5: return '#f98418'       
+        case 6: return '#9c4eda'
+        case 7: return '#ea5eed'         
+        case 8: return '#000000'
+    }
+}
 
 
 
-const criarTarefaIndividual = (idTopico) => {
+const criarTarefaIndividual = async (idTopico) => {
     event.preventDefault();
 
     const tarefa = {
-        "nome": document.getElementById('input-nome-criar-tarefa-individual').value,
-        "dataConclusao": document.getElementById('input-data-criar-tarefa-individual').value,
+        "nome": document.getElementById(`input-nome-criar-tarefa-individualTopicoIndividual${idTopico}`).value,
+        "dataConclusao": document.getElementById(`input-data-criar-tarefa-individualTopicoIndividual${idTopico}`).value,
         "idTopicoAluno": idTopico
     }
 
@@ -182,33 +209,9 @@ const criarTarefaIndividual = (idTopico) => {
         body: JSON.stringify(tarefa),
     };
     
-    fetch(`http://localhost:3000/tarefas/cadastrarTarefa/${localStorageUser.idTipo}`, config).then(() => location.reload());
+    await fetch(`http://localhost:3000/tarefas/cadastrarTarefa/${localStorageUser.idTipo}`, config).then(() => location.reload());
 }
 
-
-
-
-const showModalOpcoesTarefa = () => {
-
-    let iconOpcoesTarefa = document.getElementById('iconOpcoesTarefa1');
-    let modalOpcoesTarefa = document.getElementById('modalOpcoesTarefa1');
-
-    if (iconOpcoesTarefa.src == 'http://127.0.0.1:5500/aluno/tarefas/img/icon-options.svg') {
-        iconOpcoesTarefa.src = 'img/icon-x.svg';
-    } else {
-        iconOpcoesTarefa.src = 'img/icon-options.svg';
-    } 
-
-    if (modalOpcoesTarefa.style.display == 'flex') {
-        modalOpcoesTarefa.style.display = 'none';
-    } else {
-        modalOpcoesTarefa.style.display = 'flex';
-    }    
-
-    if (document.getElementById('modalAlterarCorTarefa1').style.display == 'flex') {
-        document.getElementById('modalAlterarCorTarefa1').style.display = 'none';
-    }
-}
 
 const showModalAlterarCorTarefa = () => {
     let modalAlterarCorTarefa = document.getElementById('modalAlterarCorTarefa1');
@@ -241,11 +244,6 @@ const showModalInfosTarefaGeral = () => {
     background.style.display = 'flex';
 }
 
-let liExcluirTopico = document.getElementById('liExcluirTopico1');
-liExcluirTopico.addEventListener('click', () => console.log('Excluir Tópico 1'));
-
-
-
 const converterData = (dataBanco) => {
     const dataSplit = dataBanco.split(['T'])[0]
     const dataFormatoEstrangeiro = dataSplit.split(['-'])
@@ -264,7 +262,54 @@ const tarefaProgessBar = (img, status) => {
     // }
 }
 
+const prioridadeTarefa = (prioridadeTarefa) => {
+    switch (prioridadeTarefa) {
+        case 'Baixa':
+            return 'calendario.svg'
 
+        case 'Média':
+            return 'calendario.svg'
+
+        case 'Importante':
+            return 'alerta.svg'
+
+        case 'Urgente':
+            return 'urgente.svg'
+    
+        default:
+            break;
+    }
+}
+
+
+
+const duplicarTarefaIndividual = async (idTarefa) => {
+    event.preventDefault();
+
+    const tarefa = {
+        "idTarefa": idTarefa
+    }
+
+    const config = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(tarefa),
+    };
+    
+    await fetch('http://localhost:3000/tarefas/duplicarTarefa/', config).then(() => location.reload());
+}
+const moverTarefaIndividual = async (idTarefa, idTopicoAluno) => {
+}
+const excluirTarefaIndividual = async (idTarefa) => {
+    const url = `http://localhost:3000/tarefas/deletarTarefa/${idTarefa}` 
+
+    const requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+    };
+              
+    fetch(url, requestOptions).then(() => location.reload());
+}
 
 
 
@@ -276,6 +321,8 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
         const topico = document.createElement('div')
         topico.classList = 'topico'
         topico.id = tarefasIndividuais[t].idTopico
+        
+        let corTopico = hexColorTopico(tarefasIndividuais[t].idCor)
 
         topico.innerHTML += `
             <div class="header-topico">
@@ -307,8 +354,8 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
             <button class="botao-add-topico" onclick="modalCriarTarefa(modalCriarTarefa${'tarefaIndividual' + tarefasIndividuais[t].idTopico})"><img src="./img/mais.svg" alt="">ADICIONAR TAREFA</button>
 
             <form class="modal-add-tarefa" id='modalCriarTarefa${'tarefaIndividual' + tarefasIndividuais[t].idTopico}' onsubmit='criarTarefaIndividual(${tarefasIndividuais[t].idTopico})'>
-                <input id='input-nome-criar-tarefa-individual' type="text" maxlength="255" placeholder="Insira o nome da tarefa" />
-                <input id='input-data-criar-tarefa-individual' type="date" placeholder="Insira uma data de conclusão"/>
+                <input id='input-nome-criar-tarefa-individual${'TopicoIndividual' + tarefasIndividuais[t].idTopico}' type="text" maxlength="255" placeholder="Insira o nome da tarefa" />
+                <input id='input-data-criar-tarefa-individual${'TopicoIndividual' + tarefasIndividuais[t].idTopico}' type="date" placeholder="Insira uma data de conclusão"/>
 
                 <div class="buttons-tarefa">
                     <button class="botao-cancelar-tarefa" onclick="exitModalCriarTarefa(modalCriarTarefa${'tarefaIndividual' + tarefasIndividuais[t].idTopico})">CANCELAR</button>
@@ -319,34 +366,35 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
         
         container.appendChild(topico)
 
+
         for (let i = 0; i < tarefasIndividuais[t].tarefasDoTopico.length; i++) {
             const tarefa = document.createElement('div')
             tarefa.classList = 'tarefa'
             tarefa.id = `tarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}`
 
+            tarefa.style.border = `2px solid ${corTopico}`
+
             tarefa.innerHTML += `
                 <div class="header-tarefa">
-                    <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)">
-                        <div class="progress-bar" id="imgStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)" style="border: 2px solid ${corTopico}">
+                        <div class="progress-bar" id="imgStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" role="progressbar" style="width: 100%; background-color="${corTopico}"" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 
                     <p id="nomeTarefa" onclick="showModalInfosTarefa()">${tarefasIndividuais[t].tarefasDoTopico[i].nome}</p>
-                    <img onclick="showModalOpcoesTarefa()" id="iconOpcoesTarefa1" src="img/icon-options.svg" alt="opções">
+                    <img onclick="showModalOpcoesTarefa(iconOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}, modalOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})" id="iconOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" src="img/icon-options.svg" alt="opções">
                 </div>
 
 
-                <div class="modal-opcoes-tarefa" id="modalOpcoesTarefa1">
-
+                <div class="modal-opcoes-tarefa" id="modalOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}">
                     <ul>
-                        <li>Duplicar</li>
-                        <li>Mover para<img src="img/abrir.svg" alt="abrir"></li>
-                        <li id="liExcluirTopico1"><img src="img/excluir.svg" alt="excluir">Excluir</li>
+                        <li onclick="duplicarTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/duplicar.svg" alt="duplicar"> Duplicar </li>
+                        <li onclick="moverTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/mover.svg" alt="mover"> Mover para <img src="img/abrir.svg" alt="abrir"> </li>
+                        <li onclick="excluirTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/excluir.svg" alt="excluir"> Excluir </li>
                     </ul>
                 </div>
 
-
                 <div class="prioridade-tarefa">
-                    <img src="./img/calendario.svg" alt="">
+                    <img src=./img/${prioridadeTarefa(tarefasIndividuais[t].tarefasDoTopico[i].prioridade)} alt="">
                     <p id="dataConclusaoTarefa">${converterData(tarefasIndividuais[t].tarefasDoTopico[i].dataConclusao)}</p>
                 </div>
             `
