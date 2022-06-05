@@ -61,7 +61,7 @@
                     </select>
                 </div>
                 <div class="preco_pedido">
-                    <p id="preco-plano">R$ 120,00</p>
+                    <p id="preco-plano">R$ 113,22</p>
                     <a href="../index.html">
                         <img src="img/cancelar.svg" alt="cancelar" />
                     </a>
@@ -70,7 +70,7 @@
             <div class="segunda_linha">
                 <div class="infos">
                     <p>Total</p>
-                    <p id="preco-total-plano">R$ 120,00</p>
+                    <p id="preco-total-plano">R$ 113,22</p>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                         <label for="inputNomeInstituicao">Nome da Instituição</label>
                         <div class="input_dados_instituicao">
                             <input id="inputNomeInstituicao" name="inputNomeInstituicao" type="text"
-                                placeholder="Nome da Instituição" maxlength="255" />
+                                placeholder="Nome da Instituição" maxlength="255" value="SENAI Santa Cecília"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                         <label for="inputEmailInstituicao">E-mail Institucional</label>
                         <div class="input_dados_instituicao">
                             <input id="inputEmailInstituicao" name="inputEmailInstituicao" type="email"
-                                placeholder="E-mail Institucional" maxlength="255" />
+                                placeholder="E-mail Institucional" maxlength="255" value="informatica@sp.senai.br"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                         <label for="inputConfirmarEmail">Confirme seu E-mail</label>
                         <div class="input_dados_instituicao">
                             <input id="inputConfirmarEmail" name="inputConfirmarEmail" type="email"
-                                placeholder="Confirme seu E-mail" />
+                                placeholder="Confirme seu E-mail" value="informatica@sp.senai.br"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                         <label for="inputSenhaInstituicao">Senha</label>
                         <div class="input_dados_instituicao">
                             <input id="inputSenhaInstituicao" name="inputSenhaInstituicao" type="password"
-                                placeholder="Senha" maxlength="255" />
+                                placeholder="Senha" maxlength="255" value="123"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                         <label for="inputConfirmarSenha">Confirme sua senha</label>
                         <div class="input_dados_instituicao">
                             <input id="inputConfirmarSenha" name="inputConfirmarSenha" type="password"
-                                placeholder="Confirme sua senha" />
+                                placeholder="Confirme sua senha" value="123"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                         <label for="inputTelefoneInstituicao">Telefone</label>
                         <div class="input_dados_instituicao">
                             <input id="inputTelefoneInstituicao" name="inputTelefoneInstituicao" type="text"
-                                placeholder="Telefone" />
+                                placeholder="Telefone" value="(11) 3273-5000"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                         <label for="inputCnpjInstituicao">CNPJ</label>
                         <div class="input_dados_instituicao">
                             <input id="inputCnpjInstituicao" name="inputCnpjInstituicao" type="text"
-                                placeholder="CNPJ" />
+                                placeholder="CNPJ"  value="03.774.819/0081-89"/>
                             <p><small>Error mesage</small></p>
                         </div>
                     </div>
@@ -149,27 +149,27 @@
                         <div class="input_cartao_instituicao">
                             <input id="inputNumeroCartao" name="inputNumeroCartao" type="text"
                                 placeholder="Número do cartão" minlength="9" maxlength="19"
-                                onkeypress="isInputNumber(event)" />
+                                onkeypress="isInputNumber(event)" value="1234 1234 1234 1234"/>
                             <p><small>Error mesage</small></p>
                         </div>
 
                         <div class="input_cartao_instituicao">
                             <input id="inputNomeCartao" name="inputNomeCartao" type="text" placeholder="Nome no cartão"
-                                maxlength="45" />
+                                maxlength="45" value="SENAI INFORMATICA"/>
                             <p><small>Error mesage</small></p>
                         </div>
 
                         <div class="inputs_cartao">
                             <div class="input_cartao_instituicao">
                                 <input id="inputDataValidadeCartao" name="inputDataValidadeCartao" type="text"
-                                    placeholder="Data de validade (mm/aa)" />
+                                    placeholder="Data de validade (mm/aa)" value="04/28"/>
                                 <p><small>Error mesage</small></p>
                             </div>
 
                             <div class="input_cartao_instituicao">
                                 <input id="inputCvvCartao" name="inputCvvCartao" type="text"
                                     placeholder="Código de segurança" minlength="3" maxlength="4"
-                                    onkeypress="isInputNumber(event)" />
+                                    onkeypress="isInputNumber(event)"  value="123"/>
                                 <p><small>Error mesage</small></p>
                             </div>
                         </div>

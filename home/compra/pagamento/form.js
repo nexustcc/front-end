@@ -27,12 +27,12 @@ let txtPrecoTotalPlano = document.getElementById('preco-total-plano');
 const alterarPrecoPlano = () => {
     if (selectTipoPlano.value == "1") {
 
-        txtPrecoPlano.textContent = 'R$ 120,00';
-        txtPrecoTotalPlano.textContent = 'R$ 120,00';
+        txtPrecoPlano.textContent = 'R$ 113,22';
+        txtPrecoTotalPlano.textContent = 'R$ 113,22';
     } else if (selectTipoPlano.value == "2") {
 
-        txtPrecoPlano.textContent = 'R$ 600,00';
-        txtPrecoTotalPlano.textContent = 'R$ 600,00';
+        txtPrecoPlano.textContent = 'R$ 1.119,11';
+        txtPrecoTotalPlano.textContent = 'R$ 1.119,11';
     }
 }
 
