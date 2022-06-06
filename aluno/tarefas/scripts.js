@@ -68,16 +68,55 @@ const exitModalCriarTarefa = (modal) => {
 
 
 
-const showModalInfosTarefa = () => {}
+const showModalInfosTarefa = (idTarefa, status, prioridade, nome, dataInicio, dataConclusao, idTopico, idCor, idAluno) => {
+    document.querySelector('.bg').style.display = 'flex'
+    document.getElementById('modalInfosTarefaIndividual').style.display = 'flex'
 
-const exitModalInfosTarefa = () => {}
+    document.getElementById('nome-tarefa-individual').value = nome
+}
 
-const alterarStatus = (div) => {}
+const exitModalInfosTarefa = () => {
+    event.preventDefault()
+    document.querySelector('.bg').style.display = 'none'
+    document.getElementById('modalInfosTarefaIndividual').style.display = 'none'
+}
+
+const alterarStatusTarefaIndividual = (div, idTarefa) => {
+
+    if(div.firstElementChild.style.height == '0px'){
+        event.preventDefault();
+        const status = { status: 'Em Andamento' };
+        const config = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(status),
+        }
+
+        const url = `http://localhost:3000/tarefas/editarStatusTarefaIndividual/${idTarefa}`
+        fetch(url, config).then(() => location.reload());
+
+    } else if(div.firstElementChild.style.height == '12px') {
+        event.preventDefault();
+        const status = { status: 'Concluída' };
+        const config = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(status),
+        }
+        const url = `http://localhost:3000/tarefas/editarStatusTarefaIndividual/${idTarefa}`
+        fetch(url, config).then(() => location.reload());
+    }
+}
 
 
 
 
 const showModalOpcoesTopico = (iconOpcoesTopico, modalOpcoesTopicos) => {
+
     if (iconOpcoesTopico.src == 'http://127.0.0.1:5500/aluno/tarefas/img/icon-options.svg') {
         iconOpcoesTopico.src = 'img/icon-x.svg';
     } else {
@@ -250,16 +289,14 @@ const converterData = (dataBanco) => {
     return dataFormatoEstrangeiro[2] + '/' + dataFormatoEstrangeiro[1] + '/' + dataFormatoEstrangeiro[0]
 }
 
-const tarefaProgessBar = (img, status) => {
-    console.log(img)
-    console.log(document.getElementById(img))
-    // if(status == 'Não Iniciada'){
-    //     document.getElementById('img').style.width = '0%'
-    // } else if(status == 'Em andamento'){
-    //     document.getElementById('img').style.width = '50%'
-    // } else {
-    //     document.getElementById('img').style.width = '100%'
-    // }
+const statusTarefaIndividual = (status) => {
+    if(status == 'Não Iniciada'){
+        return '0px'
+    } else if(status == 'Em Andamento'){
+        return '12px'
+    } else {
+        return '30px'
+    }
 }
 
 const prioridadeTarefa = (prioridadeTarefa) => {
@@ -372,15 +409,18 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
             tarefa.classList = 'tarefa'
             tarefa.id = `tarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}`
 
-            tarefa.style.border = `2px solid ${corTopico}`
+            tarefa.style.border = `3px solid ${corTopico}`
 
             tarefa.innerHTML += `
                 <div class="header-tarefa">
-                    <div class="progress" id="divStatusTarefa1" onclick="alterarStatus(divStatusTarefa1)" style="border: 2px solid ${corTopico}">
-                        <div class="progress-bar" id="imgStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" role="progressbar" style="width: 100%; background-color="${corTopico}"" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress" id="divStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" onclick="alterarStatusTarefaIndividual(divStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}, ${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})" style="border: 3px solid ${corTopico}">
+                        <div class="progress-bar" id="imgStatusTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" style="height: ${statusTarefaIndividual(tarefasIndividuais[t].tarefasDoTopico[i].status)}; background-color: ${corTopico}"></div>
                     </div>
 
-                    <p id="nomeTarefa" onclick="showModalInfosTarefa()">${tarefasIndividuais[t].tarefasDoTopico[i].nome}</p>
+                    <p id="nomeTarefa" onclick="showModalInfosTarefa(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})">
+                        ${tarefasIndividuais[t].tarefasDoTopico[i].nome}
+                    </p>
+                    
                     <img onclick="showModalOpcoesTarefa(iconOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}, modalOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})" id="iconOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}" src="img/icon-options.svg" alt="opções">
                 </div>
 
