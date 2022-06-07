@@ -318,8 +318,6 @@ const prioridadeTarefa = (prioridadeTarefa) => {
     }
 }
 
-
-
 const duplicarTarefaIndividual = async (idTarefa) => {
     event.preventDefault();
 
@@ -335,8 +333,40 @@ const duplicarTarefaIndividual = async (idTarefa) => {
     
     await fetch('http://localhost:3000/tarefas/duplicarTarefa/', config).then(() => location.reload());
 }
-const moverTarefaIndividual = async (idTarefa, idTopicoAluno) => {
+
+const moverTarefaIndividual = async (idTarefa) => {
+    const container = document.getElementById(`mover-tarefa-individual-${idTarefa}`)
+
+    if(container.firstElementChild == null || container.firstElementChild == ''){
+
+        container.style.display = 'flex'
+    
+        const url = `http://localhost:3000/tarefas/listarTopicoAluno/${localStorageUser.idTipo}`
+        const dadosTopicos = await fetch(url);
+        const dadosTopicosJson = await dadosTopicos.json();
+    
+        const containerUl = document.createElement('ul')
+    
+        for (let t = 0; t < dadosTopicosJson.topicos_aluno.length; t++) {
+            const liTopico = document.createElement('li')
+    
+            liTopico.innerHTML +=
+            `
+                <img src="./img/icon-topico.svg" alt="topico" >
+                ${dadosTopicosJson.topicos_aluno[t].nome}
+            `
+    
+            containerUl.appendChild(liTopico)
+        }
+    
+        container.appendChild(containerUl)
+    } else {
+        container.innerHTML = ''
+        container.style.display = 'none'
+    }
+
 }
+
 const excluirTarefaIndividual = async (idTarefa) => {
     const url = `http://localhost:3000/tarefas/deletarTarefa/${idTarefa}` 
 
@@ -403,7 +433,6 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
         
         container.appendChild(topico)
 
-
         for (let i = 0; i < tarefasIndividuais[t].tarefasDoTopico.length; i++) {
             const tarefa = document.createElement('div')
             tarefa.classList = 'tarefa'
@@ -429,6 +458,8 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
                     <ul>
                         <li onclick="duplicarTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/duplicar.svg" alt="duplicar"> Duplicar </li>
                         <li onclick="moverTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/mover.svg" alt="mover"> Mover para <img src="img/abrir.svg" alt="abrir"> </li>
+                        <div class="modal-alterar-cor-topico mover-para" id="mover-tarefa-individual-${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}"> </div>
+
                         <li onclick="excluirTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/excluir.svg" alt="excluir"> Excluir </li>
                     </ul>
                 </div>
@@ -443,8 +474,6 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
         }
     }
 }
-
-
 
 const getTarefas = async () => {
     const url = `http://localhost:3000/tarefas/listarTarefas/${localStorageUser.idTipo}`;
