@@ -11,25 +11,31 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../componentes/side_menu/styles_side_menu.css" />
-    <link rel="stylesheet" href="../../componentes/header/styles_header.css" />
+    <script src="script.js" defer></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../../../home/images-global/logo-azul.svg" type="image/x-icon" />
-    <script defer src="script.js"></script>
+
+    <link rel="stylesheet" href="../componentes/header/styles_header.css" />
+    <link rel="stylesheet" href="../componentes/side_menu/styles_side_menu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <title>Relatório da banca</title>
 </head>
 
 <body>
     <header>
         <div class="primeira_parte">
-            <img src="../../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
+            <img src="../componentes/header/img/grupo_pessoas.svg" alt="grupo_pessoas" />
             <h1 id="nomeGrupoAluno">NOME DO GRUPO</h1>
         </div>
 
         <a href="../../perfil/index.html">
-            <img id="fotoPerfilAluno" src="../../componentes/header/img/foto_padrao.svg" alt="foto" />
+            <img id="fotoPerfilAluno" src="../componentes/header/img/foto_padrao.svg" alt="foto" />
         </a>
     </header>
+
     <div class="sidebar">
         <div class="logo-details">
             <img class="icon" src="../../../home/images-global/logo-branca.svg" alt="logo" />
@@ -37,14 +43,14 @@
         </div>
 
         <li>
-            <a href="#">
+            <a href="../../projeto_tcc/index.html">
                 <i class="bx bx-info-circle"></i>
                 <span class="links_name">Informações do projeto</span>
             </a>
             <span class="tooltip">Projeto</span>
         </li>
         <li>
-            <a href="#">
+            <a href="../../tarefas/">
                 <i class="bx bx-task"></i>
                 <span class="links_name">Tarefas</span>
             </a>
@@ -58,7 +64,7 @@
             <span class="tooltip">Arquivos</span>
         </li>
         <li>
-            <a href="#">
+            <a href="./index.html">
                 <i class="bx bx-edit"></i>
                 <span class="links_name">Relatório da banca</span>
             </a>
@@ -71,6 +77,10 @@
             </a>
             <span class="tooltip">Log Out</span>
         </li>
+    </div>
+
+    <div class="container">
+        
     </div>
 
     <script>
@@ -90,9 +100,6 @@
             }
         }
     </script>
-    <main>
-        <h1>O RELATÓRIO DO SEU PROJETO AINDA NÃO ESTÁ DISPONIVEL</h1>
-    </main>
 </body>
 
 </html>
