@@ -164,7 +164,7 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .modal h1 {
-    font-size: 70px;
+    font-size: 55px;
     font-weight: 700;
     color: #05204a;
 }
@@ -292,6 +292,7 @@ ul {
     border-radius: 10px;
     padding: 2%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .ul-grupo {
@@ -312,10 +313,9 @@ ul {
 .li {
     border: none;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5% 5%;
+    margin-left: 2%;
 }
 
 #modal-membros .li {
@@ -597,7 +597,7 @@ ul {
 }
 
 .modal-excluir {
-    width: 40%;
+    width: 45%;
     height: 30vh;
     display: none;
     background-color: rgb(255, 255, 255);
