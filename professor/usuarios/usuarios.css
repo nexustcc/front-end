@@ -115,8 +115,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-    width: 30vw;
-    height: 30vh;
+    width: 50vw;
+    height: 35vh;
     background-color: rgb(255, 255, 255);
     display: none;
     align-items: center;
@@ -345,7 +345,7 @@ ul {
 }
 
 .container-geral h1 {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 700;
     color: #05204a;
 }
