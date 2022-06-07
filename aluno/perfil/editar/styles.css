@@ -111,17 +111,12 @@ body {
    right: 5px;
 }
 
-#show_password {
-   position: absolute;
-   bottom: 34.75%;
-   right: 3.5%;
-   cursor: pointer;
-}
-
+#show_password,
 #show_confirm_password {
-   position: absolute;
-   bottom: 24.4%;
-   right: 3.5%;
+   position: relative;
+   bottom: 34.75%;
+   right: 0;
+   left: 93%;
    cursor: pointer;
 }
 
