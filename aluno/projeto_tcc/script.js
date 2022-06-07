@@ -102,11 +102,11 @@ const exibirProfessores = (professores) => {
 }
 
 const getInfoGrupo = async () => {
-    const url = `http://localhost:3000/aluno/informacoesGrupo/${localStorageUser.idTipo}`;
-
-    fetch(url).then((response) => response.json);
+    const url = `http://localhost:3000/aluno/informacoesGrupo/${localStorageUser.idTipo}`
     const dados = await fetch(url);
     let grupo = await dados.json();
+
+    console.log(grupo)
     
     exibirGrupo(grupo.grupo[0], grupo.andamento);
     exibirAlunos(grupo.alunos)
