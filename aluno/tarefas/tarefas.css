@@ -430,6 +430,10 @@ option {
   margin-left: 290px;
 }
 
+.mover-para {
+  margin-left: 215px !important;
+}
+
 .modal-alterar-cor-topico > ul > li{
   border-radius: 20px;
 }
