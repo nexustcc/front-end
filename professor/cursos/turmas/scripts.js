@@ -52,8 +52,8 @@ const exibirGrupos = (grupos) => {
         const grupo = document.createElement("li");
         grupo.classList = "list-group-item li";
 
-        if (grupos[g].nomeProjeto == null) {
-            grupos[g].nomeProjeto = "sem nome*";
+        if (grupos[g].nomeGrupo == null) {
+            grupos[g].nomeGrupo = "sem nome*";
         }
 
         grupo.innerHTML += `
@@ -61,7 +61,7 @@ const exibirGrupos = (grupos) => {
         <button class="btnExcluirGrupo" onclick="showModalExcluirGrupo(${grupos[g].idGrupo})"><i class='bx bx-trash'></i></button>
         <a href="./grupo/index.html?idGrupo=${grupos[g].idGrupo}"><span class="iconify" data-icon="healthicons:group-discussion-meetingx3" style="color: #05244d;"data-width="130" data-height="130"></span></a>
         <p class="numero">Grupo ${grupos[g].numeracao}</p>
-        <p class="tema">${grupos[g].nomeProjeto}</p>
+        <p class="tema">${grupos[g].nomeGrupo}</p>
         </div>
         `;
 
@@ -74,14 +74,10 @@ async function showModalGrupos(idTurma) {
     document.querySelector(".modal-grupos").style.display = "flex";
 
     const url = `http://localhost:3000/grupo/listarGrupos/${idTurma}`;
-
-    fetch(url).then((response) => response.json);
+    
     const dados = await fetch(url);
     let grupos = await dados.json();
     exibirGrupos(grupos.grupos);
-
-    console.log(grupos.grupos);
-    console.log("Oi");
 }
 
 function exitModalGrupos() {
