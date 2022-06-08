@@ -261,7 +261,7 @@ const exibirDadosAlunos = (alunos) => {
     if (alunos.length == 0) {
         const aluno_view = document.createElement("li");
         aluno_view.classList = "list-group-item li";
-        aluno_view.innerHTML += ` <li class="list-group-item li"> <p>Nenhum Professor Cadastrado</p> </li> `;
+        aluno_view.innerHTML += ` <li class="list-group-item li"> <p>Nenhum Aluno Cadastrado</p> </li> `;
         alunos_container.appendChild(aluno_view);
     }
 
