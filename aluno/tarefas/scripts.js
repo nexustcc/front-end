@@ -8,27 +8,27 @@ const tarefaGeral = document.getElementById('tarefa-geral');
 const divTarefaIndividual = document.querySelector('.container-geral');
 const divTarefaGeral = document.querySelector('.container-geral-tarefas-gerais');
 
-tiposTarefa.forEach((tipoTarefa) => {
-    tipoTarefa.addEventListener("click", () => {
-        tiposTarefa.forEach((tipoTarefa) => {
-            tipoTarefa.classList.remove("ativo");
-        });
-        tipoTarefa.classList.add("ativo");
-    });
-});
+// tiposTarefa.forEach((tipoTarefa) => {
+//     tipoTarefa.addEventListener("click", () => {
+//         tiposTarefa.forEach((tipoTarefa) => {
+//             tipoTarefa.classList.remove("ativo");
+//         });
+//         tipoTarefa.classList.add("ativo");
+//     });
+// });
 
-tarefaIndividual.addEventListener('click', function(){
+// tarefaIndividual.addEventListener('click', function(){
 
-    divTarefaGeral.style.display = 'none';
-    divTarefaIndividual.style.display = 'flex';
-})
+//     divTarefaGeral.style.display = 'none';
+//     divTarefaIndividual.style.display = 'flex';
+// })
 
-tarefaGeral.addEventListener('click', function(){
-    console.log('a')
-    divTarefaIndividual.style.display = 'none';
-    divTarefaGeral.style.display = 'flex';
+// tarefaGeral.addEventListener('click', function(){
+//     console.log('a')
+//     divTarefaIndividual.style.display = 'none';
+//     divTarefaGeral.style.display = 'flex';
     
-})
+// })
 
 
 
@@ -457,7 +457,6 @@ const exibirTarefasIndividuais = async (tarefasIndividuais) => {
                 <div class="modal-opcoes-tarefa" id="modalOpcoesTarefaIndividual${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}">
                     <ul>
                         <li onclick="duplicarTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/duplicar.svg" alt="duplicar"> Duplicar </li>
-                        <li onclick="moverTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/mover.svg" alt="mover"> Mover para <img src="img/abrir.svg" alt="abrir"> </li>
                         <div class="modal-alterar-cor-topico mover-para" id="mover-tarefa-individual-${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa}"> </div>
 
                         <li onclick="excluirTarefaIndividual(${tarefasIndividuais[t].tarefasDoTopico[i].idTarefa})"> <img src="img/excluir.svg" alt="excluir"> Excluir </li>
